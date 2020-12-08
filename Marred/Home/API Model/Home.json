@@ -1,0 +1,17 @@
+[
+    {
+        "type" : "CATEGORY_LIST"
+    },
+    {
+        "type" : "BANNER_AD"
+    },
+    {
+        "type" : "PRODUCT_LIST"
+    },
+    {
+        "type" : "PRODUCT_LIST"
+    },
+    {
+        "type" : "CONTACT_INFO"
+    }
+]

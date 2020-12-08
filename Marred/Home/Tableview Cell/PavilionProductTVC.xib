@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PavilionProductTVC" id="KGk-i7-Jjw" customClass="PavilionProductTVC" customModule="Marred" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="334"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="334"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4C-2W-SUd">
+                        <rect key="frame" x="0.0" y="10" width="320" height="34"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UAE Pavilion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uij-4R-bH0" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                <rect key="frame" x="10" y="5" width="92" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ab"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pB5-Ej-fnO" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                <rect key="frame" x="255" y="3" width="55" height="23"/>
+                                <color key="backgroundColor" red="0.98431372549019602" green="0.97647058823529409" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="JjK-we-p9N"/>
+                                    <constraint firstAttribute="width" constant="55" id="w5t-bz-ap1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                <state key="normal" title="View All">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="600-yb-tIX"/>
+                            <constraint firstItem="Uij-4R-bH0" firstAttribute="top" secondItem="C4C-2W-SUd" secondAttribute="top" constant="5" id="Cor-RX-DMj"/>
+                            <constraint firstItem="pB5-Ej-fnO" firstAttribute="top" secondItem="C4C-2W-SUd" secondAttribute="top" constant="3" id="D7n-nO-XWM"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pB5-Ej-fnO" secondAttribute="bottom" constant="5" id="Mht-2h-Aa2"/>
+                            <constraint firstAttribute="trailing" secondItem="pB5-Ej-fnO" secondAttribute="trailing" constant="10" id="VtF-8c-je2"/>
+                            <constraint firstAttribute="bottom" secondItem="Uij-4R-bH0" secondAttribute="bottom" constant="10" id="cGy-t5-dUb"/>
+                            <constraint firstItem="Uij-4R-bH0" firstAttribute="leading" secondItem="C4C-2W-SUd" secondAttribute="leading" constant="10" id="dZq-C4-8Hb"/>
+                        </constraints>
+                    </view>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JAF-Fe-mod">
+                        <rect key="frame" x="5" y="44" width="315" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="EGo-P8-aAn"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="47d-kh-x1S">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="GUL-MZ-ApO"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="7u5-1d-A1z"/>
+                        </connections>
+                    </collectionView>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTF-VH-762" customClass="View" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="10" y="84" width="110" height="240"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product_uae" translatesAutoresizingMaskIntoConstraints="NO" id="KAE-2w-Mi0">
+                                <rect key="frame" x="0.0" y="0.0" width="110" height="240"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KAE-2w-Mi0" firstAttribute="leading" secondItem="TTF-VH-762" secondAttribute="leading" id="Loj-h7-m7d"/>
+                            <constraint firstAttribute="width" constant="110" id="Ubw-9s-2IH"/>
+                            <constraint firstItem="KAE-2w-Mi0" firstAttribute="top" secondItem="TTF-VH-762" secondAttribute="top" id="VvC-Br-Yd1"/>
+                            <constraint firstAttribute="bottom" secondItem="KAE-2w-Mi0" secondAttribute="bottom" id="bND-uA-hnn"/>
+                            <constraint firstAttribute="trailing" secondItem="KAE-2w-Mi0" secondAttribute="trailing" id="cUL-Nl-NYb"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="azA-0X-cFS">
+                        <rect key="frame" x="130" y="84" width="180" height="240"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="240" id="OkX-yy-91X"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="pdM-Sb-Bou">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="4gr-s0-sCj"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="DFA-kj-lNC"/>
+                        </connections>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="azA-0X-cFS" firstAttribute="leading" secondItem="TTF-VH-762" secondAttribute="trailing" constant="10" id="0m9-od-klI"/>
+                    <constraint firstAttribute="bottom" secondItem="azA-0X-cFS" secondAttribute="bottom" constant="10" id="6l1-EC-OTK"/>
+                    <constraint firstAttribute="trailing" secondItem="JAF-Fe-mod" secondAttribute="trailing" id="C4C-ay-Ohy"/>
+                    <constraint firstAttribute="bottom" secondItem="TTF-VH-762" secondAttribute="bottom" constant="10" id="Ldw-7d-3Wb"/>
+                    <constraint firstItem="TTF-VH-762" firstAttribute="top" secondItem="JAF-Fe-mod" secondAttribute="bottom" constant="10" id="UNj-nU-bPl"/>
+                    <constraint firstAttribute="trailing" secondItem="C4C-2W-SUd" secondAttribute="trailing" id="Zb5-ul-gYF"/>
+                    <constraint firstItem="C4C-2W-SUd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="cPg-7j-qBA"/>
+                    <constraint firstItem="TTF-VH-762" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="f6e-sj-dEQ"/>
+                    <constraint firstAttribute="trailing" secondItem="azA-0X-cFS" secondAttribute="trailing" constant="10" id="fR1-zq-b9F"/>
+                    <constraint firstItem="C4C-2W-SUd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hef-ft-pwt"/>
+                    <constraint firstItem="JAF-Fe-mod" firstAttribute="top" secondItem="C4C-2W-SUd" secondAttribute="bottom" id="iCV-HB-Pwx"/>
+                    <constraint firstItem="azA-0X-cFS" firstAttribute="top" secondItem="JAF-Fe-mod" secondAttribute="bottom" constant="10" id="mz1-32-80S"/>
+                    <constraint firstItem="JAF-Fe-mod" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="umZ-Jq-4ip"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="adImgView" destination="KAE-2w-Mi0" id="VjI-TQ-fmi"/>
+                <outlet property="categoryCV" destination="JAF-Fe-mod" id="doR-Jq-WLP"/>
+                <outlet property="nameLbl" destination="Uij-4R-bH0" id="2Z0-F0-ksz"/>
+                <outlet property="productCV" destination="azA-0X-cFS" id="Czr-2V-FD0"/>
+                <outlet property="viewAllBtn" destination="pB5-Ej-fnO" id="SJf-eJ-ymS"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="product_uae" width="119" height="280"/>
+    </resources>
+</document>

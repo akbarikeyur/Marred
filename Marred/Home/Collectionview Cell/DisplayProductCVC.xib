@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DisplayProductCVC" id="gTV-IL-0wX" customClass="DisplayProductCVC" customModule="Marred" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waO-Ta-b1N" customClass="View" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="5" y="5" width="100" height="110"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_product1" translatesAutoresizingMaskIntoConstraints="NO" id="7uT-89-45s">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="71"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSv-iR-xdc">
+                                <rect key="frame" x="75" y="0.0" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="CZG-Eu-N8M"/>
+                                    <constraint firstAttribute="width" constant="25" id="bdL-dc-2Df"/>
+                                </constraints>
+                                <state key="normal" image="add_black"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Princess" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCS-BB-gxe" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                <rect key="frame" x="2" y="75" width="96" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14.5" id="5yv-nb-SIl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34.50 AED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-zv-XdU" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                <rect key="frame" x="2" y="91.5" width="96" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14.5" id="bFs-YK-Gbh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ab"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hyT-zv-XdU" secondAttribute="bottom" constant="4" id="2bK-bg-fG0"/>
+                            <constraint firstItem="qSv-iR-xdc" firstAttribute="top" secondItem="waO-Ta-b1N" secondAttribute="top" id="5Ji-ob-lQ3"/>
+                            <constraint firstAttribute="trailing" secondItem="oCS-BB-gxe" secondAttribute="trailing" constant="2" id="Auf-lK-TTP"/>
+                            <constraint firstAttribute="trailing" secondItem="hyT-zv-XdU" secondAttribute="trailing" constant="2" id="D68-1K-Nvw"/>
+                            <constraint firstItem="hyT-zv-XdU" firstAttribute="leading" secondItem="waO-Ta-b1N" secondAttribute="leading" constant="2" id="aQs-0U-ixf"/>
+                            <constraint firstItem="hyT-zv-XdU" firstAttribute="top" secondItem="oCS-BB-gxe" secondAttribute="bottom" constant="2" id="koC-ca-sW6"/>
+                            <constraint firstAttribute="trailing" secondItem="7uT-89-45s" secondAttribute="trailing" id="n2U-qX-CiU"/>
+                            <constraint firstItem="oCS-BB-gxe" firstAttribute="leading" secondItem="waO-Ta-b1N" secondAttribute="leading" constant="2" id="rNz-PA-BUb"/>
+                            <constraint firstItem="oCS-BB-gxe" firstAttribute="top" secondItem="7uT-89-45s" secondAttribute="bottom" constant="4" id="u0H-1X-vRD"/>
+                            <constraint firstItem="7uT-89-45s" firstAttribute="leading" secondItem="waO-Ta-b1N" secondAttribute="leading" id="wrl-Gg-JCh"/>
+                            <constraint firstItem="7uT-89-45s" firstAttribute="top" secondItem="waO-Ta-b1N" secondAttribute="top" id="xdW-f1-plI"/>
+                            <constraint firstAttribute="trailing" secondItem="qSv-iR-xdc" secondAttribute="trailing" id="z6B-SM-rj0"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderColorTypeAdapter">
+                                <integer key="value" value="9"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="waO-Ta-b1N" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="UaD-pG-PY8"/>
+                <constraint firstAttribute="trailing" secondItem="waO-Ta-b1N" secondAttribute="trailing" constant="5" id="hkE-bP-gkl"/>
+                <constraint firstItem="waO-Ta-b1N" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="lQL-zg-tEJ"/>
+                <constraint firstAttribute="bottom" secondItem="waO-Ta-b1N" secondAttribute="bottom" constant="5" id="otT-wR-o9H"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="addBtn" destination="qSv-iR-xdc" id="aGP-Ae-b8I"/>
+                <outlet property="imgView" destination="7uT-89-45s" id="z9i-CS-by5"/>
+                <outlet property="nameLbl" destination="oCS-BB-gxe" id="R65-eg-u8T"/>
+                <outlet property="priceLbl" destination="hyT-zv-XdU" id="Zx5-cr-Chu"/>
+            </connections>
+            <point key="canvasLocation" x="133" y="139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="add_black" width="20" height="20"/>
+        <image name="temp_product1" width="105" height="90"/>
+    </resources>
+</document>

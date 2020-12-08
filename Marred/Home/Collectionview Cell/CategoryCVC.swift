@@ -1,0 +1,26 @@
+//
+//  CategoryCVC.swift
+//  Marred
+//
+//  Created by Keyur Akbari on 07/12/20.
+//  Copyright © 2020 Keyur Akbari. All rights reserved.
+//
+
+import UIKit
+
+class CategoryCVC: UICollectionViewCell {
+
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var nameLbl: Label!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    func setupDetail(_ dict : CategoryModel) {
+        imgView.image = UIImage(named: dict.image)
+        nameLbl.text = dict.title
+    }
+    
+}
