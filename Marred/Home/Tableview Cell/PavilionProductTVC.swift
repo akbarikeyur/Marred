@@ -90,5 +90,9 @@ extension PavilionProductTVC : UICollectionViewDelegate, UICollectionViewDataSou
             selectedCategory = indexPath.row
             categoryCV.reloadData()
         }
+        else {
+            let vc : ProductDetailVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
+            UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

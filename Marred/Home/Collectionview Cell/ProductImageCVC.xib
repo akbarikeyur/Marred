@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductImageCVC" id="gTV-IL-0wX" customClass="ProductImageCVC" customModule="Marred" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cg0-Z2-C2y" customClass="View" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="5" y="5" width="90" height="90"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_product" translatesAutoresizingMaskIntoConstraints="NO" id="BnN-WS-cVV">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="BnN-WS-cVV" secondAttribute="bottom" id="Tqp-Za-eFa"/>
+                            <constraint firstItem="BnN-WS-cVV" firstAttribute="leading" secondItem="Cg0-Z2-C2y" secondAttribute="leading" id="YK0-TD-VrA"/>
+                            <constraint firstItem="BnN-WS-cVV" firstAttribute="top" secondItem="Cg0-Z2-C2y" secondAttribute="top" id="rR2-N2-qGd"/>
+                            <constraint firstAttribute="trailing" secondItem="BnN-WS-cVV" secondAttribute="trailing" id="vvP-w3-41a"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderColorTypeAdapter">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Cg0-Z2-C2y" secondAttribute="bottom" constant="5" id="7WW-80-0es"/>
+                <constraint firstItem="Cg0-Z2-C2y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="E0t-Wm-IQh"/>
+                <constraint firstAttribute="trailing" secondItem="Cg0-Z2-C2y" secondAttribute="trailing" constant="5" id="Xaw-s8-ZeC"/>
+                <constraint firstItem="Cg0-Z2-C2y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="e8A-KP-ddV"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="imgView" destination="BnN-WS-cVV" id="y8p-HE-d2D"/>
+                <outlet property="outerView" destination="Cg0-Z2-C2y" id="ing-tY-sKG"/>
+            </connections>
+            <point key="canvasLocation" x="133" y="154"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="temp_product" width="375" height="598"/>
+    </resources>
+</document>

@@ -1,5 +1,5 @@
 //
-//  CategoryCVC.swift
+//  TopCategoryCVC.swift
 //  Marred
 //
 //  Created by Keyur Akbari on 07/12/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryCVC: UICollectionViewCell {
+class TopCategoryCVC: UICollectionViewCell {
 
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLbl: Label!

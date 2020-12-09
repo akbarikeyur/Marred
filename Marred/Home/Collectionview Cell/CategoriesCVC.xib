@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoriesCVC" id="gTV-IL-0wX" customClass="CategoriesCVC" customModule="Marred" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="110"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="90" height="110"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxl-P0-abb" customClass="View" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="5" y="5" width="80" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="accessorie" translatesAutoresizingMaskIntoConstraints="NO" id="g1V-Kw-0px">
+                                <rect key="frame" x="15" y="10" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="A2a-dd-edg"/>
+                                    <constraint firstAttribute="width" constant="50" id="U2n-cj-QHy"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKF-bH-xN5" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                <rect key="frame" x="5" y="67" width="70" height="28.5"/>
+                                <string key="text">Shoes
+&amp; Bags</string>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="LKF-bH-xN5" firstAttribute="top" secondItem="g1V-Kw-0px" secondAttribute="bottom" constant="7" id="0rg-78-qyv"/>
+                            <constraint firstItem="LKF-bH-xN5" firstAttribute="leading" secondItem="vxl-P0-abb" secondAttribute="leading" constant="5" id="OAp-Yy-ZEd"/>
+                            <constraint firstAttribute="trailing" secondItem="LKF-bH-xN5" secondAttribute="trailing" constant="5" id="UYs-nG-n7z"/>
+                            <constraint firstItem="g1V-Kw-0px" firstAttribute="centerX" secondItem="vxl-P0-abb" secondAttribute="centerX" id="VPB-nB-2EH"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LKF-bH-xN5" secondAttribute="bottom" constant="4.5" id="dUS-Kl-uhC"/>
+                            <constraint firstItem="g1V-Kw-0px" firstAttribute="top" secondItem="vxl-P0-abb" secondAttribute="top" constant="10" id="l8a-Sg-V5I"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="applyShadow" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="vxl-P0-abb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="9Ax-sf-RE7"/>
+                <constraint firstItem="vxl-P0-abb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="JLP-Uw-gz5"/>
+                <constraint firstAttribute="bottom" secondItem="vxl-P0-abb" secondAttribute="bottom" constant="5" id="ZCy-Bv-msO"/>
+                <constraint firstAttribute="trailing" secondItem="vxl-P0-abb" secondAttribute="trailing" constant="5" id="ry2-51-GCF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="imgView" destination="g1V-Kw-0px" id="bQW-ce-FuT"/>
+                <outlet property="nameLbl" destination="LKF-bH-xN5" id="nsk-IS-M8w"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="accessorie" width="50" height="47"/>
+    </resources>
+</document>

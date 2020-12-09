@@ -34,11 +34,7 @@ class HomeVC: UIViewController {
 
     //MARK:- Button click event
     @IBAction func clickToSideMenu(_ sender: Any) {
-        
-    }
-    
-    @IBAction func clickToSelectTopDropDown(_ sender: UIButton) {
-        
+        self.menuContainerViewController.toggleLeftSideMenuCompletion { }
     }
     
     @IBAction func clickToSearch(_ sender: Any) {

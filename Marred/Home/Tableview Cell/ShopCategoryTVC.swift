@@ -18,11 +18,11 @@ class ShopCategoryTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        registerCollectionView()
     }
 
     func setupDetails() {
-        registerCollectionView()
+        
     }
     
     @IBAction func clickToSelectCategory(_ sender: UIButton) {
@@ -40,7 +40,7 @@ class ShopCategoryTVC: UITableViewCell {
 extension ShopCategoryTVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     func registerCollectionView() {
-        categoryCV.register(UINib.init(nibName: "CategoryCVC", bundle: nil), forCellWithReuseIdentifier: "CategoryCVC")
+        categoryCV.register(UINib.init(nibName: "TopCategoryCVC", bundle: nil), forCellWithReuseIdentifier: "TopCategoryCVC")
         
         arrCategory = [CategoryModel]()
         for temp in getJsonFromFile("category") {
@@ -58,7 +58,7 @@ extension ShopCategoryTVC : UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : CategoryCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "CategoryCVC", for: indexPath) as! CategoryCVC
+        let cell : TopCategoryCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "TopCategoryCVC", for: indexPath) as! TopCategoryCVC
         cell.setupDetail(arrCategory[indexPath.row])
         return cell
     }
