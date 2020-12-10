@@ -36,6 +36,10 @@ class ProductDetailVC: UIViewController {
         registerCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        AppDelegate().sharedDelegate().hideTabBar()
+    }
+    
     //MARK:- Button click event
     @IBAction func clickToBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

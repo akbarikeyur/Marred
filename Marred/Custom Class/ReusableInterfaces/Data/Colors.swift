@@ -20,7 +20,6 @@ var BorderColor = colorFromHex(hex: "C1C1C1")
 var LightBorderColor = colorFromHex(hex: "D5D5D5")
 var LightTextColor = colorFromHex(hex: "858585")
 
-
 enum ColorType : Int32 {
     case Clear = 0
     case Black = 1

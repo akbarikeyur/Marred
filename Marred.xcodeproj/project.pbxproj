@@ -20,6 +20,10 @@
 		794B1C122580E25D00A7F391 /* CategoriesCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794B1C102580E25D00A7F391 /* CategoriesCVC.xib */; };
 		794B1C152580E65B00A7F391 /* PavillionShopCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B1C132580E65B00A7F391 /* PavillionShopCVC.swift */; };
 		794B1C162580E65B00A7F391 /* PavillionShopCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794B1C142580E65B00A7F391 /* PavillionShopCVC.xib */; };
+		79751FFF25823FD90020FEEE /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79751FFE25823FD90020FEEE /* Product.storyboard */; };
+		79752002258252820020FEEE /* ShoppingCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79752001258252820020FEEE /* ShoppingCartVC.swift */; };
+		79752006258259C00020FEEE /* CartTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79752004258259C00020FEEE /* CartTVC.swift */; };
+		79752007258259C00020FEEE /* CartTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79752005258259C00020FEEE /* CartTVC.xib */; };
 		798A4F232580B957004D8BDF /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798A4F222580B957004D8BDF /* ProductDetailVC.swift */; };
 		79BF35BA257E4466006491C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF35B9257E4466006491C5 /* AppDelegate.swift */; };
 		79BF35BE257E4466006491C5 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF35BD257E4466006491C5 /* HomeVC.swift */; };
@@ -110,6 +114,10 @@
 		794B1C102580E25D00A7F391 /* CategoriesCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCVC.xib; sourceTree = "<group>"; };
 		794B1C132580E65B00A7F391 /* PavillionShopCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PavillionShopCVC.swift; sourceTree = "<group>"; };
 		794B1C142580E65B00A7F391 /* PavillionShopCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PavillionShopCVC.xib; sourceTree = "<group>"; };
+		79751FFE25823FD90020FEEE /* Product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Product.storyboard; sourceTree = "<group>"; };
+		79752001258252820020FEEE /* ShoppingCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartVC.swift; sourceTree = "<group>"; };
+		79752004258259C00020FEEE /* CartTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTVC.swift; sourceTree = "<group>"; };
+		79752005258259C00020FEEE /* CartTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTVC.xib; sourceTree = "<group>"; };
 		798A4F222580B957004D8BDF /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		79BF35B6257E4466006491C5 /* Marred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marred.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79BF35B9257E4466006491C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +255,24 @@
 			path = "API Model";
 			sourceTree = "<group>";
 		};
+		79752000258251620020FEEE /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				79752001258252820020FEEE /* ShoppingCartVC.swift */,
+				79752003258259A10020FEEE /* Tableview Cell */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		79752003258259A10020FEEE /* Tableview Cell */ = {
+			isa = PBXGroup;
+			children = (
+				79752004258259C00020FEEE /* CartTVC.swift */,
+				79752005258259C00020FEEE /* CartTVC.xib */,
+			);
+			path = "Tableview Cell";
+			sourceTree = "<group>";
+		};
 		79BF35AD257E4466006491C5 = {
 			isa = PBXGroup;
 			children = (
@@ -270,8 +296,10 @@
 			children = (
 				79BF35B9257E4466006491C5 /* AppDelegate.swift */,
 				79BF35BF257E4466006491C5 /* Main.storyboard */,
+				79751FFE25823FD90020FEEE /* Product.storyboard */,
 				79220C312580F49D00329AC8 /* Login */,
 				79BF3647257E5A24006491C5 /* Home */,
+				79752000258251620020FEEE /* Product */,
 				79BF35C2257E4468006491C5 /* Assets.xcassets */,
 				79BF35C4257E4468006491C5 /* LaunchScreen.storyboard */,
 				79BF35CD257E4686006491C5 /* Custom Class */,
@@ -534,8 +562,10 @@
 				79EAD230257F89D000DC6422 /* BannerAdTVC.xib in Resources */,
 				79BF3654257E6155006491C5 /* category.json in Resources */,
 				794B1C122580E25D00A7F391 /* CategoriesCVC.xib in Resources */,
+				79751FFF25823FD90020FEEE /* Product.storyboard in Resources */,
 				79EAD234257F8A4000DC6422 /* BannerImageCVC.xib in Resources */,
 				79220C382580FCB100329AC8 /* SideMenuTVC.xib in Resources */,
+				79752007258259C00020FEEE /* CartTVC.xib in Resources */,
 				79BF3651257E5B84006491C5 /* TopCategoryCVC.xib in Resources */,
 				79BF3659257E63B1006491C5 /* Home.json in Resources */,
 				79BF364C257E5A5E006491C5 /* ShopCategoryTVC.xib in Resources */,
@@ -636,6 +666,7 @@
 				79BF35DB257E469B006491C5 /* GlobalConstant.swift in Sources */,
 				79BF361F257E46A4006491C5 /* Date+RUI.swift in Sources */,
 				79BF3620257E46A4006491C5 /* UIImage+RUI.swift in Sources */,
+				79752006258259C00020FEEE /* CartTVC.swift in Sources */,
 				79BF35DE257E469B006491C5 /* DatePickerManager.swift in Sources */,
 				79BF3635257E46A4006491C5 /* TextField.swift in Sources */,
 				79BF35DC257E469B006491C5 /* DateTimeUtility.swift in Sources */,
@@ -650,6 +681,7 @@
 				79BF35BE257E4466006491C5 /* HomeVC.swift in Sources */,
 				79BF3638257E46A4006491C5 /* Button.swift in Sources */,
 				79BF35DD257E469B006491C5 /* FloatRatingView.swift in Sources */,
+				79752002258252820020FEEE /* ShoppingCartVC.swift in Sources */,
 				79220C332580F4DA00329AC8 /* SideMenuVC.swift in Sources */,
 				794B1C0E2580DF8500A7F391 /* CategoryVC.swift in Sources */,
 				79BF364B257E5A5E006491C5 /* ShopCategoryTVC.swift in Sources */,

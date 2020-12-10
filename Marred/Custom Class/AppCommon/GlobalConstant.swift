@@ -35,6 +35,7 @@ struct IMAGE {
 
 struct STORYBOARD {
     static var MAIN = UIStoryboard(name: "Main", bundle: nil)
+    static var PRODUCT = UIStoryboard(name: "Product", bundle: nil)
 }
 
 struct NOTIFICATION {

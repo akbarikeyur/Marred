@@ -31,7 +31,11 @@ class HomeVC: UIViewController {
         }
         tblView.reloadData()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        AppDelegate().sharedDelegate().showTabBar()
+    }
+    
     //MARK:- Button click event
     @IBAction func clickToSideMenu(_ sender: Any) {
         self.menuContainerViewController.toggleLeftSideMenuCompletion { }
@@ -46,7 +50,8 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func clickToCart(_ sender: Any) {
-        
+        let vc : ShoppingCartVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "ShoppingCartVC") as! ShoppingCartVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
