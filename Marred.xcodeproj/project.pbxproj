@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79100C132584A5E000000215 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79100C122584A5E000000215 /* CheckoutVC.swift */; };
+		79100C162584AE4B00000215 /* MyOrderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79100C142584AE4B00000215 /* MyOrderTVC.swift */; };
+		79100C172584AE4B00000215 /* MyOrderTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79100C152584AE4B00000215 /* MyOrderTVC.xib */; };
+		7920BD222584EB130065AEEF /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7920BD212584EB130065AEEF /* Dashboard.storyboard */; };
+		7920BD252584F02B0065AEEF /* DealofDaysVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920BD242584F02B0065AEEF /* DealofDaysVC.swift */; };
+		7920BD292584F1FB0065AEEF /* DealProductCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920BD272584F1FB0065AEEF /* DealProductCVC.swift */; };
+		7920BD2A2584F1FB0065AEEF /* DealProductCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7920BD282584F1FB0065AEEF /* DealProductCVC.xib */; };
+		7920BD2D2584F8570065AEEF /* ProductCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920BD2B2584F8570065AEEF /* ProductCVC.swift */; };
+		7920BD2E2584F8570065AEEF /* ProductCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7920BD2C2584F8570065AEEF /* ProductCVC.xib */; };
+		7920BD302585062A0065AEEF /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920BD2F2585062A0065AEEF /* DashboardVC.swift */; };
 		79220C332580F4DA00329AC8 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79220C322580F4DA00329AC8 /* SideMenuVC.swift */; };
 		79220C372580FCB100329AC8 /* SideMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79220C352580FCB100329AC8 /* SideMenuTVC.swift */; };
 		79220C382580FCB100329AC8 /* SideMenuTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79220C362580FCB100329AC8 /* SideMenuTVC.xib */; };
@@ -101,6 +111,16 @@
 
 /* Begin PBXFileReference section */
 		74716199F9D06511FFDF47A9 /* Pods_Marred.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marred.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79100C122584A5E000000215 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		79100C142584AE4B00000215 /* MyOrderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderTVC.swift; sourceTree = "<group>"; };
+		79100C152584AE4B00000215 /* MyOrderTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrderTVC.xib; sourceTree = "<group>"; };
+		7920BD212584EB130065AEEF /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		7920BD242584F02B0065AEEF /* DealofDaysVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealofDaysVC.swift; sourceTree = "<group>"; };
+		7920BD272584F1FB0065AEEF /* DealProductCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealProductCVC.swift; sourceTree = "<group>"; };
+		7920BD282584F1FB0065AEEF /* DealProductCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DealProductCVC.xib; sourceTree = "<group>"; };
+		7920BD2B2584F8570065AEEF /* ProductCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCVC.swift; sourceTree = "<group>"; };
+		7920BD2C2584F8570065AEEF /* ProductCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCVC.xib; sourceTree = "<group>"; };
+		7920BD2F2585062A0065AEEF /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		79220C322580F4DA00329AC8 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		79220C352580FCB100329AC8 /* SideMenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTVC.swift; sourceTree = "<group>"; };
 		79220C362580FCB100329AC8 /* SideMenuTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuTVC.xib; sourceTree = "<group>"; };
@@ -227,6 +247,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7920BD232584EFCF0065AEEF /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7920BD2F2585062A0065AEEF /* DashboardVC.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		7920BD262584F1C00065AEEF /* Collectionview Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7920BD272584F1FB0065AEEF /* DealProductCVC.swift */,
+				7920BD282584F1FB0065AEEF /* DealProductCVC.xib */,
+				7920BD2B2584F8570065AEEF /* ProductCVC.swift */,
+				7920BD2C2584F8570065AEEF /* ProductCVC.xib */,
+			);
+			path = "Collectionview Cell";
+			sourceTree = "<group>";
+		};
 		79220C312580F49D00329AC8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,7 +298,10 @@
 			isa = PBXGroup;
 			children = (
 				79752001258252820020FEEE /* ShoppingCartVC.swift */,
+				79100C122584A5E000000215 /* CheckoutVC.swift */,
+				7920BD242584F02B0065AEEF /* DealofDaysVC.swift */,
 				79752003258259A10020FEEE /* Tableview Cell */,
+				7920BD262584F1C00065AEEF /* Collectionview Cell */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -269,6 +311,8 @@
 			children = (
 				79752004258259C00020FEEE /* CartTVC.swift */,
 				79752005258259C00020FEEE /* CartTVC.xib */,
+				79100C142584AE4B00000215 /* MyOrderTVC.swift */,
+				79100C152584AE4B00000215 /* MyOrderTVC.xib */,
 			);
 			path = "Tableview Cell";
 			sourceTree = "<group>";
@@ -297,9 +341,11 @@
 				79BF35B9257E4466006491C5 /* AppDelegate.swift */,
 				79BF35BF257E4466006491C5 /* Main.storyboard */,
 				79751FFE25823FD90020FEEE /* Product.storyboard */,
+				7920BD212584EB130065AEEF /* Dashboard.storyboard */,
 				79220C312580F49D00329AC8 /* Login */,
 				79BF3647257E5A24006491C5 /* Home */,
 				79752000258251620020FEEE /* Product */,
+				7920BD232584EFCF0065AEEF /* Dashboard */,
 				79BF35C2257E4468006491C5 /* Assets.xcassets */,
 				79BF35C4257E4468006491C5 /* LaunchScreen.storyboard */,
 				79BF35CD257E4686006491C5 /* Custom Class */,
@@ -549,13 +595,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				79EAD240257FC18900DC6422 /* CategoryListCVC.xib in Resources */,
+				7920BD222584EB130065AEEF /* Dashboard.storyboard in Resources */,
 				79BF3646257E548D006491C5 /* Roboto-Italic.ttf in Resources */,
 				79BF35C6257E4468006491C5 /* LaunchScreen.storyboard in Resources */,
 				79BF35E2257E469B006491C5 /* Localizable.strings in Resources */,
 				79EAD244257FC69C00DC6422 /* ContactInfoTVC.xib in Resources */,
 				79EAD23C257F960400DC6422 /* DisplayProductCVC.xib in Resources */,
 				79BF3641257E547C006491C5 /* Roboto-Medium.ttf in Resources */,
+				7920BD2A2584F1FB0065AEEF /* DealProductCVC.xib in Resources */,
 				79BF363E257E545D006491C5 /* Roboto-Regular.ttf in Resources */,
+				7920BD2E2584F8570065AEEF /* ProductCVC.xib in Resources */,
 				794B1C162580E65B00A7F391 /* PavillionShopCVC.xib in Resources */,
 				79EAD238257F900A00DC6422 /* PavilionProductTVC.xib in Resources */,
 				79BF3645257E548D006491C5 /* Roboto-Light.ttf in Resources */,
@@ -574,6 +623,7 @@
 				79BF35C1257E4466006491C5 /* Main.storyboard in Resources */,
 				79BF3642257E547C006491C5 /* Roboto-Bold.ttf in Resources */,
 				79BF3639257E46A4006491C5 /* CustomTabBarView.xib in Resources */,
+				79100C172584AE4B00000215 /* MyOrderTVC.xib in Resources */,
 				794B1C0C2580D0D500A7F391 /* ProductImageCVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +685,8 @@
 				79BF362F257E46A4006491C5 /* CollectionView.swift in Sources */,
 				79BF362A257E46A4006491C5 /* Fonts.swift in Sources */,
 				794B1C152580E65B00A7F391 /* PavillionShopCVC.swift in Sources */,
+				7920BD292584F1FB0065AEEF /* DealProductCVC.swift in Sources */,
+				7920BD302585062A0065AEEF /* DashboardVC.swift in Sources */,
 				79BF35E6257E469B006491C5 /* Preference.swift in Sources */,
 				79EAD243257FC69C00DC6422 /* ContactInfoTVC.swift in Sources */,
 				79BF35E0257E469B006491C5 /* APIManager.swift in Sources */,
@@ -648,12 +700,15 @@
 				79BF35DF257E469B006491C5 /* AppModel.swift in Sources */,
 				79BF35E5257E469B006491C5 /* UploadImageVC.swift in Sources */,
 				79BF3634257E46A4006491C5 /* TableView.swift in Sources */,
+				79100C132584A5E000000215 /* CheckoutVC.swift in Sources */,
 				79EAD23B257F960400DC6422 /* DisplayProductCVC.swift in Sources */,
 				79BF362B257E46A4006491C5 /* Colors.swift in Sources */,
 				79BF361B257E46A4006491C5 /* UIColor+RUI.swift in Sources */,
 				79BF3616257E46A4006491C5 /* UIImage+ProportionalFill.m in Sources */,
+				79100C162584AE4B00000215 /* MyOrderTVC.swift in Sources */,
 				79BF3636257E46A4006491C5 /* TextView.swift in Sources */,
 				79EAD237257F900A00DC6422 /* PavilionProductTVC.swift in Sources */,
+				7920BD252584F02B0065AEEF /* DealofDaysVC.swift in Sources */,
 				79BF3633257E46A4006491C5 /* GradientLayer.swift in Sources */,
 				79BF361A257E46A4006491C5 /* Data+RUI.swift in Sources */,
 				79BF361E257E46A4006491C5 /* NSError+RUI.swift in Sources */,
@@ -676,6 +731,7 @@
 				79BF3637257E46A4006491C5 /* ImageView.swift in Sources */,
 				79BF35E1257E469B006491C5 /* MD5.swift in Sources */,
 				79BF362D257E46A4006491C5 /* View.swift in Sources */,
+				7920BD2D2584F8570065AEEF /* ProductCVC.swift in Sources */,
 				79BF3619257E46A4006491C5 /* NSObject+Copy.swift in Sources */,
 				794B1C112580E25D00A7F391 /* CategoriesCVC.swift in Sources */,
 				79BF35BE257E4466006491C5 /* HomeVC.swift in Sources */,

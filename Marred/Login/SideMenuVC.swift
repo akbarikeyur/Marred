@@ -78,6 +78,15 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.menuContainerViewController.toggleLeftSideMenuCompletion { }
+        switch arrMenu[indexPath.row].id {
+        case 4:
+            let navController = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "DealofDaysVCNav") as! UINavigationController
+            navController.isNavigationBarHidden = true
+            menuContainerViewController.centerViewController = navController
+            break
+        default:
+            break
+        }
     }
 }

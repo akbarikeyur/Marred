@@ -71,6 +71,12 @@ class CustomTabBarView: UIView {
         lbl3.textColor = DarkTextColor
         lbl4.textColor = DarkTextColor
         lbl5.textColor = DarkTextColor
+        
+        btn1.isSelected = false
+        btn2.isSelected = false
+        btn3.isSelected = false
+        btn4.isSelected = false
+        btn5.isSelected = false
     }
     
     func selectTabButton()
@@ -78,18 +84,23 @@ class CustomTabBarView: UIView {
         switch lastIndex {
         case 0:
             lbl1.textColor = BlackColor
+            btn1.isSelected = true
             break
         case 1:
             lbl2.textColor = BlackColor
+            btn2.isSelected = true
             break
         case 2:
             lbl3.textColor = BlackColor
+            btn3.isSelected = true
             break
         case 3:
             lbl4.textColor = BlackColor
+            btn4.isSelected = true
             break
         case 4:
             lbl5.textColor = BlackColor
+            btn5.isSelected = true
             break
         default:
             break

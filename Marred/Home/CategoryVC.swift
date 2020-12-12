@@ -49,7 +49,8 @@ class CategoryVC: UIViewController {
     }
     
     @IBAction func clickToCart(_ sender: Any) {
-        
+        let vc : ShoppingCartVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "ShoppingCartVC") as! ShoppingCartVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     /*

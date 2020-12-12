@@ -60,6 +60,7 @@ class CustomTabBarController: UITabBarController, CustomTabBarViewDelegate {
         self.viewControllers = viewControllers;
         
         self.tabBarView.lbl1.textColor = BlackColor
+        self.tabBarView.btn1.isSelected = true
         self.tabSelectedAtIndex(index: 0)
     }
     

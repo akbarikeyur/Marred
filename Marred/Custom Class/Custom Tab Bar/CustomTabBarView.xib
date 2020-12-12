@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,7 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="Q15-5M-XPA" customClass="CustomTabBarView" customModule="Ecommerce" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="Q15-5M-XPA" customClass="CustomTabBarView" customModule="Marred" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -37,7 +36,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="64" height="50"/>
                                     <color key="tintColor" red="0.69019607843137254" green="0.69019607843137254" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" image="tab_home"/>
+                                    <state key="normal" image="tab_home_off"/>
+                                    <state key="selected" image="tab_home_on"/>
                                     <connections>
                                         <action selector="tabBtnClicked:" destination="Q15-5M-XPA" eventType="touchUpInside" id="kBD-WS-Id6"/>
                                     </connections>
@@ -68,7 +68,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="64" height="50"/>
                                     <color key="tintColor" red="0.69019607839999997" green="0.69019607839999997" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" image="tab_category"/>
+                                    <state key="normal" image="tab_category_off"/>
+                                    <state key="selected" image="tab_category_on"/>
                                     <connections>
                                         <action selector="tabBtnClicked:" destination="Q15-5M-XPA" eventType="touchUpInside" id="eg7-Z7-fLw"/>
                                     </connections>
@@ -99,7 +100,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="64" height="50"/>
                                     <color key="tintColor" red="0.69019607839999997" green="0.69019607839999997" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" image="tab_cart"/>
+                                    <state key="normal" image="tab_cart_off"/>
+                                    <state key="selected" image="tab_cart_on"/>
                                     <connections>
                                         <action selector="tabBtnClicked:" destination="Q15-5M-XPA" eventType="touchUpInside" id="Xit-aC-TvF"/>
                                     </connections>
@@ -130,7 +132,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="64" height="50"/>
                                     <color key="tintColor" red="0.69019607839999997" green="0.69019607839999997" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" image="tab_bookmark"/>
+                                    <state key="normal" image="tab_bookmark_off"/>
+                                    <state key="selected" image="tab_bookmark_on"/>
                                     <connections>
                                         <action selector="tabBtnClicked:" destination="Q15-5M-XPA" eventType="touchUpInside" id="Zx5-Mr-eIz"/>
                                     </connections>
@@ -161,7 +164,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="64" height="50"/>
                                     <color key="tintColor" red="0.69019607839999997" green="0.69019607839999997" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" image="tab_my_account"/>
+                                    <state key="normal" image="tab_my_account_off"/>
+                                    <state key="selected" image="tab_my_account_on"/>
                                     <connections>
                                         <action selector="tabBtnClicked:" destination="Q15-5M-XPA" eventType="touchUpInside" id="UuL-38-Eud"/>
                                     </connections>
@@ -241,11 +245,16 @@
         </view>
     </objects>
     <resources>
-        <image name="tab_bookmark" width="28" height="28"/>
-        <image name="tab_cart" width="25" height="23"/>
-        <image name="tab_category" width="28" height="25"/>
-        <image name="tab_home" width="27.5" height="24"/>
-        <image name="tab_my_account" width="21.5" height="24"/>
+        <image name="tab_bookmark_off" width="28" height="28"/>
+        <image name="tab_bookmark_on" width="28" height="28"/>
+        <image name="tab_cart_off" width="22.5" height="22.5"/>
+        <image name="tab_cart_on" width="22.5" height="22.5"/>
+        <image name="tab_category_off" width="28" height="25"/>
+        <image name="tab_category_on" width="28" height="25"/>
+        <image name="tab_home_off" width="27.5" height="24"/>
+        <image name="tab_home_on" width="27.5" height="24"/>
+        <image name="tab_my_account_off" width="21.5" height="24"/>
+        <image name="tab_my_account_on" width="21.5" height="24"/>
         <namedColor name="DarkText">
             <color red="0.3059999942779541" green="0.3449999988079071" blue="0.4309999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

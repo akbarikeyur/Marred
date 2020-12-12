@@ -1,25 +1,31 @@
 [
     {
+        "id" : 1,
         "name" : "Home",
         "image" : "menu_home"
     },
     {
+        "id" : 2,
         "name" : "Shop By Global Pavilions",
         "image" : "menu_pavilion"
     },
     {
+        "id" : 3,
         "name" : "Shop Categories",
         "image" : "menu_category"
     },
     {
+        "id" : 4,
         "name" : "Deals of The Day",
         "image" : "menu_deal"
     },
     {
+        "id" : 5,
         "name" : "Add Your Shop",
         "image" : "menu_shop"
     },
     {
+        "id" : 6,
         "name" : "Contact us",
         "image" : "menu_contact"
     }

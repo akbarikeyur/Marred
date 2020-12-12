@@ -10,7 +10,6 @@ import UIKit
 
 class ShoppingCartVC: UIViewController {
 
-    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var constraintHeightTblView: NSLayoutConstraint!
     @IBOutlet weak var promocodeTxt: TextField!
@@ -21,6 +20,8 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var freeShipBtn: Button!
     @IBOutlet weak var flatRateBtn: Button!
     @IBOutlet weak var priceLbl: Label!
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var sideImgView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +29,19 @@ class ShoppingCartVC: UIViewController {
         // Do any additional setup after loading the view.
         registerTableViewMethod()
         
-//        var newFrame = contentView.frame
-//        newFrame.size.width = SCREEN.WIDTH
-//        contentView.frame = newFrame
-//        contentView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 20)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate().sharedDelegate().hideTabBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        var newFrame = bottomView.frame
+        newFrame.size.width = SCREEN.WIDTH
+        bottomView.frame = newFrame
+        bottomView.roundCorners(corners: [.bottomLeft], radius: 20)
+        sideImgView.roundCorners(corners: [.bottomRight], radius: 20)
     }
     
     //MARK:- Button click event
@@ -52,6 +58,7 @@ class ShoppingCartVC: UIViewController {
     }
     
     @IBAction func clickToUpdateAddress(_ sender: Any) {
+        
     }
     
     @IBAction func clickToShipping(_ sender: UIButton) {
@@ -61,7 +68,8 @@ class ShoppingCartVC: UIViewController {
     }
     
     @IBAction func clickToProcessToCheckout(_ sender: Any) {
-        
+        let vc : CheckoutVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "CheckoutVC") as! CheckoutVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     /*

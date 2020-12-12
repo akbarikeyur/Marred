@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCVC" id="gTV-IL-0wX" customClass="ProductCVC" customModule="Marred" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="230" height="280"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="230" height="280"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyf-QK-Aso" customClass="View" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="5" y="5" width="220" height="270"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOY-ar-Bkj" customClass="View" customModule="Marred" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="220" height="187"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_deal1" translatesAutoresizingMaskIntoConstraints="NO" id="dfo-Jz-xvO">
+                                        <rect key="frame" x="5" y="5" width="210" height="177"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dfo-Jz-xvO" secondAttribute="trailing" constant="5" id="Jem-1O-gol"/>
+                                    <constraint firstItem="dfo-Jz-xvO" firstAttribute="top" secondItem="AOY-ar-Bkj" secondAttribute="top" constant="5" id="Xbj-1k-Pxr"/>
+                                    <constraint firstAttribute="bottom" secondItem="dfo-Jz-xvO" secondAttribute="bottom" constant="5" id="ZkE-80-bYh"/>
+                                    <constraint firstItem="dfo-Jz-xvO" firstAttribute="leading" secondItem="AOY-ar-Bkj" secondAttribute="leading" constant="5" id="e4N-5V-DJA"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderColorTypeAdapter">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mkhalat al dewan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3g-Cb-N2b" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                <rect key="frame" x="10" y="197" width="200" height="14.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sold by: Najma al fajer trading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hah-lJ-89A" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                <rect key="frame" x="10" y="216.5" width="200" height="14.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                <color key="textColor" red="0.52156862749999999" green="0.83921568629999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34.50 AED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q57-kL-ud4" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                <rect key="frame" x="10" y="236" width="95" height="24"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ab"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130.00 AED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxE-vZ-GE9" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                <rect key="frame" x="110" y="243.5" width="62.5" height="14.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uxE-vZ-GE9" firstAttribute="bottom" secondItem="q57-kL-ud4" secondAttribute="bottom" constant="-2" id="8If-xq-78d"/>
+                            <constraint firstItem="q57-kL-ud4" firstAttribute="leading" secondItem="hyf-QK-Aso" secondAttribute="leading" constant="10" id="Db5-6X-UlB"/>
+                            <constraint firstAttribute="trailing" secondItem="E3g-Cb-N2b" secondAttribute="trailing" constant="10" id="Doc-Tm-nHK"/>
+                            <constraint firstItem="hah-lJ-89A" firstAttribute="leading" secondItem="hyf-QK-Aso" secondAttribute="leading" constant="10" id="EFN-7a-fj3"/>
+                            <constraint firstAttribute="bottom" secondItem="AOY-ar-Bkj" secondAttribute="bottom" constant="83" id="QLt-52-Ni7"/>
+                            <constraint firstItem="E3g-Cb-N2b" firstAttribute="leading" secondItem="hyf-QK-Aso" secondAttribute="leading" constant="10" id="Sk7-sn-RSG"/>
+                            <constraint firstItem="q57-kL-ud4" firstAttribute="top" secondItem="hah-lJ-89A" secondAttribute="bottom" constant="5" id="Zis-P0-bI1"/>
+                            <constraint firstItem="AOY-ar-Bkj" firstAttribute="top" secondItem="hyf-QK-Aso" secondAttribute="top" id="bBq-Cp-c4J"/>
+                            <constraint firstAttribute="bottom" secondItem="q57-kL-ud4" secondAttribute="bottom" constant="10" id="eI4-wu-1nn"/>
+                            <constraint firstItem="AOY-ar-Bkj" firstAttribute="leading" secondItem="hyf-QK-Aso" secondAttribute="leading" id="iIj-gz-wRK"/>
+                            <constraint firstAttribute="trailing" secondItem="AOY-ar-Bkj" secondAttribute="trailing" id="jVg-0g-fzQ"/>
+                            <constraint firstItem="uxE-vZ-GE9" firstAttribute="leading" secondItem="q57-kL-ud4" secondAttribute="trailing" constant="5" id="mei-Up-uWh"/>
+                            <constraint firstItem="hah-lJ-89A" firstAttribute="top" secondItem="E3g-Cb-N2b" secondAttribute="bottom" constant="5" id="tJ6-DS-9ca"/>
+                            <constraint firstAttribute="trailing" secondItem="hah-lJ-89A" secondAttribute="trailing" constant="10" id="wZl-Zs-eAQ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hyf-QK-Aso" secondAttribute="trailing" constant="5" id="CG0-qH-Me9"/>
+                <constraint firstAttribute="bottom" secondItem="hyf-QK-Aso" secondAttribute="bottom" constant="5" id="LhR-zk-jam"/>
+                <constraint firstItem="hyf-QK-Aso" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="fEn-Xx-PZW"/>
+                <constraint firstItem="hyf-QK-Aso" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="r9v-6W-2Qz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="temp_deal1" width="167" height="157"/>
+    </resources>
+</document>
