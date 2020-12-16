@@ -85,6 +85,10 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
             navController.isNavigationBarHidden = true
             menuContainerViewController.centerViewController = navController
             break
+        case 5:
+            let vc : AddYourShopVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "AddYourShopVC") as! AddYourShopVC
+            UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+            break
         default:
             break
         }

@@ -19,6 +19,7 @@ var GreenColor = colorFromHex(hex: "669900")
 var BorderColor = colorFromHex(hex: "C1C1C1")
 var LightBorderColor = colorFromHex(hex: "D5D5D5")
 var LightTextColor = colorFromHex(hex: "858585")
+var OrangeColor = colorFromHex(hex: "FE604D")
 
 enum ColorType : Int32 {
     case Clear = 0
@@ -32,6 +33,7 @@ enum ColorType : Int32 {
     case Border = 8
     case LightBorder = 9
     case LightText = 10
+    case Orange = 11
 }
 
 extension ColorType {
@@ -60,6 +62,8 @@ extension ColorType {
                     return LightBorderColor
                 case .LightText:
                     return LightTextColor
+                case .Orange:
+                    return OrangeColor
             }
         }
     }

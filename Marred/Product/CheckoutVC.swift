@@ -101,7 +101,7 @@ class CheckoutVC: UIViewController {
 extension CheckoutVC : UITableViewDelegate, UITableViewDataSource {
 
     func registerTableViewMethod() {
-        orderTbl.register(UINib.init(nibName: "MyOrderTVC", bundle: nil), forCellReuseIdentifier: "MyOrderTVC")
+        orderTbl.register(UINib.init(nibName: "CheckoutOrderTVC", bundle: nil), forCellReuseIdentifier: "CheckoutOrderTVC")
         updateTableviewHeight()
     }
 
@@ -114,7 +114,7 @@ extension CheckoutVC : UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : MyOrderTVC = orderTbl.dequeueReusableCell(withIdentifier: "MyOrderTVC") as! MyOrderTVC
+        let cell : CheckoutOrderTVC = orderTbl.dequeueReusableCell(withIdentifier: "CheckoutOrderTVC") as! CheckoutOrderTVC
         
         cell.selectionStyle = .none
         return cell

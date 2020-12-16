@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyAddressTVC" id="KGk-i7-Jjw" customClass="MyAddressTVC" customModule="Marred" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRF-WG-n2H">
+                        <rect key="frame" x="10" y="10" width="38" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="37" id="VWJ-N3-4zW"/>
+                            <constraint firstAttribute="width" constant="38" id="xec-dg-azd"/>
+                        </constraints>
+                        <state key="normal" image="address_pin"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OM-WP-r4F">
+                        <rect key="frame" x="40" y="30" width="7" height="15"/>
+                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
+                        <color key="textColor" red="0.99607843139999996" green="0.37647058820000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="66 Al Marsa St - Dubai Marina 4 Floor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExF-pn-SCE" customClass="Label" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="58" y="13" width="252" height="16.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
+                        <color key="textColor" red="0.30588235294117649" green="0.34509803921568627" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ab"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="14"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United Arab Emirates" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VH-aN-wMF" customClass="Label" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="58" y="29.5" width="252" height="14.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dash_line" translatesAutoresizingMaskIntoConstraints="NO" id="dby-7R-n5j">
+                        <rect key="frame" x="10" y="56" width="300" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="sH8-vG-SXQ"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ExF-pn-SCE" secondAttribute="trailing" constant="10" id="1ob-bA-p9J"/>
+                    <constraint firstAttribute="trailing" secondItem="dby-7R-n5j" secondAttribute="trailing" constant="10" id="5S4-jn-sdF"/>
+                    <constraint firstItem="1OM-WP-r4F" firstAttribute="bottom" secondItem="kRF-WG-n2H" secondAttribute="bottom" constant="-2" id="5rz-XV-Y2Z"/>
+                    <constraint firstItem="dby-7R-n5j" firstAttribute="top" secondItem="9VH-aN-wMF" secondAttribute="bottom" constant="12" id="8Kp-RI-yaS"/>
+                    <constraint firstItem="9VH-aN-wMF" firstAttribute="leading" secondItem="kRF-WG-n2H" secondAttribute="trailing" constant="10" id="98Z-lr-by0"/>
+                    <constraint firstItem="kRF-WG-n2H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="BIZ-et-i6W"/>
+                    <constraint firstItem="ExF-pn-SCE" firstAttribute="leading" secondItem="kRF-WG-n2H" secondAttribute="trailing" constant="10" id="BgW-85-7hL"/>
+                    <constraint firstItem="1OM-WP-r4F" firstAttribute="trailing" secondItem="kRF-WG-n2H" secondAttribute="trailing" constant="-1" id="Cwi-R7-okt"/>
+                    <constraint firstAttribute="trailing" secondItem="9VH-aN-wMF" secondAttribute="trailing" constant="10" id="ORv-H1-NGq"/>
+                    <constraint firstItem="ExF-pn-SCE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="Wrc-uL-tjT"/>
+                    <constraint firstItem="9VH-aN-wMF" firstAttribute="top" secondItem="ExF-pn-SCE" secondAttribute="bottom" id="jam-th-o1p"/>
+                    <constraint firstAttribute="bottom" secondItem="dby-7R-n5j" secondAttribute="bottom" id="kAQ-y0-yqr"/>
+                    <constraint firstItem="kRF-WG-n2H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ri2-C3-zKk"/>
+                    <constraint firstItem="dby-7R-n5j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xbo-Mw-BTG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressLbl" destination="ExF-pn-SCE" id="ljx-VM-C0t"/>
+                <outlet property="countryLbl" destination="9VH-aN-wMF" id="P18-nY-Lai"/>
+                <outlet property="indexLbl" destination="1OM-WP-r4F" id="fRr-kD-HgM"/>
+            </connections>
+            <point key="canvasLocation" x="133" y="154"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="address_pin" width="38" height="37"/>
+        <image name="dash_line" width="345" height="1"/>
+    </resources>
+</document>

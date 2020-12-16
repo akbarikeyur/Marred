@@ -1,15 +1,19 @@
 //
-//  MyOrderTVC.swift
+//  MyAddressTVC.swift
 //  Marred
 //
-//  Created by Keyur Akbari on 12/12/20.
+//  Created by Keyur Akbari on 16/12/20.
 //  Copyright © 2020 Keyur Akbari. All rights reserved.
 //
 
 import UIKit
 
-class MyOrderTVC: UITableViewCell {
+class MyAddressTVC: UITableViewCell {
 
+    @IBOutlet weak var indexLbl: UILabel!
+    @IBOutlet weak var addressLbl: Label!
+    @IBOutlet weak var countryLbl: Label!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
