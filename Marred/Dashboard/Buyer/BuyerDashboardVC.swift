@@ -1,5 +1,5 @@
 //
-//  DashboardVC.swift
+//  BuyerDashboardVC.swift
 //  Marred
 //
 //  Created by Keyur Akbari on 12/12/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardVC: UIViewController {
+class BuyerDashboardVC: UIViewController {
 
     @IBOutlet weak var tabCV: UICollectionView!
     @IBOutlet weak var mainContainerView: UIView!
@@ -16,10 +16,10 @@ class DashboardVC: UIViewController {
     var arrTabData = ["Dashboard", "Orders", "Downloads", "Addresses", "Account details"]
     var selectedTab = 0
     
-    let dashboardTab : DashboardTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "DashboardTabVC") as! DashboardTabVC
-    let orderTab : OrderTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "OrderTabVC") as! OrderTabVC
-    let addressTab : AddressTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "AddressTabVC") as! AddressTabVC
-    let accountTab : AccountDetailTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "AccountDetailTabVC") as! AccountDetailTabVC
+    let dashboardTab : BuyerDashboardTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerDashboardTabVC") as! BuyerDashboardTabVC
+    let orderTab : BuyerOrderTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerOrderTabVC") as! BuyerOrderTabVC
+    let addressTab : BuyerAddressTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerAddressTabVC") as! BuyerAddressTabVC
+    let accountTab : BuyerAccountDetailTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerAccountDetailTabVC") as! BuyerAccountDetailTabVC
     
     
     override func viewDidLoad() {
@@ -61,7 +61,7 @@ class DashboardVC: UIViewController {
 }
 
 //MARK:- CollectionView Method
-extension DashboardVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+extension BuyerDashboardVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     func registerCollectionView() {
         tabCV.register(UINib.init(nibName: "CategoryListCVC", bundle: nil), forCellWithReuseIdentifier: "CategoryListCVC")
@@ -74,7 +74,11 @@ extension DashboardVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let label = UILabel(frame: CGRect.zero)
         label.text = arrTabData[indexPath.row]
-        label.font = UIFont.init(name: APP_REGULAR, size: 12)
+        if selectedTab == indexPath.row {
+            label.font = UIFont.init(name: APP_REGULAR, size: 14)
+        }else{
+            label.font = UIFont.init(name: APP_BOLD, size: 14)
+        }
         label.sizeToFit()
         return CGSize(width: label.frame.size.width + 10, height: collectionView.frame.size.height)
     }
@@ -85,9 +89,11 @@ extension DashboardVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
         if selectedTab == indexPath.row {
             cell.nameLbl.textColor = BlackColor
             cell.lineImg.isHidden = false
+            cell.nameLbl.font = UIFont.init(name: APP_REGULAR, size: 14)
         }else{
             cell.nameLbl.textColor = DarkTextColor
             cell.lineImg.isHidden = true
+            cell.nameLbl.font = UIFont.init(name: APP_BOLD, size: 14)
         }
         return cell
     }

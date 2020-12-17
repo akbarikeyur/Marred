@@ -1,5 +1,5 @@
 //
-//  DashboardTabVC.swift
+//  BuyerOrderTabVC.swift
 //  Marred
 //
 //  Created by Keyur Akbari on 16/12/20.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class DashboardTabVC: UIViewController {
+class BuyerOrderTabVC: UIViewController {
 
     @IBOutlet weak var tblView: UITableView!
-    @IBOutlet var headerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +22,7 @@ class DashboardTabVC: UIViewController {
     func setupDetails() {
         
     }
-
+    
     /*
     // MARK: - Navigation
 
@@ -37,12 +36,10 @@ class DashboardTabVC: UIViewController {
 }
 
 //MARK:- Tableview Method
-extension DashboardTabVC : UITableViewDelegate, UITableViewDataSource {
+extension BuyerOrderTabVC : UITableViewDelegate, UITableViewDataSource {
     
     func registerTableViewMethod() {
         tblView.register(UINib.init(nibName: "MyOrderTVC", bundle: nil), forCellReuseIdentifier: "MyOrderTVC")
-        tblView.tableHeaderView = headerView
-        tblView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

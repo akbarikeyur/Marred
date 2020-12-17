@@ -1,5 +1,5 @@
 //
-//  AddressTabVC.swift
+//  BuyerAddressTabVC.swift
 //  Marred
 //
 //  Created by Keyur Akbari on 16/12/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddressTabVC: UIViewController {
+class BuyerAddressTabVC: UIViewController {
 
     @IBOutlet weak var billingTbl: UITableView!
     @IBOutlet weak var constraintHeightBillingTbl: NSLayoutConstraint!
@@ -56,7 +56,7 @@ class AddressTabVC: UIViewController {
 }
 
 //MARK:- Tableview Method
-extension AddressTabVC : UITableViewDelegate, UITableViewDataSource {
+extension BuyerAddressTabVC : UITableViewDelegate, UITableViewDataSource {
     
     func registerTableViewMethod() {
         billingTbl.register(UINib.init(nibName: "MyAddressTVC", bundle: nil), forCellReuseIdentifier: "MyAddressTVC")

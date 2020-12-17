@@ -1,5 +1,5 @@
 //
-//  AccountDetailTabVC.swift
+//  BuyerAccountDetailTabVC.swift
 //  Marred
 //
 //  Created by Keyur Akbari on 16/12/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountDetailTabVC: UIViewController {
+class BuyerAccountDetailTabVC: UIViewController {
 
     @IBOutlet weak var userImg: ImageView!
     @IBOutlet weak var nameLbl: Label!
