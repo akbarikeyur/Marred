@@ -43,6 +43,7 @@ struct NOTIFICATION {
     static var UPDATE_CURRENT_USER_DATA     =   "UPDATE_CURRENT_USER_DATA"
     static var REDICT_TAB_BAR               =   "REDICT_TAB_BAR"
     static var NOTIFICATION_TAB_CLICK       =   "NOTIFICATION_TAB_CLICK"
+    static var SELECT_CATEGORY_CLICK        =   "SELECT_CATEGORY_CLICK"
 }
 
 struct Platform {

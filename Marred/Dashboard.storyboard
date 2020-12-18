@@ -1841,13 +1841,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="220"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViH-QC-VHn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="220"/>
+                                                        <rect key="frame" x="1" y="1" width="298" height="218"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="WFD-2O-gJp">
-                                                                <rect key="frame" x="88" y="30" width="124" height="83.5"/>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="upload_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="WFD-2O-gJp">
+                                                                <rect key="frame" x="87" y="30" width="124" height="83.5"/>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Banner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuf-ys-ffO" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="133.5" width="280" height="19"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Upload Banner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuf-ys-ffO" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                                <rect key="frame" x="10" y="133.5" width="278" height="19"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1861,8 +1861,8 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRV-l4-UEX" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="162.5" width="280" height="28.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRV-l4-UEX" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                                <rect key="frame" x="10" y="162.5" width="278" height="28.5"/>
                                                                 <string key="text">Upload a banner for your store. Banner
 size is (625x300) pixels. </string>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
@@ -1879,7 +1879,7 @@ size is (625x300) pixels. </string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc5-aA-9QG">
-                                                                <rect key="frame" x="0.0" y="0.0" width="300" height="220"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="298" height="218"/>
                                                                 <connections>
                                                                     <action selector="clickToUploadImage:" destination="bBP-Ea-bRu" eventType="touchUpInside" id="jHM-af-wXD"/>
                                                                 </connections>
@@ -1905,14 +1905,14 @@ size is (625x300) pixels. </string>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="ViH-QC-VHn" secondAttribute="bottom" id="0LY-OV-J7x"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ViH-QC-VHn" secondAttribute="bottom" constant="1" id="0LY-OV-J7x"/>
                                                     <constraint firstAttribute="bottom" secondItem="AvL-RR-XYX" secondAttribute="bottom" id="0yy-kB-lm3"/>
                                                     <constraint firstAttribute="height" constant="220" id="Nrp-Wa-i9c"/>
-                                                    <constraint firstItem="ViH-QC-VHn" firstAttribute="top" secondItem="shV-IG-PIz" secondAttribute="top" id="O6E-fp-yDk"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ViH-QC-VHn" secondAttribute="trailing" id="OWa-vY-hCW"/>
+                                                    <constraint firstItem="ViH-QC-VHn" firstAttribute="top" secondItem="shV-IG-PIz" secondAttribute="top" constant="1" id="O6E-fp-yDk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ViH-QC-VHn" secondAttribute="trailing" constant="1" id="OWa-vY-hCW"/>
                                                     <constraint firstItem="AvL-RR-XYX" firstAttribute="leading" secondItem="shV-IG-PIz" secondAttribute="leading" id="fuH-ue-JA0"/>
                                                     <constraint firstItem="AvL-RR-XYX" firstAttribute="top" secondItem="shV-IG-PIz" secondAttribute="top" id="mBU-5p-VUo"/>
-                                                    <constraint firstItem="ViH-QC-VHn" firstAttribute="leading" secondItem="shV-IG-PIz" secondAttribute="leading" id="wRH-hd-naE"/>
+                                                    <constraint firstItem="ViH-QC-VHn" firstAttribute="leading" secondItem="shV-IG-PIz" secondAttribute="leading" constant="1" id="wRH-hd-naE"/>
                                                     <constraint firstAttribute="trailing" secondItem="AvL-RR-XYX" secondAttribute="trailing" id="yzz-4G-1e5"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>

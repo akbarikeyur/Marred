@@ -27,12 +27,22 @@ class CategoryVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(changeSelectedTab(_:)), name: NSNotification.Name.init(NOTIFICATION.SELECT_CATEGORY_CLICK), object: nil)
         registerCollectionView()
         selectTab()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate().sharedDelegate().showTabBar()
+    }
+    
+    @objc func changeSelectedTab(_ noti : Notification) {
+        if let dict = noti.object as? [String : Any] {
+            if let tab = dict["index"] as? Int {
+                selectedTab = tab
+                selectTab()
+            }
+        }
     }
     
     //MARK:- Button click event
@@ -45,7 +55,7 @@ class CategoryVC: UIViewController {
     }
     
     @IBAction func clickToWishList(_ sender: Any) {
-        
+        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 3])
     }
     
     @IBAction func clickToCart(_ sender: Any) {

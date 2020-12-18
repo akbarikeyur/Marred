@@ -80,10 +80,38 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.menuContainerViewController.toggleLeftSideMenuCompletion { }
         switch arrMenu[indexPath.row].id {
+            case 1:
+                
+                break
+            case 2:
+                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 1])
+                var delayCnt = 0.1
+                for controller in self.navigationController!.viewControllers as Array {
+                    if controller.isKind(of: CategoryVC.self) {
+                        delayCnt = 0.0
+                        break
+                    }
+                }
+                delay(delayCnt) {
+                    NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.SELECT_CATEGORY_CLICK), object: ["index" : 1])
+                }
+                break
+            case 3:
+                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 1])
+                var delayCnt = 0.1
+                for controller in self.navigationController!.viewControllers as Array {
+                    if controller.isKind(of: CategoryVC.self) {
+                        delayCnt = 0.0
+                        break
+                    }
+                }
+                delay(delayCnt) {
+                    NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.SELECT_CATEGORY_CLICK), object: ["index" : 0])
+                }
+                break
             case 4:
-                let navController = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "DealofDaysVCNav") as! UINavigationController
-                navController.isNavigationBarHidden = true
-                menuContainerViewController.centerViewController = navController
+                let vc : DealofDaysVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "DealofDaysVC") as! DealofDaysVC
+                UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
                 break
             case 5:
                 let vc : AddYourShopVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "AddYourShopVC") as! AddYourShopVC

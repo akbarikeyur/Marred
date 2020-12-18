@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JXPageControl
 
 class PavilionProductTVC: UITableViewCell {
 
@@ -15,6 +16,7 @@ class PavilionProductTVC: UITableViewCell {
     @IBOutlet weak var adImgView: UIImageView!
     @IBOutlet weak var productCV: UICollectionView!
     @IBOutlet weak var viewAllBtn: Button!
+    @IBOutlet weak var topPageControl: JXPageControlScale!
     
     var arrCategory = ["Uae Fashion", "Uae Fragrance & Beauty Care", "Uae Accessories & Jewelery"]
     var selectedCategory = 0
@@ -28,6 +30,8 @@ class PavilionProductTVC: UITableViewCell {
     func setupDetails() {
         categoryCV.reloadData()
         productCV.reloadData()
+        topPageControl.numberOfPages = 2
+        topPageControl.currentPage = 0
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -93,6 +97,16 @@ extension PavilionProductTVC : UICollectionViewDelegate, UICollectionViewDataSou
         else {
             let vc : ProductDetailVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
             UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == productCV {
+            let visibleRect = CGRect(origin: self.productCV.contentOffset, size: self.productCV.bounds.size)
+            let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+            if let visibleIndexPath = self.productCV.indexPathForItem(at: visiblePoint) {
+                self.topPageControl.currentPage = visibleIndexPath.row/4
+            }
         }
     }
 }

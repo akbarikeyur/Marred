@@ -23,9 +23,13 @@ class DealofDaysVC: UIViewController {
         registerCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        AppDelegate().sharedDelegate().hideTabBar()
+    }
+    
     //MARK:- Button click event
-    @IBAction func clickToSideMenu(_ sender: Any) {
-        self.menuContainerViewController.toggleLeftSideMenuCompletion { }
+    @IBAction func clickToBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func clickToSearch(_ sender: Any) {
@@ -33,7 +37,7 @@ class DealofDaysVC: UIViewController {
     }
     
     @IBAction func clickToWishList(_ sender: Any) {
-        
+        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 3])
     }
     
     @IBAction func clickToCart(_ sender: Any) {

@@ -30,6 +30,10 @@ class BuyerDashboardVC: UIViewController {
         selectTab()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        AppDelegate().sharedDelegate().showTabBar()
+    }
+    
     //MARK:- Button click event
     @IBAction func clickToSideMenu(_ sender: Any) {
         self.menuContainerViewController.toggleLeftSideMenuCompletion { }
@@ -40,7 +44,7 @@ class BuyerDashboardVC: UIViewController {
     }
     
     @IBAction func clickToWishList(_ sender: Any) {
-        
+        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 3])
     }
     
     @IBAction func clickToCart(_ sender: Any) {
