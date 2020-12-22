@@ -28,12 +28,10 @@ class ShoppingCartVC: UIViewController {
 
         // Do any additional setup after loading the view.
         registerTableViewMethod()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        AppDelegate().sharedDelegate().hideTabBar()
+        AppDelegate().sharedDelegate().showTabBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,6 +43,14 @@ class ShoppingCartVC: UIViewController {
     }
     
     //MARK:- Button click event
+    @IBAction func clickToSideMenu(_ sender: Any) {
+        self.menuContainerViewController.toggleLeftSideMenuCompletion { }
+    }
+    
+    @IBAction func clickToSearch(_ sender: Any) {
+        
+    }
+    
     @IBAction func clickToBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

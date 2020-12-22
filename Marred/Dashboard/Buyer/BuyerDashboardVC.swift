@@ -48,8 +48,9 @@ class BuyerDashboardVC: UIViewController {
     }
     
     @IBAction func clickToCart(_ sender: Any) {
-        let vc : ShoppingCartVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "ShoppingCartVC") as! ShoppingCartVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 2])
+//        let vc : ShoppingCartVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "ShoppingCartVC") as! ShoppingCartVC
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     /*

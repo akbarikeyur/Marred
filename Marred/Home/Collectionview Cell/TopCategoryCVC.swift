@@ -20,7 +20,7 @@ class TopCategoryCVC: UICollectionViewCell {
     
     func setupDetail(_ dict : CategoryModel) {
         imgView.image = UIImage(named: dict.image)
-        nameLbl.text = dict.title
+        nameLbl.text = dict.name
     }
     
 }

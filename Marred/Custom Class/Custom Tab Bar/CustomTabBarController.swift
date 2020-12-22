@@ -48,7 +48,7 @@ class CustomTabBarController: UITabBarController, CustomTabBarViewDelegate {
         let navController2 : UINavigationController = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "CategoryVCNav") as! UINavigationController
         viewControllers.append(navController2)
         
-        let navController3 : UINavigationController = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "HomeVCNav") as! UINavigationController
+        let navController3 : UINavigationController = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "ShoppingCartVCNav") as! UINavigationController
         viewControllers.append(navController3)
         
         let navController4 : UINavigationController = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "BookmarkVCNav") as! UINavigationController

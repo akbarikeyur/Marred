@@ -154,3 +154,10 @@ extension UIApplication {
         return base
     }
 }
+
+extension AppDelegate {
+    
+    func serviceCallToGetCategory() {
+        HomeAPIManager.shared.serviceCallToGetCategory()
+    }
+}

@@ -14,11 +14,15 @@ class SubCategoryVC: UIViewController {
     @IBOutlet weak var categoryCV: UICollectionView!
     @IBOutlet weak var productCV: UICollectionView!
     
+    var categoryData = CategoryModel.init([String : Any]())
+    var arrSubCategory = [CategoryModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         registerCollectionView()
+        serviceCallToGetSubCategory()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +41,6 @@ class SubCategoryVC: UIViewController {
     @IBAction func clickToFilter(_ sender: Any) {
     
     }
-    
     
     /*
     // MARK: - Navigation
@@ -60,7 +63,11 @@ extension SubCategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if collectionView == categoryCV {
+            return arrSubCategory.count
+        }else{
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -75,7 +82,7 @@ extension SubCategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoryCV {
             let cell : CategoriesCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "CategoriesCVC", for: indexPath) as! CategoriesCVC
-            
+            cell.setupDetails(arrSubCategory[indexPath.row])
             return cell
         }else{
             let cell : DisplayProductCVC = productCV.dequeueReusableCell(withReuseIdentifier: "DisplayProductCVC", for: indexPath) as! DisplayProductCVC
@@ -88,6 +95,18 @@ extension SubCategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, 
         if collectionView == productCV {
             let vc : ProductDetailVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}
+
+extension SubCategoryVC {
+    func serviceCallToGetSubCategory() {
+        HomeAPIManager.shared.serviceCallToGetSubCategory(categoryData.id) { (data) in
+            self.arrSubCategory = [CategoryModel]()
+            for temp in data {
+                self.arrSubCategory.append(CategoryModel.init(temp))
+            }
+            self.categoryCV.reloadData()
         }
     }
 }

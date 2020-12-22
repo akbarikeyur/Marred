@@ -53,26 +53,30 @@ func getApiKey() -> String
 }
 
 
-/*
+
 //MARK: - Login
-func setLoginUserData()
+func setCategoryData(_ data : [CategoryModel])
 {
-    if AppModel.shared.currentUser == nil {
-        return
+    var arrData = [[String : Any]]()
+    for temp in data {
+        arrData.append(temp.dictionary())
     }
-    setDataToPreference(data: AppModel.shared.currentUser.dictionary() as AnyObject, forKey: "login_user_data")
+    setDataToPreference(data: arrData as AnyObject, forKey: "category_data")
     setIsUserLogin(true)
 }
 
-func getLoginUserData() -> UserModel
+func getCategoryData() -> [CategoryModel]
 {
-    if let dict : [String : Any] = getDataFromPreference(key: "login_user_data") as? [String : Any]
-    {
-        return UserModel.init(dict: dict)
+    var arrCategory = [CategoryModel]()
+    if let data : [[String : Any]] = getDataFromPreference(key: "category_data") as? [[String : Any]] {
+        for temp in data {
+            arrCategory.append(CategoryModel.init(temp))
+        }
+        return arrCategory
     }
-    return UserModel.init(dict: [String : Any]())
+    return arrCategory
 }
-*/
+
 func setIsUserLogin(_ value: Bool)
 {
     setDataToPreference(data: value as AnyObject, forKey: "is_user_login")

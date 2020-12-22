@@ -71,7 +71,7 @@ Pavilion</string>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="N8B-KU-ai1">
-                        <rect key="frame" x="65" y="37.5" width="7.5" height="15"/>
+                        <rect key="frame" x="64" y="37.5" width="7.5" height="15"/>
                     </imageView>
                 </subviews>
             </view>
@@ -79,7 +79,7 @@ Pavilion</string>
                 <constraint firstItem="dL9-mq-HWk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="4Kg-ZC-Hb5"/>
                 <constraint firstAttribute="bottom" secondItem="dL9-mq-HWk" secondAttribute="bottom" constant="5" id="Lah-7r-QX6"/>
                 <constraint firstItem="N8B-KU-ai1" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="WWV-iA-yBF"/>
-                <constraint firstItem="N8B-KU-ai1" firstAttribute="leading" secondItem="dL9-mq-HWk" secondAttribute="trailing" id="dTo-dT-AjI"/>
+                <constraint firstItem="N8B-KU-ai1" firstAttribute="leading" secondItem="dL9-mq-HWk" secondAttribute="trailing" constant="-1" id="dTo-dT-AjI"/>
                 <constraint firstItem="dL9-mq-HWk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="fts-r0-oz9"/>
                 <constraint firstAttribute="trailing" secondItem="dL9-mq-HWk" secondAttribute="trailing" constant="15" id="sxt-78-ggL"/>
             </constraints>
@@ -95,6 +95,6 @@ Pavilion</string>
     </objects>
     <resources>
         <image name="black_arrow" width="7.5" height="15"/>
-        <image name="flag" width="44" height="38"/>
+        <image name="flag" width="26" height="20"/>
     </resources>
 </document>

@@ -129,6 +129,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="8RQ-Qp-1ja"/>
                     <connections>
                         <outlet property="tblView" destination="8dg-Gw-IFb" id="qBl-vT-NwS"/>
@@ -1166,6 +1167,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ecU-7K-sXM"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="VFr-jl-1bo"/>
                     <connections>
                         <outlet property="categoryCV" destination="yT9-Fb-YZc" id="633-pT-o1v"/>

@@ -17,5 +17,8 @@ class CategoriesCVC: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func setupDetails(_ dict : CategoryModel) {
+        nameLbl.text = dict.name
+    }
 }

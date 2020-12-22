@@ -9,12 +9,18 @@
 import Foundation
 
 struct CategoryModel {
-    var title, image : String!
+    var id : Int!
+    var name, image : String!
     
     init(_ dict : [String : Any])
     {
-        title = dict["title"] as? String ?? ""
+        id = AppModel.shared.getIntData(dict, "id")
+        name = dict["name"] as? String ?? ""
         image = dict["image"] as? String ?? ""
+    }
+    
+    func dictionary() -> [String : Any] {
+        return ["id" : id!, "name" : name!, "image" : image!]
     }
 }
 

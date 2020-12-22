@@ -45,6 +45,10 @@ class CheckoutVC: UIViewController {
         configUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        AppDelegate().sharedDelegate().hideTabBar()
+    }
+    
     func configUI() {
         loginLbl.attributedText = getAttributeStringWithColor(loginLbl.text!, ["Log in"], color: BlackColor, font: UIFont(name: APP_BOLD, size: 14.0), isUnderLine: true)
         registerTableViewMethod()

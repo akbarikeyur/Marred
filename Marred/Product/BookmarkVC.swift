@@ -33,8 +33,9 @@ class BookmarkVC: UIViewController {
     }
     
     @IBAction func clickToCart(_ sender: Any) {
-        let vc : ShoppingCartVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "ShoppingCartVC") as! ShoppingCartVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 2])
+//        let vc : ShoppingCartVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "ShoppingCartVC") as! ShoppingCartVC
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     /*
@@ -68,5 +69,10 @@ extension BookmarkVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         let cell : BookmarkCVC = productCV.dequeueReusableCell(withReuseIdentifier: "BookmarkCVC", for: indexPath) as! BookmarkCVC
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc : ProductDetailVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

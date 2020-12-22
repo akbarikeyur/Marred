@@ -20,4 +20,7 @@ class PavillionShopCVC: UICollectionViewCell {
         // Initialization code
     }
 
+    func setupDetails(_ dict : CategoryModel) {
+        nameLbl.text = dict.name
+    }
 }

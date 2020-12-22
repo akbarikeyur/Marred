@@ -62,4 +62,9 @@ extension ShopCategoryTVC : UICollectionViewDelegate, UICollectionViewDataSource
         cell.setupDetail(arrCategory[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc : SubCategoryVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryVC
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

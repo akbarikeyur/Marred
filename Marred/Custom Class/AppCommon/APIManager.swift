@@ -12,9 +12,9 @@ import Alamofire
 
 
 struct API {
-    static let BASE_URL = ""
+    static let BASE_URL = "https://maared24.com/wp-json/public-woo/v1/"
     
-    static let GET_COUNTRY                           =       BASE_URL + ""
+    static let GET_CATEGORY                           =       BASE_URL + "products/categories"
 }
 
 public class APIManager {
@@ -96,7 +96,7 @@ public class APIManager {
     }
     
     //MARK:- Get request
-    func callGetRequest(_ api : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
+    func callGetRequest(_ api : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [[String:Any]]) -> Void) {
         if !APIManager.isConnectedToNetwork()
         {
             APIManager().networkErrorMsg()
@@ -110,7 +110,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                if let result = response.result.value as? [String:Any] {
+                if let result = response.result.value as? [[String:Any]] {
                     completion(result)
                     return
                 }

@@ -22,18 +22,38 @@ class CategoryVC: UIViewController {
     
     var selectedTab = 0
     var selectedPavillion = 0
+    var arrCategory = getCategoryData()
+    var arrPavilion = [CategoryModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(changeSelectedTab(_:)), name: NSNotification.Name.init(NOTIFICATION.SELECT_CATEGORY_CLICK), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshCategoryList), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CATEGORY_LIST), object: nil)
         registerCollectionView()
         selectTab()
+        
+        if arrCategory.count == 0 {
+            AppDelegate().sharedDelegate().serviceCallToGetCategory()
+        }else{
+            categoryCV.reloadData()
+        }
+        
+        arrPavilion = [CategoryModel]()
+        for temp in getJsonFromFile("pavilion") {
+            arrPavilion.append(CategoryModel.init(temp))
+        }
+        pavillionCV.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate().sharedDelegate().showTabBar()
+    }
+    
+    @objc func refreshCategoryList() {
+        arrCategory = getCategoryData()
+        categoryCV.reloadData()
     }
     
     @objc func changeSelectedTab(_ noti : Notification) {
@@ -59,8 +79,9 @@ class CategoryVC: UIViewController {
     }
     
     @IBAction func clickToCart(_ sender: Any) {
-        let vc : ShoppingCartVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "ShoppingCartVC") as! ShoppingCartVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 2])
+//        let vc : ShoppingCartVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "ShoppingCartVC") as! ShoppingCartVC
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     /*
@@ -87,13 +108,13 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == categoryCV {
-            return 10
+            return arrCategory.count
         }
         else if collectionView == tabCV {
             return arrTabData.count
         }
         else if collectionView == pavillionCV {
-            return 10
+            return arrPavilion.count
         }
         else {
             return 10
@@ -126,7 +147,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoryCV {
             let cell : CategoriesCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "CategoriesCVC", for: indexPath) as! CategoriesCVC
-            
+            cell.setupDetails(arrCategory[indexPath.row])
             return cell
         }
         else if collectionView == tabCV {
@@ -154,6 +175,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
                 cell.outerView.backgroundColor = WhiteColor
                 cell.nameLbl.textColor = BlackColor
             }
+            cell.setupDetails(arrPavilion[indexPath.row])
             return cell
         }
         else{
@@ -174,6 +196,11 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         }
         else if collectionView == categoryCV {
             let vc : SubCategoryVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryVC
+            vc.categoryData = arrCategory[indexPath.row]
+            UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+        }
+        else if collectionView == shopCV {
+            let vc : ProductDetailVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
             UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
         }
     }
