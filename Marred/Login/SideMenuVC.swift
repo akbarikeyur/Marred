@@ -81,7 +81,7 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
         self.menuContainerViewController.toggleLeftSideMenuCompletion { }
         switch arrMenu[indexPath.row].id {
             case 1:
-                
+                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 0])
                 break
             case 2:
                 NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 1])
