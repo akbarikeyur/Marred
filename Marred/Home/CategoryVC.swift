@@ -108,7 +108,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == categoryCV {
-            return arrCategory.count
+            return 15//arrCategory.count
         }
         else if collectionView == tabCV {
             return arrTabData.count
@@ -147,7 +147,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoryCV {
             let cell : CategoriesCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "CategoriesCVC", for: indexPath) as! CategoriesCVC
-            cell.setupDetails(arrCategory[indexPath.row])
+            //cell.setupDetails(arrCategory[indexPath.row])
             return cell
         }
         else if collectionView == tabCV {
@@ -196,7 +196,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         }
         else if collectionView == categoryCV {
             let vc : SubCategoryVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryVC
-            vc.categoryData = arrCategory[indexPath.row]
+            //vc.categoryData = arrCategory[indexPath.row]
             UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
         }
         else if collectionView == shopCV {

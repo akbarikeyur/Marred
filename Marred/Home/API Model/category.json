@@ -1,18 +1,18 @@
 [
     {
-        "title" : "Accessories",
+        "name" : "Accessories",
         "image" : "accessorie"
     },
     {
-        "title" : "Fragrance",
+        "name" : "Fragrance",
         "image" : "fragrance"
     },
     {
-        "title" : "Fashion",
+        "name" : "Fashion",
         "image" : "fashion"
     },
     {
-        "title" : "Beauty & Care",
+        "name" : "Beauty & Care",
         "image" : "beauty"
     }
 ]

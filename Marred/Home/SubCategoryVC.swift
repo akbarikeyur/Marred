@@ -22,7 +22,7 @@ class SubCategoryVC: UIViewController {
 
         // Do any additional setup after loading the view.
         registerCollectionView()
-        serviceCallToGetSubCategory()
+        //serviceCallToGetSubCategory()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,9 +64,9 @@ extension SubCategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == categoryCV {
-            return arrSubCategory.count
+            return 5//arrSubCategory.count
         }else{
-            return 0
+            return 10
         }
     }
     
@@ -82,7 +82,7 @@ extension SubCategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoryCV {
             let cell : CategoriesCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "CategoriesCVC", for: indexPath) as! CategoriesCVC
-            cell.setupDetails(arrSubCategory[indexPath.row])
+            //cell.setupDetails(arrSubCategory[indexPath.row])
             return cell
         }else{
             let cell : DisplayProductCVC = productCV.dequeueReusableCell(withReuseIdentifier: "DisplayProductCVC", for: indexPath) as! DisplayProductCVC
