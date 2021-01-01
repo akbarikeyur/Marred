@@ -20,6 +20,10 @@ class SellerSettingTabVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        var newFrame = uploadView.frame
+        newFrame.size.width = SCREEN.WIDTH - 20
+        uploadView.frame = newFrame
+        uploadView.addDashedBorder(DarkYellowColor)
     }
     
     func setupDetails() {
