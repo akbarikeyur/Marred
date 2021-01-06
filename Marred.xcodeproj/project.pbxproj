@@ -114,7 +114,6 @@
 		79BF364C257E5A5E006491C5 /* ShopCategoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79BF364A257E5A5E006491C5 /* ShopCategoryTVC.xib */; };
 		79BF3650257E5B84006491C5 /* TopCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF364E257E5B84006491C5 /* TopCategoryCVC.swift */; };
 		79BF3651257E5B84006491C5 /* TopCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79BF364F257E5B84006491C5 /* TopCategoryCVC.xib */; };
-		79BF3654257E6155006491C5 /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 79BF3653257E6155006491C5 /* category.json */; };
 		79BF3657257E61FA006491C5 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF3656257E61FA006491C5 /* HomeModel.swift */; };
 		79BF3659257E63B1006491C5 /* Home.json in Resources */ = {isa = PBXBuildFile; fileRef = 79BF3658257E63B1006491C5 /* Home.json */; };
 		79DDD67E2589F04200510375 /* BuyerDashboardTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDD67D2589F04200510375 /* BuyerDashboardTabVC.swift */; };
@@ -130,6 +129,7 @@
 		79EAD240257FC18900DC6422 /* CategoryListCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79EAD23E257FC18900DC6422 /* CategoryListCVC.xib */; };
 		79EAD243257FC69C00DC6422 /* ContactInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EAD241257FC69C00DC6422 /* ContactInfoTVC.swift */; };
 		79EAD244257FC69C00DC6422 /* ContactInfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79EAD242257FC69C00DC6422 /* ContactInfoTVC.xib */; };
+		79F9F75425A59FFE00623705 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F9F75325A59FFE00623705 /* ProductModel.swift */; };
 		79FC898E2591F55400DCCFE9 /* pavilion.json in Resources */ = {isa = PBXBuildFile; fileRef = 79FC898D2591F55400DCCFE9 /* pavilion.json */; };
 		79FC89902591F77900DCCFE9 /* HomeAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FC898F2591F77900DCCFE9 /* HomeAPIManager.swift */; };
 		AB9B0BA4633454B5CEEF15AD /* Pods_Marred.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74716199F9D06511FFDF47A9 /* Pods_Marred.framework */; };
@@ -248,7 +248,6 @@
 		79BF364A257E5A5E006491C5 /* ShopCategoryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCategoryTVC.xib; sourceTree = "<group>"; };
 		79BF364E257E5B84006491C5 /* TopCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCategoryCVC.swift; sourceTree = "<group>"; };
 		79BF364F257E5B84006491C5 /* TopCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCategoryCVC.xib; sourceTree = "<group>"; };
-		79BF3653257E6155006491C5 /* category.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
 		79BF3656257E61FA006491C5 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		79BF3658257E63B1006491C5 /* Home.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Home.json; sourceTree = "<group>"; };
 		79DDD67D2589F04200510375 /* BuyerDashboardTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerDashboardTabVC.swift; sourceTree = "<group>"; };
@@ -264,6 +263,7 @@
 		79EAD23E257FC18900DC6422 /* CategoryListCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryListCVC.xib; sourceTree = "<group>"; };
 		79EAD241257FC69C00DC6422 /* ContactInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoTVC.swift; sourceTree = "<group>"; };
 		79EAD242257FC69C00DC6422 /* ContactInfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactInfoTVC.xib; sourceTree = "<group>"; };
+		79F9F75325A59FFE00623705 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		79FC898D2591F55400DCCFE9 /* pavilion.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pavilion.json; sourceTree = "<group>"; };
 		79FC898F2591F77900DCCFE9 /* HomeAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPIManager.swift; sourceTree = "<group>"; };
 		C4DB19435AD43064F67A7D02 /* Pods-Marred.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marred.release.xcconfig"; path = "Target Support Files/Pods-Marred/Pods-Marred.release.xcconfig"; sourceTree = "<group>"; };
@@ -373,6 +373,7 @@
 				7920BD242584F02B0065AEEF /* DealofDaysVC.swift */,
 				792DAE63258A34D7008E1343 /* BookmarkVC.swift */,
 				792DAE65258A3F7F008E1343 /* AddYourShopVC.swift */,
+				79F9F75225A59FE800623705 /* API Manager */,
 				79752003258259A10020FEEE /* Tableview Cell */,
 				7920BD262584F1C00065AEEF /* Collectionview Cell */,
 			);
@@ -627,13 +628,20 @@
 		79BF3652257E613F006491C5 /* API Model */ = {
 			isa = PBXGroup;
 			children = (
-				79BF3653257E6155006491C5 /* category.json */,
 				79BF3658257E63B1006491C5 /* Home.json */,
 				79FC898D2591F55400DCCFE9 /* pavilion.json */,
 				79BF3656257E61FA006491C5 /* HomeModel.swift */,
 				79FC898F2591F77900DCCFE9 /* HomeAPIManager.swift */,
 			);
 			path = "API Model";
+			sourceTree = "<group>";
+		};
+		79F9F75225A59FE800623705 /* API Manager */ = {
+			isa = PBXGroup;
+			children = (
+				79F9F75325A59FFE00623705 /* ProductModel.swift */,
+			);
+			path = "API Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -716,7 +724,6 @@
 				79BF3645257E548D006491C5 /* Roboto-Light.ttf in Resources */,
 				792DAE54258A0698008E1343 /* MyOrderTVC.xib in Resources */,
 				79EAD230257F89D000DC6422 /* BannerAdTVC.xib in Resources */,
-				79BF3654257E6155006491C5 /* category.json in Resources */,
 				794B1C122580E25D00A7F391 /* CategoriesCVC.xib in Resources */,
 				79751FFF25823FD90020FEEE /* Product.storyboard in Resources */,
 				79EAD234257F8A4000DC6422 /* BannerImageCVC.xib in Resources */,
@@ -809,6 +816,7 @@
 				79BF361D257E46A4006491C5 /* Lable.swift in Sources */,
 				794B1C0B2580D0D500A7F391 /* ProductImageCVC.swift in Sources */,
 				79BF3618257E46A4006491C5 /* Array+RUI.swift in Sources */,
+				79F9F75425A59FFE00623705 /* ProductModel.swift in Sources */,
 				79BF35DF257E469B006491C5 /* AppModel.swift in Sources */,
 				79BF35E5257E469B006491C5 /* UploadImageVC.swift in Sources */,
 				79BF3634257E46A4006491C5 /* TableView.swift in Sources */,

@@ -158,6 +158,6 @@ extension UIApplication {
 extension AppDelegate {
     
     func serviceCallToGetCategory() {
-        //HomeAPIManager.shared.serviceCallToGetCategory()
+        HomeAPIManager.shared.serviceCallToGetCategory()
     }
 }

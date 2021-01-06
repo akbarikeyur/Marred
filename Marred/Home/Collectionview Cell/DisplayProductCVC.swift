@@ -19,5 +19,11 @@ class DisplayProductCVC: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func setupDetails(_ dict : ProductModel) {
+        setImageBackgroundImage(imgView, dict.thumbnail, IMAGE.PLACEHOLDER)
+        nameLbl.text = dict.title
+        priceLbl.text = displayPriceWithCurrency(dict.price)
+    }
 
 }

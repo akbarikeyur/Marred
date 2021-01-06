@@ -21,9 +21,10 @@ class CategoryVC: UIViewController {
     var arrTabData = ["Shop by Categories", "Shop by Pavilions"]
     
     var selectedTab = 0
-    var selectedPavillion = 0
+    var selectedPavillion = PavilionModel.init([String : Any]())
     var arrCategory = getCategoryData()
-    var arrPavilion = [CategoryModel]()
+    var arrPavilion = [PavilionModel]()
+    var arrPavilionCategory = [CategoryModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +41,15 @@ class CategoryVC: UIViewController {
             categoryCV.reloadData()
         }
         
-        arrPavilion = [CategoryModel]()
+        arrPavilion = [PavilionModel]()
         for temp in getJsonFromFile("pavilion") {
-            arrPavilion.append(CategoryModel.init(temp))
+            arrPavilion.append(PavilionModel.init(temp))
         }
         pavillionCV.reloadData()
+        if arrPavilion.count > 0 {
+            selectedPavillion = arrPavilion[0]
+            serviceCallToGetPavilionCategory()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,7 +113,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == categoryCV {
-            return 15//arrCategory.count
+            return arrCategory.count
         }
         else if collectionView == tabCV {
             return arrTabData.count
@@ -117,7 +122,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
             return arrPavilion.count
         }
         else {
-            return 10
+            return arrPavilionCategory.count
         }
     }
     
@@ -147,7 +152,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoryCV {
             let cell : CategoriesCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "CategoriesCVC", for: indexPath) as! CategoriesCVC
-            //cell.setupDetails(arrCategory[indexPath.row])
+            cell.setupDetails(arrCategory[indexPath.row])
             return cell
         }
         else if collectionView == tabCV {
@@ -166,7 +171,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         }
         else if collectionView == pavillionCV {
             let cell : PavillionShopCVC = pavillionCV.dequeueReusableCell(withReuseIdentifier: "PavillionShopCVC", for: indexPath) as! PavillionShopCVC
-            if selectedPavillion == indexPath.row {
+            if selectedPavillion.id == arrPavilion[indexPath.row].id {
                 cell.arrowImg.isHidden = false
                 cell.outerView.backgroundColor = BlackColor
                 cell.nameLbl.textColor = WhiteColor
@@ -180,7 +185,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         }
         else{
             let cell : CategoriesCVC = shopCV.dequeueReusableCell(withReuseIdentifier: "CategoriesCVC", for: indexPath) as! CategoriesCVC
-            
+            cell.setupDetails(arrPavilionCategory[indexPath.row])
             return cell
         }
     }
@@ -191,16 +196,18 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
             selectTab()
         }
         else if collectionView == pavillionCV {
-            selectedPavillion = indexPath.row
+            selectedPavillion = arrPavilion[indexPath.row]
             pavillionCV.reloadData()
+            serviceCallToGetPavilionCategory()
         }
         else if collectionView == categoryCV {
             let vc : SubCategoryVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryVC
-            //vc.categoryData = arrCategory[indexPath.row]
+            vc.categoryData = arrCategory[indexPath.row]
             UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
         }
         else if collectionView == shopCV {
-            let vc : ProductDetailVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
+            let vc : SubCategoryVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryVC
+            vc.categoryData = arrCategory[indexPath.row]
             UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -217,6 +224,18 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
             displaySubViewtoParentView(mainContainerView, subview: pavillionView)
             pavillionCV.reloadData()
             shopCV.reloadData()
+        }
+    }
+}
+
+extension CategoryVC {
+    func serviceCallToGetPavilionCategory() {
+        HomeAPIManager.shared.serviceCallToGetPavilionCategory(selectedPavillion.id) { (data) in
+            self.arrPavilionCategory = [CategoryModel]()
+            for temp in data {
+                self.arrPavilionCategory.append(CategoryModel.init(temp))
+            }
+            self.shopCV.reloadData()
         }
     }
 }

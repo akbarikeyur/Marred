@@ -16,13 +16,17 @@ class SubCategoryVC: UIViewController {
     
     var categoryData = CategoryModel.init([String : Any]())
     var arrSubCategory = [CategoryModel]()
+    var selectedSubCat = CategoryModel.init([String : Any]())
+    var page = 1
+    var arrProduct = [ProductModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         registerCollectionView()
-        //serviceCallToGetSubCategory()
+        nameLbl.text = categoryData.name
+        serviceCallToGetSubCategory()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,9 +68,9 @@ extension SubCategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == categoryCV {
-            return 5//arrSubCategory.count
+            return arrSubCategory.count
         }else{
-            return 10
+            return arrProduct.count
         }
     }
     
@@ -82,12 +86,18 @@ extension SubCategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoryCV {
             let cell : CategoriesCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "CategoriesCVC", for: indexPath) as! CategoriesCVC
-            //cell.setupDetails(arrSubCategory[indexPath.row])
+            cell.setupDetails(arrSubCategory[indexPath.row])
             return cell
         }else{
             let cell : DisplayProductCVC = productCV.dequeueReusableCell(withReuseIdentifier: "DisplayProductCVC", for: indexPath) as! DisplayProductCVC
-            
+            cell.setupDetails(arrProduct[indexPath.row])
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if collectionView  == productCV && page != 0 && (arrProduct.count-1) == indexPath.row {
+            serviceCallToGetProductList()
         }
     }
     
@@ -95,18 +105,52 @@ extension SubCategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, 
         if collectionView == productCV {
             let vc : ProductDetailVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
             self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            if selectedSubCat.term_id != arrSubCategory[indexPath.row].term_id {
+                selectedSubCat = arrSubCategory[indexPath.row]
+                page = 1
+                serviceCallToGetProductList()
+            }
         }
     }
 }
 
 extension SubCategoryVC {
     func serviceCallToGetSubCategory() {
-        HomeAPIManager.shared.serviceCallToGetSubCategory(categoryData.id) { (data) in
+        HomeAPIManager.shared.serviceCallToGetSubCategory(categoryData.term_id) { (data) in
             self.arrSubCategory = [CategoryModel]()
             for temp in data {
                 self.arrSubCategory.append(CategoryModel.init(temp))
             }
             self.categoryCV.reloadData()
+            if self.arrSubCategory.count > 0 {
+                self.selectedSubCat = self.arrSubCategory[0]
+                self.page = 1
+                self.serviceCallToGetProductList()
+            }
+            self.nameLbl.text = self.categoryData.name + " (" + String(self.arrSubCategory.count) + " Products found)"
+            self.nameLbl.attributedText = attributedStringWithColor(self.nameLbl.text!, [self.categoryData.name], color: self.nameLbl.textColor, font: UIFont(name: APP_BOLD, size: 14.0))
+        }
+    }
+    
+    func serviceCallToGetProductList() {
+        var param = [String : Any]()
+        param["paged"] = page
+        param["cat_id"] = selectedSubCat.term_id
+        printData(param)
+        HomeAPIManager.shared.serviceCallToGetProductList(param) { (data, total) in
+            if self.page == 1 {
+                self.arrProduct = [ProductModel]()
+            }
+            for temp in data {
+                self.arrProduct.append(ProductModel.init(temp))
+            }
+            if total == self.arrProduct.count {
+                self.page = 0
+            }else{
+                self.page += 1
+            }
+            self.productCV.reloadData()
         }
     }
 }

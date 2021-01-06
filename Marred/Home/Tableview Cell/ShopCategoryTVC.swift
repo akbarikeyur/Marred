@@ -18,11 +18,20 @@ class ShopCategoryTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshCategoryList), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CATEGORY_LIST), object: nil)
         registerCollectionView()
     }
 
     func setupDetails() {
-        
+        if arrCategory.count == 0 {
+            arrCategory = getCategoryData()
+        }
+        categoryCV.reloadData()
+    }
+    
+    @objc func refreshCategoryList() {
+        arrCategory = getCategoryData()
+        categoryCV.reloadData()
     }
     
     @IBAction func clickToSelectCategory(_ sender: UIButton) {
@@ -41,12 +50,6 @@ extension ShopCategoryTVC : UICollectionViewDelegate, UICollectionViewDataSource
 {
     func registerCollectionView() {
         categoryCV.register(UINib.init(nibName: "TopCategoryCVC", bundle: nil), forCellWithReuseIdentifier: "TopCategoryCVC")
-        
-        arrCategory = [CategoryModel]()
-        for temp in getJsonFromFile("category") {
-            arrCategory.append(CategoryModel.init(temp))
-        }
-        categoryCV.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -65,6 +68,7 @@ extension ShopCategoryTVC : UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc : SubCategoryVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryVC
+        vc.categoryData = arrCategory[indexPath.row]
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

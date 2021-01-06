@@ -13,22 +13,55 @@ public class HomeAPIManager {
     static let shared = HomeAPIManager()
 
     func serviceCallToGetCategory() {
-        APIManager.shared.callGetRequest(API.GET_CATEGORY, false) { (data) in
-            printData(data)
-            var arrCategory = [CategoryModel]()
-            for temp in data {
-                arrCategory.append(CategoryModel.init(temp))
+        APIManager.shared.callPostRequest(API.GET_CATEGORY, ["cat_id" : 0], false) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [[String : Any]] {
+                    var arrCategory = [CategoryModel]()
+                    for temp in data {
+                        arrCategory.append(CategoryModel.init(temp))
+                    }
+                    setCategoryData(arrCategory)
+                    NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CATEGORY_LIST), object: nil)
+                }
             }
-            setCategoryData(arrCategory)
-            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CATEGORY_LIST), object: nil)
         }
     }
     
-    func serviceCallToGetSubCategory(_ id : Int, _ completion: @escaping (_ result : [[String:Any]]) -> Void) {
-        let strUrl = API.GET_CATEGORY + "?parent=" + String(id)
-        APIManager.shared.callGetRequest(strUrl, true) { (data) in
-            printData(data)
-            completion(data)
+    func serviceCallToGetSubCategory(_ id : Int, _ completion: @escaping (_ result : [[String : Any]]) -> Void) {
+        APIManager.shared.callPostRequest(API.GET_CATEGORY, ["cat_id" : id], true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [[String : Any]] {
+                    completion(data)
+                }
+            }
+        }
+    }
+    
+    func serviceCallToGetProductList(_ param : [String : Any], _ completion: @escaping (_ result : [[String : Any]], _ total : Int) -> Void) {
+        APIManager.shared.callPostRequest(API.GET_PRODUCT_LIST, param, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let tempDict = dict["data"] as? [String : Any] {
+                    if let tempData = tempDict["products"] as? [[String : Any]] {
+                        if let total_products = tempDict["total_products"] as? Int {
+                            completion(tempData, total_products)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func serviceCallToGetPavilionCategory(_ id : Int, _ completion: @escaping (_ data : [[String : Any]]) -> Void) {
+        APIManager.shared.callPostRequest(API.GET_PAVILION_CATEGORY, ["pavilions_id" : id], true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [[String : Any]] {
+                    completion(data)
+                }
+            }
         }
     }
 }

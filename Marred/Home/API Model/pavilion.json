@@ -1,42 +1,52 @@
 [
     {
         "id" : 234,
-        "name" : "UAE Pavilion"
+        "name" : "UAE Pavilion",
+        "image" : "uae"
     },
     {
         "id" : 1041,
-        "name" : "Yemen Pavilion"
+        "name" : "Yemen Pavilion",
+        "image" : "yemen"
     },
     {
         "id" : 790,
-        "name" : "Fashion Style Pavilion"
+        "name" : "Fashion Style Pavilion",
+        "image" : "uae"
     },
     {
         "id" : 239,
-        "name" : "China Pavilion"
+        "name" : "China Pavilion",
+        "image" : "china"
     },
     {
         "id" : 258,
-        "name" : "Europe Pavilion"
+        "name" : "Europe Pavilion",
+        "image" : "europe"
     },
     {
         "id" : 441,
-        "name" : "Europe Fashion"
+        "name" : "Europe Fashion",
+        "image" : "europe"
     },
     {
         "id" : 243,
-        "name" : "Kuwait Pavilion"
+        "name" : "Kuwait Pavilion",
+        "image" : "kuwait"
     },
     {
         "id" : 235,
-        "name" : "Saudi Pavilion"
+        "name" : "Saudi Pavilion",
+        "image" : "saudi"
     },
     {
         "id" : 236,
-        "name" : "Turkey Pavilion"
+        "name" : "Turkey Pavilion",
+        "image" : "turkey"
     },
     {
         "id" : 443,
-        "name" : "Egypt Pavilion"
+        "name" : "Egypt Pavilion",
+        "image" : "egypt"
     }
 ]

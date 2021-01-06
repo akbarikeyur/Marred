@@ -20,7 +20,8 @@ class PavillionShopCVC: UICollectionViewCell {
         // Initialization code
     }
 
-    func setupDetails(_ dict : CategoryModel) {
+    func setupDetails(_ dict : PavilionModel) {
         nameLbl.text = dict.name
+        imgView.image = UIImage(named: dict.image)
     }
 }
