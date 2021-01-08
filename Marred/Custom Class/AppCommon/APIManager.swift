@@ -15,9 +15,10 @@ struct API {
     static let BASE_URL = "https://maared24.com/wp-json/v1/"
     
     static let GET_CATEGORY                           =       BASE_URL + "get_cateogories"
-    static let GET_PRODUCT_LIST                       =       BASE_URL + "getProductsByCat"
     static let GET_PAVILION_CATEGORY                  =       BASE_URL + "pavilions"
     
+    static let GET_PRODUCT_LIST                       =       BASE_URL + "getProductsByCat"
+    static let GET_PRODUCT_DETAIL                     =       BASE_URL + "productDetail"
     
 }
 

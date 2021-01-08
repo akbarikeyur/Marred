@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18BD2EF025A7691F00842C88 /* ProductAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2EEF25A7691F00842C88 /* ProductAPIManager.swift */; };
 		79100C132584A5E000000215 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79100C122584A5E000000215 /* CheckoutVC.swift */; };
 		79100C162584AE4B00000215 /* CheckoutOrderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79100C142584AE4B00000215 /* CheckoutOrderTVC.swift */; };
 		79100C172584AE4B00000215 /* CheckoutOrderTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79100C152584AE4B00000215 /* CheckoutOrderTVC.xib */; };
@@ -136,6 +137,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18BD2EEF25A7691F00842C88 /* ProductAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAPIManager.swift; sourceTree = "<group>"; };
 		74716199F9D06511FFDF47A9 /* Pods_Marred.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marred.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79100C122584A5E000000215 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		79100C142584AE4B00000215 /* CheckoutOrderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutOrderTVC.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 		79752000258251620020FEEE /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				798A4F222580B957004D8BDF /* ProductDetailVC.swift */,
 				79752001258252820020FEEE /* ShoppingCartVC.swift */,
 				79100C122584A5E000000215 /* CheckoutVC.swift */,
 				7920BD242584F02B0065AEEF /* DealofDaysVC.swift */,
@@ -579,7 +582,6 @@
 			isa = PBXGroup;
 			children = (
 				79BF35BD257E4466006491C5 /* HomeVC.swift */,
-				798A4F222580B957004D8BDF /* ProductDetailVC.swift */,
 				794B1C0D2580DF8500A7F391 /* CategoryVC.swift */,
 				79220C3E25810A1000329AC8 /* SubCategoryVC.swift */,
 				79BF3652257E613F006491C5 /* API Model */,
@@ -640,6 +642,7 @@
 			isa = PBXGroup;
 			children = (
 				79F9F75325A59FFE00623705 /* ProductModel.swift */,
+				18BD2EEF25A7691F00842C88 /* ProductAPIManager.swift */,
 			);
 			path = "API Manager";
 			sourceTree = "<group>";
@@ -835,6 +838,7 @@
 				793223A8258B9E4100ACF496 /* SellerSettingTabVC.swift in Sources */,
 				79BF361A257E46A4006491C5 /* Data+RUI.swift in Sources */,
 				793223A2258B7C1200ACF496 /* SellerDashboardOrderTabVC.swift in Sources */,
+				18BD2EF025A7691F00842C88 /* ProductAPIManager.swift in Sources */,
 				79BF361E257E46A4006491C5 /* NSError+RUI.swift in Sources */,
 				79BF3657257E61FA006491C5 /* HomeModel.swift in Sources */,
 				793223A0258B77D800ACF496 /* SellerDashboardProductTabVC.swift in Sources */,

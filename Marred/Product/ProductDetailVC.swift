@@ -28,12 +28,14 @@ class ProductDetailVC: UIViewController {
     @IBOutlet weak var productCV: UICollectionView!
     
     var selectedImageIndex = 0
+    var productData = ProductModel.init([String : Any]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         registerCollectionView()
+        serviceCallToGetProductDetail()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -154,6 +156,14 @@ extension ProductDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
         if collectionView == imageCV {
             selectedImageIndex = indexPath.row
             imageCV.reloadData()
+        }
+    }
+}
+
+extension ProductDetailVC {
+    func serviceCallToGetProductDetail() {
+        ProductAPIManager.shared.serviceCallToGetProductDetail(productData.id) { (dict) in
+            
         }
     }
 }
