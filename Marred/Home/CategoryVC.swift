@@ -25,6 +25,7 @@ class CategoryVC: UIViewController {
     var arrCategory = getCategoryData()
     var arrPavilion = [PavilionModel]()
     var arrPavilionCategory = [CategoryModel]()
+    var pavilionDict = [String : [CategoryModel]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,12 @@ class CategoryVC: UIViewController {
         pavillionCV.reloadData()
         if arrPavilion.count > 0 {
             selectedPavillion = arrPavilion[0]
-            serviceCallToGetPavilionCategory()
+            if let data = pavilionDict[String(selectedPavillion.id)], data.count > 0 {
+                arrPavilionCategory = data
+                shopCV.reloadData()
+            }else{
+                serviceCallToGetPavilionCategory()
+            }
         }
     }
     
@@ -198,7 +204,12 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         else if collectionView == pavillionCV {
             selectedPavillion = arrPavilion[indexPath.row]
             pavillionCV.reloadData()
-            serviceCallToGetPavilionCategory()
+            if let data = pavilionDict[String(selectedPavillion.id)], data.count > 0 {
+                arrPavilionCategory = data
+                shopCV.reloadData()
+            }else{
+                serviceCallToGetPavilionCategory()
+            }
         }
         else if collectionView == categoryCV {
             let vc : SubCategoryVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryVC
@@ -207,7 +218,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         }
         else if collectionView == shopCV {
             let vc : SubCategoryVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryVC
-            vc.categoryData = arrCategory[indexPath.row]
+            vc.arrSubCategory = arrPavilionCategory
             UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -236,6 +247,7 @@ extension CategoryVC {
                 self.arrPavilionCategory.append(CategoryModel.init(temp))
             }
             self.shopCV.reloadData()
+            self.pavilionDict[String(self.selectedPavillion.id)] = self.arrPavilionCategory
         }
     }
 }

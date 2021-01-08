@@ -17,5 +17,5 @@ class ProductImageCVC: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
 }

@@ -12,14 +12,17 @@ import Alamofire
 
 
 struct API {
-    static let BASE_URL = "https://maared24.com/wp-json/v1/"
+    static let BASE_URL = "https://maared24.com/wp-json/"
     
-    static let GET_CATEGORY                           =       BASE_URL + "get_cateogories"
-    static let GET_PAVILION_CATEGORY                  =       BASE_URL + "pavilions"
+    static let GET_CATEGORY                           =       BASE_URL + "v1/get_cateogories"
+    static let GET_PAVILION_CATEGORY                  =       BASE_URL + "v1/pavilions"
     
-    static let GET_PRODUCT_LIST                       =       BASE_URL + "getProductsByCat"
-    static let GET_PRODUCT_DETAIL                     =       BASE_URL + "productDetail"
+    static let GET_PRODUCT_LIST                       =       BASE_URL + "v1/getProductsByCat"
+    static let GET_PRODUCT_DETAIL                     =       BASE_URL + "v1/productDetail"
     
+    static let ADD_TO_CART                            =       BASE_URL + "cocart/v1/add-item"
+    static let CLEAR_CART                             =       BASE_URL + "cocart/v1/clear"
+    static let GET_CART_COUNT                         =       BASE_URL + "cocart/v1/count-items"
 }
 
 public class APIManager {

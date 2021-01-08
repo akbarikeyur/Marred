@@ -25,8 +25,14 @@ class SubCategoryVC: UIViewController {
 
         // Do any additional setup after loading the view.
         registerCollectionView()
-        nameLbl.text = categoryData.name
-        serviceCallToGetSubCategory()
+        nameLbl.text = ""
+        if arrSubCategory.count == 0 {
+            serviceCallToGetSubCategory()
+        }else{
+            selectedSubCat = arrSubCategory[0]
+            page = 1
+            serviceCallToGetProductList()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,6 +110,7 @@ extension SubCategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == productCV {
             let vc : ProductDetailVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
+            vc.product = arrProduct[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
             if selectedSubCat.term_id != arrSubCategory[indexPath.row].term_id {
@@ -128,8 +135,6 @@ extension SubCategoryVC {
                 self.page = 1
                 self.serviceCallToGetProductList()
             }
-            self.nameLbl.text = self.categoryData.name + " (" + String(self.arrSubCategory.count) + " Products found)"
-            self.nameLbl.attributedText = attributedStringWithColor(self.nameLbl.text!, [self.categoryData.name], color: self.nameLbl.textColor, font: UIFont(name: APP_BOLD, size: 14.0))
         }
     }
     
@@ -151,6 +156,9 @@ extension SubCategoryVC {
                 self.page += 1
             }
             self.productCV.reloadData()
+            
+            self.nameLbl.text = self.selectedSubCat.name + " (" + String(total) + " Products found)"
+            self.nameLbl.attributedText = attributedStringWithColor(self.nameLbl.text!, [self.selectedSubCat.name], color: self.nameLbl.textColor, font: UIFont(name: APP_BOLD, size: 14.0))
         }
     }
 }

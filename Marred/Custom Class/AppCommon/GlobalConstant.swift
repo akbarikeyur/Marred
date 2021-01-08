@@ -14,7 +14,7 @@ let BUILD_VERSION = 1
 let DEVICE_ID = UIDevice.current.identifierForVendor?.uuidString
 
 let ITUNES_URL = ""
-let CURRENCY = "$"
+let CURRENCY = "د.إ"
 
 
 struct SCREEN

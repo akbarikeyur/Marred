@@ -10,36 +10,64 @@ import UIKit
 
 class ProductDetailVC: UIViewController {
 
+    @IBOutlet weak var myScroll: UIScrollView!
     @IBOutlet weak var coverImgView: UIImageView!
     @IBOutlet weak var imageCV: UICollectionView!
     @IBOutlet weak var nameLbl: Label!
     @IBOutlet weak var brandLbl: Label!
     @IBOutlet weak var skuLbl: Label!
-    @IBOutlet weak var sizeLbl: Label!
     @IBOutlet weak var quantityBtn: Button!
-    @IBOutlet weak var colorView: View!
     @IBOutlet weak var priceLbl: Label!
     @IBOutlet weak var categoryLbl: Label!
     @IBOutlet weak var soldByLbl: Label!
     @IBOutlet weak var stockLbl: Label!
     @IBOutlet weak var descBtn: Button!
     @IBOutlet weak var vendorBtn: Button!
-    @IBOutlet weak var moreProductBtn: Button!
     @IBOutlet weak var productCV: UICollectionView!
+    @IBOutlet weak var descLbl: Label!
     
     var selectedImageIndex = 0
-    var productData = ProductModel.init([String : Any]())
+    var product = ProductModel.init([String : Any]())
+    var productDetail = ProductDetailModel.init([String : Any]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         registerCollectionView()
+        setupProduct()
         serviceCallToGetProductDetail()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate().sharedDelegate().hideTabBar()
+    }
+    
+    func setupProduct() {
+        setImageBackgroundImage(coverImgView, product.thumbnail, IMAGE.PLACEHOLDER)
+        imageCV.reloadData()
+        nameLbl.text = product.title
+        brandLbl.text = product.brands.name
+        quantityBtn.setTitle("1", for: .normal)
+        priceLbl.text = product.price
+        soldByLbl.text = "Sold By: " + product.vendor
+    }
+    
+    func setupProductDetail() {
+        setImageBackgroundImage(coverImgView, product.thumbnail, IMAGE.PLACEHOLDER)
+        imageCV.reloadData()
+        nameLbl.text = productDetail.get_name
+        brandLbl.text = product.brands.name
+        skuLbl.text = productDetail.get_sku
+        quantityBtn.setTitle("1", for: .normal)
+        priceLbl.text = displayPriceWithCurrency(productDetail.get_price)
+        let tempCat = "Categories: " + productDetail.get_categories.html2String
+        categoryLbl.attributedText = attributedStringWithColor(tempCat, ["Categories:"], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 14.0))
+        soldByLbl.attributedText = attributedStringWithColor("Sold By: " + product.vendor, ["Sold By:"], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 14.0))
+        stockLbl.text = getStockStatus(productDetail.get_stock_status)
+        stockLbl.textColor = getStockStatusColor(productDetail.get_stock_status)
+        clickToSelectTab(descBtn)
+        productCV.reloadData()
     }
     
     //MARK:- Button click event
@@ -52,10 +80,6 @@ class ProductDetailVC: UIViewController {
     }
     
     @IBAction func clickToCircle(_ sender: Any) {
-        
-    }
-    
-    @IBAction func clickToSelectSize(_ sender: UIButton) {
         
     }
     
@@ -73,30 +97,23 @@ class ProductDetailVC: UIViewController {
     }
     
     @IBAction func clickToAddToCart(_ sender: Any) {
-        
-    }
-    
-    @IBAction func clickToSelectColor(_ sender: UIButton) {
-        
+        if Int((quantityBtn.titleLabel?.text)!)! > 0 {
+            serviceCallToAddToCart()
+        }
     }
     
     @IBAction func clickToSelectTab(_ sender: UIButton) {
         descBtn.backgroundColor = ClearColor
         vendorBtn.backgroundColor = ClearColor
-        moreProductBtn.backgroundColor = ClearColor
         descBtn.isSelected = false
         vendorBtn.isSelected = false
-        moreProductBtn.isSelected = false
         sender.backgroundColor = DarkYellowColor
         sender.isSelected = true
         if sender == descBtn {
-            
+            descLbl.text = productDetail.get_description
         }
         else if sender == vendorBtn {
-            
-        }
-        else if sender == moreProductBtn {
-            
+            descLbl.text = "VENDOR INFORMATION\n\nStore Name: " + product.vendor
         }
     }
     
@@ -122,9 +139,9 @@ extension ProductDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == imageCV {
-            return 4
+            return (product.thumbnail == "") ? 0 : 1
         }
-        return 3
+        return productDetail.related_products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -138,6 +155,7 @@ extension ProductDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == imageCV {
             let cell : ProductImageCVC = imageCV.dequeueReusableCell(withReuseIdentifier: "ProductImageCVC", for: indexPath) as! ProductImageCVC
+            setImageBackgroundImage(cell.imgView, product.thumbnail, IMAGE.PLACEHOLDER)
             cell.outerView.setCornerRadius((imageCV.frame.size.width-10)/2)
             if selectedImageIndex == indexPath.row {
                 cell.outerView.layer.borderColor = DarkYellowColor.cgColor
@@ -147,7 +165,7 @@ extension ProductDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
             return cell
         }else{
             let cell : DisplayProductCVC = productCV.dequeueReusableCell(withReuseIdentifier: "DisplayProductCVC", for: indexPath) as! DisplayProductCVC
-            
+            cell.setupDetails(productDetail.related_products[indexPath.row])
             return cell
         }
     }
@@ -157,13 +175,28 @@ extension ProductDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
             selectedImageIndex = indexPath.row
             imageCV.reloadData()
         }
+        else if collectionView == productCV {
+            product = productDetail.related_products[indexPath.row]
+            serviceCallToGetProductDetail()
+        }
     }
 }
 
 extension ProductDetailVC {
     func serviceCallToGetProductDetail() {
-        ProductAPIManager.shared.serviceCallToGetProductDetail(productData.id) { (dict) in
-            
+        ProductAPIManager.shared.serviceCallToGetProductDetail(product.id) { (dict) in
+            self.productDetail = ProductDetailModel.init(dict)
+            self.setupProductDetail()
+            self.myScroll.setContentOffset(.zero, animated: true)
+        }
+    }
+    
+    func serviceCallToAddToCart() {
+        var param = [String : Any]()
+        param["product_id"] = product.id
+        param["quantity"] = Int((quantityBtn.titleLabel?.text)!)!
+        ProductAPIManager.shared.serviceCallToAddToCart(param) {
+            self.quantityBtn.setTitle("1", for: .normal)
         }
     }
 }

@@ -24,6 +24,41 @@ struct ProductModel {
     }
 }
 
+struct ProductDetailModel {
+    var get_total_sales, get_stock_quantity : Int!
+    var get_name, get_status, get_description, get_short_description, get_sku, get_price, get_regular_price, get_sale_price, get_tax_status, get_stock_status, get_purchase_note, get_categories : String!
+    var get_featured, get_virtual, get_manage_stock : Bool!
+    var related_products : [ProductModel]!
+    
+    init(_ dict : [String : Any])
+    {
+        get_total_sales = AppModel.shared.getIntData(dict, "get_total_sales")
+        get_stock_quantity = AppModel.shared.getIntData(dict, "get_stock_quantity")
+        get_name = dict["get_name"] as? String ?? ""
+        get_status = dict["get_status"] as? String ?? ""
+        get_description = dict["get_description"] as? String ?? ""
+        get_short_description = dict["get_short_description"] as? String ?? ""
+        get_sku = dict["get_sku"] as? String ?? ""
+        get_tax_status = dict["get_tax_status"] as? String ?? ""
+        get_stock_status = dict["get_stock_status"] as? String ?? ""
+        get_purchase_note = dict["get_purchase_note"] as? String ?? ""
+        get_categories = dict["get_categories"] as? String ?? ""
+        get_price = AppModel.shared.getStringData(dict, "get_price")
+        get_regular_price = AppModel.shared.getStringData(dict, "get_regular_price")
+        get_sale_price = AppModel.shared.getStringData(dict, "get_sale_price")
+        get_featured = dict["get_featured"] as? Bool ?? false
+        get_virtual = dict["get_virtual"] as? Bool ?? false
+        get_manage_stock = dict["get_manage_stock"] as? Bool ?? false
+        
+        related_products = [ProductModel]()
+        if let data = dict["related_products"] as? [[String : Any]] {
+            for temp in data {
+                related_products.append(ProductModel.init(temp))
+            }
+        }
+    }
+}
+
 struct BrandModel {
     var count, parent, term_group, term_id, term_taxonomy_id : Int!
     var desc, filter, name, slug, taxonomy : String!

@@ -430,3 +430,21 @@ func getDiscountPrice(_ price : Float, _ discount : Int) -> Float {
     let newPrice = price - (price * Float(discount) / 100)
     return newPrice
 }
+
+func getStockStatus(_ status : String) -> String {
+    if status == "instock" {
+        return "In stock"
+    }
+    else {
+        return "Out of stock"
+    }
+}
+
+func getStockStatusColor(_ status : String) -> UIColor {
+    if status == "instock" {
+        return GreenColor
+    }
+    else {
+        return UIColor.red
+    }
+}
