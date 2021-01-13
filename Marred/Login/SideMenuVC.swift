@@ -13,6 +13,9 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var profileImgBtn: Button!
+    @IBOutlet weak var nameLbl: Label!
+    @IBOutlet weak var emailLbl: Label!
     
     var arrMenu = [MenuModel]()
     
@@ -20,9 +23,17 @@ class SideMenuVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUserData), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
         registerTableViewMethod()
         loginView.isHidden = true
         profileView.isHidden = false
+        
+        updateUserData()
+    }
+    
+    @objc func updateUserData() {
+        nameLbl.text = AppModel.shared.currentUser.display_name
+        emailLbl.text = AppModel.shared.currentUser.user_email
     }
     
     //MARK:- Button click event

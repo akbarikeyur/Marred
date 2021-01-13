@@ -11,6 +11,10 @@
 		79100C132584A5E000000215 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79100C122584A5E000000215 /* CheckoutVC.swift */; };
 		79100C162584AE4B00000215 /* CheckoutOrderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79100C142584AE4B00000215 /* CheckoutOrderTVC.swift */; };
 		79100C172584AE4B00000215 /* CheckoutOrderTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79100C152584AE4B00000215 /* CheckoutOrderTVC.xib */; };
+		791E030425AC61FE003C15C8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791E030325AC61FE003C15C8 /* LoginVC.swift */; };
+		791E030625AC6218003C15C8 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791E030525AC6218003C15C8 /* SignupVC.swift */; };
+		791E030825AC6228003C15C8 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791E030725AC6228003C15C8 /* ForgotPasswordVC.swift */; };
+		791E030A25AC6961003C15C8 /* LoginAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791E030925AC6960003C15C8 /* LoginAPIManager.swift */; };
 		7920BD222584EB130065AEEF /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7920BD212584EB130065AEEF /* Dashboard.storyboard */; };
 		7920BD252584F02B0065AEEF /* DealofDaysVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920BD242584F02B0065AEEF /* DealofDaysVC.swift */; };
 		7920BD292584F1FB0065AEEF /* DealProductCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920BD272584F1FB0065AEEF /* DealProductCVC.swift */; };
@@ -142,6 +146,10 @@
 		79100C122584A5E000000215 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		79100C142584AE4B00000215 /* CheckoutOrderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutOrderTVC.swift; sourceTree = "<group>"; };
 		79100C152584AE4B00000215 /* CheckoutOrderTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutOrderTVC.xib; sourceTree = "<group>"; };
+		791E030325AC61FE003C15C8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		791E030525AC6218003C15C8 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		791E030725AC6228003C15C8 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		791E030925AC6960003C15C8 /* LoginAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPIManager.swift; sourceTree = "<group>"; };
 		7920BD212584EB130065AEEF /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		7920BD242584F02B0065AEEF /* DealofDaysVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealofDaysVC.swift; sourceTree = "<group>"; };
 		7920BD272584F1FB0065AEEF /* DealProductCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealProductCVC.swift; sourceTree = "<group>"; };
@@ -327,6 +335,9 @@
 		79220C312580F49D00329AC8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				791E030325AC61FE003C15C8 /* LoginVC.swift */,
+				791E030525AC6218003C15C8 /* SignupVC.swift */,
+				791E030725AC6228003C15C8 /* ForgotPasswordVC.swift */,
 				79220C322580F4DA00329AC8 /* SideMenuVC.swift */,
 				79220C392580FD9F00329AC8 /* API Model */,
 				79220C342580FC9A00329AC8 /* Tableview Cell */,
@@ -348,6 +359,7 @@
 			children = (
 				79220C3A2580FDB100329AC8 /* menu.json */,
 				79220C3C2580FE5A00329AC8 /* LoginModel.swift */,
+				791E030925AC6960003C15C8 /* LoginAPIManager.swift */,
 			);
 			path = "API Model";
 			sourceTree = "<group>";
@@ -804,6 +816,7 @@
 				79BF362F257E46A4006491C5 /* CollectionView.swift in Sources */,
 				79BF362A257E46A4006491C5 /* Fonts.swift in Sources */,
 				794B1C152580E65B00A7F391 /* PavillionShopCVC.swift in Sources */,
+				791E030425AC61FE003C15C8 /* LoginVC.swift in Sources */,
 				7920BD292584F1FB0065AEEF /* DealProductCVC.swift in Sources */,
 				7920BD302585062A0065AEEF /* BuyerDashboardVC.swift in Sources */,
 				792DAE64258A34D7008E1343 /* BookmarkVC.swift in Sources */,
@@ -832,6 +845,7 @@
 				792DAE5D258A29C8008E1343 /* MyAddressTVC.swift in Sources */,
 				79BF3636257E46A4006491C5 /* TextView.swift in Sources */,
 				79EAD237257F900A00DC6422 /* PavilionProductTVC.swift in Sources */,
+				791E030825AC6228003C15C8 /* ForgotPasswordVC.swift in Sources */,
 				7920BD252584F02B0065AEEF /* DealofDaysVC.swift in Sources */,
 				79FC89902591F77900DCCFE9 /* HomeAPIManager.swift in Sources */,
 				79BF3633257E46A4006491C5 /* GradientLayer.swift in Sources */,
@@ -845,6 +859,7 @@
 				79220C3F25810A1000329AC8 /* SubCategoryVC.swift in Sources */,
 				79BF3650257E5B84006491C5 /* TopCategoryCVC.swift in Sources */,
 				7932239D258B733200ACF496 /* DashboardProductTVC.swift in Sources */,
+				791E030A25AC6961003C15C8 /* LoginAPIManager.swift in Sources */,
 				79BF3621257E46A4006491C5 /* UIView+ParentController.swift in Sources */,
 				79EAD233257F8A4000DC6422 /* BannerImageCVC.swift in Sources */,
 				793223AA258BA2DD00ACF496 /* SellerPaymentSettingTabVC.swift in Sources */,
@@ -878,6 +893,7 @@
 				794B1C0E2580DF8500A7F391 /* CategoryVC.swift in Sources */,
 				79BF364B257E5A5E006491C5 /* ShopCategoryTVC.swift in Sources */,
 				79BF362C257E46A4006491C5 /* Label.swift in Sources */,
+				791E030625AC6218003C15C8 /* SignupVC.swift in Sources */,
 				79A4607E258B362300A65BDE /* SellerDashboardTabVC.swift in Sources */,
 				79BF363A257E46A4006491C5 /* CustomTabBarView.swift in Sources */,
 				792DAE5A258A283D008E1343 /* BuyerAddressTabVC.swift in Sources */,

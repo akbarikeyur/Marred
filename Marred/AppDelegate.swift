@@ -28,7 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.backgroundColor = WhiteColor
         
-        navigateToDashBoard()
+        if isUserLogin() {
+            AppModel.shared.currentUser = getLoginUserData()
+            if AppModel.shared.currentUser != nil && AppModel.shared.currentUser.ID != 0 {
+                navigateToDashBoard()
+            }
+        }
         return true
     }
 
@@ -156,8 +161,13 @@ extension UIApplication {
 }
 
 extension AppDelegate {
-    
     func serviceCallToGetCategory() {
         HomeAPIManager.shared.serviceCallToGetCategory()
+    }
+    
+    func serviceCallToGetUserDetail() {
+        LoginAPIManager.shared.serviceCallToGetUserDetail(["user_id" : AppModel.shared.currentUser.ID!]) {
+            
+        }
     }
 }

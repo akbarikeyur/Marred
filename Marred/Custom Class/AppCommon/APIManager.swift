@@ -14,6 +14,11 @@ import Alamofire
 struct API {
     static let BASE_URL = "https://maared24.com/wp-json/"
     
+    static let LOGIN                                  =       BASE_URL + "v1/user/signin"
+    static let SIGNUP                                 =       BASE_URL + "v1/user/register"
+    static let FORGOT_PASSWORD                        =       BASE_URL + "v1/user/forgotpassword"
+    static let GET_USER_DETAIL                        =       BASE_URL + "v1/user/getuserdetail"
+    
     static let GET_CATEGORY                           =       BASE_URL + "v1/get_cateogories"
     static let GET_PAVILION_CATEGORY                  =       BASE_URL + "v1/pavilions"
     

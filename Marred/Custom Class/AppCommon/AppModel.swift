@@ -11,10 +11,10 @@ import UIKit
 class AppModel: NSObject {
     
     static let shared = AppModel()
-//    var currentUser : UserModel!
+    var currentUser : UserModel!
     
     func resetData() {
-//        currentUser = UserModel.init(dict: [String : Any]())
+        currentUser = UserModel.init([String : Any]())
     }
     
 //    func getPropertyTypeArrOfDictionary(arr:[PropertyTypeModel]) -> [[String:Any]] {
