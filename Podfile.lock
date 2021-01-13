@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.9.1)
   - DropDown (2.3.13)
+  - Foloosi-iOS-SDK (1.0.7)
   - IQKeyboardManagerSwift (6.5.5)
   - JXPageControl (0.1.3):
     - JXPageControl/Common (= 0.1.3)
@@ -26,6 +27,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4)
   - DropDown
+  - Foloosi-iOS-SDK (~> 1.0.7)
   - IQKeyboardManagerSwift
   - JXPageControl
   - MFSideMenu
@@ -40,6 +42,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - DropDown
+    - Foloosi-iOS-SDK
     - IQKeyboardManagerSwift
     - JXPageControl
     - MFSideMenu
@@ -53,6 +56,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Foloosi-iOS-SDK: 00b4580e5bce2f70320fd38e37f75c1988a4ef20
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   JXPageControl: eea52838699a4949063e600b25eb9e8b6e20ae3f
   MFSideMenu: 268122e6894f2747fc3a2b48578100b232506c60
@@ -63,6 +67,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: a091159df5e6f90747b8a37c0d94e170417382fb
+PODFILE CHECKSUM: a56363e52d000f1f3ae15d81c2f5ca8b4e63a623
 
 COCOAPODS: 1.9.3

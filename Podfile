@@ -17,4 +17,5 @@ target 'Marred' do
   pod 'Alamofire', '~> 4'
   pod 'SwiftyJSON'
   pod 'JXPageControl'
+  pod 'Foloosi-iOS-SDK', '~> 1.0.7'
 end

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FoloosiSdk
 
 class CheckoutVC: UIViewController {
 
@@ -52,6 +53,8 @@ class CheckoutVC: UIViewController {
     func configUI() {
         loginLbl.attributedText = getAttributeStringWithColor(loginLbl.text!, ["Log in"], color: BlackColor, font: UIFont(name: APP_BOLD, size: 14.0), isUnderLine: true)
         registerTableViewMethod()
+        
+        FoloosiPay.initSDK(merchantKey: "live_$2y$10$PbNf0Ij5CjOElRO7WK3s0OSfRorPhwmIq5fwRTS5azZmRFmYg.jeq",withDelegate: self)
     }
     
     //MARK:- Button click event
@@ -86,7 +89,7 @@ class CheckoutVC: UIViewController {
     }
     
     @IBAction func clickToPayNow(_ sender: Any) {
-        
+        setupForPayment()
     }
     
     /*
@@ -131,4 +134,34 @@ extension CheckoutVC : UITableViewDelegate, UITableViewDataSource {
     func updateTableviewHeight() {
         constraintHeightOrderTbl.constant = 130*3
     }
+}
+
+extension CheckoutVC : FoloosiDelegate {
+    
+    func setupForPayment() {
+        let orderData = OrderData()
+        orderData.orderTitle = "Title" // Any Title
+        orderData.currencyCode = "AED"  // 3 digit currency code like "AED"
+        orderData.customColor = "#12233"  // make payment page loading color as app color.
+        orderData.orderAmount = 100  // in double format ##,###.##
+        orderData.orderId = "1234"  // unique order id.
+        orderData.orderDescription = "Test Order"  // any description.
+        let customer = Customer()
+        customer.customerEmail = "keyurdakbari@gmail.com"
+        customer.customerName = "Keyur"
+        customer.customerPhoneNumber = "1234567890"
+        orderData.customer = customer
+        FLog.setLogVisible(debug: true)
+        FoloosiPay.makePayment(orderData: orderData)
+    }
+    
+    func onPaymentError(descriptionOfError: String) {
+        printData("Failure Callback.")
+    }
+    
+    func onPaymentSuccess(paymentId: String) {
+        printData("Success Callback")
+    }
+    
+    
 }
