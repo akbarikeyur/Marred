@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -2828,7 +2829,7 @@
                                             <constraint firstAttribute="height" constant="36" id="Agy-IR-wyj"/>
                                             <constraint firstAttribute="width" constant="36" id="OYK-PH-p41"/>
                                         </constraints>
-                                        <state key="normal" image="heart"/>
+                                        <state key="normal" image="heart_off"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="18"/>
@@ -3085,7 +3086,7 @@
         <image name="dropdown" width="7.5" height="5"/>
         <image name="flag" width="26" height="20"/>
         <image name="gift" width="23" height="22.5"/>
-        <image name="heart" width="21" height="18"/>
+        <image name="heart_off" width="20" height="20"/>
         <image name="menu" width="25" height="15"/>
         <image name="next_yellow" width="30" height="30"/>
         <image name="radio_off" width="17" height="17"/>

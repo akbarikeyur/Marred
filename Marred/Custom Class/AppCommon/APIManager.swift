@@ -28,6 +28,10 @@ struct API {
     static let ADD_TO_CART                            =       BASE_URL + "cocart/v1/add-item"
     static let CLEAR_CART                             =       BASE_URL + "cocart/v1/clear"
     static let GET_CART_COUNT                         =       BASE_URL + "cocart/v1/count-items"
+    
+    static let ADD_BOOKMARK                           =       BASE_URL + "v1/bookmark/addbookmark"
+    static let REMOVE_BOOKMARK                        =       BASE_URL + "v1/bookmark/removebookmark"
+    static let GET_BOOKMARK                           =       BASE_URL + "v1/bookmark/getbookmark"
 }
 
 public class APIManager {

@@ -162,6 +162,4 @@ extension CheckoutVC : FoloosiDelegate {
     func onPaymentSuccess(paymentId: String) {
         printData("Success Callback")
     }
-    
-    
 }

@@ -23,6 +23,7 @@ class ProductDetailVC: UIViewController {
     @IBOutlet weak var stockLbl: Label!
     @IBOutlet weak var descBtn: Button!
     @IBOutlet weak var vendorBtn: Button!
+    @IBOutlet weak var relatedProductView: UIView!
     @IBOutlet weak var productCV: UICollectionView!
     @IBOutlet weak var descLbl: Label!
     
@@ -67,6 +68,12 @@ class ProductDetailVC: UIViewController {
         stockLbl.text = getStockStatus(productDetail.get_stock_status)
         stockLbl.textColor = getStockStatusColor(productDetail.get_stock_status)
         clickToSelectTab(descBtn)
+        
+        if productDetail.related_products.count == 0 {
+            relatedProductView.isHidden = true
+        }else{
+            relatedProductView.isHidden = false
+        }
         productCV.reloadData()
     }
     
@@ -75,8 +82,14 @@ class ProductDetailVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func clickToWishList(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 3])
+    @IBAction func clickToWishList(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        var param = [String : Any]()
+        param["user_id"] = AppModel.shared.currentUser.ID
+        param["product_id"] = product.id
+        ProductAPIManager.shared.serviceCallToAddBookmark(param) {
+            
+        }
     }
     
     @IBAction func clickToCircle(_ sender: Any) {

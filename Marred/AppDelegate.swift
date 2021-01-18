@@ -74,10 +74,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func navigateToLogin() {
+        let navigationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "LoginVCNav") as! UINavigationController
+        UIApplication.shared.keyWindow?.rootViewController = navigationVC
+    }
+    
     func navigaeToLogout() {
         AppModel.shared.resetData()
         removeUserDefaultValues()
-        navigateToDashBoard()
+        navigateToLogin()
     }
     
     //MARK:- Tab Bar

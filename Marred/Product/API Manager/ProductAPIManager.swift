@@ -40,4 +40,33 @@ public class ProductAPIManager {
             }
         }
     }
+    
+    func serviceCallToAddBookmark(_ param : [String : Any], _ completion: @escaping () -> Void) {
+        APIManager.shared.callPostRequest(API.ADD_BOOKMARK, param, false) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                completion()
+            }
+        }
+    }
+    
+    func serviceCallToRemoveBookmark(_ param : [String : Any], _ completion: @escaping () -> Void) {
+        APIManager.shared.callPostRequest(API.REMOVE_BOOKMARK, param, false) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                completion()
+            }
+        }
+    }
+    
+    func serviceCallToGetBookmark(_ param : [String : Any], _ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
+        APIManager.shared.callPostRequest(API.GET_BOOKMARK, param, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [[String : Any]] {
+                    completion(data)
+                }
+            }
+        }
+    }
 }
