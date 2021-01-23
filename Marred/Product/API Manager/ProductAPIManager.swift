@@ -32,6 +32,15 @@ public class ProductAPIManager {
         }
     }
     
+    func serviceCallToGetCart(_ completion: @escaping () -> Void) {
+        APIManager.shared.callGetRequest(API.GET_CART, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                completion()
+            }
+        }
+    }
+    
     func serviceCallToClearToCart(_ param : [String : Any], _ completion: @escaping () -> Void) {
         APIManager.shared.callPostRequest(API.CLEAR_CART, param, false) { (dict) in
             printData(dict)

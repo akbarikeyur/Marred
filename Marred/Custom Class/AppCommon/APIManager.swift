@@ -15,7 +15,7 @@ struct API {
     static let BASE_URL = "https://maared24.com/wp-json/"
     
     static let LOGIN                                  =       BASE_URL + "v1/user/signin"
-    static let SIGNUP                                 =       BASE_URL + "wc/v3/customers"
+    static let SIGNUP                                 =       BASE_URL + "v1/user/register"
     static let FORGOT_PASSWORD                        =       BASE_URL + "v1/user/forgotpassword"
     static let GET_USER_DETAIL                        =       BASE_URL + "v1/user/getuserdetail"
     
@@ -28,6 +28,7 @@ struct API {
     static let ADD_TO_CART                            =       BASE_URL + "cocart/v1/add-item"
     static let CLEAR_CART                             =       BASE_URL + "cocart/v1/clear"
     static let GET_CART_COUNT                         =       BASE_URL + "cocart/v1/count-items"
+    static let GET_CART                               =       BASE_URL + "cocart/v1/get-cart"
     
     static let ADD_BOOKMARK                           =       BASE_URL + "v1/bookmark/addbookmark"
     static let REMOVE_BOOKMARK                        =       BASE_URL + "v1/bookmark/removebookmark"
@@ -58,9 +59,9 @@ public class APIManager {
     
     func getJsonHeader() -> HTTPHeaders {
         if isUserLogin() {
-            return ["Content-Type":"application/json", "Accept":"application/json"]
+            return ["Content-Type":"application/json", "Accept":"application/json", "Authorization" : "Bearer " + getApiKey()]
         }else{
-            return ["Content-Type":"application/json", "Accept":"application/json", "Authorization" : "Basic eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbWFhcmVkMjQuY29tIiwiaWF0IjoxNjExMTQ5NjA0LCJuYmYiOjE2MTExNDk2MDQsImV4cCI6MTYxMTc1NDQwNCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMiJ9fX0.mhzNXnc1cjAmam_tRDBh3yJzv2wvWSyMpYbBxe5WJX8"]
+            return ["Content-Type":"application/json", "Accept":"application/json", "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbWFhcmVkMjQuY29tIiwiaWF0IjoxNjExMTQ5NjA0LCJuYmYiOjE2MTExNDk2MDQsImV4cCI6MTYxMTc1NDQwNCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMiJ9fX0.mhzNXnc1cjAmam_tRDBh3yJzv2wvWSyMpYbBxe5WJX8"]
         }
     }
     
@@ -70,7 +71,7 @@ public class APIManager {
     
     func getMultipartHeader() -> [String:String]{
         if isUserLogin() {
-            return ["Content-Type":"multipart/form-data", "Accept":"application/json"]
+            return ["Content-Type":"multipart/form-data", "Accept":"application/json", "Authorization" : "Bearer " + getApiKey()]
         }else{
             return ["Content-Type":"multipart/form-data", "Accept":"application/json"]
         }
@@ -113,7 +114,7 @@ public class APIManager {
     }
     
     //MARK:- Get request
-    func callGetRequest(_ api : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [[String:Any]]) -> Void) {
+    func callGetRequest(_ api : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
         if !APIManager.isConnectedToNetwork()
         {
             APIManager().networkErrorMsg()
@@ -127,7 +128,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                if let result = response.result.value as? [[String:Any]] {
+                if let result = response.result.value as? [String:Any] {
                     completion(result)
                     return
                 }
@@ -145,6 +146,37 @@ public class APIManager {
     }
     
     //MARK:- Post request
+    func callPostRequestWithBasicAuth(_ api : String, _ params : [String : Any], _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        if isLoaderDisplay {
+            showLoader()
+        }
+        
+        Alamofire.request(api, method: .post, parameters: params, encoding: JSONEncoding.default, headers: getJsonHeader()).authenticate(user: "ck_eb581e733c1f69769fa0ca5407cd56f7f7137942", password: "cs_bedc787fb94f3adeffae2e40475b3fbae5812305").responseJSON { (response) in
+            removeLoader()
+            switch response.result {
+            case .success:
+                if let result = response.result.value as? [String:Any] {
+                    completion(result)
+                    return
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+    }
+    
     func callPostRequest(_ api : String, _ params : [String : Any], _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
         if !APIManager.isConnectedToNetwork()
         {

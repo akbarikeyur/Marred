@@ -462,9 +462,9 @@
 				79BF3647257E5A24006491C5 /* Home */,
 				79752000258251620020FEEE /* Product */,
 				7920BD232584EFCF0065AEEF /* Dashboard */,
+				79BF35CD257E4686006491C5 /* Custom Class */,
 				79BF35C2257E4468006491C5 /* Assets.xcassets */,
 				79BF35C4257E4468006491C5 /* LaunchScreen.storyboard */,
-				79BF35CD257E4686006491C5 /* Custom Class */,
 				79BF35C7257E4468006491C5 /* Info.plist */,
 			);
 			path = Marred;

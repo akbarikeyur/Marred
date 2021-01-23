@@ -28,6 +28,7 @@ class ShoppingCartVC: UIViewController {
 
         // Do any additional setup after loading the view.
         registerTableViewMethod()
+        serviceCallToGetCart()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,5 +120,13 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource {
     
     func updateTableviewHeight() {
         constraintHeightTblView.constant = 130*3
+    }
+}
+
+extension ShoppingCartVC {
+    func serviceCallToGetCart() {
+        ProductAPIManager.shared.serviceCallToGetCart {
+            
+        }
     }
 }

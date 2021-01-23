@@ -22,6 +22,8 @@ class SignupVC: UIViewController {
     @IBOutlet weak var pavilionFlagImg: UIImageView!
     @IBOutlet weak var pavilionTxt: TextField!
     @IBOutlet weak var categoryTxt: TextField!
+    @IBOutlet weak var customerBtn: Button!
+    @IBOutlet weak var vendorBtn: Button!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,13 @@ class SignupVC: UIViewController {
         
     }
     
+    @IBAction func clickToSelectUserRole(_ sender: UIButton) {
+        customerBtn.isSelected = false
+        vendorBtn.isSelected = false
+        sender.isSelected = true
+        
+    }
+    
     @IBAction func clickToSubmit(_ sender: Any) {
         self.view.endEditing(true)
         if fnameTxt.text?.trimmed == "" {
@@ -67,13 +76,19 @@ class SignupVC: UIViewController {
         else {
             var param = [String : Any]()
             param["email"] = emailTxt.text
-            param["first_name"] = fnameTxt.text
-            param["last_name"] = lnameTxt.text
+            param["firstname"] = fnameTxt.text
+            param["lastname"] = lnameTxt.text
             param["username"] = unameTxt.text
-            param["billing"] = [String : Any]()
-            param["shipping"] = [String : Any]()
+            if customerBtn.isSelected {
+                param["role"] = "customer"
+            }else{
+                param["role"] = "vendor"
+            }
             printData(param)
             LoginAPIManager.shared.serviceCallToSignup(param) {
+                showAlert("", message: "A password will be sent to your email address.") {
+                    
+                }
                 self.navigationController?.popViewController(animated: true)
             }
         }

@@ -68,13 +68,12 @@ class ProductDetailVC: UIViewController {
         stockLbl.text = getStockStatus(productDetail.get_stock_status)
         stockLbl.textColor = getStockStatusColor(productDetail.get_stock_status)
         clickToSelectTab(descBtn)
-        
+        productCV.reloadData()
         if productDetail.related_products.count == 0 {
             relatedProductView.isHidden = true
         }else{
             relatedProductView.isHidden = false
         }
-        productCV.reloadData()
     }
     
     //MARK:- Button click event

@@ -80,6 +80,9 @@ func setLoginUserData()
     if AppModel.shared.currentUser != nil && AppModel.shared.currentUser.ID != 0 {
         setDataToPreference(data: AppModel.shared.currentUser.dictionary() as AnyObject, forKey: "login_user_data")
         setIsUserLogin(true)
+        if AppModel.shared.currentUser.token != "" {
+            setApiKey(AppModel.shared.currentUser.token)
+        }
     }
 }
 

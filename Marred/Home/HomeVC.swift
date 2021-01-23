@@ -33,6 +33,7 @@ class HomeVC: UIViewController {
         tblView.reloadData()
         
         AppDelegate().sharedDelegate().serviceCallToGetCategory()
+        AppDelegate().sharedDelegate().serviceCallToGetUserDetail()
     }
     
     override func viewWillAppear(_ animated: Bool) {
