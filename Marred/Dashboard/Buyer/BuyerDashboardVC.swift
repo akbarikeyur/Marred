@@ -13,7 +13,7 @@ class BuyerDashboardVC: UIViewController {
     @IBOutlet weak var tabCV: UICollectionView!
     @IBOutlet weak var mainContainerView: UIView!
     
-    var arrTabData = ["Dashboard", "Orders", "Downloads", "Addresses", "Account details"]
+    var arrTabData = ["Dashboard", "Orders", "Addresses", "Account details"]
     var selectedTab = 0
     
     let dashboardTab : BuyerDashboardTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerDashboardTabVC") as! BuyerDashboardTabVC
@@ -118,11 +118,11 @@ extension BuyerDashboardVC : UICollectionViewDelegate, UICollectionViewDataSourc
             displaySubViewtoParentView(mainContainerView, subview: orderTab.view)
             orderTab.setupDetails()
         }
-        else if selectedTab == 3 {
+        else if selectedTab == 2 {
             displaySubViewtoParentView(mainContainerView, subview: addressTab.view)
             addressTab.setupDetails()
         }
-        else if selectedTab == 4 {
+        else if selectedTab == 3 {
             displaySubViewtoParentView(mainContainerView, subview: accountTab.view)
             accountTab.setupDetails()
         }

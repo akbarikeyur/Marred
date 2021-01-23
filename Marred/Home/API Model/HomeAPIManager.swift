@@ -21,7 +21,7 @@ public class HomeAPIManager {
     
     func serviceCallToGetCategory() {
         APIManager.shared.callPostRequest(API.GET_CATEGORY, ["cat_id" : 0], false) { (dict) in
-            printData(dict)
+//            printData(dict)
             if let status = dict["status"] as? String, status == "success" {
                 if let data = dict["data"] as? [[String : Any]] {
                     var arrCategory = [CategoryModel]()

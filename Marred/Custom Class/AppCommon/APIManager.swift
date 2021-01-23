@@ -32,6 +32,8 @@ struct API {
     static let GET_CART_COUNT                         =       BASE_URL + "cocart/v1/count-items"
     static let GET_CART                               =       BASE_URL + "cocart/v1/get-cart"
     
+    static let GET_PAYMENT_GATEWAY                    =       BASE_URL + "wc/v3/payment_gateways"
+    
     static let ADD_BOOKMARK                           =       BASE_URL + "v1/bookmark/addbookmark"
     static let REMOVE_BOOKMARK                        =       BASE_URL + "v1/bookmark/removebookmark"
     static let GET_BOOKMARK                           =       BASE_URL + "v1/bookmark/getbookmark"

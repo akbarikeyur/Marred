@@ -55,13 +55,27 @@ public class LoginAPIManager {
     }
     
     func serviceCallToGetUserDetail(_ param : [String : Any], _ completion: @escaping () -> Void) {
-        APIManager.shared.callPostRequest(API.GET_USER_DETAIL, param, true) { (dict) in
-            printData(dict)
+        APIManager.shared.callPostRequest(API.GET_USER_DETAIL, param, false) { (dict) in
+//            printData(dict)
             if let status = dict["status"] as? String, status == "success" {
                 if let data = dict["data"] as? [String : Any] {
                     if let tempDict = data["data"] as? [String : Any] {
                         AppModel.shared.currentUser = UserModel.init(tempDict)
                         setLoginUserData()
+                        completion()
+                        return
+                    }
+                }
+            }
+        }
+    }
+    
+    func serviceCallToUpdateUserDetail(_ param : [String : Any], _ completion: @escaping () -> Void) {
+        APIManager.shared.callPostRequest(API.SIGNUP, param, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [String : Any] {
+                    if let tempDict = data["data"] as? [String : Any] {
                         completion()
                         return
                     }

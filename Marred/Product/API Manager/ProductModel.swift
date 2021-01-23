@@ -16,9 +16,18 @@ struct ProductModel {
     init(_ dict : [String : Any])
     {
         id = AppModel.shared.getIntData(dict, "id")
-        price = AppModel.shared.getStringData(dict, "price")
+        if dict["price"] != nil {
+            price = AppModel.shared.getStringData(dict, "price")
+        }else if dict["get_price"] != nil {
+            price = AppModel.shared.getStringData(dict, "get_price")
+        }
+        
         thumbnail = dict["thumbnail"] as? String ?? ""
-        title = dict["title"] as? String ?? ""
+        if dict["title"] != nil {
+            title = dict["title"] as? String ?? ""
+        }else if dict["get_name"] != nil {
+            title = dict["get_name"] as? String ?? ""
+        }
         vendor = dict["vendor"] as? String ?? ""
         brands = BrandModel.init(dict["brands"] as? [String : Any] ?? [String : Any]())
     }

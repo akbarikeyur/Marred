@@ -17,8 +17,8 @@ class BannerImageCVC: UICollectionViewCell {
         // Initialization code
     }
 
-    func setupDetails(_ image : String) {
-        imgView.image = UIImage(named: image)
+    func setupDetails(_ url : String) {
+        setImageBackgroundImage(imgView, url, IMAGE.PLACEHOLDER)
     }
     
 }

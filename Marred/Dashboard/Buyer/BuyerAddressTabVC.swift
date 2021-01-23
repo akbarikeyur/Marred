@@ -11,37 +11,23 @@ import UIKit
 class BuyerAddressTabVC: UIViewController {
 
     @IBOutlet weak var billingTbl: UITableView!
-    @IBOutlet weak var constraintHeightBillingTbl: NSLayoutConstraint!
-    @IBOutlet weak var shippingTbl: UITableView!
-    @IBOutlet weak var constraintHeightShippingTbl: NSLayoutConstraint!
     
+    var arrAddress = [AddressModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         registerTableViewMethod()
+        arrAddress = [AddressModel]()
+        arrAddress.append(AppModel.shared.currentUser.billing)
+        arrAddress.append(AppModel.shared.currentUser.shipping)
+        billingTbl.reloadData()
     }
     
     func setupDetails() {
-        updateBillingTableHeight()
-        updateShippingTableHeight()
+        billingTbl.reloadData()
     }
     
-    @IBAction func clickToEditBilling(_ sender: Any) {
-        
-    }
-    
-    @IBAction func clickToAddMoreBilling(_ sender: Any) {
-        
-    }
-    
-    @IBAction func clickToEditShipping(_ sender: Any) {
-        
-    }
-    
-    @IBAction func clickToAddMoreShipping(_ sender: Any) {
-        
-    }
     
     /*
     // MARK: - Navigation
@@ -56,20 +42,14 @@ class BuyerAddressTabVC: UIViewController {
 }
 
 //MARK:- Tableview Method
-extension BuyerAddressTabVC : UITableViewDelegate, UITableViewDataSource {
+extension BuyerAddressTabVC : UITableViewDelegate, UITableViewDataSource, MyAddressDelegate {
     
     func registerTableViewMethod() {
         billingTbl.register(UINib.init(nibName: "MyAddressTVC", bundle: nil), forCellReuseIdentifier: "MyAddressTVC")
-        shippingTbl.register(UINib.init(nibName: "MyAddressTVC", bundle: nil), forCellReuseIdentifier: "MyAddressTVC")
-        updateBillingTableHeight()
-        updateShippingTableHeight()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == billingTbl {
-            return 4
-        }
-        return 5
+        return arrAddress.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -77,34 +57,22 @@ extension BuyerAddressTabVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == billingTbl {
-            let cell : MyAddressTVC = billingTbl.dequeueReusableCell(withIdentifier: "MyAddressTVC") as! MyAddressTVC
-            
-            cell.selectionStyle = .none
-            return cell
-        }else {
-            let cell : MyAddressTVC = shippingTbl.dequeueReusableCell(withIdentifier: "MyAddressTVC") as! MyAddressTVC
-            
-            cell.selectionStyle = .none
-            return cell
+        let cell : MyAddressTVC = billingTbl.dequeueReusableCell(withIdentifier: "MyAddressTVC") as! MyAddressTVC
+        cell.index = indexPath.row
+        cell.deleagate = self
+        cell.setupDetails(arrAddress[indexPath.row])
+        if indexPath.row == 0 {
+            cell.titleLbl.text = "Billing Address"
+        }else{
+            cell.titleLbl.text = "Shipping Address"
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        cell.selectionStyle = .none
+        return cell
     }
     
-    func updateBillingTableHeight() {
-        constraintHeightBillingTbl.constant = CGFloat.greatestFiniteMagnitude
-        billingTbl.reloadData()
-        billingTbl.layoutIfNeeded()
-        constraintHeightBillingTbl.constant = billingTbl.contentSize.height
-    }
-    
-    func updateShippingTableHeight() {
-        constraintHeightShippingTbl.constant = CGFloat.greatestFiniteMagnitude
-        shippingTbl.reloadData()
-        shippingTbl.layoutIfNeeded()
-        constraintHeightShippingTbl.constant = shippingTbl.contentSize.height
+    func updateAddress(_ index: Int, _ dict: AddressModel) {
+        arrAddress[index] = dict
+        billingTbl.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
 }

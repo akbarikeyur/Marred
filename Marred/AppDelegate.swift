@@ -176,4 +176,10 @@ extension AppDelegate {
             
         }
     }
+    
+    func serviceCallToGetPaymentGateway() {
+        ProductAPIManager.shared.serviceCallToGetPaymentGateway { (data) in
+            
+        }
+    }
 }

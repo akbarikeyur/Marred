@@ -78,4 +78,15 @@ public class ProductAPIManager {
             }
         }
     }
+    
+    func serviceCallToGetPaymentGateway(_ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
+        APIManager.shared.callGetRequest(API.GET_PAYMENT_GATEWAY, false) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [[String : Any]] {
+                    completion(data)
+                }
+            }
+        }
+    }
 }

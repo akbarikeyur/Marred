@@ -12,7 +12,7 @@ class BannerAdTVC: UITableViewCell {
 
     @IBOutlet weak var bannerCV: UICollectionView!
     
-    var arrImage = ["banner_yellow_1", "banner_yellow_2"]
+    var arrBanner = [String]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,16 +40,16 @@ extension BannerAdTVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrImage.count
+        return arrBanner.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 210, height: collectionView.frame.size.height)
+        return CGSize(width: SCREEN.WIDTH-20, height: collectionView.frame.size.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : BannerImageCVC = bannerCV.dequeueReusableCell(withReuseIdentifier: "BannerImageCVC", for: indexPath) as! BannerImageCVC
-        cell.setupDetails(arrImage[indexPath.row])
+        cell.setupDetails(arrBanner[indexPath.row])
         return cell
     }
 }

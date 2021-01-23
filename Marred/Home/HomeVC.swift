@@ -21,19 +21,20 @@ class HomeVC: UIViewController {
     @IBOutlet weak var tblView: UITableView!
     
     var arrData = [HomeDisplayModel]()
+    var arrBanner = [String]()
+    var arrHomeData = [HomeModel]()
+    var refreshControl = UIRefreshControl.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         registerTableViewMethod()
-        for temp in getJsonFromFile("Home") {
-            arrData.append(HomeDisplayModel.init(temp))
-        }
-        tblView.reloadData()
-        
         AppDelegate().sharedDelegate().serviceCallToGetCategory()
         AppDelegate().sharedDelegate().serviceCallToGetUserDetail()
+        AppDelegate().sharedDelegate().serviceCallToGetPaymentGateway()
+        refreshControl.addTarget(self, action: #selector(serviceCallToGetHome), for: .valueChanged)
+        tblView.refreshControl = refreshControl
         serviceCallToGetHome()
     }
     
@@ -51,8 +52,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func clickToWishList(_ sender: Any) {
-        serviceCallToGetHome()
-        //NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 3])
+        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 3])
     }
     
     @IBAction func clickToCart(_ sender: Any) {
@@ -92,12 +92,18 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         }
         else if dict.type == HOME.BANNER_AD {
             let cell : BannerAdTVC = tblView.dequeueReusableCell(withIdentifier: "BannerAdTVC") as! BannerAdTVC
+            cell.arrBanner = arrBanner
             cell.setupDetails()
             cell.selectionStyle = .none
             return cell
         }
         else if dict.type == HOME.PRODUCT_LIST {
             let cell : PavilionProductTVC = tblView.dequeueReusableCell(withIdentifier: "PavilionProductTVC") as! PavilionProductTVC
+            if arrBanner.count > 0 {
+                cell.dictHome = arrHomeData[indexPath.row-2]
+            }else{
+                cell.dictHome = arrHomeData[indexPath.row-1]
+            }
             cell.setupDetails()
             cell.selectionStyle = .none
             return cell
@@ -116,9 +122,26 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeVC {
-    func serviceCallToGetHome() {
-        HomeAPIManager.shared.serviceCallToGetHome { (data) in
-            
-        }
+    @objc func serviceCallToGetHome() {
+        refreshControl.endRefreshing()
+        HomeAPIManager.shared.serviceCallToGetHome { (dict) in
+            self.arrData = [HomeDisplayModel]()
+            self.arrData.append(HomeDisplayModel.init(["type":"CATEGORY_LIST"]))
+            if let temp = dict["home_banner"] as? [String] {
+                self.arrBanner = temp
+                self.arrData.append(HomeDisplayModel.init(["type":"BANNER_AD"]))
+            }
+            let arrKeys = dict["count"] as? [String] ?? [String]()
+            if let pavalionDict = dict["pavalion"] as? [String : Any] {
+                for temp in arrKeys {
+                    if let tempDict = pavalionDict[temp] as? [String : Any] {
+                        self.arrHomeData.append(HomeModel.init(tempDict))
+                        self.arrData.append(HomeDisplayModel.init(["type":"PRODUCT_LIST"]))
+                    }
+                }
+            }
+            self.arrData.append(HomeDisplayModel.init(["type":"CONTACT_INFO"]))
+            self.tblView.reloadData()
+         }
     }
 }

@@ -13,6 +13,7 @@ class SubCategoryVC: UIViewController {
     @IBOutlet weak var nameLbl: Label!
     @IBOutlet weak var categoryCV: UICollectionView!
     @IBOutlet weak var productCV: UICollectionView!
+    @IBOutlet weak var noDataFound: Label!
     
     var categoryData = CategoryModel.init([String : Any]())
     var arrSubCategory = [CategoryModel]()
@@ -135,6 +136,7 @@ extension SubCategoryVC {
                 self.page = 1
                 self.serviceCallToGetProductList()
             }
+            self.noDataFound.isHidden = (self.arrSubCategory.count > 0)
         }
     }
     

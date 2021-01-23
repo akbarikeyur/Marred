@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,91 +19,276 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyAddressTVC" id="KGk-i7-Jjw" customClass="MyAddressTVC" customModule="Marred" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRF-WG-n2H">
-                        <rect key="frame" x="10" y="10" width="38" height="37"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="37" id="VWJ-N3-4zW"/>
-                            <constraint firstAttribute="width" constant="38" id="xec-dg-azd"/>
-                        </constraints>
-                        <state key="normal" image="address_pin"/>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OM-WP-r4F">
-                        <rect key="frame" x="40" y="30" width="7" height="15"/>
-                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
-                        <color key="textColor" red="0.99607843139999996" green="0.37647058820000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="66 Al Marsa St - Dubai Marina 4 Floor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExF-pn-SCE" customClass="Label" customModule="Marred" customModuleProvider="target">
-                        <rect key="frame" x="58" y="13" width="252" height="16.5"/>
-                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
-                        <color key="textColor" red="0.30588235294117649" green="0.34509803921568627" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Billing Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExF-pn-SCE" customClass="Label" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="300" height="21.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ab"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                <real key="value" value="14"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
-                                <integer key="value" value="3"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United Arab Emirates" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VH-aN-wMF" customClass="Label" customModule="Marred" customModuleProvider="target">
-                        <rect key="frame" x="58" y="29.5" width="252" height="14.5"/>
-                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
-                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                <real key="value" value="12"/>
+                                <real key="value" value="18"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
                                 <integer key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dash_line" translatesAutoresizingMaskIntoConstraints="NO" id="dby-7R-n5j">
-                        <rect key="frame" x="10" y="56" width="300" height="1"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fo8-YX-R43" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="10" y="41.5" width="145" height="34"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0eQ-2K-V0k" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="165" y="41.5" width="145" height="34"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IO9-0l-gK9" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="10" y="85.5" width="300" height="34"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address line 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ow1-jd-TC6" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="10" y="129.5" width="300" height="34"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address line 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6a-2b-X6V" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="10" y="173.5" width="300" height="34"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="75V-Af-79D" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="10" y="217.5" width="300" height="34"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bu-JG-FVl" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="10" y="261.5" width="300" height="34"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u7y-qa-uVI" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="10" y="305.5" width="145" height="34"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kfg-s6-J3k" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="165" y="305.5" width="145" height="34"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZjY-xM-ifA" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="10" y="349.5" width="300" height="34"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone (000)000-0000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bQp-Ow-3Fn" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="10" y="393.5" width="300" height="34"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFr-wI-jU4" customClass="Button" customModule="Marred" customModuleProvider="target">
+                        <rect key="frame" x="230" y="437.5" width="80" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="1" id="sH8-vG-SXQ"/>
+                            <constraint firstAttribute="width" constant="80" id="9ja-Bq-FX7"/>
+                            <constraint firstAttribute="height" constant="30" id="vsu-by-ZhG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <state key="normal" title="Update">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="clickToUpdate:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dj5-nz-EHR"/>
+                        </connections>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dash_line" translatesAutoresizingMaskIntoConstraints="NO" id="dby-7R-n5j">
+                        <rect key="frame" x="10" y="479" width="300" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="cD9-zo-Zr5"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="ExF-pn-SCE" secondAttribute="trailing" constant="10" id="1ob-bA-p9J"/>
-                    <constraint firstAttribute="trailing" secondItem="dby-7R-n5j" secondAttribute="trailing" constant="10" id="5S4-jn-sdF"/>
-                    <constraint firstItem="1OM-WP-r4F" firstAttribute="bottom" secondItem="kRF-WG-n2H" secondAttribute="bottom" constant="-2" id="5rz-XV-Y2Z"/>
-                    <constraint firstItem="dby-7R-n5j" firstAttribute="top" secondItem="9VH-aN-wMF" secondAttribute="bottom" constant="12" id="8Kp-RI-yaS"/>
-                    <constraint firstItem="9VH-aN-wMF" firstAttribute="leading" secondItem="kRF-WG-n2H" secondAttribute="trailing" constant="10" id="98Z-lr-by0"/>
-                    <constraint firstItem="kRF-WG-n2H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="BIZ-et-i6W"/>
-                    <constraint firstItem="ExF-pn-SCE" firstAttribute="leading" secondItem="kRF-WG-n2H" secondAttribute="trailing" constant="10" id="BgW-85-7hL"/>
-                    <constraint firstItem="1OM-WP-r4F" firstAttribute="trailing" secondItem="kRF-WG-n2H" secondAttribute="trailing" constant="-1" id="Cwi-R7-okt"/>
-                    <constraint firstAttribute="trailing" secondItem="9VH-aN-wMF" secondAttribute="trailing" constant="10" id="ORv-H1-NGq"/>
-                    <constraint firstItem="ExF-pn-SCE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="Wrc-uL-tjT"/>
-                    <constraint firstItem="9VH-aN-wMF" firstAttribute="top" secondItem="ExF-pn-SCE" secondAttribute="bottom" id="jam-th-o1p"/>
-                    <constraint firstAttribute="bottom" secondItem="dby-7R-n5j" secondAttribute="bottom" id="kAQ-y0-yqr"/>
-                    <constraint firstItem="kRF-WG-n2H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ri2-C3-zKk"/>
-                    <constraint firstItem="dby-7R-n5j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xbo-Mw-BTG"/>
+                    <constraint firstItem="0eQ-2K-V0k" firstAttribute="leading" secondItem="fo8-YX-R43" secondAttribute="trailing" constant="10" id="00w-1S-gl8"/>
+                    <constraint firstItem="bQp-Ow-3Fn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="04T-Ar-SQW"/>
+                    <constraint firstItem="6bu-JG-FVl" firstAttribute="top" secondItem="75V-Af-79D" secondAttribute="bottom" constant="10" id="0aR-cF-6Ft"/>
+                    <constraint firstItem="6bu-JG-FVl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1G9-cy-x6U"/>
+                    <constraint firstAttribute="trailing" secondItem="sFr-wI-jU4" secondAttribute="trailing" constant="10" id="3cI-Gl-1qT"/>
+                    <constraint firstItem="0eQ-2K-V0k" firstAttribute="width" secondItem="fo8-YX-R43" secondAttribute="width" id="6eb-in-40T"/>
+                    <constraint firstItem="75V-Af-79D" firstAttribute="top" secondItem="w6a-2b-X6V" secondAttribute="bottom" constant="10" id="6l0-Rb-RrZ"/>
+                    <constraint firstAttribute="trailing" secondItem="ZjY-xM-ifA" secondAttribute="trailing" constant="10" id="7Mo-dU-mqP"/>
+                    <constraint firstAttribute="trailing" secondItem="w6a-2b-X6V" secondAttribute="trailing" constant="10" id="BrW-aK-zjd"/>
+                    <constraint firstAttribute="trailing" secondItem="Kfg-s6-J3k" secondAttribute="trailing" constant="10" id="Ehw-44-nii"/>
+                    <constraint firstAttribute="bottom" secondItem="dby-7R-n5j" secondAttribute="bottom" id="EmH-I1-DKk"/>
+                    <constraint firstItem="fo8-YX-R43" firstAttribute="top" secondItem="ExF-pn-SCE" secondAttribute="bottom" constant="10" id="Fza-fK-ZlM"/>
+                    <constraint firstItem="Kfg-s6-J3k" firstAttribute="leading" secondItem="u7y-qa-uVI" secondAttribute="trailing" constant="10" id="HCn-aS-HKA"/>
+                    <constraint firstItem="ZjY-xM-ifA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="IA4-gG-W8G"/>
+                    <constraint firstItem="Ow1-jd-TC6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="JFL-2i-XAY"/>
+                    <constraint firstAttribute="trailing" secondItem="0eQ-2K-V0k" secondAttribute="trailing" constant="10" id="KUK-DD-KxH"/>
+                    <constraint firstItem="Kfg-s6-J3k" firstAttribute="width" secondItem="u7y-qa-uVI" secondAttribute="width" id="L0J-9d-y3X"/>
+                    <constraint firstItem="75V-Af-79D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="PtT-pV-tdl"/>
+                    <constraint firstItem="w6a-2b-X6V" firstAttribute="top" secondItem="Ow1-jd-TC6" secondAttribute="bottom" constant="10" id="QUq-yL-KnF"/>
+                    <constraint firstAttribute="trailing" secondItem="bQp-Ow-3Fn" secondAttribute="trailing" constant="10" id="Qwz-kI-3Ot"/>
+                    <constraint firstAttribute="trailing" secondItem="IO9-0l-gK9" secondAttribute="trailing" constant="10" id="Txc-3d-ZIa"/>
+                    <constraint firstItem="u7y-qa-uVI" firstAttribute="top" secondItem="6bu-JG-FVl" secondAttribute="bottom" constant="10" id="WS4-mU-GmP"/>
+                    <constraint firstItem="Kfg-s6-J3k" firstAttribute="top" secondItem="6bu-JG-FVl" secondAttribute="bottom" constant="10" id="Xqo-YP-AcN"/>
+                    <constraint firstItem="bQp-Ow-3Fn" firstAttribute="top" secondItem="ZjY-xM-ifA" secondAttribute="bottom" constant="10" id="anw-W1-NIY"/>
+                    <constraint firstItem="ZjY-xM-ifA" firstAttribute="top" secondItem="u7y-qa-uVI" secondAttribute="bottom" constant="10" id="brX-MI-1Hz"/>
+                    <constraint firstItem="u7y-qa-uVI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="bvi-Ey-sUK"/>
+                    <constraint firstAttribute="trailing" secondItem="6bu-JG-FVl" secondAttribute="trailing" constant="10" id="cWc-dQ-GoI"/>
+                    <constraint firstItem="Ow1-jd-TC6" firstAttribute="top" secondItem="IO9-0l-gK9" secondAttribute="bottom" constant="10" id="dTA-Vz-3IT"/>
+                    <constraint firstItem="IO9-0l-gK9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="dl3-dW-ysd"/>
+                    <constraint firstAttribute="trailing" secondItem="ExF-pn-SCE" secondAttribute="trailing" constant="10" id="eEP-9g-mfw"/>
+                    <constraint firstAttribute="trailing" secondItem="Ow1-jd-TC6" secondAttribute="trailing" constant="10" id="hJT-JM-GH3"/>
+                    <constraint firstItem="IO9-0l-gK9" firstAttribute="top" secondItem="fo8-YX-R43" secondAttribute="bottom" constant="10" id="nBf-Eh-UZO"/>
+                    <constraint firstItem="dby-7R-n5j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ohF-bu-RFP"/>
+                    <constraint firstItem="ExF-pn-SCE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="p8h-U4-dQ1"/>
+                    <constraint firstItem="dby-7R-n5j" firstAttribute="top" secondItem="sFr-wI-jU4" secondAttribute="bottom" constant="11.5" id="pJC-Ds-xLE"/>
+                    <constraint firstItem="sFr-wI-jU4" firstAttribute="top" secondItem="bQp-Ow-3Fn" secondAttribute="bottom" constant="10" id="rtu-zY-8BO"/>
+                    <constraint firstAttribute="trailing" secondItem="75V-Af-79D" secondAttribute="trailing" constant="10" id="tkZ-Zn-xyr"/>
+                    <constraint firstItem="fo8-YX-R43" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="vKU-0H-nqD"/>
+                    <constraint firstItem="w6a-2b-X6V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="wZp-cy-qsl"/>
+                    <constraint firstItem="0eQ-2K-V0k" firstAttribute="centerY" secondItem="fo8-YX-R43" secondAttribute="centerY" id="wpE-x4-pQ0"/>
+                    <constraint firstAttribute="trailing" secondItem="dby-7R-n5j" secondAttribute="trailing" constant="10" id="wzh-Aq-ACD"/>
+                    <constraint firstItem="ExF-pn-SCE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xaB-8A-bbQ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="addressLbl" destination="ExF-pn-SCE" id="ljx-VM-C0t"/>
-                <outlet property="countryLbl" destination="9VH-aN-wMF" id="P18-nY-Lai"/>
-                <outlet property="indexLbl" destination="1OM-WP-r4F" id="fRr-kD-HgM"/>
+                <outlet property="address1Txt" destination="Ow1-jd-TC6" id="EGw-fb-wWS"/>
+                <outlet property="address2Txt" destination="w6a-2b-X6V" id="GuR-pY-clt"/>
+                <outlet property="cityTxt" destination="u7y-qa-uVI" id="GJf-KV-DJM"/>
+                <outlet property="companyTxt" destination="IO9-0l-gK9" id="la8-lY-HXN"/>
+                <outlet property="countryTxt" destination="75V-Af-79D" id="pCz-Xb-Lp4"/>
+                <outlet property="emailTxt" destination="ZjY-xM-ifA" id="p8y-nk-HxW"/>
+                <outlet property="fnameTxt" destination="fo8-YX-R43" id="A5r-ui-43k"/>
+                <outlet property="lnameTxt" destination="0eQ-2K-V0k" id="hQA-46-SUC"/>
+                <outlet property="phoneTxt" destination="bQp-Ow-3Fn" id="oI5-Fo-dtH"/>
+                <outlet property="postcodeTxt" destination="Kfg-s6-J3k" id="HpH-PU-f1n"/>
+                <outlet property="stateTxt" destination="6bu-JG-FVl" id="HCO-3J-W9i"/>
+                <outlet property="titleLbl" destination="ExF-pn-SCE" id="Fgu-4v-2nh"/>
             </connections>
             <point key="canvasLocation" x="133" y="154"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="address_pin" width="38" height="37"/>
         <image name="dash_line" width="345" height="1"/>
     </resources>
 </document>
