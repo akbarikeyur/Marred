@@ -15,7 +15,7 @@ struct API {
     static let BASE_URL = "https://maared24.com/wp-json/"
     
     static let LOGIN                                  =       BASE_URL + "v1/user/signin"
-    static let SIGNUP                                 =       BASE_URL + "v1/user/register"
+    static let SIGNUP                                 =       BASE_URL + "wc/v3/customers"
     static let FORGOT_PASSWORD                        =       BASE_URL + "v1/user/forgotpassword"
     static let GET_USER_DETAIL                        =       BASE_URL + "v1/user/getuserdetail"
     
@@ -60,7 +60,7 @@ public class APIManager {
         if isUserLogin() {
             return ["Content-Type":"application/json", "Accept":"application/json"]
         }else{
-            return ["Content-Type":"application/json", "Accept":"application/json"]
+            return ["Content-Type":"application/json", "Accept":"application/json", "Authorization" : "Basic eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbWFhcmVkMjQuY29tIiwiaWF0IjoxNjExMTQ5NjA0LCJuYmYiOjE2MTExNDk2MDQsImV4cCI6MTYxMTc1NDQwNCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMiJ9fX0.mhzNXnc1cjAmam_tRDBh3yJzv2wvWSyMpYbBxe5WJX8"]
         }
     }
     

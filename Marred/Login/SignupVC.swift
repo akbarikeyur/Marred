@@ -15,6 +15,7 @@ class SignupVC: UIViewController {
     @IBOutlet weak var unameTxt: TextField!
     @IBOutlet weak var businessNameTxt: TextField!
     @IBOutlet weak var emailTxt: TextField!
+    @IBOutlet weak var deailView: UIView!
     @IBOutlet weak var phoneFlagImg: UIImageView!
     @IBOutlet weak var phonecodeLbl: Label!
     @IBOutlet weak var phoneTxt: TextField!
@@ -26,6 +27,7 @@ class SignupVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        deailView.isHidden = true
     }
     
     //MARK:- Button click event
@@ -46,7 +48,35 @@ class SignupVC: UIViewController {
     }
     
     @IBAction func clickToSubmit(_ sender: Any) {
-        
+        self.view.endEditing(true)
+        if fnameTxt.text?.trimmed == "" {
+            displayToast("Please ente first name")
+        }
+        else if lnameTxt.text?.trimmed == "" {
+            displayToast("Please ente last name")
+        }
+        else if unameTxt.text?.trimmed == "" {
+            displayToast("Please ente user name")
+        }
+        else if emailTxt.text?.trimmed == "" {
+            displayToast("Please ente email")
+        }
+        else if !emailTxt.text!.isValidEmail {
+            displayToast("Invalid email")
+        }
+        else {
+            var param = [String : Any]()
+            param["email"] = emailTxt.text
+            param["first_name"] = fnameTxt.text
+            param["last_name"] = lnameTxt.text
+            param["username"] = unameTxt.text
+            param["billing"] = [String : Any]()
+            param["shipping"] = [String : Any]()
+            printData(param)
+            LoginAPIManager.shared.serviceCallToSignup(param) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
     
     /*
