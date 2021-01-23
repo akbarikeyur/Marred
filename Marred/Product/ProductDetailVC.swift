@@ -205,7 +205,7 @@ extension ProductDetailVC {
     
     func serviceCallToAddToCart() {
         var param = [String : Any]()
-        param["product_id"] = product.id
+        param["product_id"] = String(product.id)
         param["quantity"] = Int((quantityBtn.titleLabel?.text)!)!
         ProductAPIManager.shared.serviceCallToAddToCart(param) {
             self.quantityBtn.setTitle("1", for: .normal)

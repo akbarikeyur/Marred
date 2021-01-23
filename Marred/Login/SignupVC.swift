@@ -86,9 +86,6 @@ class SignupVC: UIViewController {
             }
             printData(param)
             LoginAPIManager.shared.serviceCallToSignup(param) {
-                showAlert("", message: "A password will be sent to your email address.") {
-                    
-                }
                 self.navigationController?.popViewController(animated: true)
             }
         }

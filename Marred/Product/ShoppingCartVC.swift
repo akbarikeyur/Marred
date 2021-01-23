@@ -23,16 +23,19 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var sideImgView: UIImageView!
     
+    var isLoader = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         registerTableViewMethod()
-        serviceCallToGetCart()
+        isLoader = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate().sharedDelegate().showTabBar()
+        serviceCallToGetCart()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -125,8 +128,9 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource {
 
 extension ShoppingCartVC {
     func serviceCallToGetCart() {
-        ProductAPIManager.shared.serviceCallToGetCart {
+        ProductAPIManager.shared.serviceCallToGetCart(isLoader) {
             
         }
+        isLoader = false
     }
 }

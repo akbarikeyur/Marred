@@ -143,7 +143,7 @@ extension SubCategoryVC {
         param["paged"] = page
         param["cat_id"] = selectedSubCat.term_id
         printData(param)
-        HomeAPIManager.shared.serviceCallToGetProductList(param) { (data, total) in
+        HomeAPIManager.shared.serviceCallToGetProductList(param, (arrProduct.count == 0)) { (data, total) in
             if self.page == 1 {
                 self.arrProduct = [ProductModel]()
             }

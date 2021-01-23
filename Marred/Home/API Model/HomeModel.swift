@@ -26,6 +26,30 @@ struct CategoryModel {
     }
 }
 
+struct HomeModel {
+    var name, banner : String!
+    var data : [CategoryModel]!
+    var products : [ProductModel]!
+    
+    init(_ dict : [String : Any])
+    {
+        name = dict["name"] as? String ?? ""
+        banner = dict["banner"] as? String ?? ""
+        data = [CategoryModel]()
+        if let tempData = dict["data"] as? [[String : Any]] {
+            for temp in tempData {
+                data.append(CategoryModel.init(temp))
+            }
+        }
+        products = [ProductModel]()
+        if let tempData = dict["products"] as? [[String : Any]] {
+            for temp in tempData {
+                products.append(ProductModel.init(temp))
+            }
+        }
+    }
+}
+
 struct HomeDisplayModel {
     var type : String!
     

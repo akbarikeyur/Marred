@@ -12,6 +12,13 @@ public class HomeAPIManager {
 
     static let shared = HomeAPIManager()
 
+    func serviceCallToGetHome(_ completion: @escaping (_ result : [String : Any]) -> Void) {
+        APIManager.shared.callPostRequest(API.GET_HOME, [String : Any](), true) { (dict) in
+            printData(dict)
+            completion(dict)
+        }
+    }
+    
     func serviceCallToGetCategory() {
         APIManager.shared.callPostRequest(API.GET_CATEGORY, ["cat_id" : 0], false) { (dict) in
             printData(dict)
@@ -39,8 +46,8 @@ public class HomeAPIManager {
         }
     }
     
-    func serviceCallToGetProductList(_ param : [String : Any], _ completion: @escaping (_ result : [[String : Any]], _ total : Int) -> Void) {
-        APIManager.shared.callPostRequest(API.GET_PRODUCT_LIST, param, true) { (dict) in
+    func serviceCallToGetProductList(_ param : [String : Any], _ isLoader : Bool, _ completion: @escaping (_ result : [[String : Any]], _ total : Int) -> Void) {
+        APIManager.shared.callPostRequest(API.GET_PRODUCT_LIST, param, isLoader) { (dict) in
             printData(dict)
             if let status = dict["status"] as? String, status == "success" {
                 if let tempDict = dict["data"] as? [String : Any] {

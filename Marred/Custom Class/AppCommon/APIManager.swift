@@ -19,6 +19,8 @@ struct API {
     static let FORGOT_PASSWORD                        =       BASE_URL + "v1/user/forgotpassword"
     static let GET_USER_DETAIL                        =       BASE_URL + "v1/user/getuserdetail"
     
+    static let GET_HOME                               =       BASE_URL + "v1/getHomepage"
+    
     static let GET_CATEGORY                           =       BASE_URL + "v1/get_cateogories"
     static let GET_PAVILION_CATEGORY                  =       BASE_URL + "v1/pavilions"
     
@@ -66,7 +68,11 @@ public class APIManager {
     }
     
     func getJsonFormHeader() -> HTTPHeaders {
-        return ["Content-Type":"application/x-www-form-urlencoded", "Accept":"application/json, text/plain, */*"]
+        if isUserLogin() {
+            return ["Content-Type":"application/x-www-form-urlencoded", "Accept":"application/json, text/plain, */*", "Authorization" : "Bearer " + getApiKey()]
+        }else{
+            return ["Content-Type":"application/x-www-form-urlencoded", "Accept":"application/json, text/plain, */*"]
+        }
     }
     
     func getMultipartHeader() -> [String:String]{
@@ -192,6 +198,10 @@ public class APIManager {
             case .success:
                 if let result = response.result.value as? [String:Any] {
                     completion(result)
+                    return
+                }
+                else if let result = response.result.value as? [[String:Any]], result.count > 0 {
+                    completion(["data" : result])
                     return
                 }
                 if let error = response.result.error

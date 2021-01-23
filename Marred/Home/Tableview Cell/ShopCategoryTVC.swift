@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 
 class ShopCategoryTVC: UITableViewCell {
 
@@ -35,7 +36,20 @@ class ShopCategoryTVC: UITableViewCell {
     }
     
     @IBAction func clickToSelectCategory(_ sender: UIButton) {
-        
+        self.endEditing(true)
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        var arrData = [String]()
+        for temp in arrCategory {
+            arrData.append(temp.name)
+        }
+        dropDown.dataSource = arrData
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            let vc : SubCategoryVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryVC
+            vc.categoryData = self.arrCategory[index]
+            UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+        }
+        dropDown.show()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

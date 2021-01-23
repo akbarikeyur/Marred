@@ -26,8 +26,8 @@ class LoginVC: UIViewController {
         signupBtn.setAttributedTitle(attributedStringWithColor("If not a member yet, Sign up", ["Sign up"], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 12.0)), for: .normal)
         
         if PLATFORM.isSimulator {
-            emailTxt.text = "h2033345@gmail.com"
-            passwordTxt.text = "Hh@1234567"
+            emailTxt.text = "keyurdakbari@gmail.com"
+            passwordTxt.text = "qqqqqq"
         }
     }
     
