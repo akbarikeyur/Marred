@@ -24,6 +24,7 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var sideImgView: UIImageView!
     
     var isLoader = false
+    var arrCart = [CartModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +61,13 @@ class ShoppingCartVC: UIViewController {
     }
 
     @IBAction func clickToApplyPromocode(_ sender: Any) {
-        
+        if promocodeTxt.text?.trimmed == "" {
+            displayToast("Please enter coupon code")
+        }else{
+            ProductAPIManager.shared.serviceCallToApplyCoupon("maareedtest") { (data) in
+                
+            }
+        }
     }
     
     @IBAction func clickToSelectCountry(_ sender: UIButton) {
@@ -95,7 +102,7 @@ class ShoppingCartVC: UIViewController {
 }
 
 //MARK:- Tableview Method
-extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource {
+extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDelegate {
 
     func registerTableViewMethod() {
         tblView.register(UINib.init(nibName: "CartTVC", bundle: nil), forCellReuseIdentifier: "CartTVC")
@@ -103,7 +110,7 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return arrCart.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -112,7 +119,8 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CartTVC = tblView.dequeueReusableCell(withIdentifier: "CartTVC") as! CartTVC
-        
+        cell.delegate = self
+        cell.setupDetails(arrCart[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }
@@ -122,14 +130,28 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func updateTableviewHeight() {
-        constraintHeightTblView.constant = 130*3
+        tblView.reloadData()
+        constraintHeightTblView.constant = CGFloat(130*arrCart.count)
+    }
+    
+    func updateQuantity(_ cart: CartModel) {
+        let index = arrCart.firstIndex { (temp) -> Bool in
+            temp.product_id == cart.product_id
+        }
+        if index != nil {
+            arrCart[index!] = cart
+        }
     }
 }
 
 extension ShoppingCartVC {
     func serviceCallToGetCart() {
-        ProductAPIManager.shared.serviceCallToGetCart(isLoader) {
-            
+        ProductAPIManager.shared.serviceCallToGetCart(isLoader) { (data) in
+            self.arrCart = [CartModel]()
+            for temp in data {
+                self.arrCart.append(CartModel.init(temp))
+            }
+            self.updateTableviewHeight()
         }
         isLoader = false
     }

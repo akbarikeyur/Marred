@@ -27,6 +27,7 @@ class LoginVC: UIViewController {
         
         if PLATFORM.isSimulator {
             emailTxt.text = "keyurdakbari@gmail.com"
+//            emailTxt.text = "amishapadasala20@gmail.com"
             passwordTxt.text = "qqqqqq"
         }
     }

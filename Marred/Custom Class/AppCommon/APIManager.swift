@@ -30,13 +30,20 @@ struct API {
     static let ADD_TO_CART                            =       BASE_URL + "cocart/v1/add-item"
     static let CLEAR_CART                             =       BASE_URL + "cocart/v1/clear"
     static let GET_CART_COUNT                         =       BASE_URL + "cocart/v1/count-items"
-    static let GET_CART                               =       BASE_URL + "cocart/v1/get-cart"
+    static let GET_CART                               =       BASE_URL + "v1/cocart/custom/get-cart"
     
+    static let APPLY_COUPON                           =       BASE_URL + "wc/v3/coupons?code="
     static let GET_PAYMENT_GATEWAY                    =       BASE_URL + "wc/v3/payment_gateways"
     
     static let ADD_BOOKMARK                           =       BASE_URL + "v1/bookmark/addbookmark"
     static let REMOVE_BOOKMARK                        =       BASE_URL + "v1/bookmark/removebookmark"
     static let GET_BOOKMARK                           =       BASE_URL + "v1/bookmark/getbookmark"
+    
+    static let GET_SELLER_DASHBOARD                   =       BASE_URL + "v1/seller/Dashboard"
+    static let ADD_SHOP                               =       BASE_URL + "v1/seller/addShop"
+    
+    static let GET_PRODUCT                            =       BASE_URL + "v1/user/getPorductByUser"
+    static let GET_ORDER                              =       BASE_URL + "v1/user/getVendorOrder"
 }
 
 public class APIManager {

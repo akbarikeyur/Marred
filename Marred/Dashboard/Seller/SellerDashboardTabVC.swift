@@ -10,6 +10,7 @@ import UIKit
 
 class SellerDashboardTabVC: UIViewController {
 
+    @IBOutlet weak var chartView: UIView!
     @IBOutlet weak var totalSaleLbl: Label!
     @IBOutlet weak var saleDateLbl: Label!
     @IBOutlet weak var totalEarningLbl: Label!
@@ -23,18 +24,45 @@ class SellerDashboardTabVC: UIViewController {
     @IBOutlet weak var productTbl: UITableView!
     @IBOutlet weak var constraintHeightProductTbl: NSLayoutConstraint!
     
-    var arrOrder = ["Total", "Completed", "Pending", "Processing", "Cancelled", "Refunded", "On hold"]
-    var arrProduct = ["Total", "Live", "Offline", "Pending", "Review"]
+    var arrOrder = [TitleValueModel]()
+    var arrProduct = [TitleValueModel]()
+    var sellerDict = DashboardSellerModel.init([String : Any]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        chartView.isHidden = true
         registerTableViewMethod()
+        serviceCallToGetSellerDashboard()
     }
     
     func setupDetails() {
         
+    }
+    
+    func setupData() {
+        totalSaleLbl.text = sellerDict.total_sales
+        saleDateLbl.text = ""
+        totalEarningLbl.text = sellerDict.order_total
+        earningDateLbl.text = ""
+        totalViewLbl.text = sellerDict.pageviews
+        viewDateLbl.text = ""
+        totalOrderLbl.text = sellerDict.orders.total
+        orderDateLbl.text = ""
+        
+        arrOrder = [TitleValueModel]()
+        arrOrder.append(TitleValueModel.init(["title" : "Total", "value" : sellerDict.orders.total!]))
+        arrOrder.append(TitleValueModel.init(["title" : "Completed", "value" : sellerDict.orders.wc_completed!]))
+        arrOrder.append(TitleValueModel.init(["title" : "Pending", "value" : sellerDict.orders.wc_pending!]))
+        arrOrder.append(TitleValueModel.init(["title" : "Processing", "value" : sellerDict.orders.wc_processing!]))
+        arrOrder.append(TitleValueModel.init(["title" : "Cancelled", "value" : sellerDict.orders.wc_cancelled!]))
+        arrOrder.append(TitleValueModel.init(["title" : "Refunded", "value" : sellerDict.orders.wc_failed!]))
+        updateOrderTableHeight()
+        
+        arrProduct = [TitleValueModel]()
+        arrProduct.append(TitleValueModel.init(["title" : "Total", "value" : sellerDict.products.total!]))
+        updateProductTableHeight()
     }
     
     /*
@@ -74,14 +102,14 @@ extension SellerDashboardTabVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == orderTbl {
             let cell : DashboardOrderTVC = orderTbl.dequeueReusableCell(withIdentifier: "DashboardOrderTVC") as! DashboardOrderTVC
-            cell.titleLbl.text = arrOrder[indexPath.row]
-            cell.valueLbl.text = String((Int(arc4random()) % 20) + indexPath.row)
+            cell.titleLbl.text = arrOrder[indexPath.row].title
+            cell.valueLbl.text = arrOrder[indexPath.row].value
             cell.selectionStyle = .none
             return cell
         }else{
             let cell : DashboardOrderTVC = productTbl.dequeueReusableCell(withIdentifier: "DashboardOrderTVC") as! DashboardOrderTVC
-            cell.titleLbl.text = arrProduct[indexPath.row]
-            cell.valueLbl.text = String((Int(arc4random()) % 20) + indexPath.row)
+            cell.titleLbl.text = arrProduct[indexPath.row].title
+            cell.valueLbl.text = arrProduct[indexPath.row].value
             cell.selectionStyle = .none
             return cell
         }
@@ -103,5 +131,14 @@ extension SellerDashboardTabVC : UITableViewDelegate, UITableViewDataSource {
         productTbl.reloadData()
         productTbl.layoutIfNeeded()
         constraintHeightProductTbl.constant = productTbl.contentSize.height
+    }
+}
+
+extension SellerDashboardTabVC {
+    func serviceCallToGetSellerDashboard() {
+        DashboardAPIManager.shared.serviceCallToGetSellerDashboard { (dict) in
+            self.sellerDict = DashboardSellerModel.init(dict)
+            self.setupData()
+        }
     }
 }

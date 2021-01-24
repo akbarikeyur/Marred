@@ -24,6 +24,7 @@ class SellerDashboardProductTabVC: UIViewController {
         // Do any additional setup after loading the view.
         registerTableViewMethod()
         registerCollectionView()
+        serviceCallToGetProducts()
     }
     
     func setupDetails() {
@@ -118,5 +119,17 @@ extension SellerDashboardProductTabVC : UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedType = indexPath.row
         typeCV.reloadData()
+    }
+}
+
+extension SellerDashboardProductTabVC {
+    func serviceCallToGetProducts() {
+        var param = [String : Any]()
+        param["author_name"] = AppModel.shared.currentUser.user_nicename
+        param["paged"] = 1
+        printData(param)
+        DashboardAPIManager.shared.serviceCallToGetProducts(param) { (data) in
+            
+        }
     }
 }

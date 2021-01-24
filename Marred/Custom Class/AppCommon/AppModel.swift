@@ -62,3 +62,13 @@ class AppModel: NSObject {
         return value
     }
 }
+
+struct CountryModel {
+    var name, dial_code, code : String!
+    
+    init(_ dict : [String : Any]) {
+        name = dict["name"] as? String ?? ""
+        dial_code = dict["dial_code"] as? String ?? ""
+        code = dict["code"] as? String ?? ""
+    }
+}

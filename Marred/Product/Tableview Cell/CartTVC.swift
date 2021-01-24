@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CartDelegate {
+    func updateQuantity(_ cart : CartModel)
+}
+
 class CartTVC: UITableViewCell {
 
     @IBOutlet weak var imgBtn: Button!
@@ -19,16 +23,38 @@ class CartTVC: UITableViewCell {
     @IBOutlet weak var plusBtn: Button!
     @IBOutlet weak var minusBtn: Button!
     
+    var delegate : CartDelegate?
+    var cart = CartModel.init([String : Any]())
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    func setupDetails(_ dict : CartModel) {
+        cart = dict
+        nameLbl.text = dict.product_name
+        priceLbl.text = dict.product_price.decoded
+        quantityLbl.text = String(dict.quantity)
+    }
+    
+    @IBAction func clickToChangeQuantity(_ sender: UIButton) {
+        var value = Int(quantityLbl.text!)!
+        if sender == plusBtn {
+            value += 1
+        }else{
+            if value > 0 {
+                value -= 1
+            }
+        }
+        quantityLbl.text = String(value)
+        cart.quantity = value
+        delegate?.updateQuantity(cart)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    
 }

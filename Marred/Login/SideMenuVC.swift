@@ -86,11 +86,19 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if arrMenu[indexPath.row].id == 5 && !isSeller() {
+            return 0
+        }
         return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : SideMenuTVC = tblView.dequeueReusableCell(withIdentifier: "SideMenuTVC") as! SideMenuTVC
+        if arrMenu[indexPath.row].id == 5 && !isSeller() {
+            cell.isHidden = true
+        }else{
+            cell.isHidden = false
+        }
         cell.setupDetails(arrMenu[indexPath.row])
         cell.selectionStyle = .none
         return cell

@@ -108,3 +108,17 @@ func isUserLogin() -> Bool
     }
     return false
 }
+
+func setIsSeller(_ value: Bool)
+{
+    setDataToPreference(data: value as AnyObject, forKey: "is_user_seller")
+}
+
+func isSeller() -> Bool
+{
+    if let value : Bool = getDataFromPreference(key: "is_user_seller") as? Bool
+    {
+        return value
+    }
+    return false
+}

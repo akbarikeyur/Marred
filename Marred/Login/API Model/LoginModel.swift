@@ -23,7 +23,7 @@ struct UserModel {
     var ID, user_status : Int!
     var user_login, user_nicename, user_email, display_name, token : String!
     var billing, shipping : AddressModel
-    
+     
     init(_ dict : [String : Any]) {
         ID = AppModel.shared.getIntData(dict, "ID")
         user_status = AppModel.shared.getIntData(dict, "user_status")

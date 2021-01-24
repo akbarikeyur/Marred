@@ -32,11 +32,16 @@ public class ProductAPIManager {
         }
     }
     
-    func serviceCallToGetCart(_ isLoader : Bool, _ completion: @escaping () -> Void) {
+    func serviceCallToGetCart(_ isLoader : Bool, _ completion: @escaping (_ data : [[String : Any]]) -> Void) {
         APIManager.shared.callGetRequest(API.GET_CART, isLoader) { (dict) in
             printData(dict)
             if let status = dict["status"] as? String, status == "success" {
-                completion()
+                if let data = dict["data"] as? [String : Any] {
+                    if let cart = data["cart"] as? [[String : Any]] {
+                        completion(cart)
+                        return
+                    }
+                }
             }
         }
     }
@@ -89,4 +94,26 @@ public class ProductAPIManager {
             }
         }
     }
+    
+    func serviceCallToApplyCoupon(_ code : String, _ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
+        APIManager.shared.callGetRequest((API.APPLY_COUPON + code), true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [[String : Any]] {
+                    completion(data)
+                }
+            }
+        }
+    }
+    
+    func serviceCallToAddShop(_ param : [String : Any], _ completion: @escaping () -> Void) {
+        
+        APIManager.shared.callPostRequest(API.ADD_SHOP, param, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                completion()
+                return
+            }
+        }
+    }    
 }

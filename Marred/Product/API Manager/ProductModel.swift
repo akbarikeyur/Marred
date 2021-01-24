@@ -90,3 +90,15 @@ struct BrandModel {
         return ["count" : count!, "parent" : parent!, "term_group" : term_group!, "term_id" : term_id!, "term_taxonomy_id" : term_taxonomy_id!, "description" : desc!, "filter" : filter!, "name" : name!, "slug" : slug!, "taxonomy" : taxonomy!]
     }
 }
+
+struct CartModel {
+    var product_id, product_name, product_price : String
+    var quantity : Int!
+    
+    init(_ dict : [String : Any]) {
+        product_id = AppModel.shared.getStringData(dict, "product_id")
+        product_name = AppModel.shared.getStringData(dict, "product_name")
+        product_price = AppModel.shared.getStringData(dict, "product_price")
+        quantity = AppModel.shared.getIntData(dict, "quantity")
+    }
+}

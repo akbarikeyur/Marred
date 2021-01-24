@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18714EC325BD2D480035E07F /* DashboardAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18714EC225BD2D480035E07F /* DashboardAPIManager.swift */; };
+		18714EC525BD2D530035E07F /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18714EC425BD2D530035E07F /* DashboardModel.swift */; };
+		1890CDE625BD9F19008644A1 /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 1890CDE525BD9F19008644A1 /* country.json */; };
 		18BD2EF025A7691F00842C88 /* ProductAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2EEF25A7691F00842C88 /* ProductAPIManager.swift */; };
 		79100C132584A5E000000215 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79100C122584A5E000000215 /* CheckoutVC.swift */; };
 		79100C162584AE4B00000215 /* CheckoutOrderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79100C142584AE4B00000215 /* CheckoutOrderTVC.swift */; };
@@ -141,6 +144,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18714EC225BD2D480035E07F /* DashboardAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAPIManager.swift; sourceTree = "<group>"; };
+		18714EC425BD2D530035E07F /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
+		1890CDE525BD9F19008644A1 /* country.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
 		18BD2EEF25A7691F00842C88 /* ProductAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAPIManager.swift; sourceTree = "<group>"; };
 		74716199F9D06511FFDF47A9 /* Pods_Marred.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marred.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79100C122584A5E000000215 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
@@ -292,6 +298,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18714EC125BD2D310035E07F /* API Model */ = {
+			isa = PBXGroup;
+			children = (
+				18714EC225BD2D480035E07F /* DashboardAPIManager.swift */,
+				18714EC425BD2D530035E07F /* DashboardModel.swift */,
+			);
+			path = "API Model";
+			sourceTree = "<group>";
+		};
 		1F6A9EA04B9BF7984A44028B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +329,7 @@
 			children = (
 				79A46079258B262F00A65BDE /* Buyer */,
 				79A4607A258B263F00A65BDE /* Seller */,
+				18714EC125BD2D310035E07F /* API Model */,
 				792DAE50258A0673008E1343 /* Tableview Cell */,
 			);
 			path = Dashboard;
@@ -496,6 +512,7 @@
 				79BF35D8257E469B006491C5 /* Utility.swift */,
 				79BF35D9257E469B006491C5 /* UploadImageVC.swift */,
 				79BF35D6257E469B006491C5 /* Localizable.strings */,
+				1890CDE525BD9F19008644A1 /* country.json */,
 			);
 			path = AppCommon;
 			sourceTree = "<group>";
@@ -725,6 +742,7 @@
 				79BF3646257E548D006491C5 /* Roboto-Italic.ttf in Resources */,
 				79BF35C6257E4468006491C5 /* LaunchScreen.storyboard in Resources */,
 				79BF35E2257E469B006491C5 /* Localizable.strings in Resources */,
+				1890CDE625BD9F19008644A1 /* country.json in Resources */,
 				792DAE5E258A29C8008E1343 /* MyAddressTVC.xib in Resources */,
 				79EAD244257FC69C00DC6422 /* ContactInfoTVC.xib in Resources */,
 				79EAD23C257F960400DC6422 /* DisplayProductCVC.xib in Resources */,
@@ -865,6 +883,7 @@
 				79EAD237257F900A00DC6422 /* PavilionProductTVC.swift in Sources */,
 				791E030825AC6228003C15C8 /* ForgotPasswordVC.swift in Sources */,
 				7920BD252584F02B0065AEEF /* DealofDaysVC.swift in Sources */,
+				18714EC525BD2D530035E07F /* DashboardModel.swift in Sources */,
 				79FC89902591F77900DCCFE9 /* HomeAPIManager.swift in Sources */,
 				79BF3633257E46A4006491C5 /* GradientLayer.swift in Sources */,
 				793223A8258B9E4100ACF496 /* SellerSettingTabVC.swift in Sources */,
@@ -872,6 +891,7 @@
 				793223A2258B7C1200ACF496 /* SellerDashboardOrderTabVC.swift in Sources */,
 				18BD2EF025A7691F00842C88 /* ProductAPIManager.swift in Sources */,
 				79BF361E257E46A4006491C5 /* NSError+RUI.swift in Sources */,
+				18714EC325BD2D480035E07F /* DashboardAPIManager.swift in Sources */,
 				79BF3657257E61FA006491C5 /* HomeModel.swift in Sources */,
 				793223A0258B77D800ACF496 /* SellerDashboardProductTabVC.swift in Sources */,
 				79220C3F25810A1000329AC8 /* SubCategoryVC.swift in Sources */,

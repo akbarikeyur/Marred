@@ -54,10 +54,13 @@ class CustomTabBarController: UITabBarController, CustomTabBarViewDelegate {
         let navController4 : UINavigationController = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "BookmarkVCNav") as! UINavigationController
         viewControllers.append(navController4)
         
-//        let navController5 : UINavigationController = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerDashboardVCNav") as! UINavigationController
-        let navController5 : UINavigationController = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "SellerDashboardVCNav") as! UINavigationController
-        viewControllers.append(navController5)
-        
+        if isSeller() {
+            let navController5 : UINavigationController = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "SellerDashboardVCNav") as! UINavigationController
+            viewControllers.append(navController5)
+        }else{
+            let navController5 : UINavigationController = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerDashboardVCNav") as! UINavigationController
+            viewControllers.append(navController5)
+        }
         self.viewControllers = viewControllers;
         
         self.tabBarView.lbl1.textColor = BlackColor
