@@ -31,6 +31,10 @@ struct ProductModel {
         vendor = dict["vendor"] as? String ?? ""
         brands = BrandModel.init(dict["brands"] as? [String : Any] ?? [String : Any]())
     }
+    
+    func dictionary() -> [String : Any] {
+        return ["id" : id!, "price" : price!, "thumbnail" : thumbnail!, "title" : title!, "vendor" : vendor!, "brands" : brands.dictionary()]
+    }
 }
 
 struct ProductDetailModel {

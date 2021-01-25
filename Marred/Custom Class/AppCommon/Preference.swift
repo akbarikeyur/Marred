@@ -122,3 +122,38 @@ func isSeller() -> Bool
     }
     return false
 }
+
+func setHomeBannerData(_ data: [String])
+{
+    setDataToPreference(data: data as AnyObject, forKey: "home_banner_data")
+}
+
+func getHomeBannerData() -> [String]
+{
+    if let data : [String] = getDataFromPreference(key: "home_banner_data") as? [String]
+    {
+        return data
+    }
+    return [String]()
+}
+
+func setHomePavalionData(_ data: [HomeModel])
+{
+    var arrData = [[String : Any]]()
+    for temp in data {
+        arrData.append(temp.dictionary())
+    }
+    setDataToPreference(data: arrData as AnyObject, forKey: "home_banner_data")
+}
+
+func getHomePavalionData() -> [HomeModel]
+{
+    var arrData = [HomeModel]()
+    if let data : [[String : Any]] = getDataFromPreference(key: "home_banner_data") as? [[String : Any]]
+    {
+        for temp in data {
+            arrData.append(HomeModel.init(temp))
+        }
+    }
+    return arrData
+}

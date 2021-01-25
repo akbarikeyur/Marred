@@ -44,6 +44,8 @@ struct API {
     
     static let GET_PRODUCT                            =       BASE_URL + "v1/user/getPorductByUser"
     static let GET_ORDER                              =       BASE_URL + "v1/user/getVendorOrder"
+    
+    static let CONTACT_US                             =       BASE_URL + "v1/contactadmin"
 }
 
 public class APIManager {

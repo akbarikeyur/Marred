@@ -33,13 +33,18 @@ class HomeVC: UIViewController {
         AppDelegate().sharedDelegate().serviceCallToGetCategory()
         AppDelegate().sharedDelegate().serviceCallToGetUserDetail()
         AppDelegate().sharedDelegate().serviceCallToGetPaymentGateway()
-        refreshControl.addTarget(self, action: #selector(serviceCallToGetHome), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(refreshHomeData), for: .valueChanged)
         tblView.refreshControl = refreshControl
-        serviceCallToGetHome()
+        setupData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate().sharedDelegate().showTabBar()
+    }
+    
+    @objc func refreshHomeData() {
+        refreshControl.endRefreshing()
+        serviceCallToGetHome(true)
     }
     
     //MARK:- Button click event
@@ -122,14 +127,40 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeVC {
-    @objc func serviceCallToGetHome() {
+    func setupData() {
+        if getHomeBannerData().count > 0 || getHomePavalionData().count > 0 {
+            self.arrData = [HomeDisplayModel]()
+            self.arrData.append(HomeDisplayModel.init(["type":"CATEGORY_LIST"]))
+            
+            if getHomeBannerData().count > 0 {
+                self.arrBanner = getHomeBannerData()
+                self.arrData.append(HomeDisplayModel.init(["type":"BANNER_AD"]))
+            }
+            
+            if getHomePavalionData().count > 0 {
+                for temp in getHomePavalionData() {
+                    self.arrHomeData.append(temp)
+                    self.arrData.append(HomeDisplayModel.init(["type":"BANNER_AD"]))
+                }
+            }
+            self.arrData.append(HomeDisplayModel.init(["type":"CONTACT_INFO"]))
+            self.tblView.reloadData()
+            serviceCallToGetHome(false)
+        }
+        else{
+            serviceCallToGetHome(true)
+        }
+    }
+    
+    @objc func serviceCallToGetHome(_ isLoader : Bool) {
         refreshControl.endRefreshing()
-        HomeAPIManager.shared.serviceCallToGetHome { (dict) in
+        HomeAPIManager.shared.serviceCallToGetHome(isLoader) { (dict) in
             self.arrData = [HomeDisplayModel]()
             self.arrData.append(HomeDisplayModel.init(["type":"CATEGORY_LIST"]))
             if let temp = dict["home_banner"] as? [String] {
                 self.arrBanner = temp
                 self.arrData.append(HomeDisplayModel.init(["type":"BANNER_AD"]))
+                setHomeBannerData(temp)
             }
             let arrKeys = dict["count"] as? [String] ?? [String]()
             if let pavalionDict = dict["pavalion"] as? [String : Any] {
@@ -139,9 +170,12 @@ extension HomeVC {
                         self.arrData.append(HomeDisplayModel.init(["type":"PRODUCT_LIST"]))
                     }
                 }
+                setHomePavalionData(self.arrHomeData)
             }
             self.arrData.append(HomeDisplayModel.init(["type":"CONTACT_INFO"]))
             self.tblView.reloadData()
          }
     }
+    
+    
 }

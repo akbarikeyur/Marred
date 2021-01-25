@@ -18,38 +18,6 @@
             endingLineNumber = "146"
             landmarkName = "serviceCallToGetProductList()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "82AF06AC-59B0-489E-BA03-A4A6F099F755 - 19a4af4707d6874c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Marred.SubCategoryVC.serviceCallToGetProductList() -&gt; ()"
-                  moduleName = "Marred"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/keyurakbari/Upwork/Waqas/Marred/Progress/Marred/Marred/Home/SubCategoryVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "808">
-               </Location>
-               <Location
-                  uuid = "82AF06AC-59B0-489E-BA03-A4A6F099F755 - 326ac72c221fd529"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, Swift.Int) -&gt; () in Marred.SubCategoryVC.serviceCallToGetProductList() -&gt; ()"
-                  moduleName = "Marred"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/keyurakbari/Upwork/Waqas/Marred/Progress/Marred/Marred/Home/SubCategoryVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "147"
-                  endingLineNumber = "147"
-                  offsetFromSymbolStart = "241">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

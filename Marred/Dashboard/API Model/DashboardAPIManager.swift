@@ -29,4 +29,14 @@ public class DashboardAPIManager {
             }
         }
     }
+    
+    func serviceCallToContactUs(_ param : [String : Any], _ completion: @escaping () -> Void) {
+        APIManager.shared.callPostRequest(API.CONTACT_US, param, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                completion()
+                return
+            }
+        }
+    }
 }

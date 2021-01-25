@@ -48,6 +48,10 @@ struct HomeModel {
             }
         }
     }
+    
+    func dictionary() -> [String : Any] {
+        return ["name" : name!, "banner" : banner!, "data" : AppModel.shared.getCategoryArrOfDictionary(arr: data), "products" : AppModel.shared.getProductArrOfDictionary(arr: products)]
+    }
 }
 
 struct HomeDisplayModel {

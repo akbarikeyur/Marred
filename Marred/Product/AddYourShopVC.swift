@@ -161,8 +161,8 @@ class AddYourShopVC: UIViewController {
             param["email"] = emailTxt.text
             param["phonecode"] = phonecodeLbl.text
             param["phone"] = phoneTxt.text
-            param["pavilion"] = String(selectedPavilion.id)
-            param["category"] = String(selectedCategory.term_id)
+            param["pavilion"] = selectedPavilion.name
+            param["category"] = selectedCategory.name
             param["request"] = requestTxtview.text
             printData(param)
             ProductAPIManager.shared.serviceCallToAddShop(param) {

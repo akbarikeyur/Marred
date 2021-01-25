@@ -17,14 +17,23 @@ class AppModel: NSObject {
         currentUser = UserModel.init([String : Any]())
     }
     
-//    func getPropertyTypeArrOfDictionary(arr:[PropertyTypeModel]) -> [[String:Any]] {
-//        let len:Int = arr.count
-//        var retArr:[[String:Any]] =  [[String:Any]] ()
-//        for i in 0..<len{
-//            retArr.append(arr[i].dictionary())
-//        }
-//        return retArr
-//    }
+    func getCategoryArrOfDictionary(arr:[CategoryModel]) -> [[String:Any]] {
+        let len:Int = arr.count
+        var retArr:[[String:Any]] =  [[String:Any]] ()
+        for i in 0..<len{
+            retArr.append(arr[i].dictionary())
+        }
+        return retArr
+    }
+    
+    func getProductArrOfDictionary(arr:[ProductModel]) -> [[String:Any]] {
+        let len:Int = arr.count
+        var retArr:[[String:Any]] =  [[String:Any]] ()
+        for i in 0..<len{
+            retArr.append(arr[i].dictionary())
+        }
+        return retArr
+    }
     
     func getIntData(_ dict : [String : Any], _ key : String) -> Int {
         var value = 0

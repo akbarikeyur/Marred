@@ -19,15 +19,61 @@ class SellerContactAdminTabVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupData()
     }
     
     func setupDetails() {
         
     }
     
+    func resetData() {
+        fnameTxt.text = ""
+        lnameTxt.text = ""
+        emailTxt.text = ""
+        messageTxtView.text = ""
+    }
+    
+    func setupData() {
+        resetData()
+        if AppModel.shared.currentUser.display_name.contains(" ") {
+            let arrTemp = AppModel.shared.currentUser.display_name.components(separatedBy: " ")
+            fnameTxt.text = arrTemp[0]
+            lnameTxt.text = arrTemp[1]
+        }
+        emailTxt.text = AppModel.shared.currentUser.user_email
+    }
+    
     //MARK:- Button click event
     @IBAction func clickToSend(_ sender: Any) {
-        
+        self.view.endEditing(true)
+        if fnameTxt.text?.trimmed == "" {
+            displayToast("Please enter first name")
+        }
+        else if lnameTxt.text?.trimmed == "" {
+            displayToast("Please enter last name")
+        }
+        else if emailTxt.text?.trimmed == "" {
+            displayToast("Please enter email")
+        }
+        else if !emailTxt.text!.isValidEmail {
+            displayToast("Invalid email")
+        }
+        else if messageTxtView.text?.trimmed == "" {
+            displayToast("Please enter your message")
+        }
+        else{
+            var param = [String : Any]()
+            param["first_name"] = fnameTxt.text
+            param["last_name"] = fnameTxt.text
+            param["email"] = fnameTxt.text
+            param["message"] = fnameTxt.text
+            
+            DashboardAPIManager.shared.serviceCallToContactUs(param) {
+                showAlert("Thank you for getting in touch! ", message: "We appreciate you contacting us. One of our colleagues will get back in touch with you soon!") {
+                    self.resetData()
+                }
+            }
+        }
     }
     
 

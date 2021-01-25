@@ -28,6 +28,7 @@ class PavilionProductTVC: UITableViewCell {
     }
 
     func setupDetails() {
+        nameLbl.text = dictHome.name.capitalized
         categoryCV.reloadData()
         productCV.reloadData()
         setImageBackgroundImage(adImgView, dictHome.banner, IMAGE.PLACEHOLDER)

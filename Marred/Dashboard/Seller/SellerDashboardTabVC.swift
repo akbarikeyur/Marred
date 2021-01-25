@@ -33,6 +33,7 @@ class SellerDashboardTabVC: UIViewController {
 
         // Do any additional setup after loading the view.
         chartView.isHidden = true
+        resetData()
         registerTableViewMethod()
         serviceCallToGetSellerDashboard()
     }
@@ -41,15 +42,23 @@ class SellerDashboardTabVC: UIViewController {
         
     }
     
-    func setupData() {
-        totalSaleLbl.text = sellerDict.total_sales
+    func resetData() {
+        totalSaleLbl.text = "0"
         saleDateLbl.text = ""
-        totalEarningLbl.text = sellerDict.order_total
+        totalEarningLbl.text = "0"
         earningDateLbl.text = ""
-        totalViewLbl.text = sellerDict.pageviews
+        totalViewLbl.text = "0"
         viewDateLbl.text = ""
-        totalOrderLbl.text = sellerDict.orders.total
+        totalOrderLbl.text = "0"
         orderDateLbl.text = ""
+    }
+    
+    func setupData() {
+        resetData()
+        totalSaleLbl.text = sellerDict.total_sales
+        totalEarningLbl.text = sellerDict.order_total
+        totalViewLbl.text = sellerDict.pageviews
+        totalOrderLbl.text = sellerDict.orders.total
         
         arrOrder = [TitleValueModel]()
         arrOrder.append(TitleValueModel.init(["title" : "Total", "value" : sellerDict.orders.total!]))
