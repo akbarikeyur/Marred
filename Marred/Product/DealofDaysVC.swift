@@ -11,16 +11,22 @@ import JXPageControl
 
 class DealofDaysVC: UIViewController {
 
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var topCV: UICollectionView!
     @IBOutlet weak var topPageControl: JXPageControlScale!
     @IBOutlet weak var bottomCV: UICollectionView!
     @IBOutlet weak var constraintHeightBottomCV: NSLayoutConstraint!
     
+    var arrFeatureData = [DealProductModel]()
+    var arrDealData = [DealProductModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        topView.isHidden = (arrFeatureData.count == 0)
         registerCollectionView()
+        serviceCallToGetDealOfDay()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,12 +72,14 @@ extension DealofDaysVC : UICollectionViewDelegate, UICollectionViewDataSource, U
     func registerCollectionView() {
         topCV.register(UINib.init(nibName: "DealProductCVC", bundle: nil), forCellWithReuseIdentifier: "DealProductCVC")
         bottomCV.register(UINib.init(nibName: "ProductCVC", bundle: nil), forCellWithReuseIdentifier: "ProductCVC")
-        constraintHeightBottomCV.constant = 280 * 3
-        self.topPageControl.numberOfPages = 5
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if collectionView == topCV {
+            return arrFeatureData.count
+        }else{
+            return arrDealData.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -85,11 +93,11 @@ extension DealofDaysVC : UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == topCV {
             let cell : DealProductCVC = topCV.dequeueReusableCell(withReuseIdentifier: "DealProductCVC", for: indexPath) as! DealProductCVC
-            
+            cell.setupDetails(arrFeatureData[indexPath.row])
             return cell
         }else{
             let cell : ProductCVC = bottomCV.dequeueReusableCell(withReuseIdentifier: "ProductCVC", for: indexPath) as! ProductCVC
-            
+            cell.setupDetails(arrDealData[indexPath.row])
             return cell
         }
     }
@@ -101,6 +109,35 @@ extension DealofDaysVC : UICollectionViewDelegate, UICollectionViewDataSource, U
             if let visibleIndexPath = self.topCV.indexPathForItem(at: visiblePoint) {
                 self.topPageControl.currentPage = visibleIndexPath.row
             }
+        }
+    }
+}
+
+extension DealofDaysVC {
+    func serviceCallToGetDealOfDay() {
+        ProductAPIManager.shared.serviceCallToGetDealOfDay(["user_id" : AppModel.shared.currentUser.ID!]) { (data) in
+            self.arrDealData = [DealProductModel]()
+            self.arrFeatureData = [DealProductModel]()
+            for temp in data {
+                let dict = DealProductModel.init(temp)
+                if dict.get_featured {
+                    self.arrFeatureData.append(dict)
+                }else{
+                    self.arrDealData.append(dict)
+                }
+            }
+            self.topCV.reloadData()
+            self.bottomCV.reloadData()
+            self.topView.isHidden = (self.arrFeatureData.count == 0)
+            self.updateHeight()
+        }
+    }
+    
+    func updateHeight() {
+        if arrDealData.count % 2 == 0 {
+            constraintHeightBottomCV.constant = CGFloat(280 * (arrDealData.count/2))
+        }else{
+            constraintHeightBottomCV.constant = CGFloat(280 * ((arrDealData.count/2) + 1))
         }
     }
 }

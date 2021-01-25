@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1758,6 +1758,10 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="371" id="vQv-58-3rT"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="zy2-kF-lMy" id="mTu-JJ-Nk9"/>
+                                                    <outlet property="delegate" destination="zy2-kF-lMy" id="bli-o0-aTu"/>
+                                                </connections>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kCQ-UF-rOI" customClass="View" customModule="Marred" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="237" width="280" height="97.5"/>
@@ -1830,6 +1834,8 @@
                         <viewLayoutGuide key="safeArea" id="blq-v8-UIC"/>
                     </view>
                     <connections>
+                        <outlet property="constraintHeightTblView" destination="vQv-58-3rT" id="fNK-9l-EBN"/>
+                        <outlet property="noDataLbl" destination="ztH-HM-f9T" id="mgy-a0-fiS"/>
                         <outlet property="priceLbl" destination="adC-ft-yVt" id="wNr-4v-dTI"/>
                         <outlet property="tabCV" destination="L2U-L8-qVp" id="7Cw-Dg-fG9"/>
                         <outlet property="tblView" destination="ehm-WG-xih" id="F3K-dc-HUZ"/>
@@ -1867,7 +1873,7 @@
                                                                 <rect key="frame" x="83" y="30" width="124" height="83.5"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Banner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuf-ys-ffO" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="133.5" width="270" height="9"/>
+                                                                <rect key="frame" x="10" y="133.5" width="270" height="19"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1882,7 +1888,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRV-l4-UEX" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="152.5" width="270" height="28.5"/>
+                                                                <rect key="frame" x="10" y="162.5" width="270" height="28.5"/>
                                                                 <string key="text">Upload a banner for your store. Banner
 size is (625x300) pixels. </string>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
@@ -1915,7 +1921,7 @@ size is (625x300) pixels. </string>
                                                             <constraint firstItem="SRV-l4-UEX" firstAttribute="leading" secondItem="ViH-QC-VHn" secondAttribute="leading" constant="10" id="PGb-FX-GQX"/>
                                                             <constraint firstAttribute="trailing" secondItem="Sc5-aA-9QG" secondAttribute="trailing" id="UdO-fH-G14"/>
                                                             <constraint firstItem="WFD-2O-gJp" firstAttribute="centerX" secondItem="ViH-QC-VHn" secondAttribute="centerX" id="Waq-9E-poP"/>
-                                                            <constraint firstAttribute="bottom" secondItem="SRV-l4-UEX" secondAttribute="bottom" constant="29" id="YSJ-3Z-u76"/>
+                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SRV-l4-UEX" secondAttribute="bottom" constant="10" id="YSJ-3Z-u76"/>
                                                             <constraint firstItem="SRV-l4-UEX" firstAttribute="top" secondItem="fuf-ys-ffO" secondAttribute="bottom" constant="10" id="erd-6q-faq"/>
                                                             <constraint firstItem="fuf-ys-ffO" firstAttribute="leading" secondItem="ViH-QC-VHn" secondAttribute="leading" constant="10" id="fA9-C5-ruN"/>
                                                             <constraint firstItem="WFD-2O-gJp" firstAttribute="top" secondItem="ViH-QC-VHn" secondAttribute="top" constant="30" id="l1Z-IV-NO8"/>

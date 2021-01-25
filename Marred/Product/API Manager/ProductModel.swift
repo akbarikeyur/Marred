@@ -9,8 +9,8 @@
 import Foundation
 
 struct ProductModel {
-    var id : Int!
-    var price, thumbnail, title, vendor : String!
+    var id, vendor_id : Int!
+    var price, thumbnail, title, vendor, author_name : String!
     var brands : BrandModel!
     
     init(_ dict : [String : Any])
@@ -30,10 +30,12 @@ struct ProductModel {
         }
         vendor = dict["vendor"] as? String ?? ""
         brands = BrandModel.init(dict["brands"] as? [String : Any] ?? [String : Any]())
+        vendor_id = AppModel.shared.getIntData(dict, "vendor_id")
+        author_name = dict["author_name"] as? String ?? ""
     }
     
     func dictionary() -> [String : Any] {
-        return ["id" : id!, "price" : price!, "thumbnail" : thumbnail!, "title" : title!, "vendor" : vendor!, "brands" : brands.dictionary()]
+        return ["id" : id!, "price" : price!, "thumbnail" : thumbnail!, "title" : title!, "vendor" : vendor!, "brands" : brands.dictionary(), "vendor_id" : vendor_id!, "author_name" : author_name!]
     }
 }
 
@@ -104,5 +106,22 @@ struct CartModel {
         product_name = AppModel.shared.getStringData(dict, "product_name")
         product_price = AppModel.shared.getStringData(dict, "product_price")
         quantity = AppModel.shared.getIntData(dict, "quantity")
+    }
+}
+
+struct DealProductModel {
+    var id : Int!
+    var get_featured : Bool!
+    var get_name, get_status, get_description, get_short_description, get_price, thumbnail : String
+    
+    init(_ dict : [String : Any]) {
+        id = AppModel.shared.getIntData(dict, "id")
+        get_featured = dict["get_featured"] as? Bool ?? false
+        get_name = AppModel.shared.getStringData(dict, "get_name")
+        get_status = AppModel.shared.getStringData(dict, "get_status")
+        get_description = AppModel.shared.getStringData(dict, "get_description")
+        get_short_description = AppModel.shared.getStringData(dict, "get_short_description")
+        get_price = AppModel.shared.getStringData(dict, "get_price")
+        thumbnail = AppModel.shared.getStringData(dict, "thumbnail")
     }
 }

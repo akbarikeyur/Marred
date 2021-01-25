@@ -13,19 +13,20 @@ class BuyerDashboardVC: UIViewController {
     @IBOutlet weak var tabCV: UICollectionView!
     @IBOutlet weak var mainContainerView: UIView!
     
-    var arrTabData = ["Dashboard", "Orders", "Addresses", "Account details"]
+    var arrTabData = ["Dashboard", "Orders", "Addresses", "Account details", "Contact Us"]
     var selectedTab = 0
     
     let dashboardTab : BuyerDashboardTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerDashboardTabVC") as! BuyerDashboardTabVC
     let orderTab : BuyerOrderTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerOrderTabVC") as! BuyerOrderTabVC
     let addressTab : BuyerAddressTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerAddressTabVC") as! BuyerAddressTabVC
     let accountTab : BuyerAccountDetailTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerAccountDetailTabVC") as! BuyerAccountDetailTabVC
-    
+    let contactTab : SellerContactAdminTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "SellerContactAdminTabVC") as! SellerContactAdminTabVC
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(redirectToContactUs), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_CONTACT_US), object: nil)
         registerCollectionView()
         selectTab()
     }
@@ -34,13 +35,23 @@ class BuyerDashboardVC: UIViewController {
         AppDelegate().sharedDelegate().showTabBar()
     }
     
+    @objc func redirectToContactUs() {
+        selectedTab = 4
+        selectTab()
+    }
+    
     //MARK:- Button click event
     @IBAction func clickToSideMenu(_ sender: Any) {
         self.menuContainerViewController.toggleLeftSideMenuCompletion { }
     }
     
     @IBAction func clickToLogout(_ sender: Any) {
-        
+        self.view.endEditing(true)
+        showAlertWithOption("Logout", message: "Are you sure want to logout?", btns: ["No", "Yes"], completionConfirm: {
+            AppDelegate().sharedDelegate().navigaeToLogout()
+        }) {
+            
+        }
     }
     
     @IBAction func clickToWishList(_ sender: Any) {
@@ -80,9 +91,9 @@ extension BuyerDashboardVC : UICollectionViewDelegate, UICollectionViewDataSourc
         let label = UILabel(frame: CGRect.zero)
         label.text = arrTabData[indexPath.row]
         if selectedTab == indexPath.row {
-            label.font = UIFont.init(name: APP_REGULAR, size: 14)
-        }else{
             label.font = UIFont.init(name: APP_BOLD, size: 14)
+        }else{
+            label.font = UIFont.init(name: APP_REGULAR, size: 14)
         }
         label.sizeToFit()
         return CGSize(width: label.frame.size.width + 10, height: collectionView.frame.size.height)
@@ -94,11 +105,11 @@ extension BuyerDashboardVC : UICollectionViewDelegate, UICollectionViewDataSourc
         if selectedTab == indexPath.row {
             cell.nameLbl.textColor = BlackColor
             cell.lineImg.isHidden = false
-            cell.nameLbl.font = UIFont.init(name: APP_REGULAR, size: 14)
+            cell.nameLbl.font = UIFont.init(name: APP_BOLD, size: 14)
         }else{
             cell.nameLbl.textColor = DarkTextColor
             cell.lineImg.isHidden = true
-            cell.nameLbl.font = UIFont.init(name: APP_BOLD, size: 14)
+            cell.nameLbl.font = UIFont.init(name: APP_REGULAR, size: 14)
         }
         return cell
     }
@@ -126,6 +137,10 @@ extension BuyerDashboardVC : UICollectionViewDelegate, UICollectionViewDataSourc
             displaySubViewtoParentView(mainContainerView, subview: accountTab.view)
             accountTab.setupDetails()
         }
+        else if selectedTab == 4 {
+            displaySubViewtoParentView(mainContainerView, subview: contactTab.view)
+            contactTab.setupDetails()
+        }
     }
     
     func resetAllTab() {
@@ -133,5 +148,6 @@ extension BuyerDashboardVC : UICollectionViewDelegate, UICollectionViewDataSourc
         orderTab.view.removeFromSuperview()
         addressTab.view.removeFromSuperview()
         accountTab.view.removeFromSuperview()
+        contactTab.view.removeFromSuperview()
     }
 }

@@ -85,16 +85,16 @@ class MyAddressTVC: UITableViewCell, UITextFieldDelegate {
         else {
             var param = [String : Any]()
             param["first_name"] = fnameTxt.text
-            param["last_name"] = fnameTxt.text
-            param["company"] = fnameTxt.text
-            param["address_1"] = fnameTxt.text
-            param["address_2"] = fnameTxt.text
-            param["city"] = fnameTxt.text
-            param["state"] = fnameTxt.text
-            param["postcode"] = fnameTxt.text
-            param["country"] = fnameTxt.text
-            param["email"] = fnameTxt.text
-            param["phone"] = fnameTxt.text
+            param["last_name"] = lnameTxt.text
+            param["company"] = companyTxt.text
+            param["address_1"] = address1Txt.text
+            param["address_2"] = address2Txt.text
+            param["city"] = cityTxt.text
+            param["state"] = stateTxt.text
+            param["postcode"] = postcodeTxt.text
+            param["country"] = countryTxt.text
+            param["email"] = emailTxt.text
+            param["phone"] = phoneTxt.text
             print(param)
             
             var newParam = [String : Any]()
@@ -105,7 +105,7 @@ class MyAddressTVC: UITableViewCell, UITextFieldDelegate {
                 newParam["shipping"] = param
             }
             LoginAPIManager.shared.serviceCallToUpdateUserDetail(param) {
-                
+                displayToast("Address update successfully.")
             }
         }
     }

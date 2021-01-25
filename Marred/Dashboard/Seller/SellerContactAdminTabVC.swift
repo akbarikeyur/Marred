@@ -63,14 +63,16 @@ class SellerContactAdminTabVC: UIViewController {
         }
         else{
             var param = [String : Any]()
+            param["user_id"] = AppModel.shared.currentUser.ID
             param["first_name"] = fnameTxt.text
-            param["last_name"] = fnameTxt.text
-            param["email"] = fnameTxt.text
-            param["message"] = fnameTxt.text
+            param["last_name"] = lnameTxt.text
+            param["email"] = emailTxt.text
+            param["user_message"] = messageTxtView.text
             
             DashboardAPIManager.shared.serviceCallToContactUs(param) {
-                showAlert("Thank you for getting in touch! ", message: "We appreciate you contacting us. One of our colleagues will get back in touch with you soon!") {
-                    self.resetData()
+                self.resetData()
+                showAlert("Thank you for getting in touch!", message: "We appreciate you contacting us. One of our colleagues will get back in touch with you soon!") {
+                    NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.NOTIFICATION_TAB_CLICK), object: ["tabIndex" : 0])
                 }
             }
         }

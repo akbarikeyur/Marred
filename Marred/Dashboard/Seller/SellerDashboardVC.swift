@@ -13,7 +13,7 @@ class SellerDashboardVC: UIViewController {
     @IBOutlet weak var tabCV: UICollectionView!
     @IBOutlet weak var mainContainerView: UIView!
     
-    var arrTabData = ["Dashboard", "Products", "Orders", "Contact Admin", "Withdraw", "Settings", "Payment Settings"]
+    var arrTabData = ["Dashboard", "Products", "Orders", "Contact Admin", "Withdraw", "Settings"]
     var selectedTab = 0
     
     let dashboardTab : SellerDashboardTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "SellerDashboardTabVC") as! SellerDashboardTabVC
@@ -28,6 +28,7 @@ class SellerDashboardVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(redirectToContactUs), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_CONTACT_US), object: nil)
         registerCollectionView()
         selectTab()
     }
@@ -36,13 +37,23 @@ class SellerDashboardVC: UIViewController {
         AppDelegate().sharedDelegate().showTabBar()
     }
     
+    @objc func redirectToContactUs() {
+        selectedTab = 3
+        selectTab()
+    }
+    
     //MARK:- Button click event
     @IBAction func clickToSideMenu(_ sender: Any) {
         self.menuContainerViewController.toggleLeftSideMenuCompletion { }
     }
     
     @IBAction func clickToLogout(_ sender: Any) {
-        
+        self.view.endEditing(true)
+        showAlertWithOption("Logout", message: "Are you sure want to logout?", btns: ["No", "Yes"], completionConfirm: {
+            AppDelegate().sharedDelegate().navigaeToLogout()
+        }) {
+            
+        }
     }
     
     @IBAction func clickToWishList(_ sender: Any) {

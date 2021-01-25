@@ -41,9 +41,11 @@ struct API {
     
     static let GET_SELLER_DASHBOARD                   =       BASE_URL + "v1/seller/Dashboard"
     static let ADD_SHOP                               =       BASE_URL + "v1/seller/addShop"
+    static let DEAL_OF_DAY                            =       BASE_URL + "v1/deal_of_the_day"    
     
     static let GET_PRODUCT                            =       BASE_URL + "v1/user/getPorductByUser"
     static let GET_ORDER                              =       BASE_URL + "v1/user/getVendorOrder"
+    static let GET_WITHDRAW_REQUEST                   =       BASE_URL + "v1/seller/getwithDrawRequest"
     
     static let CONTACT_US                             =       BASE_URL + "v1/contactadmin"
 }

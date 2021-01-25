@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -84,7 +85,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34.50 AED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q57-kL-ud4" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                <rect key="frame" x="10" y="236" width="95" height="24"/>
+                                <rect key="frame" x="10" y="236" width="200" height="24"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -98,25 +99,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130.00 AED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxE-vZ-GE9" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                <rect key="frame" x="110" y="243.5" width="62.5" height="14.5"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="uxE-vZ-GE9" firstAttribute="bottom" secondItem="q57-kL-ud4" secondAttribute="bottom" constant="-2" id="8If-xq-78d"/>
                             <constraint firstItem="q57-kL-ud4" firstAttribute="leading" secondItem="hyf-QK-Aso" secondAttribute="leading" constant="10" id="Db5-6X-UlB"/>
                             <constraint firstAttribute="trailing" secondItem="E3g-Cb-N2b" secondAttribute="trailing" constant="10" id="Doc-Tm-nHK"/>
                             <constraint firstItem="hah-lJ-89A" firstAttribute="leading" secondItem="hyf-QK-Aso" secondAttribute="leading" constant="10" id="EFN-7a-fj3"/>
@@ -127,8 +112,8 @@
                             <constraint firstAttribute="bottom" secondItem="q57-kL-ud4" secondAttribute="bottom" constant="10" id="eI4-wu-1nn"/>
                             <constraint firstItem="AOY-ar-Bkj" firstAttribute="leading" secondItem="hyf-QK-Aso" secondAttribute="leading" id="iIj-gz-wRK"/>
                             <constraint firstAttribute="trailing" secondItem="AOY-ar-Bkj" secondAttribute="trailing" id="jVg-0g-fzQ"/>
-                            <constraint firstItem="uxE-vZ-GE9" firstAttribute="leading" secondItem="q57-kL-ud4" secondAttribute="trailing" constant="5" id="mei-Up-uWh"/>
                             <constraint firstItem="hah-lJ-89A" firstAttribute="top" secondItem="E3g-Cb-N2b" secondAttribute="bottom" constant="5" id="tJ6-DS-9ca"/>
+                            <constraint firstAttribute="trailing" secondItem="q57-kL-ud4" secondAttribute="trailing" constant="10" id="v0m-Ls-EEB"/>
                             <constraint firstAttribute="trailing" secondItem="hah-lJ-89A" secondAttribute="trailing" constant="10" id="wZl-Zs-eAQ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -146,6 +131,12 @@
                 <constraint firstItem="hyf-QK-Aso" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="r9v-6W-2Qz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="descLbl" destination="hah-lJ-89A" id="cPY-5N-k2T"/>
+                <outlet property="imgView" destination="dfo-Jz-xvO" id="rhm-9J-wCn"/>
+                <outlet property="nameLbl" destination="E3g-Cb-N2b" id="shG-v7-LPi"/>
+                <outlet property="priceLbl" destination="q57-kL-ud4" id="uvz-5J-R3l"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </collectionViewCell>
     </objects>

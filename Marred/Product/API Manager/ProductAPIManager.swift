@@ -115,5 +115,16 @@ public class ProductAPIManager {
                 return
             }
         }
-    }    
+    }
+    
+    func serviceCallToGetDealOfDay(_ param : [String : Any], _ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
+        APIManager.shared.callPostRequest(API.DEAL_OF_DAY, param, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [[String : Any]] {
+                    completion(data)
+                }
+            }
+        }
+    }
 }

@@ -63,3 +63,18 @@ struct TitleValueModel {
         value = dict["value"] as? String ?? ""
     }
 }
+
+struct WithdrawModel {
+    var id, user_id, amount, date, status, method, note : String!
+    
+    init(_ dict : [String : Any]) {
+        id = AppModel.shared.getStringData(dict, "id")
+        user_id = AppModel.shared.getStringData(dict, "user_id")
+        amount = AppModel.shared.getStringData(dict, "amount")
+        date = AppModel.shared.getStringData(dict, "date")
+        status = AppModel.shared.getStringData(dict, "status")
+        method = AppModel.shared.getStringData(dict, "method")
+        note = AppModel.shared.getStringData(dict, "note")
+        
+    }
+}

@@ -14,11 +14,16 @@ class DealProductCVC: UICollectionViewCell {
     @IBOutlet weak var nameLbl: Label!
     @IBOutlet weak var soldByLbl: Label!
     @IBOutlet weak var priceLbl: Label!
-    @IBOutlet weak var oldPriceLbl: Label!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func setupDetails(_ dict : DealProductModel) {
+        setImageBackgroundImage(imgView, dict.thumbnail, IMAGE.PLACEHOLDER)
+        nameLbl.text = dict.get_name
+        soldByLbl.text = dict.get_short_description
+        priceLbl.text = dict.get_price
+    }
 }

@@ -30,6 +30,17 @@ public class DashboardAPIManager {
         }
     }
     
+    func serviceCallToGetWithdrawRequest(_ param : [String : Any], _ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
+        APIManager.shared.callPostRequest(API.GET_WITHDRAW_REQUEST, param, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [[String : Any]] {
+                    completion(data)
+                }
+            }
+        }
+    }
+    
     func serviceCallToContactUs(_ param : [String : Any], _ completion: @escaping () -> Void) {
         APIManager.shared.callPostRequest(API.CONTACT_US, param, true) { (dict) in
             printData(dict)

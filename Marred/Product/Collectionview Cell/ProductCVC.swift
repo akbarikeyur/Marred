@@ -10,9 +10,21 @@ import UIKit
 
 class ProductCVC: UICollectionViewCell {
 
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var nameLbl: Label!
+    @IBOutlet weak var descLbl: Label!
+    @IBOutlet weak var priceLbl: Label!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    func setupDetails(_ dict : DealProductModel) {
+        setImageBackgroundImage(imgView, dict.thumbnail, IMAGE.PLACEHOLDER)
+        nameLbl.text = dict.get_name
+        descLbl.text = dict.get_short_description
+        priceLbl.text = displayPriceWithCurrency(dict.get_price)
+    }
+    
 }

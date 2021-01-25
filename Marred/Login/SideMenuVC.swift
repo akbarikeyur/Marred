@@ -144,6 +144,12 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
                 let vc : AddYourShopVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "AddYourShopVC") as! AddYourShopVC
                 UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
                 break
+            case 6:
+                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 4])
+                delay(0.2) {
+                    NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_CONTACT_US), object: nil)
+                }
+                break
             default:
                 break
         }
