@@ -121,6 +121,8 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
         let cell : CartTVC = tblView.dequeueReusableCell(withIdentifier: "CartTVC") as! CartTVC
         cell.delegate = self
         cell.setupDetails(arrCart[indexPath.row])
+        cell.removeBtn.tag = indexPath.row
+        cell.removeBtn.addTarget(self, action: #selector(clickToRemove(_:)), for: .touchUpInside)
         cell.selectionStyle = .none
         return cell
     }
@@ -142,6 +144,15 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
             arrCart[index!] = cart
         }
     }
+    
+    @objc @IBAction func clickToRemove(_ sender: UIButton) {
+        showAlertWithOption("Delete", message: "Are you sure want to delete?", btns: ["No", "Yes"], completionConfirm: {
+            self.arrCart.remove(at: sender.tag)
+            self.updateTableviewHeight()
+        }) {
+            
+        }
+    }
 }
 
 extension ShoppingCartVC {
@@ -149,7 +160,11 @@ extension ShoppingCartVC {
         ProductAPIManager.shared.serviceCallToGetCart(isLoader) { (data) in
             self.arrCart = [CartModel]()
             for temp in data {
-                self.arrCart.append(CartModel.init(temp))
+                if let dict = temp["cart"] as? [String : Any] {
+                    var product = CartModel.init(dict)
+                    product.store_name = temp["store_name"] as? String ?? ""
+                    self.arrCart.append(product)
+                }
             }
             self.updateTableviewHeight()
         }

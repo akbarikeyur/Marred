@@ -33,8 +33,10 @@ class CartTVC: UITableViewCell {
 
     func setupDetails(_ dict : CartModel) {
         cart = dict
+        setButtonBackgroundImage(imgBtn, cart.product_image, IMAGE.PLACEHOLDER)
         nameLbl.text = dict.product_name
-        priceLbl.text = dict.product_price.decoded
+        vendorLbl.text = "Veendor: " + dict.store_name
+        priceLbl.text = dict.product_price
         quantityLbl.text = String(dict.quantity)
     }
     

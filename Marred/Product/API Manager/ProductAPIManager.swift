@@ -36,11 +36,9 @@ public class ProductAPIManager {
         APIManager.shared.callGetRequest(API.GET_CART, isLoader) { (dict) in
             printData(dict)
             if let status = dict["status"] as? String, status == "success" {
-                if let data = dict["data"] as? [String : Any] {
-                    if let cart = data["cart"] as? [[String : Any]] {
-                        completion(cart)
-                        return
-                    }
+                if let data = dict["data"] as? [[String : Any]] {
+                    completion(data)
+                    return
                 }
             }
         }
