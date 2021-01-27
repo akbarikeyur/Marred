@@ -19,7 +19,6 @@ target 'Marred' do
   pod 'JXPageControl'
   pod 'Foloosi-iOS-SDK', '~> 1.0.7'
   
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Core'
+  pod 'Firebase'
   pod 'Firebase/Messaging'
 end

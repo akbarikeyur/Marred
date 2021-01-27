@@ -10,7 +10,6 @@ import UIKit
 
 class TopCategoryCVC: UICollectionViewCell {
 
-    @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLbl: Label!
     
     override func awakeFromNib() {
@@ -19,7 +18,6 @@ class TopCategoryCVC: UICollectionViewCell {
     }
     
     func setupDetail(_ dict : CategoryModel) {
-        //imgView.image = UIImage(named: dict.image)
         nameLbl.text = dict.name
     }
     

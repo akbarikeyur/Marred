@@ -13,6 +13,7 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var constraintHeightTblView: NSLayoutConstraint!
     @IBOutlet weak var promocodeTxt: TextField!
+    @IBOutlet weak var calculateView: UIView!
     @IBOutlet weak var countryTxt: TextField!
     @IBOutlet weak var countryFlagImg: UIButton!
     @IBOutlet weak var stateTxt: TextField!
@@ -22,6 +23,8 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var priceLbl: Label!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var sideImgView: UIImageView!
+    @IBOutlet weak var myScroll: UIScrollView!
+    @IBOutlet weak var noDataView: UIView!
     
     var isLoader = false
     var arrCart = [CartModel]()
@@ -30,17 +33,20 @@ class ShoppingCartVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(serviceCallToGetCart), name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART), object: nil)
         registerTableViewMethod()
         isLoader = true
-        if PLATFORM.isSimulator {
-            promocodeTxt.text = "maareedtest"
-        }
+        noDataView.isHidden = true
+//        myScroll.isHidden = true
+        promocodeTxt.text = ""
         
+        calculateView.isHidden = true
+        clickToShipping(freeShipBtn)
+        serviceCallToGetCart()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate().sharedDelegate().showTabBar()
-        serviceCallToGetCart()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,6 +96,7 @@ class ShoppingCartVC: UIViewController {
     
     @IBAction func clickToProcessToCheckout(_ sender: Any) {
         let vc : CheckoutVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "CheckoutVC") as! CheckoutVC
+        vc.arrCart = arrCart
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -160,7 +167,7 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
 }
 
 extension ShoppingCartVC {
-    func serviceCallToGetCart() {
+    @objc func serviceCallToGetCart() {
         ProductAPIManager.shared.serviceCallToGetCart(isLoader) { (data) in
             self.arrCart = [CartModel]()
             for temp in data {
@@ -171,6 +178,8 @@ extension ShoppingCartVC {
                 }
             }
             self.updateTableviewHeight()
+//            self.noDataView.isHidden = (self.arrCart.count > 0)
+//            self.myScroll.isHidden = (self.arrCart.count == 0)
         }
         isLoader = false
     }

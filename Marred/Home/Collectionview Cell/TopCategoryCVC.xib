@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,18 +25,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxA-Mf-u0A" customClass="View" customModule="Marred" customModuleProvider="target">
                         <rect key="frame" x="5" y="5" width="80" height="90"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="accessorie" translatesAutoresizingMaskIntoConstraints="NO" id="fah-dB-Izo">
-                                <rect key="frame" x="15" y="10" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Hkj-nw-7j0"/>
-                                    <constraint firstAttribute="height" constant="50" id="i7X-6P-8Sv"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accessories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwI-PU-Kep" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                <rect key="frame" x="5" y="67" width="70" height="16"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="16" id="dLa-Lz-McV"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accessories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwI-PU-Kep" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                <rect key="frame" x="5" y="7" width="70" height="76"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -49,12 +40,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vwI-PU-Kep" firstAttribute="top" secondItem="fah-dB-Izo" secondAttribute="bottom" constant="7" id="19p-GT-HUn"/>
-                            <constraint firstItem="fah-dB-Izo" firstAttribute="top" secondItem="rxA-Mf-u0A" secondAttribute="top" constant="10" id="EgO-Wk-vRg"/>
                             <constraint firstAttribute="bottom" secondItem="vwI-PU-Kep" secondAttribute="bottom" constant="7" id="M7z-fE-cDa"/>
                             <constraint firstAttribute="trailing" secondItem="vwI-PU-Kep" secondAttribute="trailing" constant="5" id="Rl2-lA-OuS"/>
-                            <constraint firstItem="fah-dB-Izo" firstAttribute="centerX" secondItem="rxA-Mf-u0A" secondAttribute="centerX" id="qZd-Vp-V3q"/>
                             <constraint firstItem="vwI-PU-Kep" firstAttribute="leading" secondItem="rxA-Mf-u0A" secondAttribute="leading" constant="5" id="rZo-tC-Vbf"/>
+                            <constraint firstItem="vwI-PU-Kep" firstAttribute="top" secondItem="rxA-Mf-u0A" secondAttribute="top" constant="7" id="yFe-26-vsX"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -73,13 +62,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="imgView" destination="fah-dB-Izo" id="7O3-Fr-WUv"/>
                 <outlet property="nameLbl" destination="vwI-PU-Kep" id="c8Y-Sa-Hqj"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="accessorie" width="50" height="47"/>
-    </resources>
 </document>

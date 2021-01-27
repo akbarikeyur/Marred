@@ -104,6 +104,17 @@ public class ProductAPIManager {
         }
     }
     
+    func serviceCallToCheckout(_ param : [String : Any], _ completion: @escaping () -> Void) {
+        
+        APIManager.shared.callPostRequest(API.CHECKOUT_ORDER, param, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                completion()
+                return
+            }
+        }
+    }
+    
     func serviceCallToAddShop(_ param : [String : Any], _ completion: @escaping () -> Void) {
         
         APIManager.shared.callPostRequest(API.ADD_SHOP, param, true) { (dict) in

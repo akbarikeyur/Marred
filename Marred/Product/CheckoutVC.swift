@@ -8,6 +8,7 @@
 
 import UIKit
 import FoloosiSdk
+import DropDown
 
 class CheckoutVC: UIViewController {
 
@@ -37,7 +38,12 @@ class CheckoutVC: UIViewController {
     @IBOutlet weak var shippingChargeLbl: Label!
     @IBOutlet weak var flatRateLbl: Label!
     @IBOutlet weak var cardBtn: Button!
+    @IBOutlet weak var cashBtn: Button!
     @IBOutlet weak var totalLbl: Label!
+    
+    var arrCountry = [CountryModel]()
+    var selectedCountry = CountryModel.init([String : Any]())
+    var arrCart = [CartModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +57,44 @@ class CheckoutVC: UIViewController {
     }
     
     func configUI() {
+        loginView.isHidden = isUserLogin()
         loginLbl.attributedText = getAttributeStringWithColor(loginLbl.text!, ["Log in"], color: BlackColor, font: UIFont(name: APP_BOLD, size: 14.0), isUnderLine: true)
         registerTableViewMethod()
         
-        FoloosiPay.initSDK(merchantKey: "live_$2y$10$PbNf0Ij5CjOElRO7WK3s0OSfRorPhwmIq5fwRTS5azZmRFmYg.jeq",withDelegate: self)
+        FoloosiPay.initSDK(merchantKey: FOLOOSI.MERCHANT_KEY,withDelegate: self)
+        
+        setupDetails()
+        clickToShipping(freeShipBtn)
+    }
+    
+    func setupDetails() {
+        
+        fnameTxt.text = AppModel.shared.currentUser.billing.first_name
+        lnameTxt.text = AppModel.shared.currentUser.billing.last_name
+        companyNameTxt.text = AppModel.shared.currentUser.billing.company
+        countryTxt.text = AppModel.shared.currentUser.billing.country
+        stateTxt.text = AppModel.shared.currentUser.billing.state
+        addressTxt.text = AppModel.shared.currentUser.billing.address_1
+        apartmentTxt.text = AppModel.shared.currentUser.billing.address_2
+        cityTxt.text = AppModel.shared.currentUser.billing.city
+        stateCountryTxt.text = AppModel.shared.currentUser.billing.postcode
+        phoneTxt.text = AppModel.shared.currentUser.billing.phone
+        emailTxt.text = AppModel.shared.currentUser.billing.email
+        
+        for temp in getJsonFromFile("country") {
+            arrCountry.append(CountryModel.init(temp))
+        }
+        if AppModel.shared.currentUser.billing.country != ""
+        {
+            let index = arrCountry.firstIndex { (temp) -> Bool in
+                temp.name.lowercased() == AppModel.shared.currentUser.billing.country.lowercased()
+            }
+            if index != nil {
+                phoneFlagImg.image = UIImage(named: arrCountry[index!].code.lowercased())
+                phoneCodeLbl.text = arrCountry[index!].dial_code
+                selectedCountry = arrCountry[index!]
+            }
+        }
     }
     
     //MARK:- Button click event
@@ -67,7 +107,21 @@ class CheckoutVC: UIViewController {
     }
     
     @IBAction func clickToSelectCountry(_ sender: UIButton) {
-        
+        self.view.endEditing(true)
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        var arrData = [String]()
+        for temp in arrCountry {
+            arrData.append(temp.name)
+        }
+        dropDown.dataSource = arrData
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.selectedCountry = self.arrCountry[index]
+            self.countryTxt.text = self.selectedCountry.name
+            self.phoneFlagImg.image = UIImage(named: self.arrCountry[index].code.lowercased())
+            self.phoneCodeLbl.text = self.arrCountry[index].dial_code
+        }
+        dropDown.show()
     }
     
     @IBAction func clickToSelectPhoneCode(_ sender: UIButton) {
@@ -85,11 +139,17 @@ class CheckoutVC: UIViewController {
     }
     
     @IBAction func clickToSelectCard(_ sender: UIButton) {
+        cardBtn.isSelected = false
+        cashBtn.isSelected = false
         sender.isSelected = true
     }
     
     @IBAction func clickToPayNow(_ sender: Any) {
-        setupForPayment()
+        if cardBtn.isSelected {
+            setupForPayment()
+        }else{
+            serviceCallToCheckout()
+        }
     }
     
     /*
@@ -113,7 +173,7 @@ extension CheckoutVC : UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return arrCart.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -122,7 +182,7 @@ extension CheckoutVC : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CheckoutOrderTVC = orderTbl.dequeueReusableCell(withIdentifier: "CheckoutOrderTVC") as! CheckoutOrderTVC
-        
+        cell.setupDetails(arrCart[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }
@@ -132,7 +192,7 @@ extension CheckoutVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func updateTableviewHeight() {
-        constraintHeightOrderTbl.constant = 130*3
+        constraintHeightOrderTbl.constant = CGFloat(130*arrCart.count)
     }
 }
 
@@ -140,16 +200,16 @@ extension CheckoutVC : FoloosiDelegate {
     
     func setupForPayment() {
         let orderData = OrderData()
-        orderData.orderTitle = "Title" // Any Title
+        orderData.orderTitle = "Maared" // Any Title
         orderData.currencyCode = "AED"  // 3 digit currency code like "AED"
         orderData.customColor = "#12233"  // make payment page loading color as app color.
         orderData.orderAmount = 100  // in double format ##,###.##
-        orderData.orderId = "1234"  // unique order id.
+        orderData.orderId = getCurrentTimeStampValue()  // unique order id.
         orderData.orderDescription = "Test Order"  // any description.
         let customer = Customer()
-        customer.customerEmail = "keyurdakbari@gmail.com"
-        customer.customerName = "Keyur"
-        customer.customerPhoneNumber = "1234567890"
+        customer.customerEmail = AppModel.shared.currentUser.user_email
+        customer.customerName = AppModel.shared.currentUser.display_name
+        customer.customerPhoneNumber = AppModel.shared.currentUser.billing.phone
         orderData.customer = customer
         FLog.setLogVisible(debug: true)
         FoloosiPay.makePayment(orderData: orderData)
@@ -161,5 +221,27 @@ extension CheckoutVC : FoloosiDelegate {
     
     func onPaymentSuccess(paymentId: String) {
         printData("Success Callback")
+        // payment id : FLSAPI00060115d83142ab
+    }
+}
+
+
+extension CheckoutVC {
+    func serviceCallToCheckout() {
+        var param = [String : Any]()
+        param["user_id"] = AppModel.shared.currentUser.ID
+        var arrData = [[String : Any]]()
+        for temp in arrCart {
+            var dict = [String : Any]()
+            dict["product_id"] = temp.product_id
+            dict["qty"] = temp.quantity
+            arrData.append(dict)
+        }
+        param["products"] = arrData
+        param["payment_method"] = "COD"
+        printData(param)
+        ProductAPIManager.shared.serviceCallToCheckout(param) {
+            
+        }
     }
 }

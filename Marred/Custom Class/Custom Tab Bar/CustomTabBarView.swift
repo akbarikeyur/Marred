@@ -57,8 +57,12 @@ class CustomTabBarView: UIView {
     @IBAction func tabBtnClicked(_ sender: UIButton)
     {
         let btn: UIButton = sender
-        lastIndex = btn.tag - 1
         
+        if !isUserLogin() && btn.tag >= 3 {
+            AppDelegate().sharedDelegate().navigateToLogin()
+            return
+        }
+        lastIndex = btn.tag - 1
         resetAllButton()
         selectTabButton()
         

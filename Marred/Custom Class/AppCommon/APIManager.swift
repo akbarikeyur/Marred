@@ -34,6 +34,7 @@ struct API {
     
     static let APPLY_COUPON                           =       BASE_URL + "wc/v3/coupons?code="
     static let GET_PAYMENT_GATEWAY                    =       BASE_URL + "wc/v3/payment_gateways"
+    static let CHECKOUT_ORDER                         =       BASE_URL + "v1/user/checkout"
     
     static let ADD_BOOKMARK                           =       BASE_URL + "v1/bookmark/addbookmark"
     static let REMOVE_BOOKMARK                        =       BASE_URL + "v1/bookmark/removebookmark"
@@ -77,7 +78,7 @@ public class APIManager {
         if isUserLogin() {
             return ["Content-Type":"application/json", "Accept":"application/json", "Authorization" : "Bearer " + getApiKey()]
         }else{
-            return ["Content-Type":"application/json", "Accept":"application/json", "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbWFhcmVkMjQuY29tIiwiaWF0IjoxNjExMTQ5NjA0LCJuYmYiOjE2MTExNDk2MDQsImV4cCI6MTYxMTc1NDQwNCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMiJ9fX0.mhzNXnc1cjAmam_tRDBh3yJzv2wvWSyMpYbBxe5WJX8"]
+            return ["Content-Type":"application/json", "Accept":"application/json"]
         }
     }
     

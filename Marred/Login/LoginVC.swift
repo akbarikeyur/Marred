@@ -46,6 +46,10 @@ class LoginVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func clickToSkip(_ sender: Any) {
+        AppDelegate().sharedDelegate().navigateToDashBoard()
+    }
+    
     @IBAction func clickToSignIn(_ sender: Any) {
         self.view.endEditing(true)
         if emailTxt.text?.trimmed == "" {

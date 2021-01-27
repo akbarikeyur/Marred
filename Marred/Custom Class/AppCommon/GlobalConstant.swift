@@ -16,6 +16,13 @@ let DEVICE_ID = UIDevice.current.identifierForVendor?.uuidString
 let ITUNES_URL = ""
 let CURRENCY = "د.إ"
 
+struct FOLOOSI
+{
+    static var MERCHANT_KEY = "test_$2y$10$.wPSbaC1r-q5.b3uiFoGh.zmMhmNn3AFRmQbR.aeJHfBmld62y0Q6"
+//    static var MERCHANT_KEY = "live_$2y$10$PbNf0Ij5CjOElRO7WK3s0OSfRorPhwmIq5fwRTS5azZmRFmYg.jeq"
+    static var SECRET_KEY = "test_$2y$10$cTg8rHez0rYYr7mnGtEiz.RLi1u0K4Myjn1HvZE.MZr2.7bK6Vk6C"
+}
+
 
 struct SCREEN
 {
@@ -47,6 +54,8 @@ struct NOTIFICATION {
     
     static var UPDATE_CATEGORY_LIST         =   "UPDATE_CATEGORY_LIST"
     static var REDIRECT_CONTACT_US          =   "REDIRECT_CONTACT_US"
+    
+    static var REFRESH_CART                 =   "REFRESH_CART"
 }
 
 struct Platform {

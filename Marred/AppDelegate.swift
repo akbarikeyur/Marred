@@ -40,11 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Messaging.messaging().delegate = self
         UIApplication.shared.applicationIconBadgeNumber = 0
         
-        if isUserLogin() {
+        if isUserLogin() && getApiKey() != "" {
             AppModel.shared.currentUser = getLoginUserData()
-            if AppModel.shared.currentUser != nil && AppModel.shared.currentUser.ID != 0 {
-                navigateToDashBoard()
-            }
+            navigateToDashBoard()
         }
         return true
     }
@@ -88,6 +86,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func navigateToLogin() {
         let navigationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "LoginVCNav") as! UINavigationController
         UIApplication.shared.keyWindow?.rootViewController = navigationVC
+    }
+    
+    func showLoginAlert() {
+        showAlertWithOption("Maared", message: "Please login to continue.", btns: ["Cancel", "Login"], completionConfirm: {
+            self.navigateToLogin()
+        }) {
+            
+        }
     }
     
     func navigaeToLogout() {
@@ -231,6 +237,9 @@ extension AppDelegate {
     }
     
     func serviceCallToGetUserDetail() {
+        if !isUserLogin() {
+            return
+        }
         LoginAPIManager.shared.serviceCallToGetUserDetail(["user_id" : AppModel.shared.currentUser.ID!]) {
             
         }

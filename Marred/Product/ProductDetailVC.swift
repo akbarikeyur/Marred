@@ -82,6 +82,10 @@ class ProductDetailVC: UIViewController {
     }
     
     @IBAction func clickToWishList(_ sender: UIButton) {
+        if !isUserLogin() {
+            AppDelegate().sharedDelegate().showLoginAlert()
+            return
+        }
         sender.isSelected = !sender.isSelected
         var param = [String : Any]()
         param["user_id"] = AppModel.shared.currentUser.ID
@@ -109,6 +113,10 @@ class ProductDetailVC: UIViewController {
     }
     
     @IBAction func clickToAddToCart(_ sender: Any) {
+        if !isUserLogin() {
+            AppDelegate().sharedDelegate().showLoginAlert()
+            return
+        }
         if Int((quantityBtn.titleLabel?.text)!)! > 0 {
             serviceCallToAddToCart()
         }
@@ -209,6 +217,7 @@ extension ProductDetailVC {
         param["quantity"] = Int((quantityBtn.titleLabel?.text)!)!
         ProductAPIManager.shared.serviceCallToAddToCart(param) {
             self.quantityBtn.setTitle("1", for: .normal)
+            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART), object: nil)
         }
     }
 }

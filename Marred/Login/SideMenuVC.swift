@@ -25,15 +25,26 @@ class SideMenuVC: UIViewController {
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(updateUserData), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
         registerTableViewMethod()
-        loginView.isHidden = true
-        profileView.isHidden = false
+        
         
         updateUserData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if isUserLogin() {
+            loginView.isHidden = true
+            profileView.isHidden = false
+        }else{
+            loginView.isHidden = false
+            profileView.isHidden = true
+        }
+    }
+    
     @objc func updateUserData() {
-        nameLbl.text = AppModel.shared.currentUser.display_name
-        emailLbl.text = AppModel.shared.currentUser.user_email
+        if isUserLogin() {
+            nameLbl.text = AppModel.shared.currentUser.display_name
+            emailLbl.text = AppModel.shared.currentUser.user_email
+        }
     }
     
     //MARK:- Button click event
@@ -42,11 +53,11 @@ class SideMenuVC: UIViewController {
     }
 
     @IBAction func clickToLogin(_ sender: Any) {
-        
+        AppDelegate().sharedDelegate().navigateToLogin()
     }
     
     @IBAction func clickToSignup(_ sender: Any) {
-        
+        AppDelegate().sharedDelegate().navigateToLogin()
     }
     
     @IBAction func clickToLogout(_ sender: Any) {
@@ -137,14 +148,26 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
                 }
                 break
             case 4:
+                if !isUserLogin() {
+                    AppDelegate().sharedDelegate().showLoginAlert()
+                    return
+                }
                 let vc : DealofDaysVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "DealofDaysVC") as! DealofDaysVC
                 UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
                 break
             case 5:
+                if !isUserLogin() {
+                    AppDelegate().sharedDelegate().showLoginAlert()
+                    return
+                }
                 let vc : AddYourShopVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "AddYourShopVC") as! AddYourShopVC
                 UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
                 break
             case 6:
+                if !isUserLogin() {
+                    AppDelegate().sharedDelegate().showLoginAlert()
+                    return
+                }
                 NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 4])
                 delay(0.2) {
                     NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_CONTACT_US), object: nil)

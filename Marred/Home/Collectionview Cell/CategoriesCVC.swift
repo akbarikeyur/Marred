@@ -10,7 +10,6 @@ import UIKit
 
 class CategoriesCVC: UICollectionViewCell {
 
-    @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLbl: Label!
     
     override func awakeFromNib() {

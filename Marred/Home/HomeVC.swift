@@ -31,8 +31,11 @@ class HomeVC: UIViewController {
         // Do any additional setup after loading the view.
         registerTableViewMethod()
         AppDelegate().sharedDelegate().serviceCallToGetCategory()
-        AppDelegate().sharedDelegate().serviceCallToGetUserDetail()
-        AppDelegate().sharedDelegate().serviceCallToGetPaymentGateway()
+        if isUserLogin() {
+            AppDelegate().sharedDelegate().serviceCallToGetUserDetail()
+            AppDelegate().sharedDelegate().serviceCallToGetPaymentGateway()
+        }
+        
         refreshControl.addTarget(self, action: #selector(refreshHomeData), for: .valueChanged)
         tblView.refreshControl = refreshControl
         setupData()
@@ -57,10 +60,18 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func clickToWishList(_ sender: Any) {
+        if !isUserLogin() {
+            AppDelegate().sharedDelegate().showLoginAlert()
+            return
+        }
         NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 3])
     }
     
     @IBAction func clickToCart(_ sender: Any) {
+        if !isUserLogin() {
+            AppDelegate().sharedDelegate().showLoginAlert()
+            return
+        }
         NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 2])
 //        let vc : ShoppingCartVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "ShoppingCartVC") as! ShoppingCartVC
 //        self.navigationController?.pushViewController(vc, animated: true)
