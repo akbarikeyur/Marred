@@ -32,6 +32,10 @@ class ShoppingCartVC: UIViewController {
         // Do any additional setup after loading the view.
         registerTableViewMethod()
         isLoader = true
+        if PLATFORM.isSimulator {
+            promocodeTxt.text = "maareedtest"
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +68,7 @@ class ShoppingCartVC: UIViewController {
         if promocodeTxt.text?.trimmed == "" {
             displayToast("Please enter coupon code")
         }else{
-            ProductAPIManager.shared.serviceCallToApplyCoupon("maareedtest") { (data) in
+            ProductAPIManager.shared.serviceCallToApplyCoupon(promocodeTxt.text!) { (data) in
                 
             }
         }

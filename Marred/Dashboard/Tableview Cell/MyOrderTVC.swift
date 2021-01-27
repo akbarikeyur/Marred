@@ -24,6 +24,11 @@ class MyOrderTVC: UITableViewCell {
         // Initialization code
     }
 
+    func setupDetails(_ dict : OrderModel) {
+        invoiceLbl.text = " Invoice#: " + String(dict.id) + " "
+        
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

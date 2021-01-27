@@ -78,3 +78,24 @@ struct WithdrawModel {
         
     }
 }
+
+struct OrderModel {
+    var id, user_id, customer_id : Int!
+    var status, currency, date_created, total : String!
+    var billing, shipping : AddressModel!
+    
+    
+    init(_ dict : [String : Any]) {
+        id = AppModel.shared.getIntData(dict, "id")
+        user_id = AppModel.shared.getIntData(dict, "user_id")
+        customer_id = AppModel.shared.getIntData(dict, "customer_id")
+        status = AppModel.shared.getStringData(dict, "status")
+        currency = AppModel.shared.getStringData(dict, "currency")
+        if let temp = dict["date_created"] as? String {
+            date_created = temp
+        }
+        total = AppModel.shared.getStringData(dict, "total")
+        billing = AddressModel.init(dict["billing"] as? [String : Any] ?? [String : Any]())
+        shipping = AddressModel.init(dict["shipping"] as? [String : Any] ?? [String : Any]())
+    }
+}

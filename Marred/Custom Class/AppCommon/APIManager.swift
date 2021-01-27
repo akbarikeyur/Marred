@@ -43,8 +43,9 @@ struct API {
     static let ADD_SHOP                               =       BASE_URL + "v1/seller/addShop"
     static let DEAL_OF_DAY                            =       BASE_URL + "v1/deal_of_the_day"    
     
-    static let GET_PRODUCT                            =       BASE_URL + "v1/user/getPorductByUser"
-    static let GET_ORDER                              =       BASE_URL + "v1/user/getVendorOrder"
+    static let GET_USER_PRODUCT                       =       BASE_URL + "v1/user/getPorductByUser"
+    static let GET_BUYER_ORDER                        =       BASE_URL + "wc/v3/orders"
+    static let GET_SELLER_ORDER                       =       BASE_URL + "v1/user/getVendorOrder"
     static let GET_WITHDRAW_REQUEST                   =       BASE_URL + "v1/seller/getwithDrawRequest"
     
     static let CONTACT_US                             =       BASE_URL + "v1/contactadmin"
@@ -133,6 +134,37 @@ public class APIManager {
     }
     
     //MARK:- Get request
+    func callGetRequestWithBasicAuth(_ api : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        if isLoaderDisplay {
+            showLoader()
+        }
+        
+        Alamofire.request(api, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: getJsonHeader()).authenticate(user: "ck_eb581e733c1f69769fa0ca5407cd56f7f7137942", password: "cs_bedc787fb94f3adeffae2e40475b3fbae5812305").responseJSON { (response) in
+            removeLoader()
+            switch response.result {
+            case .success:
+                if let result = response.result.value as? [String:Any] {
+                    completion(result)
+                    return
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+    }
+    
     func callGetRequest(_ api : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
         if !APIManager.isConnectedToNetwork()
         {

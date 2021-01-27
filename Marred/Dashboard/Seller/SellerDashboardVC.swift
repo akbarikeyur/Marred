@@ -13,7 +13,7 @@ class SellerDashboardVC: UIViewController {
     @IBOutlet weak var tabCV: UICollectionView!
     @IBOutlet weak var mainContainerView: UIView!
     
-    var arrTabData = ["Dashboard", "Products", "Orders", "Contact Admin", "Withdraw", "Settings"]
+    var arrTabData = ["Dashboard", "Products", "Orders", "Contact Admin", "Withdraw"]
     var selectedTab = 0
     
     let dashboardTab : SellerDashboardTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "SellerDashboardTabVC") as! SellerDashboardTabVC

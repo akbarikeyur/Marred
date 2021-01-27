@@ -94,7 +94,7 @@ public class ProductAPIManager {
     }
     
     func serviceCallToApplyCoupon(_ code : String, _ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
-        APIManager.shared.callGetRequest((API.APPLY_COUPON + code), true) { (dict) in
+        APIManager.shared.callGetRequestWithBasicAuth((API.APPLY_COUPON + code), true) { (dict) in
             printData(dict)
             if let status = dict["status"] as? String, status == "success" {
                 if let data = dict["data"] as? [[String : Any]] {

@@ -21,7 +21,7 @@ class BuyerDashboardTabVC: UIViewController {
     }
     
     func setupDetails() {
-        
+
     }
 
     /*
@@ -46,7 +46,7 @@ extension BuyerDashboardTabVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -63,4 +63,9 @@ extension BuyerDashboardTabVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+}
+
+
+extension BuyerDashboardTabVC {
+    
 }

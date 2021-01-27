@@ -19,8 +19,20 @@ public class DashboardAPIManager {
         }
     }
     
-    func serviceCallToGetProducts(_ param : [String : Any], _ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
-        APIManager.shared.callPostRequest(API.GET_ORDER, param, true) { (dict) in
+    func serviceCallToGetSellerOrder(_ param : [String : Any], _ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
+        APIManager.shared.callPostRequest(API.GET_SELLER_ORDER, param, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [[String : Any]] {
+                    completion(data)
+                }
+            }
+        }
+    }
+    
+    func serviceCallToGetBuyerOrder(_ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
+        let strUrl = API.GET_BUYER_ORDER + "?customer=" + String(AppModel.shared.currentUser.ID)
+        APIManager.shared.callGetRequest(strUrl, true) { (dict) in
             printData(dict)
             if let status = dict["status"] as? String, status == "success" {
                 if let data = dict["data"] as? [[String : Any]] {
@@ -47,6 +59,17 @@ public class DashboardAPIManager {
             if let status = dict["status"] as? String, status == "success" {
                 completion()
                 return
+            }
+        }
+    }
+    
+    func serviceCallToGetUserProduct(_ param : [String : Any], _ completion: @escaping (_ dict : [String : Any]) -> Void) {
+        APIManager.shared.callPostRequest(API.GET_USER_PRODUCT, param, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [String : Any] {
+                    completion(data)
+                }
             }
         }
     }

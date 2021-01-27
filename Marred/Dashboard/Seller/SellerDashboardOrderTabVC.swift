@@ -15,8 +15,9 @@ class SellerDashboardOrderTabVC: UIViewController {
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var typeCV: UICollectionView!
     
-    var arrType = ["All 58", "Completed 49", "Processing 21", "On-hold 12", "Pending 36", "Cancelled 11", "Refunded 54", "Failed 32 "]
+    var arrType = ["All"]
     var selectedType = 0
+    var arrOrder = [OrderModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class SellerDashboardOrderTabVC: UIViewController {
         // Do any additional setup after loading the view.
         registerTableViewMethod()
         registerCollectionView()
+        serviceCallToGetSellerOrder()
     }
     
     func setupDetails() {
@@ -59,7 +61,7 @@ extension SellerDashboardOrderTabVC : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return arrOrder.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -68,7 +70,7 @@ extension SellerDashboardOrderTabVC : UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : MyOrderTVC = tblView.dequeueReusableCell(withIdentifier: "MyOrderTVC") as! MyOrderTVC
-        
+        cell.setupDetails(arrOrder[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }
@@ -118,5 +120,21 @@ extension SellerDashboardOrderTabVC : UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedType = indexPath.row
         typeCV.reloadData()
+    }
+}
+
+extension SellerDashboardOrderTabVC {
+    func serviceCallToGetSellerOrder() {
+        var param = [String : Any]()
+        param["author_name"] = AppModel.shared.currentUser.user_nicename
+        param["paged"] = 1
+        printData(param)
+        DashboardAPIManager.shared.serviceCallToGetSellerOrder(param) { (data) in
+            self.arrOrder = [OrderModel]()
+            for temp in data {
+                self.arrOrder.append(OrderModel.init(temp))
+            }
+            self.tblView.reloadData()
+        }
     }
 }

@@ -26,8 +26,15 @@ class DashboardProductTVC: UITableViewCell {
         
     }
 
-    func setupDetails() {
-        let strStock = "Stock: In stock   Status: Online   Views: 198"
+    func setupDetails(_ dict : ProductModel) {
+        setButtonBackgroundImage(imgBtn, dict.thumbnail, IMAGE.PLACEHOLDER)
+        skuLbl.text = " Sku: " + dict.get_sku + " "
+        nameLbl.text = dict.title
+        orderLbl.text = "Order Published: " + dict.order_published
+        viewsLbl.text = "Views: " + dict.view
+        priceLbl.text = "Price: " + displayPriceWithCurrency(dict.price)
+        earningLbl.text = "Earning: 0 AED"
+        let strStock = "Stock: In stock   Status: " + dict.get_status.capitalized + "   Views: " + dict.view
         stockLbl.attributedText = attributedStringWithColor(strStock, ["Stock:", "Status:", "Views:"], color: colorFromHex(hex: "33558B"), font: UIFont(name: APP_BOLD, size: 12.0))
     }
     

@@ -20,7 +20,7 @@ class BuyerOrderTabVC: UIViewController {
     }
     
     func setupDetails() {
-        
+        serviceCallToGetBuyerOrder()
     }
     
     /*
@@ -43,7 +43,7 @@ extension BuyerOrderTabVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -59,5 +59,13 @@ extension BuyerOrderTabVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+}
+
+extension BuyerOrderTabVC {
+    func serviceCallToGetBuyerOrder() {
+        DashboardAPIManager.shared.serviceCallToGetBuyerOrder { (data) in
+            
+        }
     }
 }

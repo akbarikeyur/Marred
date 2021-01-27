@@ -10,7 +10,7 @@ import Foundation
 
 struct ProductModel {
     var id, vendor_id : Int!
-    var price, thumbnail, title, vendor, author_name : String!
+    var price, thumbnail, title, vendor, author_name, view, get_status, get_sku, order_published : String!
     var brands : BrandModel!
     
     init(_ dict : [String : Any])
@@ -32,6 +32,10 @@ struct ProductModel {
         brands = BrandModel.init(dict["brands"] as? [String : Any] ?? [String : Any]())
         vendor_id = AppModel.shared.getIntData(dict, "vendor_id")
         author_name = dict["author_name"] as? String ?? ""
+        view = AppModel.shared.getStringData(dict, "view")
+        get_status = AppModel.shared.getStringData(dict, "get_status")
+        get_sku = AppModel.shared.getStringData(dict, "get_sku")
+        order_published = AppModel.shared.getStringData(dict, "order_published")
     }
     
     func dictionary() -> [String : Any] {

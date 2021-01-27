@@ -15,8 +15,11 @@ class SellerDashboardProductTabVC: UIViewController {
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var typeCV: UICollectionView!
     
-    var arrType = ["All", "Online"]
+    var arrType = ["All"]
     var selectedType = 0
+    var arrProduct = [ProductModel]()
+    var arrDisplayProduct = [ProductModel]()
+    var page = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +27,16 @@ class SellerDashboardProductTabVC: UIViewController {
         // Do any additional setup after loading the view.
         registerTableViewMethod()
         registerCollectionView()
-        serviceCallToGetProducts()
+        refreshData()
     }
     
     func setupDetails() {
         
+    }
+    
+    func refreshData() {
+        page = 1
+        serviceCallToGetUserProduct()
     }
     
     //MARK:- Button click event
@@ -60,7 +68,11 @@ extension SellerDashboardProductTabVC : UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        if selectedType == 0 {
+            return arrProduct.count
+        }else{
+            return arrDisplayProduct.count
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -69,11 +81,21 @@ extension SellerDashboardProductTabVC : UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : DashboardProductTVC = tblView.dequeueReusableCell(withIdentifier: "DashboardProductTVC") as! DashboardProductTVC
-        cell.setupDetails()
+        if selectedType == 0 {
+            cell.setupDetails(arrProduct[indexPath.row])
+        }else {
+            cell.setupDetails(arrDisplayProduct[indexPath.row])
+        }
+        
         cell.selectionStyle = .none
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if selectedType == 0 && page != 0 && (arrProduct.count-1) == indexPath.row {
+            serviceCallToGetUserProduct()
+        }
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
@@ -99,12 +121,12 @@ extension SellerDashboardProductTabVC : UICollectionViewDelegate, UICollectionVi
             label.font = UIFont.init(name: APP_REGULAR, size: 14)
         }
         label.sizeToFit()
-        return CGSize(width: label.frame.size.width + 10, height: collectionView.frame.size.height)
+        return CGSize(width: label.frame.size.width + 20, height: collectionView.frame.size.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : CategoryListCVC = typeCV.dequeueReusableCell(withReuseIdentifier: "CategoryListCVC", for: indexPath) as! CategoryListCVC
-        cell.nameLbl.text = arrType[indexPath.row]
+        cell.nameLbl.text = arrType[indexPath.row].capitalized
         cell.lineImg.isHidden = true
         if selectedType == indexPath.row {
             cell.nameLbl.textColor = BlackColor
@@ -119,17 +141,50 @@ extension SellerDashboardProductTabVC : UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedType = indexPath.row
         typeCV.reloadData()
+        arrDisplayProduct = [ProductModel]()
+        if selectedType != 0 {
+            for temp in arrProduct {
+                if temp.get_status.lowercased() == arrType[selectedType].lowercased() {
+                    arrDisplayProduct.append(temp)
+                }
+            }
+            tblView.reloadData()
+        }
     }
 }
 
 extension SellerDashboardProductTabVC {
-    func serviceCallToGetProducts() {
+    func serviceCallToGetUserProduct() {
         var param = [String : Any]()
         param["author_name"] = AppModel.shared.currentUser.user_nicename
-        param["paged"] = 1
+        param["paged"] = page
         printData(param)
-        DashboardAPIManager.shared.serviceCallToGetProducts(param) { (data) in
+        DashboardAPIManager.shared.serviceCallToGetUserProduct(param) { (dict) in
+            self.arrType = ["All"]
+            if self.page == 1 {
+                self.arrProduct = [ProductModel]()
+            }
             
+            if let data = dict["products"] as? [[String : Any]] {
+                for temp in data {
+                    let product = ProductModel.init(temp)
+                    if !self.arrType.contains(product.get_status) {
+                        self.arrType.append(product.get_status)
+                    }
+                    self.arrProduct.append(product)
+                }
+            }
+            
+            if let total_products = dict["total_products"] as? Int {
+                if total_products > self.arrProduct.count {
+                    self.page += 1
+                }
+                else {
+                    self.page = 0
+                }
+            }
+            self.tblView.reloadData()
+            self.typeCV.reloadData()
         }
     }
 }

@@ -16,6 +16,7 @@ class BuyerAccountDetailTabVC: UIViewController {
     @IBOutlet weak var lnameTxt: TextField!
     @IBOutlet weak var displayNameTxt: TextField!
     @IBOutlet weak var emailTxt: TextField!
+    @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var currentPwdTxt: TextField!
     @IBOutlet weak var newPwdTxt: TextField!
     @IBOutlet weak var confirmPwdTxt: TextField!
@@ -25,6 +26,17 @@ class BuyerAccountDetailTabVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        passwordView.isHidden = true
+        nameLbl.text = AppModel.shared.currentUser.display_name
+        if AppModel.shared.currentUser.display_name.contains(" ") {
+            let arrName = AppModel.shared.currentUser.display_name.components(separatedBy: " ")
+            fnameTxt.text = arrName[0]
+            lnameTxt.text = arrName[1]
+        }else{
+            fnameTxt.text = AppModel.shared.currentUser.display_name
+        }
+        displayNameTxt.text = AppModel.shared.currentUser.user_nicename
+        emailTxt.text = AppModel.shared.currentUser.user_email
     }
     
     func setupDetails() {
@@ -33,7 +45,9 @@ class BuyerAccountDetailTabVC: UIViewController {
     
     //MARK:- Button click event
     @IBAction func clickToSelectImage(_ sender: UIButton) {
-        
+        showAlert("", message: "To edit the details, please login to our website.") {
+            
+        }
     }
     
     @IBAction func clickToSaveChanges(_ sender: Any) {

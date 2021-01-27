@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18714EC325BD2D480035E07F /* DashboardAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18714EC225BD2D480035E07F /* DashboardAPIManager.swift */; };
 		18714EC525BD2D530035E07F /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18714EC425BD2D530035E07F /* DashboardModel.swift */; };
+		18736B8725C050D20013F5FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18736B8625C050D20013F5FD /* GoogleService-Info.plist */; };
 		1890CDE625BD9F19008644A1 /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 1890CDE525BD9F19008644A1 /* country.json */; };
 		18BD2EF025A7691F00842C88 /* ProductAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2EEF25A7691F00842C88 /* ProductAPIManager.swift */; };
 		79100C132584A5E000000215 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79100C122584A5E000000215 /* CheckoutVC.swift */; };
@@ -148,6 +149,8 @@
 /* Begin PBXFileReference section */
 		18714EC225BD2D480035E07F /* DashboardAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAPIManager.swift; sourceTree = "<group>"; };
 		18714EC425BD2D530035E07F /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
+		18736B8625C050D20013F5FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18736B8825C052530013F5FD /* Marred.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Marred.entitlements; sourceTree = "<group>"; };
 		1890CDE525BD9F19008644A1 /* country.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
 		18BD2EEF25A7691F00842C88 /* ProductAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAPIManager.swift; sourceTree = "<group>"; };
 		74716199F9D06511FFDF47A9 /* Pods_Marred.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marred.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -476,6 +479,7 @@
 		79BF35B8257E4466006491C5 /* Marred */ = {
 			isa = PBXGroup;
 			children = (
+				18736B8825C052530013F5FD /* Marred.entitlements */,
 				79BF35B9257E4466006491C5 /* AppDelegate.swift */,
 				79BF35BF257E4466006491C5 /* Main.storyboard */,
 				79751FFE25823FD90020FEEE /* Product.storyboard */,
@@ -488,6 +492,7 @@
 				79BF35C2257E4468006491C5 /* Assets.xcassets */,
 				79BF35C4257E4468006491C5 /* LaunchScreen.storyboard */,
 				79BF35C7257E4468006491C5 /* Info.plist */,
+				18736B8625C050D20013F5FD /* GoogleService-Info.plist */,
 			);
 			path = Marred;
 			sourceTree = "<group>";
@@ -769,6 +774,7 @@
 				79EAD234257F8A4000DC6422 /* BannerImageCVC.xib in Resources */,
 				79220C382580FCB100329AC8 /* SideMenuTVC.xib in Resources */,
 				79752007258259C00020FEEE /* CartTVC.xib in Resources */,
+				18736B8725C050D20013F5FD /* GoogleService-Info.plist in Resources */,
 				79BF3651257E5B84006491C5 /* TopCategoryCVC.xib in Resources */,
 				79BF3659257E63B1006491C5 /* Home.json in Resources */,
 				79BF364C257E5A5E006491C5 /* ShopCategoryTVC.xib in Resources */,
@@ -1091,8 +1097,9 @@
 			baseConfigurationReference = F57B150651FCEA4620F9FF57 /* Pods-Marred.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Marred/Marred.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JRJ7A3W5NN;
+				DEVELOPMENT_TEAM = J9QFXLMG88;
 				INFOPLIST_FILE = Marred/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1111,8 +1118,9 @@
 			baseConfigurationReference = C4DB19435AD43064F67A7D02 /* Pods-Marred.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Marred/Marred.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JRJ7A3W5NN;
+				DEVELOPMENT_TEAM = J9QFXLMG88;
 				INFOPLIST_FILE = Marred/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
