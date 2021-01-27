@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -143,7 +143,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlI-gK-Ztc" customClass="View" customModule="Marred" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="723" width="250" height="20"/>
+                                                <rect key="frame" x="0.0" y="723" width="320" height="20"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="KKf-Fo-Uuq"/>
@@ -507,6 +507,7 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELC-6H-z7Q">
                                                 <rect key="frame" x="0.0" y="462.5" width="250" height="176.5"/>
@@ -725,7 +726,7 @@
                                             <constraint firstItem="fj5-Uq-ETT" firstAttribute="leading" secondItem="VSp-Bo-be4" secondAttribute="leading" id="Y1Y-Ek-1Vp"/>
                                             <constraint firstItem="Ywg-Ch-2iL" firstAttribute="centerY" secondItem="Tyz-FQ-amX" secondAttribute="centerY" id="ZQl-43-1et"/>
                                             <constraint firstItem="fj5-Uq-ETT" firstAttribute="top" secondItem="eKl-16-Kqc" secondAttribute="bottom" constant="10" id="a3e-fy-vGO"/>
-                                            <constraint firstItem="Mxa-n4-WBS" firstAttribute="trailing" secondItem="NlI-gK-Ztc" secondAttribute="trailing" constant="70" id="aeU-8C-NnU"/>
+                                            <constraint firstItem="Mxa-n4-WBS" firstAttribute="trailing" secondItem="NlI-gK-Ztc" secondAttribute="trailing" id="aeU-8C-NnU"/>
                                             <constraint firstAttribute="trailing" secondItem="3ta-yT-tJh" secondAttribute="trailing" id="ahd-v6-Too"/>
                                             <constraint firstItem="Tyz-FQ-amX" firstAttribute="top" secondItem="Ij0-3b-h9J" secondAttribute="bottom" constant="40" id="aid-CV-AKK"/>
                                             <constraint firstItem="glf-Af-ChA" firstAttribute="top" secondItem="eOj-p8-JHu" secondAttribute="bottom" id="bbh-WQ-lYS"/>
@@ -820,11 +821,12 @@
                         <outlet property="freeShipBtn" destination="0dY-1G-J47" id="a5r-NK-uaP"/>
                         <outlet property="myScroll" destination="y74-K8-gVI" id="fiH-uL-oel"/>
                         <outlet property="noDataView" destination="BEI-oK-QJ9" id="12k-4e-PwI"/>
-                        <outlet property="priceLbl" destination="wBk-NK-qxz" id="iag-rE-GaS"/>
                         <outlet property="promocodeTxt" destination="ZXf-7X-PXi" id="6yX-e9-1P7"/>
                         <outlet property="sideImgView" destination="3ta-yT-tJh" id="64h-vX-C5n"/>
                         <outlet property="stateTxt" destination="Mva-FH-NYq" id="6cz-Qc-p9q"/>
+                        <outlet property="subTotalLbl" destination="ixd-Bx-wjs" id="TPE-mS-u6Q"/>
                         <outlet property="tblView" destination="eKl-16-Kqc" id="avy-0x-z39"/>
+                        <outlet property="totalLbl" destination="wBk-NK-qxz" id="080-Pa-X7C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tim-DE-9kz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -19,18 +19,20 @@ public class LoginAPIManager {
                 if let data = dict["data"] as? [String : Any] {
                     if let tempDict = data["data"] as? [String : Any] {
                         AppModel.shared.currentUser = UserModel.init(tempDict)
-                        if let temp = data["roles"] as? [String], temp.count > 0 {
-                            if temp[0] == "customer" {
-                                setIsSeller(false)
+                        if AppModel.shared.currentUser.token != "" {
+                            if let temp = data["roles"] as? [String], temp.count > 0 {
+                                if temp[0] == "customer" {
+                                    setIsSeller(false)
+                                }else{
+                                    setIsSeller(true)
+                                }
                             }else{
                                 setIsSeller(true)
                             }
-                        }else{
-                            setIsSeller(true)
+                            setLoginUserData()
+                            completion()
+                            return
                         }
-                        setLoginUserData()
-                        completion()
-                        return
                     }
                 }
             }

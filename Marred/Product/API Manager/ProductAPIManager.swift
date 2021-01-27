@@ -102,6 +102,15 @@ public class ProductAPIManager {
                 }
             }
         }
+        
+        APIManager.shared.callGetRequest((API.APPLY_COUPON + code), true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [[String : Any]] {
+                    completion(data)
+                }
+            }
+        }
     }
     
     func serviceCallToCheckout(_ param : [String : Any], _ completion: @escaping () -> Void) {

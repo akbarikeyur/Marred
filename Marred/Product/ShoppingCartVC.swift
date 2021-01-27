@@ -20,7 +20,8 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var cityTxt: TextField!
     @IBOutlet weak var freeShipBtn: Button!
     @IBOutlet weak var flatRateBtn: Button!
-    @IBOutlet weak var priceLbl: Label!
+    @IBOutlet weak var subTotalLbl: Label!
+    @IBOutlet weak var totalLbl: Label!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var sideImgView: UIImageView!
     @IBOutlet weak var myScroll: UIScrollView!
@@ -28,6 +29,7 @@ class ShoppingCartVC: UIViewController {
     
     var isLoader = false
     var arrCart = [CartModel]()
+    var totalPrice = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,7 @@ class ShoppingCartVC: UIViewController {
         registerTableViewMethod()
         isLoader = true
         noDataView.isHidden = true
-//        myScroll.isHidden = true
+        myScroll.isHidden = true
         promocodeTxt.text = ""
         
         calculateView.isHidden = true
@@ -92,11 +94,13 @@ class ShoppingCartVC: UIViewController {
         freeShipBtn.isSelected = false
         flatRateBtn.isSelected = false
         sender.isSelected = true
+        updateTotalPrice()
     }
     
     @IBAction func clickToProcessToCheckout(_ sender: Any) {
         let vc : CheckoutVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "CheckoutVC") as! CheckoutVC
         vc.arrCart = arrCart
+        vc.isFreeShipping = freeShipBtn.isSelected
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -154,12 +158,27 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
         if index != nil {
             arrCart[index!] = cart
         }
+        self.updateTotalPrice()
+    }
+    
+    func updateTotalPrice() {
+        totalPrice = 0
+        for temp in arrCart {
+            totalPrice += (Double(temp.quantity) * temp.price)
+        }
+        subTotalLbl.text = displayPriceWithCurrency(String(totalPrice))
+        if flatRateBtn.isSelected {
+            totalPrice += 25.0
+        }
+        totalLbl.text = displayPriceWithCurrency(String(totalPrice))
     }
     
     @objc @IBAction func clickToRemove(_ sender: UIButton) {
         showAlertWithOption("Delete", message: "Are you sure want to delete?", btns: ["No", "Yes"], completionConfirm: {
+            self.serviceCallToClearToCart(self.arrCart[sender.tag])
             self.arrCart.remove(at: sender.tag)
             self.updateTableviewHeight()
+            self.updateTotalPrice()
         }) {
             
         }
@@ -174,13 +193,24 @@ extension ShoppingCartVC {
                 if let dict = temp["cart"] as? [String : Any] {
                     var product = CartModel.init(dict)
                     product.store_name = temp["store_name"] as? String ?? ""
+                    product.price = (product.line_total / Double(product.quantity))
                     self.arrCart.append(product)
                 }
             }
             self.updateTableviewHeight()
-//            self.noDataView.isHidden = (self.arrCart.count > 0)
-//            self.myScroll.isHidden = (self.arrCart.count == 0)
+            self.updateTotalPrice()
+            self.noDataView.isHidden = (self.arrCart.count > 0)
+            self.myScroll.isHidden = (self.arrCart.count == 0)
         }
         isLoader = false
+    }
+    
+    func serviceCallToClearToCart(_ cart : CartModel) {
+        var param = [String : Any]()
+        param["product_id"] = cart.product_id
+        param["quantity"] = cart.quantity
+        ProductAPIManager.shared.serviceCallToClearToCart(param) {
+            
+        }
     }
 }

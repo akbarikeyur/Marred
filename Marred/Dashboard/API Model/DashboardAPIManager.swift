@@ -32,7 +32,7 @@ public class DashboardAPIManager {
     
     func serviceCallToGetBuyerOrder(_ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
         let strUrl = API.GET_BUYER_ORDER + "?customer=" + String(AppModel.shared.currentUser.ID)
-        APIManager.shared.callGetRequest(strUrl, true) { (dict) in
+        APIManager.shared.callGetRequestWithBasicAuth(strUrl, true) { (dict) in
             printData(dict)
             if let status = dict["status"] as? String, status == "success" {
                 if let data = dict["data"] as? [[String : Any]] {

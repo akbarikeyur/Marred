@@ -104,6 +104,7 @@ struct BrandModel {
 struct CartModel {
     var product_id, product_name, product_price, product_image, store_name : String!
     var quantity : Int!
+    var line_total, price : Double!
     
     init(_ dict : [String : Any]) {
         product_id = AppModel.shared.getStringData(dict, "product_id")
@@ -112,6 +113,8 @@ struct CartModel {
         quantity = AppModel.shared.getIntData(dict, "quantity")
         product_image = AppModel.shared.getStringData(dict, "product_image")
         store_name = AppModel.shared.getStringData(dict, "store_name")
+        line_total = AppModel.shared.getDoubleData(dict, "line_total")
+        price = AppModel.shared.getDoubleData(dict, "price")
     }
 }
 

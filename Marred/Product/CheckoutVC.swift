@@ -44,6 +44,8 @@ class CheckoutVC: UIViewController {
     var arrCountry = [CountryModel]()
     var selectedCountry = CountryModel.init([String : Any]())
     var arrCart = [CartModel]()
+    var isFreeShipping : Bool = false
+    var totalPrice = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +66,12 @@ class CheckoutVC: UIViewController {
         FoloosiPay.initSDK(merchantKey: FOLOOSI.MERCHANT_KEY,withDelegate: self)
         
         setupDetails()
-        clickToShipping(freeShipBtn)
+        if isFreeShipping {
+            clickToShipping(freeShipBtn)
+        }else{
+            clickToShipping(flatRateBtn)
+        }
+        updateTotalPrice()
     }
     
     func setupDetails() {
@@ -136,6 +143,7 @@ class CheckoutVC: UIViewController {
         freeShipBtn.isSelected = false
         flatRateBtn.isSelected = false
         sender.isSelected = true
+        updateTotalPrice()
     }
     
     @IBAction func clickToSelectCard(_ sender: UIButton) {
@@ -150,6 +158,18 @@ class CheckoutVC: UIViewController {
         }else{
             serviceCallToCheckout()
         }
+    }
+    
+    func updateTotalPrice() {
+        totalPrice = 0
+        for temp in arrCart {
+            totalPrice += (Double(temp.quantity) * temp.price)
+        }
+        subTotalLbl.text = displayPriceWithCurrency(String(totalPrice))
+        if flatRateBtn.isSelected {
+            totalPrice += 25.0
+        }
+        totalLbl.text = displayPriceWithCurrency(String(totalPrice))
     }
     
     /*
@@ -237,11 +257,12 @@ extension CheckoutVC {
             dict["qty"] = temp.quantity
             arrData.append(dict)
         }
-        param["products"] = arrData
+        param["products"] = APIManager.shared.toJson(arrData)
         param["payment_method"] = "COD"
         printData(param)
         ProductAPIManager.shared.serviceCallToCheckout(param) {
-            
+            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 0])
         }
     }
 }
