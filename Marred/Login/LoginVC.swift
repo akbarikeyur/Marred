@@ -65,6 +65,7 @@ class LoginVC: UIViewController {
             var param = [String : Any]()
             param["user_email"] = emailTxt.text
             param["user_password"] = passwordTxt.text
+            param["noti_token"] = getPushToken()
             LoginAPIManager.shared.serviceCallToLogin(param) {
                 AppDelegate().sharedDelegate().navigateToDashBoard()
             }

@@ -56,6 +56,7 @@ struct NOTIFICATION {
     static var REDIRECT_CONTACT_US          =   "REDIRECT_CONTACT_US"
     
     static var REFRESH_CART                 =   "REFRESH_CART"
+    static var CLEAR_CART                   =   "CLEAR_CART"
 }
 
 struct Platform {

@@ -35,6 +35,7 @@ struct API {
     static let APPLY_COUPON                           =       BASE_URL + "wc/v3/coupons?code="
     static let GET_PAYMENT_GATEWAY                    =       BASE_URL + "wc/v3/payment_gateways"
     static let CHECKOUT_ORDER                         =       BASE_URL + "v1/user/checkout"
+    static let CLEAR_FULL_CART                        =       BASE_URL + "cocart/v1/clear"
     
     static let ADD_BOOKMARK                           =       BASE_URL + "v1/bookmark/addbookmark"
     static let REMOVE_BOOKMARK                        =       BASE_URL + "v1/bookmark/removebookmark"
@@ -82,11 +83,11 @@ public class APIManager {
         }
     }
     
-    func getJsonFormHeader() -> HTTPHeaders {
+    func getBasicJson() -> HTTPHeaders {
         if isUserLogin() {
-            return ["Content-Type":"application/x-www-form-urlencoded", "Accept":"application/json, text/plain, */*", "Authorization" : "Bearer " + getApiKey()]
+            return ["Content-Type":"application/json", "Accept":"application/json", "Authorization" : "Basic " + getApiKey()]
         }else{
-            return ["Content-Type":"application/x-www-form-urlencoded", "Accept":"application/json, text/plain, */*"]
+            return ["Content-Type":"application/json", "Accept":"application/json"]
         }
     }
     
@@ -135,7 +136,7 @@ public class APIManager {
     }
     
     //MARK:- Get request
-    func callGetRequestWithBasicAuth(_ api : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
+    func callGetRequestWithBasicAuthenticate(_ api : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
         if !APIManager.isConnectedToNetwork()
         {
             APIManager().networkErrorMsg()
@@ -150,6 +151,37 @@ public class APIManager {
             switch response.result {
             case .success:
                 if let result = response.result.value as? [String:Any] {
+                    completion(result)
+                    return
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+    }
+    
+    func callGetRequestWithArrayResponse(_ api : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [[String:Any]]) -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        if isLoaderDisplay {
+            showLoader()
+        }
+        
+        Alamofire.request(api, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: getBasicJson()).responseJSON { (response) in
+            removeLoader()
+            switch response.result {
+            case .success:
+                if let result = response.result.value as? [[String:Any]] {
                     completion(result)
                     return
                 }
@@ -258,45 +290,6 @@ public class APIManager {
                 break
             case .failure(let error):
                 printData(error)
-                break
-            }
-        }
-    }
-    
-    //MARK:- Post request
-    func callPostRequestJsonFrom(_ api : String, _ params : [String : Any], _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
-        if !APIManager.isConnectedToNetwork()
-        {
-            APIManager().networkErrorMsg()
-            return
-        }
-        if isLoaderDisplay {
-            showLoader()
-        }
-        Alamofire.upload(multipartFormData: { (multipartFormData) in
-            for (key, value) in params {
-                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
-            }
-        }, usingThreshold: UInt64.init(), to: api, method: .post, headers: getJsonFormHeader()) { (result) in
-            switch result{
-            case .success(let upload, _, _):
-                upload.uploadProgress(closure: { (Progress) in
-                    printData("Upload Progress: \(Progress.fractionCompleted)")
-                })
-                upload.responseJSON { response in
-                    removeLoader()
-                    if let result = response.result.value as? [String:Any] {
-                        completion(result)
-                        return
-                    }
-                    else if let error = response.error{
-                        displayToast(error.localizedDescription)
-                        return
-                    }
-                }
-            case .failure(let error):
-                removeLoader()
-                printData(error.localizedDescription)
                 break
             }
         }

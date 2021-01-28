@@ -46,6 +46,7 @@ class CheckoutVC: UIViewController {
     var arrCart = [CartModel]()
     var isFreeShipping : Bool = false
     var totalPrice = 0.0
+    var coupon = CouponModel.init([String : Any]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -165,6 +166,10 @@ class CheckoutVC: UIViewController {
         for temp in arrCart {
             totalPrice += (Double(temp.quantity) * temp.price)
         }
+        if coupon.id != "" && coupon.amount != "" {
+            totalPrice -= Double(coupon.amount)!
+        }
+        
         subTotalLbl.text = displayPriceWithCurrency(String(totalPrice))
         if flatRateBtn.isSelected {
             totalPrice += 25.0
@@ -223,9 +228,9 @@ extension CheckoutVC : FoloosiDelegate {
         orderData.orderTitle = "Maared" // Any Title
         orderData.currencyCode = "AED"  // 3 digit currency code like "AED"
         orderData.customColor = "#12233"  // make payment page loading color as app color.
-        orderData.orderAmount = 100  // in double format ##,###.##
+        orderData.orderAmount = totalPrice  // in double format ##,###.##
         orderData.orderId = getCurrentTimeStampValue()  // unique order id.
-        orderData.orderDescription = "Test Order"  // any description.
+        orderData.orderDescription = "Order"  // any description.
         let customer = Customer()
         customer.customerEmail = AppModel.shared.currentUser.user_email
         customer.customerName = AppModel.shared.currentUser.display_name
@@ -242,6 +247,7 @@ extension CheckoutVC : FoloosiDelegate {
     func onPaymentSuccess(paymentId: String) {
         printData("Success Callback")
         // payment id : FLSAPI00060115d83142ab
+        serviceCallToCheckout()
     }
 }
 
@@ -250,6 +256,9 @@ extension CheckoutVC {
     func serviceCallToCheckout() {
         var param = [String : Any]()
         param["user_id"] = AppModel.shared.currentUser.ID
+        if coupon.code != "" {
+            param["coupon_code"] = coupon.code
+        }
         var arrData = [[String : Any]]()
         for temp in arrCart {
             var dict = [String : Any]()
@@ -258,11 +267,15 @@ extension CheckoutVC {
             arrData.append(dict)
         }
         param["products"] = APIManager.shared.toJson(arrData)
-        param["payment_method"] = "COD"
+        if cashBtn.isSelected {
+            param["payment_method"] = "COD"
+        }else{
+            param["payment_method"] = "foloosi"
+        }
         printData(param)
         ProductAPIManager.shared.serviceCallToCheckout(param) {
-            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART), object: nil)
-            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 0])
+            AppDelegate().sharedDelegate().continueAfterCheckout()
+            self.navigationController?.popToRootViewController(animated: false)
         }
     }
 }

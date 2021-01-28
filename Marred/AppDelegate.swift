@@ -102,6 +102,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigateToLogin()
     }
     
+    func continueAfterCheckout() {
+        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.CLEAR_CART), object: nil)
+        ProductAPIManager.shared.serviceCallToClearFullCart {
+            
+        }
+        delay(0.2) {
+            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 0])
+        }
+    }
+    
     //MARK:- Tab Bar
     func showTabBar() {
         if customTabbarVc != nil {

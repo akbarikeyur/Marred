@@ -83,7 +83,8 @@ struct OrderModel {
     var id, user_id, customer_id : Int!
     var status, currency, date_created, total : String!
     var billing, shipping : AddressModel!
-    
+    var line_items : [OrderProductModel]!
+    var stores : [BrandModel]!
     
     init(_ dict : [String : Any]) {
         id = AppModel.shared.getIntData(dict, "id")
@@ -97,5 +98,36 @@ struct OrderModel {
         total = AppModel.shared.getStringData(dict, "total")
         billing = AddressModel.init(dict["billing"] as? [String : Any] ?? [String : Any]())
         shipping = AddressModel.init(dict["shipping"] as? [String : Any] ?? [String : Any]())
+        line_items = [OrderProductModel]()
+        if let tempData = dict["line_items"] as? [[String : Any]] {
+            for temp in tempData {
+                line_items.append(OrderProductModel.init(temp))
+            }
+        }
+        stores = [BrandModel]()
+        if let tempData = dict["stores"] as? [[String : Any]] {
+            for temp in tempData {
+                stores.append(BrandModel.init(temp))
+            }
+        }
+    }
+}
+
+struct OrderProductModel {
+    var id : Int!
+    var price, name, thumbnail : String!
+    var quantity : Int!
+    
+    init(_ dict : [String : Any])
+    {
+        id = AppModel.shared.getIntData(dict, "id")
+        price = AppModel.shared.getStringData(dict, "price")
+        thumbnail = dict["thumbnail"] as? String ?? ""
+        name = dict["name"] as? String ?? ""
+        quantity = AppModel.shared.getIntData(dict, "quantity")
+    }
+    
+    func dictionary() -> [String : Any] {
+        return ["id" : id!, "price" : price!, "thumbnail" : thumbnail!, "name" : name!, "quantity" : quantity!]
     }
 }

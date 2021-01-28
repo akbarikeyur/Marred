@@ -83,7 +83,7 @@ public class ProductAPIManager {
     }
     
     func serviceCallToGetPaymentGateway(_ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
-        APIManager.shared.callGetRequest(API.GET_PAYMENT_GATEWAY, false) { (dict) in
+        APIManager.shared.callGetRequestWithBasicAuthenticate(API.GET_PAYMENT_GATEWAY, false) { (dict) in
             printData(dict)
             if let status = dict["status"] as? String, status == "success" {
                 if let data = dict["data"] as? [[String : Any]] {
@@ -93,29 +93,27 @@ public class ProductAPIManager {
         }
     }
     
-    func serviceCallToApplyCoupon(_ code : String, _ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
-        APIManager.shared.callGetRequestWithBasicAuth((API.APPLY_COUPON + code), true) { (dict) in
-            printData(dict)
-            if let status = dict["status"] as? String, status == "success" {
-                if let data = dict["data"] as? [[String : Any]] {
-                    completion(data)
-                }
-            }
-        }
-        
-        APIManager.shared.callGetRequest((API.APPLY_COUPON + code), true) { (dict) in
-            printData(dict)
-            if let status = dict["status"] as? String, status == "success" {
-                if let data = dict["data"] as? [[String : Any]] {
-                    completion(data)
-                }
+    func serviceCallToApplyCoupon(_ code : String, _ completion: @escaping (_ dict : [String : Any]) -> Void) {
+        APIManager.shared.callGetRequestWithArrayResponse((API.APPLY_COUPON + code), true) { (data) in
+            print(data)
+            if data.count > 0 {
+                completion(data[0])
             }
         }
     }
     
     func serviceCallToCheckout(_ param : [String : Any], _ completion: @escaping () -> Void) {
-        
         APIManager.shared.callPostRequest(API.CHECKOUT_ORDER, param, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                completion()
+                return
+            }
+        }
+    }
+    
+    func serviceCallToClearFullCart(_ completion: @escaping () -> Void) {
+        APIManager.shared.callPostRequest(API.CLEAR_FULL_CART, [String : Any](), false) { (dict) in
             printData(dict)
             if let status = dict["status"] as? String, status == "success" {
                 completion()

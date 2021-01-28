@@ -26,21 +26,23 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var sideImgView: UIImageView!
     @IBOutlet weak var myScroll: UIScrollView!
     @IBOutlet weak var noDataView: UIView!
+    @IBOutlet weak var applyCouponBtn: Button!
     
     var isLoader = false
     var arrCart = [CartModel]()
     var totalPrice = 0.0
+    var coupon = CouponModel.init([String : Any]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshSceen), name: NSNotification.Name.init(NOTIFICATION.NOTIFICATION_TAB_CLICK), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(serviceCallToGetCart), name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resetCartScreen), name: NSNotification.Name.init(NOTIFICATION.CLEAR_CART), object: nil)
+        
         registerTableViewMethod()
-        isLoader = true
-        noDataView.isHidden = true
-        myScroll.isHidden = true
-        promocodeTxt.text = ""
+        resetCartScreen()
         
         calculateView.isHidden = true
         clickToShipping(freeShipBtn)
@@ -59,6 +61,26 @@ class ShoppingCartVC: UIViewController {
         sideImgView.roundCorners(corners: [.bottomRight], radius: 20)
     }
     
+    @objc func refreshSceen() {
+        if tabBarController != nil {
+            let tabBar : CustomTabBarController = self.tabBarController as! CustomTabBarController
+            if tabBar.tabBarView.lastIndex == 2 && arrCart.count == 0 {
+                serviceCallToGetCart()
+            }
+        }
+    }
+    
+    @objc func resetCartScreen() {
+        isLoader = true
+        noDataView.isHidden = true
+        myScroll.isHidden = true
+        promocodeTxt.text = ""
+        
+        arrCart = [CartModel]()
+        totalPrice = 0.0
+        coupon = CouponModel.init([String : Any]())
+    }
+    
     //MARK:- Button click event
     @IBAction func clickToSideMenu(_ sender: Any) {
         self.menuContainerViewController.toggleLeftSideMenuCompletion { }
@@ -73,13 +95,30 @@ class ShoppingCartVC: UIViewController {
     }
 
     @IBAction func clickToApplyPromocode(_ sender: Any) {
-        if promocodeTxt.text?.trimmed == "" {
-            displayToast("Please enter coupon code")
+        if self.applyCouponBtn.isSelected {
+            promocodeTxt.text = ""
+            promocodeTxt.textColor = BlackColor
+            promocodeTxt.isUserInteractionEnabled = true
+            applyCouponBtn.isSelected = false
+            applyCouponBtn.setTitle("Apply", for: .normal)
+            self.coupon = CouponModel.init([String : Any]())
+            self.updateTotalPrice()
         }else{
-            ProductAPIManager.shared.serviceCallToApplyCoupon(promocodeTxt.text!) { (data) in
-                
+            if promocodeTxt.text?.trimmed == "" {
+                displayToast("Please enter coupon code")
+            }else{
+                ProductAPIManager.shared.serviceCallToApplyCoupon(promocodeTxt.text!) { (data) in
+                    self.coupon = CouponModel.init(data)
+                    self.updateTotalPrice()
+                    self.promocodeTxt.text = displayPriceWithCurrency(self.coupon.amount) + " discount applied"
+                    self.promocodeTxt.textColor = UIColor.red
+                    self.promocodeTxt.isUserInteractionEnabled = false
+                    self.applyCouponBtn.setTitle("Deny", for: .selected)
+                    self.applyCouponBtn.isSelected = true
+                 }
             }
         }
+        
     }
     
     @IBAction func clickToSelectCountry(_ sender: UIButton) {
@@ -165,6 +204,9 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
         totalPrice = 0
         for temp in arrCart {
             totalPrice += (Double(temp.quantity) * temp.price)
+        }
+        if coupon.id != "" && coupon.amount != "" {
+            totalPrice -= Double(coupon.amount)!
         }
         subTotalLbl.text = displayPriceWithCurrency(String(totalPrice))
         if flatRateBtn.isSelected {

@@ -158,13 +158,13 @@ func setHomePavalionData(_ data: [HomeModel])
     for temp in data {
         arrData.append(temp.dictionary())
     }
-    setDataToPreference(data: arrData as AnyObject, forKey: "home_banner_data")
+    setDataToPreference(data: arrData as AnyObject, forKey: "home_pavilion_data")
 }
 
 func getHomePavalionData() -> [HomeModel]
 {
     var arrData = [HomeModel]()
-    if let data : [[String : Any]] = getDataFromPreference(key: "home_banner_data") as? [[String : Any]]
+    if let data : [[String : Any]] = getDataFromPreference(key: "home_pavilion_data") as? [[String : Any]]
     {
         for temp in data {
             arrData.append(HomeModel.init(temp))

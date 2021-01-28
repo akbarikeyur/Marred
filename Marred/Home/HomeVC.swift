@@ -151,12 +151,12 @@ extension HomeVC {
             if getHomePavalionData().count > 0 {
                 for temp in getHomePavalionData() {
                     self.arrHomeData.append(temp)
-                    self.arrData.append(HomeDisplayModel.init(["type":"BANNER_AD"]))
+                    self.arrData.append(HomeDisplayModel.init(["type":"PRODUCT_LIST"]))
                 }
             }
             self.arrData.append(HomeDisplayModel.init(["type":"CONTACT_INFO"]))
             self.tblView.reloadData()
-            serviceCallToGetHome(false)
+            self.serviceCallToGetHome(false)
         }
         else{
             serviceCallToGetHome(true)
@@ -167,6 +167,9 @@ extension HomeVC {
         refreshControl.endRefreshing()
         HomeAPIManager.shared.serviceCallToGetHome(isLoader) { (dict) in
             self.arrData = [HomeDisplayModel]()
+            self.arrBanner = [String]()
+            self.arrHomeData = [HomeModel]()
+            
             self.arrData.append(HomeDisplayModel.init(["type":"CATEGORY_LIST"]))
             if let temp = dict["home_banner"] as? [String] {
                 self.arrBanner = temp

@@ -26,7 +26,17 @@ class MyOrderTVC: UITableViewCell {
 
     func setupDetails(_ dict : OrderModel) {
         invoiceLbl.text = " Invoice#: " + String(dict.id) + " "
-        
+        if dict.line_items.count > 0 {
+            nameLbl.text = dict.line_items[0].name
+            qtyLbl.text = "x" + String(dict.line_items[0].quantity)
+            priceLbl.text = displayPriceWithCurrency(dict.line_items[0].price)
+        }
+        let date = getDateFromDateString(date: dict.date_created, format: "yyyy-MM-dd'T'HH:mm:ss")
+        dateLbl.text = "Order Date: " + getDateStringFromDate(date: date, format: "MMMM dd yyyy h:mm a")
+        if dict.stores.count > 0 {
+            vendorLbl.text = "Vendor: " + dict.stores[0].name
+        }
+        statusLbl.text = dict.status.capitalized
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

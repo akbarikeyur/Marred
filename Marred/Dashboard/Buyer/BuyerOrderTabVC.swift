@@ -12,6 +12,8 @@ class BuyerOrderTabVC: UIViewController {
 
     @IBOutlet weak var tblView: UITableView!
     
+    var arrOrder = [OrderModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +22,11 @@ class BuyerOrderTabVC: UIViewController {
     }
     
     func setupDetails() {
-        serviceCallToGetBuyerOrder()
+        if arrOrder.count == 0 {
+            serviceCallToGetBuyerOrder()
+        }else{
+            tblView.reloadData()
+        }
     }
     
     /*
@@ -43,7 +49,7 @@ extension BuyerOrderTabVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return arrOrder.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -52,7 +58,7 @@ extension BuyerOrderTabVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : MyOrderTVC = tblView.dequeueReusableCell(withIdentifier: "MyOrderTVC") as! MyOrderTVC
-        
+        cell.setupDetails(arrOrder[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }
@@ -65,7 +71,11 @@ extension BuyerOrderTabVC : UITableViewDelegate, UITableViewDataSource {
 extension BuyerOrderTabVC {
     func serviceCallToGetBuyerOrder() {
         DashboardAPIManager.shared.serviceCallToGetBuyerOrder { (data) in
-            
+            self.arrOrder = [OrderModel]()
+            for temp in data {
+                self.arrOrder.append(OrderModel.init(temp))
+            }
+            self.tblView.reloadData()
         }
     }
 }

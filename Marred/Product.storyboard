@@ -811,6 +811,7 @@
                     <navigationItem key="navigationItem" id="FwN-Aa-NOy"/>
                     <size key="freeformSize" width="320" height="860"/>
                     <connections>
+                        <outlet property="applyCouponBtn" destination="B40-lF-9Bu" id="Acg-sM-YJi"/>
                         <outlet property="bottomView" destination="NlI-gK-Ztc" id="UTl-9h-dro"/>
                         <outlet property="calculateView" destination="a6N-CT-HDz" id="XC9-69-jEf"/>
                         <outlet property="cityTxt" destination="pxF-7O-BiQ" id="3Ab-At-8rG"/>

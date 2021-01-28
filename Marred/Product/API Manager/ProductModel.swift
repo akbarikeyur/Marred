@@ -27,6 +27,8 @@ struct ProductModel {
             title = dict["title"] as? String ?? ""
         }else if dict["get_name"] != nil {
             title = dict["get_name"] as? String ?? ""
+        }else if dict["name"] != nil {
+            title = dict["name"] as? String ?? ""
         }
         vendor = dict["vendor"] as? String ?? ""
         brands = BrandModel.init(dict["brands"] as? [String : Any] ?? [String : Any]())
@@ -132,5 +134,15 @@ struct DealProductModel {
         get_short_description = AppModel.shared.getStringData(dict, "get_short_description")
         get_price = AppModel.shared.getStringData(dict, "get_price")
         thumbnail = AppModel.shared.getStringData(dict, "thumbnail")
+    }
+}
+
+struct CouponModel {
+    var id, code, amount : String
+    
+    init(_ dict : [String : Any]) {
+        id = AppModel.shared.getStringData(dict, "id")
+        code = AppModel.shared.getStringData(dict, "code")
+        amount = AppModel.shared.getStringData(dict, "amount")
     }
 }
