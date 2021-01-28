@@ -75,7 +75,6 @@ func setCategoryData(_ data : [CategoryModel])
         arrData.append(temp.dictionary())
     }
     setDataToPreference(data: arrData as AnyObject, forKey: "category_data")
-    setIsUserLogin(true)
 }
 
 func getCategoryData() -> [CategoryModel]
@@ -171,4 +170,31 @@ func getHomePavalionData() -> [HomeModel]
         }
     }
     return arrData
+}
+
+//Address
+func setBillingAddress(_ dict : AddressModel) {
+    setDataToPreference(data: dict.dictionary() as AnyObject, forKey: "user_billing_address")
+}
+
+func getBillingAddress() -> AddressModel {
+    var address = AddressModel.init([String : Any]())
+    if let data : [String : Any] = getDataFromPreference(key: "user_billing_address") as? [String : Any]
+    {
+        address = AddressModel.init(data)
+    }
+    return address
+}
+
+func setShippingAddress(_ dict : AddressModel) {
+    setDataToPreference(data: dict.dictionary() as AnyObject, forKey: "user_shiping_address")
+}
+
+func getShippingAddress() -> AddressModel {
+    var address = AddressModel.init([String : Any]())
+    if let data : [String : Any] = getDataFromPreference(key: "user_shiping_address") as? [String : Any]
+    {
+        address = AddressModel.init(data)
+    }
+    return address
 }

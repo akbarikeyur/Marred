@@ -46,7 +46,10 @@ class SubCategoryVC: UIViewController {
     }
 
     @IBAction func clickToCart(_ sender: Any) {
-        
+        if !isUserLogin() {
+            AppDelegate().sharedDelegate().showLoginAlert()
+            return
+        }
     }
     
     @IBAction func clickToFilter(_ sender: Any) {

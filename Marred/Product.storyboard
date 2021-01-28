@@ -2055,6 +2055,21 @@
                                     <outlet property="delegate" destination="Fv6-cn-gIA" id="bcx-zX-HAc"/>
                                 </connections>
                             </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no any bookmarkd product" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYC-IZ-PED" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                <rect key="frame" x="10" y="276" width="300" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -2064,6 +2079,9 @@
                             <constraint firstItem="Bnd-K8-8qa" firstAttribute="trailing" secondItem="Llh-9B-Sfi" secondAttribute="trailing" constant="5" id="RwT-dd-u8q"/>
                             <constraint firstItem="zon-4V-ZXO" firstAttribute="top" secondItem="Bnd-K8-8qa" secondAttribute="top" constant="20" id="aLI-Z1-4BH"/>
                             <constraint firstItem="Llh-9B-Sfi" firstAttribute="top" secondItem="zon-4V-ZXO" secondAttribute="bottom" constant="5" id="grR-o2-eNa"/>
+                            <constraint firstItem="PYC-IZ-PED" firstAttribute="centerY" secondItem="RBJ-Lh-cGW" secondAttribute="centerY" id="vqZ-mx-JJW"/>
+                            <constraint firstItem="Bnd-K8-8qa" firstAttribute="trailing" secondItem="PYC-IZ-PED" secondAttribute="trailing" constant="10" id="wI6-Hh-5Ku"/>
+                            <constraint firstItem="PYC-IZ-PED" firstAttribute="leading" secondItem="Bnd-K8-8qa" secondAttribute="leading" constant="10" id="wmi-E6-d63"/>
                             <constraint firstItem="Bnd-K8-8qa" firstAttribute="bottom" secondItem="Llh-9B-Sfi" secondAttribute="bottom" constant="5" id="xSQ-Bq-9eT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bnd-K8-8qa"/>
@@ -2071,6 +2089,7 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="GUb-KN-E4g"/>
                     <connections>
+                        <outlet property="noDataLbl" destination="PYC-IZ-PED" id="GoY-e8-uUx"/>
                         <outlet property="productCV" destination="Llh-9B-Sfi" id="LeN-vA-gcM"/>
                     </connections>
                 </viewController>

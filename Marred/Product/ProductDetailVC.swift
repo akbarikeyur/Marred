@@ -21,6 +21,7 @@ class ProductDetailVC: UIViewController {
     @IBOutlet weak var categoryLbl: Label!
     @IBOutlet weak var soldByLbl: Label!
     @IBOutlet weak var stockLbl: Label!
+    @IBOutlet weak var wishBtn: Button!
     @IBOutlet weak var descBtn: Button!
     @IBOutlet weak var vendorBtn: Button!
     @IBOutlet weak var relatedProductView: UIView!
@@ -30,6 +31,7 @@ class ProductDetailVC: UIViewController {
     var selectedImageIndex = 0
     var product = ProductModel.init([String : Any]())
     var productDetail = ProductDetailModel.init([String : Any]())
+    var isFavorite = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,7 @@ class ProductDetailVC: UIViewController {
         registerCollectionView()
         setupProduct()
         serviceCallToGetProductDetail()
+        wishBtn.isSelected = isFavorite
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,9 +93,17 @@ class ProductDetailVC: UIViewController {
         var param = [String : Any]()
         param["user_id"] = AppModel.shared.currentUser.ID
         param["product_id"] = product.id
-        ProductAPIManager.shared.serviceCallToAddBookmark(param) {
-            
+        if sender.isSelected {
+            ProductAPIManager.shared.serviceCallToAddBookmark(param) {
+                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_BOOKMARK), object: nil)
+            }
         }
+        else{
+            ProductAPIManager.shared.serviceCallToRemoveBookmark(param) {
+                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_BOOKMARK), object: nil)
+            }
+        }
+        
     }
     
     @IBAction func clickToCircle(_ sender: Any) {

@@ -42,8 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if isUserLogin() && getApiKey() != "" {
             AppModel.shared.currentUser = getLoginUserData()
-            navigateToDashBoard()
+//            navigateToDashBoard()
         }
+        navigateToDashBoard()
         return true
     }
 
@@ -89,10 +90,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func showLoginAlert() {
-        showAlertWithOption("Maared", message: "Please login to continue.", btns: ["Cancel", "Login"], completionConfirm: {
-            self.navigateToLogin()
-        }) {
+        showAlertWithOption("Maared", message: "login_to_continue", btns: ["login_button", "cancel_button"], completionConfirm: {
             
+        }) {
+            self.navigateToLogin()
         }
     }
     
@@ -311,6 +312,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         if !isUserLogin(){
             return
         }
-        
+        printData(dict)
     }
 }

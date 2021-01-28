@@ -123,7 +123,7 @@ struct CartModel {
 struct DealProductModel {
     var id : Int!
     var get_featured : Bool!
-    var get_name, get_status, get_description, get_short_description, get_price, thumbnail : String
+    var get_name, get_status, get_description, get_short_description, get_price, thumbnail : String!
     
     init(_ dict : [String : Any]) {
         id = AppModel.shared.getIntData(dict, "id")
@@ -134,6 +134,10 @@ struct DealProductModel {
         get_short_description = AppModel.shared.getStringData(dict, "get_short_description")
         get_price = AppModel.shared.getStringData(dict, "get_price")
         thumbnail = AppModel.shared.getStringData(dict, "thumbnail")
+    }
+    
+    func dictionary() -> [String : Any] {
+        return ["id" : id!, "get_featured" : get_featured!, "get_name" : get_name!, "get_status" : get_status!, "get_description" : get_description!, "get_short_description":get_short_description!, "get_price":get_price!,  "thumbnail":thumbnail!]
     }
 }
 

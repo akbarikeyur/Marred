@@ -63,6 +63,10 @@
 "yes" = "Yes";
 "no" = "No";
 
+"login_to_continue" = "Please login to continue.";
+"login_button" = "Login";
+
+
 //Date manager
 "select_date" = "Select Date";
 "select_start_date" = "Select Start Date";

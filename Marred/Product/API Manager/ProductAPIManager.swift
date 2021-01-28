@@ -71,8 +71,8 @@ public class ProductAPIManager {
         }
     }
     
-    func serviceCallToGetBookmark(_ param : [String : Any], _ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
-        APIManager.shared.callPostRequest(API.GET_BOOKMARK, param, true) { (dict) in
+    func serviceCallToGetBookmark(_ param : [String : Any], _ isLoader : Bool, _ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
+        APIManager.shared.callPostRequest(API.GET_BOOKMARK, param, isLoader) { (dict) in
             printData(dict)
             if let status = dict["status"] as? String, status == "success" {
                 if let data = dict["data"] as? [[String : Any]] {

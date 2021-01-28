@@ -69,4 +69,22 @@ public class DashboardAPIManager {
             }
         }
     }
+    
+    func serviceCallToGetAddress(_ completion: @escaping (_ dict : [String : Any]) -> Void) {
+        APIManager.shared.callGetRequest(API.GET_SET_ADDRESS, true) { (dict) in
+            printData(dict)
+            completion(dict)
+        }
+    }
+    
+    func serviceCallToSetAddress(_ param : [String : Any], _ completion: @escaping (_ dict : [String : Any]) -> Void) {
+        APIManager.shared.callPutRequest(API.GET_SET_ADDRESS, param, true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [String : Any] {
+                    completion(data)
+                }
+            }
+        }
+    }
 }

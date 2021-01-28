@@ -21,4 +21,6 @@ target 'Marred' do
   
   pod 'Firebase'
   pod 'Firebase/Messaging'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
 end

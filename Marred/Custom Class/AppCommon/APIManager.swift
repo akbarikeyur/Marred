@@ -51,6 +51,8 @@ struct API {
     static let GET_WITHDRAW_REQUEST                   =       BASE_URL + "v1/seller/getwithDrawRequest"
     
     static let CONTACT_US                             =       BASE_URL + "v1/contactadmin"
+    
+    static let GET_SET_ADDRESS                        =       BASE_URL + "wc/v3/customers/" + String(AppModel.shared.currentUser.ID)
 }
 
 public class APIManager {
@@ -224,6 +226,45 @@ public class APIManager {
                 break
             case .failure(let error):
                 printData(error)
+                break
+            }
+        }
+    }
+    
+    //MARK:- Put Request
+    func callPutRequest(_ api : String, _ param : [String : Any], _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        if isLoaderDisplay {
+            showLoader()
+        }
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            for (key, value) in param {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+            }
+        }, usingThreshold: UInt64.init(), to: api, method: .put, headers: getJsonHeader()) { (result) in
+            switch result{
+            case .success(let upload, _, _):
+                upload.uploadProgress(closure: { (Progress) in
+                    printData("Upload Progress: \(Progress.fractionCompleted)")
+                })
+                upload.responseJSON { response in
+                    removeLoader()
+                    if let result = response.result.value as? [String:Any] {
+                        completion(result)
+                        return
+                    }
+                    else if let error = response.error{
+                        displayToast(error.localizedDescription)
+                        return
+                    }
+                }
+            case .failure(let error):
+                removeLoader()
+                printData(error.localizedDescription)
                 break
             }
         }

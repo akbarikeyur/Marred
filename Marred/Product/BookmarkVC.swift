@@ -11,6 +11,7 @@ import UIKit
 class BookmarkVC: UIViewController {
 
     @IBOutlet weak var productCV: UICollectionView!
+    @IBOutlet weak var noDataLbl: Label!
     
     var arrProduct = [ProductModel]()
     var refreshControl = UIRefreshControl.init()
@@ -19,6 +20,10 @@ class BookmarkVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshSceen), name: NSNotification.Name.init(NOTIFICATION.NOTIFICATION_TAB_CLICK), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(serviceCallToGetBookmark), name: NSNotification.Name.init(NOTIFICATION.REFRESH_BOOKMARK), object: nil)
+        
+        
         registerCollectionView()
         
         refreshControl.addTarget(self, action: #selector(serviceCallToGetBookmark), for: .valueChanged)
@@ -28,6 +33,15 @@ class BookmarkVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate().sharedDelegate().showTabBar()
+    }
+    
+    @objc func refreshSceen() {
+        if tabBarController != nil {
+            let tabBar : CustomTabBarController = self.tabBarController as! CustomTabBarController
+            if tabBar.tabBarView.lastIndex == 3 {
+                serviceCallToGetBookmark()
+            }
+        }
     }
     
     //MARK:- Button click event
@@ -87,12 +101,14 @@ extension BookmarkVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         ProductAPIManager.shared.serviceCallToRemoveBookmark(param) {
             self.arrProduct.remove(at: sender.tag)
             self.productCV.reloadData()
+            self.noDataLbl.isHidden = (self.arrProduct.count > 0)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc : ProductDetailVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
         vc.product = arrProduct[indexPath.row]
+        vc.isFavorite = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -100,12 +116,13 @@ extension BookmarkVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
 extension BookmarkVC {
     @objc func serviceCallToGetBookmark() {
         refreshControl.endRefreshing()
-        ProductAPIManager.shared.serviceCallToGetBookmark(["user_id" : AppModel.shared.currentUser.ID!]) { (data) in
+        ProductAPIManager.shared.serviceCallToGetBookmark(["user_id" : AppModel.shared.currentUser.ID!], (arrProduct.count == 0)) { (data) in
             self.arrProduct = [ProductModel]()
             for temp in data {
                 self.arrProduct.append(ProductModel.init(temp))
             }
             self.productCV.reloadData()
+            self.noDataLbl.isHidden = (self.arrProduct.count > 0)
         }
     }
 }

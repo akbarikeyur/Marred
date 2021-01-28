@@ -34,33 +34,18 @@ class MyAddressTVC: UITableViewCell, UITextFieldDelegate {
     }
 
     func setupDetails(_ dict : AddressModel) {
-        if PLATFORM.isSimulator {
-            addressDict = dict
-            fnameTxt.text = "Test"
-            lnameTxt.text = "Akbari"
-            companyTxt.text = "Testing Company"
-            address1Txt.text = "North street"
-            address2Txt.text = "Western Plaza"
-            countryTxt.text = "India"
-            stateTxt.text = "Gujarat"
-            cityTxt.text = "Surat"
-            postcodeTxt.text = "395006"
-            emailTxt.text = "test@gmail.com"
-            phoneTxt.text = "+917567080717"
-        }else{
-            addressDict = dict
-            fnameTxt.text = dict.first_name
-            lnameTxt.text = dict.last_name
-            companyTxt.text = dict.company
-            address1Txt.text = dict.address_1
-            address2Txt.text = dict.address_2
-            countryTxt.text = dict.country
-            stateTxt.text = dict.state
-            cityTxt.text = dict.city
-            postcodeTxt.text = dict.postcode
-            emailTxt.text = dict.email
-            phoneTxt.text = dict.phone
-        }
+        addressDict = dict
+        fnameTxt.text = dict.first_name
+        lnameTxt.text = dict.last_name
+        companyTxt.text = dict.company
+        address1Txt.text = dict.address_1
+        address2Txt.text = dict.address_2
+        countryTxt.text = dict.country
+        stateTxt.text = dict.state
+        cityTxt.text = dict.city
+        postcodeTxt.text = dict.postcode
+        emailTxt.text = dict.email
+        phoneTxt.text = dict.phone
     }
     
     @IBAction func clickToUpdate(_ sender: Any) {
@@ -113,18 +98,12 @@ class MyAddressTVC: UITableViewCell, UITextFieldDelegate {
             print(param)
             
             var newParam = [String : Any]()
-            newParam["id"] = AppModel.shared.currentUser.ID
-            newParam["firstname"] = fnameTxt.text
-            newParam["lastname"] = fnameTxt.text
-            newParam["username"] = AppModel.shared.currentUser.user_nicename
-            newParam["email"] = AppModel.shared.currentUser.user_email
-            newParam["role"] = isSeller() ? "seller" : "customer"
             if index == 0 {
                 newParam["billing"] = param
             }else{
                 newParam["shipping"] = param
             }
-            LoginAPIManager.shared.serviceCallToUpdateUserDetail(newParam) {
+            DashboardAPIManager.shared.serviceCallToSetAddress(newParam) { (dic) in
                 displayToast("Address update successfully.")
             }
         }

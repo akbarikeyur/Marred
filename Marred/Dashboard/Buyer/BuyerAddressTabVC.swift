@@ -18,10 +18,8 @@ class BuyerAddressTabVC: UIViewController {
 
         // Do any additional setup after loading the view.
         registerTableViewMethod()
-        arrAddress = [AddressModel]()
-        arrAddress.append(AppModel.shared.currentUser.billing)
-        arrAddress.append(AppModel.shared.currentUser.shipping)
-        billingTbl.reloadData()
+        
+        serviceCallToSetAddress()
     }
     
     func setupDetails() {
@@ -75,4 +73,26 @@ extension BuyerAddressTabVC : UITableViewDelegate, UITableViewDataSource, MyAddr
         arrAddress[index] = dict
         billingTbl.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
+}
+
+extension BuyerAddressTabVC {
+    func serviceCallToSetAddress() {
+        DashboardAPIManager.shared.serviceCallToGetAddress { (dict) in
+            self.arrAddress = [AddressModel]()
+            if let billing = dict["billing"] as? [String : Any] {
+                self.arrAddress.append(AddressModel.init(billing))
+                setBillingAddress(AddressModel.init(billing))
+            }else{
+                self.arrAddress.append(AddressModel.init([String : Any]()))
+            }
+            if let shipping = dict["shipping"] as? [String : Any]{
+                self.arrAddress.append(AddressModel.init(shipping))
+                setShippingAddress(AddressModel.init(shipping))
+            }else{
+                self.arrAddress.append(AddressModel.init([String : Any]()))
+            }
+            self.billingTbl.reloadData()
+        }
+    }
+    
 }

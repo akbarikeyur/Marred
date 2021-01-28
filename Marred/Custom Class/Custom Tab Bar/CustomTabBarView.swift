@@ -59,7 +59,7 @@ class CustomTabBarView: UIView {
         let btn: UIButton = sender
         
         if !isUserLogin() && btn.tag >= 3 {
-            AppDelegate().sharedDelegate().navigateToLogin()
+            AppDelegate().sharedDelegate().showLoginAlert()
             return
         }
         lastIndex = btn.tag - 1

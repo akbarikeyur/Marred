@@ -76,26 +76,26 @@ class CheckoutVC: UIViewController {
     }
     
     func setupDetails() {
-        
-        fnameTxt.text = AppModel.shared.currentUser.billing.first_name
-        lnameTxt.text = AppModel.shared.currentUser.billing.last_name
-        companyNameTxt.text = AppModel.shared.currentUser.billing.company
-        countryTxt.text = AppModel.shared.currentUser.billing.country
-        stateTxt.text = AppModel.shared.currentUser.billing.state
-        addressTxt.text = AppModel.shared.currentUser.billing.address_1
-        apartmentTxt.text = AppModel.shared.currentUser.billing.address_2
-        cityTxt.text = AppModel.shared.currentUser.billing.city
-        stateCountryTxt.text = AppModel.shared.currentUser.billing.postcode
-        phoneTxt.text = AppModel.shared.currentUser.billing.phone
-        emailTxt.text = AppModel.shared.currentUser.billing.email
+        let dict = getBillingAddress()
+        fnameTxt.text = dict.first_name
+        lnameTxt.text = dict.last_name
+        companyNameTxt.text = dict.company
+        countryTxt.text = dict.country
+        stateTxt.text = dict.state
+        addressTxt.text = dict.address_1
+        apartmentTxt.text = dict.address_2
+        cityTxt.text = dict.city
+        stateCountryTxt.text = dict.postcode
+        phoneTxt.text = dict.phone
+        emailTxt.text = dict.email
         
         for temp in getJsonFromFile("country") {
             arrCountry.append(CountryModel.init(temp))
         }
-        if AppModel.shared.currentUser.billing.country != ""
+        if dict.country != ""
         {
             let index = arrCountry.firstIndex { (temp) -> Bool in
-                temp.name.lowercased() == AppModel.shared.currentUser.billing.country.lowercased()
+                temp.name.lowercased() == dict.country.lowercased()
             }
             if index != nil {
                 phoneFlagImg.image = UIImage(named: arrCountry[index!].code.lowercased())
@@ -234,7 +234,12 @@ extension CheckoutVC : FoloosiDelegate {
         let customer = Customer()
         customer.customerEmail = AppModel.shared.currentUser.user_email
         customer.customerName = AppModel.shared.currentUser.display_name
-        customer.customerPhoneNumber = AppModel.shared.currentUser.billing.phone
+        if phoneTxt.text != "" {
+            customer.customerPhoneNumber = phoneTxt.text
+        }else{
+            customer.customerPhoneNumber = "544444444"
+        }
+        
         orderData.customer = customer
         FLog.setLogVisible(debug: true)
         FoloosiPay.makePayment(orderData: orderData)

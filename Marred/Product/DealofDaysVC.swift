@@ -102,6 +102,26 @@ extension DealofDaysVC : UICollectionViewDelegate, UICollectionViewDataSource, U
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var dict = DealProductModel.init([String : Any]())
+        if collectionView == topCV {
+            dict = arrFeatureData[indexPath.row]
+        }else{
+            dict = arrDealData[indexPath.row]
+        }
+        var product = ProductModel.init([String : Any]())
+        product.id = dict.id
+        product.price = dict.get_price
+        product.title = dict.get_name
+        product.thumbnail = dict.thumbnail
+        product.get_status = dict.get_status
+        
+        let vc : ProductDetailVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
+        vc.product = product
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == topCV {
             let visibleRect = CGRect(origin: self.topCV.contentOffset, size: self.topCV.bounds.size)

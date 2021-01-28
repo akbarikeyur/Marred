@@ -47,13 +47,15 @@ class CategoryVC: UIViewController {
             arrPavilion.append(PavilionModel.init(temp))
         }
         pavillionCV.reloadData()
-        if arrPavilion.count > 0 {
-            selectedPavillion = arrPavilion[0]
-            if let data = pavilionDict[String(selectedPavillion.id)], data.count > 0 {
-                arrPavilionCategory = data
-                shopCV.reloadData()
-            }else{
-                serviceCallToGetPavilionCategory()
+        if selectedTab == 1 {
+            if arrPavilion.count > 0 {
+                selectedPavillion = arrPavilion[0]
+                if let data = pavilionDict[String(selectedPavillion.id)], data.count > 0 {
+                    arrPavilionCategory = data
+                    shopCV.reloadData()
+                }else{
+                    serviceCallToGetPavilionCategory()
+                }
             }
         }
     }
@@ -243,6 +245,15 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
             displaySubViewtoParentView(mainContainerView, subview: pavillionView)
             pavillionCV.reloadData()
             shopCV.reloadData()
+            if arrPavilion.count > 0 {
+                selectedPavillion = arrPavilion[0]
+                if let data = pavilionDict[String(selectedPavillion.id)], data.count > 0 {
+                    arrPavilionCategory = data
+                    shopCV.reloadData()
+                }else{
+                    serviceCallToGetPavilionCategory()
+                }
+            }
         }
     }
 }

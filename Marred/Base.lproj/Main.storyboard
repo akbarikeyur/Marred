@@ -832,6 +832,7 @@
                         <outlet property="soldByLbl" destination="Hfy-2j-I15" id="AvC-80-Js5"/>
                         <outlet property="stockLbl" destination="hSb-Q2-Khh" id="ICn-hc-er4"/>
                         <outlet property="vendorBtn" destination="0vI-Ga-zB7" id="z1j-pI-ceF"/>
+                        <outlet property="wishBtn" destination="okD-Yv-Bmb" id="5E8-Xi-bTX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4h-3u-edg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1807,7 +1808,7 @@
                                     <action selector="clickToSignIn:" destination="Id8-Yf-HjE" eventType="touchUpInside" id="rpG-zf-h6W"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIn-84-bDg" customClass="Button" customModule="Marred" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIn-84-bDg" customClass="Button" customModule="Marred" customModuleProvider="target">
                                 <rect key="frame" x="20" y="449.5" width="280" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vaK-1k-jvL"/>
@@ -2364,10 +2365,10 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="487"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSc-fT-O1A">
-                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9y-Q9-ORc" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="10" width="300" height="19.5"/>
+                                                                        <rect key="frame" x="10" y="10" width="300" height="16.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -2382,7 +2383,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bPP-3Z-dpd" customClass="TextField" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="34.5" width="300" height="40"/>
+                                                                        <rect key="frame" x="10" y="31.5" width="300" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="cCU-Td-FmV"/>
                                                                         </constraints>
@@ -2426,10 +2427,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9l-Jd-nyV">
-                                                                <rect key="frame" x="0.0" y="74.5" width="320" height="71.5"/>
+                                                                <rect key="frame" x="0.0" y="71.5" width="320" height="74.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd5-VD-d1T" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="10" width="300" height="16.5"/>
+                                                                        <rect key="frame" x="10" y="10" width="300" height="19.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -2444,7 +2445,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEM-60-fcZ" customClass="TextField" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="31.5" width="300" height="40"/>
+                                                                        <rect key="frame" x="10" y="34.5" width="300" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="Bbb-ns-Nyk"/>
                                                                         </constraints>

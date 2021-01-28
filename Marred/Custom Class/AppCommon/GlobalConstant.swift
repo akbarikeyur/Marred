@@ -57,6 +57,8 @@ struct NOTIFICATION {
     
     static var REFRESH_CART                 =   "REFRESH_CART"
     static var CLEAR_CART                   =   "CLEAR_CART"
+    
+    static var REFRESH_BOOKMARK             =   "REFRESH_BOOKMARK"
 }
 
 struct Platform {

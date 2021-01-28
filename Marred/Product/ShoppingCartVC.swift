@@ -64,7 +64,7 @@ class ShoppingCartVC: UIViewController {
     @objc func refreshSceen() {
         if tabBarController != nil {
             let tabBar : CustomTabBarController = self.tabBarController as! CustomTabBarController
-            if tabBar.tabBarView.lastIndex == 2 && arrCart.count == 0 {
+            if tabBar.tabBarView.lastIndex == 2 {
                 serviceCallToGetCart()
             }
         }
@@ -196,6 +196,11 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
         }
         if index != nil {
             arrCart[index!] = cart
+            if cart.quantity == 0 {
+                serviceCallToClearToCart(arrCart[index!])
+                arrCart.remove(at: index!)
+                updateTableviewHeight()
+            }
         }
         self.updateTotalPrice()
     }
