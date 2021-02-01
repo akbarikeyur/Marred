@@ -63,7 +63,7 @@ class AddYourShopVC: UIViewController {
         if arrPavilion.count > 0 {
             selectedPavilion = arrPavilion[0]
             pavilionFlagImg.image = UIImage(named: selectedPavilion.image)
-            pavillionTxt.text = selectedPavilion.name
+            pavillionTxt.text = getTranslate(selectedPavilion.name)
         }
         
         if arrCategory.count > 0 {
@@ -105,7 +105,7 @@ class AddYourShopVC: UIViewController {
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.selectedPavilion = self.arrPavilion[index]
             self.pavilionFlagImg.image = UIImage(named: self.selectedPavilion.image)
-            self.pavillionTxt.text = self.selectedPavilion.name
+            self.pavillionTxt.text = getTranslate(self.selectedPavilion.name)
         }
         dropDown.show()
     }
@@ -129,28 +129,28 @@ class AddYourShopVC: UIViewController {
     @IBAction func clickToSend(_ sender: Any) {
         self.view.endEditing(true)
         if fnameTxt.text?.trimmed == "" {
-            displayToast("Please enter first name")
+            displayToast("enter_fname")
         }
         else if lnameTxt.text?.trimmed == "" {
-            displayToast("Please enter last name")
+            displayToast("enter_lname")
         }
         else if businessNameTxt.text?.trimmed == "" {
-            displayToast("Please enter business name")
+            displayToast("enter_business_name")
         }
         else if emailTxt.text?.trimmed == "" {
-            displayToast("Please enter email")
+            displayToast("enter_email")
         }
         else if !emailTxt.text!.isValidEmail {
-            displayToast("Invalid email")
+            displayToast("invalid_email")
         }
         else if phoneTxt.text?.trimmed == "" {
-            displayToast("Please enter phone number")
+            displayToast("enter_phone")
         }
         else if pavillionTxt.text?.trimmed == "" {
-            displayToast("Please select pavilion")
+            displayToast("select_pavilion")
         }
         else if categoryTxt.text?.trimmed == "" {
-            displayToast("Please select category")
+            displayToast("select_category")
         }
         else{
             var param = [String : Any]()

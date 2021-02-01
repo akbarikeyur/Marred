@@ -50,37 +50,37 @@ class MyAddressTVC: UITableViewCell, UITextFieldDelegate {
     
     @IBAction func clickToUpdate(_ sender: Any) {
         if fnameTxt.text?.trimmed == "" {
-            displayToast("Please enter first name")
+            displayToast("enter_fname")
         }
         else if lnameTxt.text?.trimmed == "" {
-            displayToast("Please enter last name")
+            displayToast("enter_lname")
         }
         else if companyTxt.text?.trimmed == "" {
-            displayToast("Please enter company name")
+            displayToast("enter_company_name")
         }
         else if address1Txt.text?.trimmed == "" {
-            displayToast("Please enter address")
+            displayToast("enter_address")
         }
         else if countryTxt.text?.trimmed == "" {
-            displayToast("Please enter country")
+            displayToast("enter_country")
         }
         else if stateTxt.text?.trimmed == "" {
-            displayToast("Please enter state")
+            displayToast("enter_state")
         }
         else if cityTxt.text?.trimmed == "" {
-            displayToast("Please enter city")
+            displayToast("enter_city")
         }
         else if postcodeTxt.text?.trimmed == "" {
-            displayToast("Please enter postal code")
+            displayToast("enter_postal_code")
         }
         else if emailTxt.text?.trimmed == "" {
-            displayToast("Please enter email")
+            displayToast("enter_email")
         }
         else if !emailTxt.text!.isValidEmail {
-            displayToast("Invalid email")
+            displayToast("invalid_email")
         }
         else if phoneTxt.text?.trimmed == "" {
-            displayToast("Please enter phone number")
+            displayToast("enter_phone")
         }
         else {
             var param = [String : Any]()
@@ -104,7 +104,7 @@ class MyAddressTVC: UITableViewCell, UITextFieldDelegate {
                 newParam["shipping"] = param
             }
             DashboardAPIManager.shared.serviceCallToSetAddress(newParam) { (dic) in
-                displayToast("Address update successfully.")
+                displayToast("address_success_msg")
             }
         }
     }

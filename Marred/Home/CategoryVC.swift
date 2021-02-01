@@ -18,7 +18,7 @@ class CategoryVC: UIViewController {
     @IBOutlet weak var pavillionCV: UICollectionView!
     @IBOutlet weak var shopCV: UICollectionView!
     
-    var arrTabData = ["Shop by Categories", "Shop by Pavilions"]
+    var arrTabData = [getTranslate("shop_by_categories"), getTranslate("shop_by_pavilions")]
     
     var selectedTab = 0
     var selectedPavillion = PavilionModel.init([String : Any]())

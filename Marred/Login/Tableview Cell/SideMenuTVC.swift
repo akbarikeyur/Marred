@@ -20,7 +20,7 @@ class SideMenuTVC: UITableViewCell {
     
     func setupDetails(_ dict : MenuModel) {
         menuBtn.setImage(UIImage(named: dict.image), for: .normal)
-        titleLbl.text = dict.name
+        titleLbl.text = getTranslate(dict.name)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

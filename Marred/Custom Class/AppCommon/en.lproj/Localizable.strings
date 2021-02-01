@@ -1,0 +1,135 @@
+/* 
+  Localizable.strings
+  Marred
+
+  Created by Keyur on 23/03/20.
+  Copyright © 2020 Keyur. All rights reserved.
+*/
+
+//camera
+"take_photo" = "Take Photo";
+"gallry_photo" = "Choose Existing Photo";
+"cancel_button" = "Cancel";
+
+//Common
+"currency_aed" = "AED ";
+
+"yes_button" = "Yes";
+"no_button" = "No";
+"ok_button" = "OK";
+
+//Pavilion
+"uae_pavilion" = "UAE Pavilion";
+"yemen_pavilion" = "Yemen Pavilion";
+"fashion_pavilion" = "Fashion Style Pavilion";
+"china_pavilion" = "China Pavilion";
+"europe_pavilion" = "Europe Pavilion";
+"europe_fashion_pavilion" = "Europe Fashion";
+"kuwait_pavilion" = "Kuwait Pavilion";
+"saudi_pavilion" = "Saudi Pavilion";
+"turkey_pavilion" = "Turkey Pavilion";
+"egypt_pavilion" = "Egypt Pavilion";
+
+"login_to_continue" = "Please login to continue.";
+"login_button" = "Login";
+
+//Login
+"signup_button_title" = "If not a member yet, Sign up";
+"signup_button" = "Sign up";
+
+"enter_email" = "Please enter email";
+"invalid_email" = "Invalid email";
+"enter_password" = "Please enter password";
+"enter_fname" = "Please enter first name";
+"enter_lname" = "Please enter last name";
+"enter_uname" = "Please enter user name";
+
+"logout_title" = "Logout";
+"logout_msg" = "Are you sure want to logout?";
+
+
+//Side menu
+"menu_home" = "Home";
+"menu_pavilion" = "Shop By Global Pavilions";
+"menu_category" = "Shop Categories";
+"menu_deal" = "Deals of The Day";
+"menu_shop" = "Add Your Shop";
+"menu_contact" = "Contact us";
+
+//Cart
+"enter_coupon_code" = "Please enter coupon code";
+"apply_button" = "Apply";
+"deny_button" = "Deny";
+
+//Shop
+"enter_business_name" = "Please enter business name";
+"enter_phone" = "Please enter phone number";
+"invalid_phone" = "Invalid phone number";
+"select_pavilion" = "Please select pavilion";
+"select_category" = "Please select category";
+
+
+//Contact Us
+"enter_message" = "Please enter your message";
+"contact_admin_title" = "Thank you for getting in touch!";
+"contact_admin_message" = "We appreciate you contacting us. One of our colleagues will get back in touch with you soon!";
+
+//Address
+"enter_company_name" = "Please enter company name";
+"enter_address" = "Please enter address";
+"enter_country" = "Please enter country";
+"enter_state" = "Please enter state";
+"enter_city" = "Please enter city";
+"enter_postal_code" = "Please enter postal code";
+"address_success_msg" = "Address update successfully.";
+
+"instock_status" = "In stock";
+"out_of_stock_status" = "Out of stock";
+
+//Category
+"shop_by_categories" = "Shop by Categories";
+"shop_by_pavilions" = "Shop by Pavilions";
+"total_product_found" = "Products found";
+
+
+//Product
+"sold_by_colon" = "Sold By: ";
+"categories_colon" = "Categories: ";
+"vendor_information" = "VENDOR INFORMATION\n\nStore Name: ";
+"discount_apply" = " discount applied";
+"vendor_colon" = "Vendor: ";
+
+"delete_title" = "Delete";
+"delete_message" = "Are you sure want to delete?";
+
+//Dashboard
+"tab_dashboard" = "Dashboard";
+"tab_order" = "Orders";
+"tab_address" = "Addresses";
+"tab_account" = "Account details";
+"tab_contact" = "Contact Us";
+"tab_product" = "Products";
+"tab_order" = "Orders";
+"tab_contact_admin" = "Contact Admin";
+"tab_withdraw" = "Withdraw";
+
+"billing_address" = "Billing Address";
+"shipping_address" = "Shipping Address";
+"edit_detail_msg" = "To edit the details, please login to our website.";
+
+
+//Seller Dashboard
+"order_total" = "Total";
+"order_complete" = "Completed";
+"order_pending" = "Pending";
+"order_processing" = "Processing";
+"order_cancel" = "Cancelled";
+"order_refund" = "Refunded";
+
+"tab_withdraw_request" = "Withdraw Request";
+"tab_approve_request" = "Approved Request";
+"tab_cancel_request" = "Cancelled Request";
+
+"withdraw_pending_msg" = "You don't have sufficient balance for a withdraw request!";
+"withdraw_approve_msg" = "You don't have any approved request!";
+"withdraw_cancel_msg" = "You don't have any cancelled request!";

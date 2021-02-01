@@ -1,0 +1,134 @@
+/* 
+  Localizable.strings
+  Marred
+
+  Created by Keyur on 23/03/20.
+  Copyright © 2020 Keyur. All rights reserved.
+*/
+
+//camera
+"take_photo" = "تصوير";
+"gallry_photo" = "اختر صورة موجودة";
+"cancel_button" = "إلغاء";
+
+//Common
+"currency_aed" = " د.إ";
+
+"yes_button" = "نعم";
+"no_button" = "لا!";
+"ok_button" = "حسنا";
+
+//Pavilion
+"uae_pavilion" = "القرية الاماراتية";
+"yemen_pavilion" = "القرية اليمنية";
+"fashion_pavilion" = "قرية فاشن ستايل";
+"china_pavilion" = "القرية الصينية";
+"europe_pavilion" = "القرية الاوروبية";
+"europe_fashion_pavilion" = "فاشن الاوروبية";
+"kuwait_pavilion" = "القرية الكويتية";
+"saudi_pavilion" = "القرية السعودية";
+"turkey_pavilion" = "القرية التركية";
+"egypt_pavilion" = "القرية المصرية";
+
+"login_to_continue" = "الرجاء تسجيل الدخول للمتابعة.";
+"login_button" = "تسجيل الدخول";
+
+//Login
+"signup_button_title" = "إذا لم تكن عضوا بعد ، قم بالتسجيل";
+"signup_button" = "قم بالتسجيل";
+
+"enter_email" = "الرجاء إدخال البريد الإلكتروني";
+"invalid_email" = "بريد إلكتروني خاطئ";
+"enter_password" = "الرجاء إدخال كلمة المرور";
+"enter_fname" = "الرجاء إدخال الاسم الأول";
+"enter_lname" = "الرجاء إدخال الاسم الأخير";
+"enter_uname" = "الرجاء إدخال اسم المستخدم";
+
+"logout_title" = "تسجيل خروج";
+"logout_msg" = "هل أنت متأكد أنك تريد تسجيل الخروج؟";
+
+
+//Side menu
+"menu_home" = "الرئيسية";
+"menu_pavilion" = "تسوق حسب الأجنحة العالمية";
+"menu_category" = "المتجر";
+"menu_deal" = "صفقات اليوم";
+"menu_shop" = "أضف متجرك";
+"menu_contact" = "تواصل معنا";
+
+//Cart
+"enter_coupon_code" = "الرجاء إدخال رمز القسيمة";
+"apply_button" = "تطبق";
+"deny_button" = "رفض";
+
+//Shop
+"enter_business_name" = "الرجاء إدخال اسم العمل";
+"enter_phone" = "الرجاء إدخال رقم الهاتف";
+"invalid_phone" = "الرجاء إدخال رقم الهاتف";
+"select_pavilion" = "الرجاء تحديد الجناح";
+"select_category" = "الرجاء تحديد الفئة";
+
+
+//Contact Us
+"enter_message" = "أدرج رسالتك من فضلك";
+"contact_admin_title" = "شكرا لك على تواصلك!";
+"contact_admin_message" = "نحن نقدر اتصالك بنا. سيقوم أحد زملائنا بالاتصال بك قريبًا!";
+
+//Address
+"enter_company_name" = "الرجاء إدخال اسم الشركة";
+"enter_address" = "الرجاء إدخال العنوان";
+"enter_country" = "الرجاء إدخال الدولة";
+"enter_state" = "الرجاء إدخال الولاية";
+"enter_city" = "الرجاء إدخال المدينة";
+"enter_postal_code" = "الرجاء إدخال الرمز البريدي";
+"address_success_msg" = "تم تحديث العنوان بنجاح.";
+
+"instock_status" = "مخزون معد للبيع";
+"out_of_stock_status" = "إنتهى من المخزن";
+
+//Category
+"shop_by_categories" = "تسوق حسب الفئات";
+"shop_by_pavilions" = "تسوق من خلال الأجنحة";
+"total_product_found" = "تم العثور على المنتجات";
+
+
+//Product
+"sold_by_colon" = " تم بيعها من قبل:";
+"categories_colon" = " التصنيفات:";
+"vendor_information" = " :معلومات البائع \n\n اسم المتجر";
+"discount_apply" = "الخصم قد تم ";
+"vendor_colon" = " بائع:";
+
+"delete_title" = "حذف";
+"delete_message" = "هل أنت متأكد من أنك تريد الحذف؟";
+
+//Dashboard
+"tab_dashboard" = "لوحة التحكم";
+"tab_order" = "الطلبات";
+"tab_address" = "العناوين";
+"tab_account" = "تفاصيل الحساب";
+"tab_contact" = "تواصل معنا";
+"tab_product" = "المنتجات";
+"tab_contact_admin" = "تواصل معنا";
+"tab_withdraw" = "انسحب";
+
+"billing_address" = "عنوان وصول الفواتير";
+"shipping_address" = "عنوان الشحن";
+"edit_detail_msg" = "لتعديل التفاصيل ، يرجى تسجيل الدخول إلى موقعنا على شبكة الإنترنت.";
+
+
+//Seller Dashboard
+"order_total" = "مجموع";
+"order_complete" = "منجز";
+"order_pending" = "قيد الانتظار";
+"order_processing" = "معالجة";
+"order_cancel" = "ألغيت";
+"order_refund" = "معاد";
+
+"tab_withdraw_request" = "طلب سحب";
+"tab_approve_request" = "طلب معتمد";
+"tab_cancel_request" = "طلب ملغى";
+
+"withdraw_pending_msg" = "ليس لديك رصيد كاف لطلب السحب!";
+"withdraw_approve_msg" = "ليس لديك أي طلب معتمد!";
+"withdraw_cancel_msg" = "ليس لديك أي طلب ملغى!";

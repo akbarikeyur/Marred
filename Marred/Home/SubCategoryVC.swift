@@ -120,6 +120,7 @@ extension SubCategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, 
             if selectedSubCat.term_id != arrSubCategory[indexPath.row].term_id {
                 selectedSubCat = arrSubCategory[indexPath.row]
                 page = 1
+                arrProduct = [ProductModel]()
                 serviceCallToGetProductList()
             }
         }
@@ -137,6 +138,7 @@ extension SubCategoryVC {
             if self.arrSubCategory.count > 0 {
                 self.selectedSubCat = self.arrSubCategory[0]
                 self.page = 1
+                self.arrProduct = [ProductModel]()
                 self.serviceCallToGetProductList()
             }
             self.noDataFound.isHidden = (self.arrSubCategory.count > 0)
@@ -162,7 +164,7 @@ extension SubCategoryVC {
             }
             self.productCV.reloadData()
             
-            self.nameLbl.text = self.selectedSubCat.name + " (" + String(total) + " Products found)"
+            self.nameLbl.text = self.selectedSubCat.name + " (" + String(total) + " " + getTranslate("total_product_found") + ")"
             self.nameLbl.attributedText = attributedStringWithColor(self.nameLbl.text!, [self.selectedSubCat.name], color: self.nameLbl.textColor, font: UIFont(name: APP_BOLD, size: 14.0))
         }
     }

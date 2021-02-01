@@ -1,0 +1,181 @@
+
+/* Class = "UIButton"; normalTitle = "Vendor Info"; ObjectID = "0vI-Ga-zB7"; */
+"0vI-Ga-zB7.normalTitle" = "بيانات التاجر";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "1f2-lP-WBn"; */
+"1f2-lP-WBn.placeholder" = "البريد الإلكتروني";
+
+/* Class = "UILabel"; text = "Create an account"; ObjectID = "2Ag-p4-ivi"; */
+"2Ag-p4-ivi.text" = "انشئ حساب";
+
+/* Class = "UIButton"; normalTitle = "I am a vendor"; ObjectID = "3hg-B1-ArJ"; */
+"3hg-B1-ArJ.normalTitle" = "أنا بائع";
+
+/* Class = "UILabel"; text = "Zercon Accessories"; ObjectID = "4tS-eW-lET"; */
+"4tS-eW-lET.text" = "Zercon Accessories";
+
+/* Class = "UIButton"; normalTitle = "1"; ObjectID = "7mr-mj-hI7"; */
+"7mr-mj-hI7.normalTitle" = "1";
+
+/* Class = "UILabel"; text = "Last Name"; ObjectID = "9Hd-ei-BR7"; */
+"9Hd-ei-BR7.text" = "الكنية";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "AiG-yO-dD5"; */
+"AiG-yO-dD5.text" = "تسجيل الدخول";
+
+/* Class = "UIButton"; normalTitle = "I am a customer"; ObjectID = "Bao-OY-CRY"; */
+"Bao-OY-CRY.normalTitle" = "أنا عميل";
+
+/* Class = "UILabel"; text = "User Name"; ObjectID = "BxN-dx-PRv"; */
+"BxN-dx-PRv.text" = "اسم المستخدم";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "ESp-4w-dFs"; */
+"ESp-4w-dFs.text" = "السعر";
+
+/* Class = "UIButton"; normalTitle = "If not a member yet, Sign up"; ObjectID = "Gne-gK-Zzg"; */
+"Gne-gK-Zzg.normalTitle" = "إذا لم تكن عضوا بعد ، قم بالتسجيل";
+
+/* Class = "UILabel"; text = "Sold By: Najma al fajer trading"; ObjectID = "Hfy-2j-I15"; */
+"Hfy-2j-I15.text" = "Sold By: Najma al fajer trading";
+
+/* Class = "UILabel"; text = "SKU: "; ObjectID = "JjV-en-Bgh"; */
+"JjV-en-Bgh.text" = "SKU: ";
+
+/* Class = "UILabel"; text = "Sign Up"; ObjectID = "KFW-uX-Ypf"; */
+"KFW-uX-Ypf.text" = "سجل";
+
+/* Class = "UILabel"; text = "Brand:"; ObjectID = "KRr-lk-UCs"; */
+"KRr-lk-UCs.text" = " :البراند";
+
+/* Class = "UITextField"; placeholder = "Email address"; ObjectID = "KhT-Zy-K2Q"; */
+"KhT-Zy-K2Q.placeholder" = "البريد الإلكتروني";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "LIn-84-bDg"; */
+"LIn-84-bDg.normalTitle" = "تخطى";
+
+/* Class = "UILabel"; text = "FV075021"; ObjectID = "LmT-HK-jKI"; */
+"LmT-HK-jKI.text" = "FV075021";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "MXe-lC-X88"; */
+"MXe-lC-X88.normalTitle" = "تسجيل خروج";
+
+/* Class = "UILabel"; text = "Accessories (28 Products found)"; ObjectID = "N0z-at-v7z"; */
+"N0z-at-v7z.text" = "Accessories (28 Products found)";
+
+/* Class = "UILabel"; text = "Add to cart"; ObjectID = "O3d-ch-GdF"; */
+"O3d-ch-GdF.text" = "أضف إلى السلة";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "OZj-cg-NZV"; */
+"OZj-cg-NZV.normalTitle" = "+";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "R1z-He-nvu"; */
+"R1z-He-nvu.normalTitle" = "عودة";
+
+/* Class = "UILabel"; text = "Add Shop in Categories"; ObjectID = "RK8-rx-58d"; */
+"RK8-rx-58d.text" = "إضافة متجر في الفئات";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "T9y-Q9-ORc"; */
+"T9y-Q9-ORc.text" = "كلمه السر";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "Ug1-cV-hCz"; */
+"Ug1-cV-hCz.normalTitle" = "هل نسيت كلمة المرور؟";
+
+/* Class = "UILabel"; text = "Enter your registered email address"; ObjectID = "VQX-Bf-ho5"; */
+"VQX-Bf-ho5.text" = "أدخل عنوان بريدك الإلكتروني المسجل";
+
+/* Class = "UILabel"; text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."; ObjectID = "WEH-gL-EaF"; */
+"WEH-gL-EaF.text" = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+
+/* Class = "UILabel"; text = "+971"; ObjectID = "YGA-Bc-L9L"; */
+"YGA-Bc-L9L.text" = "+971";
+
+/* Class = "UILabel"; text = "Sign up"; ObjectID = "YRj-Qw-c0y"; */
+"YRj-Qw-c0y.text" = "سجل";
+
+/* Class = "UILabel"; text = "Data not found"; ObjectID = "Z1d-iG-h36"; */
+"Z1d-iG-h36.text" = "لم يتم العثور على بيانات";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "Zxb-e1-aJT"; */
+"Zxb-e1-aJT.text" = "الاسم الاول";
+
+/* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "a68-lK-a2v"; */
+"a68-lK-a2v.normalTitle" = "إرسال";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "aJF-9v-d5f"; */
+"aJF-9v-d5f.placeholder" = "كلمه السر";
+
+/* Class = "UILabel"; text = "Add Shop in Pavillions"; ObjectID = "bKk-Wv-Bjh"; */
+"bKk-Wv-Bjh.text" = "إضافة متجر في الجناح";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "ciB-Ms-rdo"; */
+"ciB-Ms-rdo.normalTitle" = "-";
+
+/* Class = "UILabel"; text = "Categories: Occasional Accessories, Accessories, UAE Pavilion, UAE Accessories & Jewellery"; ObjectID = "crW-6C-vRX"; */
+"crW-6C-vRX.text" = "Categories: Occasional Accessories, Accessories, UAE Pavilion, UAE Accessories & Jewellery";
+
+/* Class = "UILabel"; text = "Welcome Back!"; ObjectID = "emh-aY-HAK"; */
+"emh-aY-HAK.text" = "مرحبا بعودتك!";
+
+/* Class = "UILabel"; text = "markherry@abc.com"; ObjectID = "gJY-lH-vjV"; */
+"gJY-lH-vjV.text" = "markherry@abc.com";
+
+/* Class = "UILabel"; text = "Enter your credentials to continue"; ObjectID = "hAq-kL-iUd"; */
+"hAq-kL-iUd.text" = "أدخل بيانات الاعتماد الخاصة بك للمتابعة";
+
+/* Class = "UILabel"; text = "Mark Herry"; ObjectID = "hNb-DC-VgD"; */
+"hNb-DC-VgD.text" = "Mark Herry";
+
+/* Class = "UILabel"; text = "In stock"; ObjectID = "hSb-Q2-Khh"; */
+"hSb-Q2-Khh.text" = "In stock";
+
+/* Class = "UILabel"; text = "Your Business Name"; ObjectID = "j4b-lx-M6M"; */
+"j4b-lx-M6M.text" = "اسم عملك";
+
+/* Class = "UITextField"; placeholder = "000 0000 000"; ObjectID = "jE2-yg-976"; */
+"jE2-yg-976.placeholder" = "000 0000 000";
+
+/* Class = "UILabel"; text = "0 AED"; ObjectID = "lCX-g4-KR2"; */
+"lCX-g4-KR2.text" = "0 AED";
+
+/* Class = "UILabel"; text = "Phone Number"; ObjectID = "msJ-aL-2ao"; */
+"msJ-aL-2ao.text" = "رقم الهاتف";
+
+/* Class = "UILabel"; text = "Confirm Password"; ObjectID = "nd5-VD-d1T"; */
+"nd5-VD-d1T.text" = "تأكيد كلمة المرور";
+
+/* Class = "UILabel"; text = "Status: "; ObjectID = "pQc-cm-yTb"; */
+"pQc-cm-yTb.text" = " : الحالة";
+
+/* Class = "UIButton"; normalTitle = "Description"; ObjectID = "qt2-5x-v9K"; */
+"qt2-5x-v9K.normalTitle" = "الوصف";
+
+/* Class = "UILabel"; text = "A password will be sent to your email address."; ObjectID = "tIh-im-m1r"; */
+"tIh-im-m1r.text" = "سيتم إرسال كلمة المرور إلى عنوان بريدك الإلكتروني.";
+
+/* Class = "UIButton"; normalTitle = "SIGN IN"; ObjectID = "utn-Aw-Kkk"; */
+"utn-Aw-Kkk.normalTitle" = "تسجيل الدخول";
+
+/* Class = "UIButton"; normalTitle = "RESET PASSWORD"; ObjectID = "vbn-Bo-9gf"; */
+"vbn-Bo-9gf.normalTitle" = "إعادة تعيين كلمة المرور";
+
+/* Class = "UILabel"; text = "FV075"; ObjectID = "xWK-dj-KmJ"; */
+"xWK-dj-KmJ.text" = "FV075";
+
+/* Class = "UILabel"; text = "Related products"; ObjectID = "xXg-RV-7Qw"; */
+"xXg-RV-7Qw.text" = "المزيد من المنتجات";
+
+/* Class = "UILabel"; text = "Email address "; ObjectID = "xeC-6l-RTf"; */
+"xeC-6l-RTf.text" = "البريد الإلكتروني";
+
+/* Class = "UILabel"; text = "Reset Password"; ObjectID = "zWq-3F-z1K"; */
+"zWq-3F-z1K.text" = "إعادة تعيين كلمة المرور";
+
+/* Class = "UILabel"; text = "I am a customer"; ObjectID = "Gdc-Tr-1kb"; */
+"Gdc-Tr-1kb.text" = "أنا عميل";
+
+/* Class = "UILabel"; text = "I am a vendor"; ObjectID = "nEL-kS-Eqm"; */
+"nEL-kS-Eqm.text" = "أنا بائع";
+
+/* Class = "UILabel"; text = "Your cart is empty. Please add some product."; ObjectID = "2GR-kB-y9p"; */
+"2GR-kB-y9p.text" = "عربة التسوق فارغة. الرجاء إضافة بعض المنتجات.";
+

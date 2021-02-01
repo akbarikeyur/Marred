@@ -21,7 +21,7 @@ class PavillionShopCVC: UICollectionViewCell {
     }
 
     func setupDetails(_ dict : PavilionModel) {
-        nameLbl.text = dict.name
+        nameLbl.text = getTranslate(dict.name)
         imgView.image = UIImage(named: dict.image)
     }
 }

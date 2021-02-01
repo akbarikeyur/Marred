@@ -23,7 +23,7 @@ class LoginVC: UIViewController {
     }
     
     func configUI() {
-        signupBtn.setAttributedTitle(attributedStringWithColor("If not a member yet, Sign up", ["Sign up"], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 12.0)), for: .normal)
+        signupBtn.setAttributedTitle(attributedStringWithColor(getTranslate("signup_button_title"), [getTranslate("signup_button")], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 12.0)), for: .normal)
         
         if PLATFORM.isSimulator {
 //            emailTxt.text = "FV500@maared24.com"
@@ -53,13 +53,13 @@ class LoginVC: UIViewController {
     @IBAction func clickToSignIn(_ sender: Any) {
         self.view.endEditing(true)
         if emailTxt.text?.trimmed == "" {
-            displayToast("Please enter email")
+            displayToast("enter_email")
         }
         else if !emailTxt.text!.isValidEmail {
-            displayToast("Invalid email")
+            displayToast("invalid_email")
         }
         else if passwordTxt.text?.trimmed == "" {
-            displayToast("Please enter password")
+            displayToast("enter_password")
         }
         else {
             var param = [String : Any]()

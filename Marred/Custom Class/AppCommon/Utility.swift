@@ -142,11 +142,11 @@ func removeLoader()
 
 func showAlertWithOption(_ title:String, message:String, btns:[String] ,completionConfirm: @escaping () -> Void,completionCancel: @escaping () -> Void){
     
-    let myAlert = UIAlertController(title:NSLocalizedString(title, comment: ""), message:NSLocalizedString(message, comment: ""), preferredStyle: UIAlertController.Style.alert)
-    let rightBtn = UIAlertAction(title: NSLocalizedString(btns[0].lowercased(), comment: ""), style: UIAlertAction.Style.default, handler: { (action) in
+    let myAlert = UIAlertController(title:getTranslate(title), message:getTranslate(message), preferredStyle: UIAlertController.Style.alert)
+    let rightBtn = UIAlertAction(title: getTranslate(btns[0].lowercased()), style: UIAlertAction.Style.default, handler: { (action) in
         completionCancel()
     })
-    let leftBtn = UIAlertAction(title: NSLocalizedString(btns[1].lowercased(), comment: ""), style: UIAlertAction.Style.cancel, handler: { (action) in
+    let leftBtn = UIAlertAction(title: getTranslate(btns[1].lowercased()), style: UIAlertAction.Style.cancel, handler: { (action) in
         completionConfirm()
     })
     myAlert.addAction(rightBtn)
@@ -156,8 +156,8 @@ func showAlertWithOption(_ title:String, message:String, btns:[String] ,completi
 
 func showAlert(_ title:String, message:String, completion: @escaping () -> Void) {
     
-    let myAlert = UIAlertController(title:NSLocalizedString(title, comment: ""), message:NSLocalizedString(message, comment: ""), preferredStyle: UIAlertController.Style.alert)
-    let okAction = UIAlertAction(title: NSLocalizedString("ok_button", comment: ""), style: UIAlertAction.Style.cancel, handler:{ (action) in
+    let myAlert = UIAlertController(title:getTranslate(title), message:getTranslate(message), preferredStyle: UIAlertController.Style.alert)
+    let okAction = UIAlertAction(title: getTranslate("ok_button"), style: UIAlertAction.Style.cancel, handler:{ (action) in
         completion()
     })
     myAlert.addAction(okAction)
@@ -230,11 +230,11 @@ func openUrlInSafari(strUrl : String)
 func redirectToPhoneCall(_ strNumber : String)
 {
     if strNumber == "" {
-        displayToast("Invalid phone number")
+        displayToast("invalid_phone")
         return
     }
     guard let url = URL(string: "tel://\(strNumber)") else {
-        displayToast("Invalid phone number")
+        displayToast("invalid_phone")
         return
     }
     if #available(iOS 10.0, *) {
@@ -248,11 +248,11 @@ func redirectToPhoneCall(_ strNumber : String)
 func redirectToEmail(_ email : String)
 {
     if email == "" || !email.isValidEmail {
-        displayToast("Invalid email address")
+        displayToast("invalid_email")
         return
     }
     guard let url = URL(string: "mailto:\(email)") else {
-        displayToast("Invalid email address")
+        displayToast("invalid_email")
         return
     }
     if #available(iOS 10.0, *) {
@@ -418,12 +418,12 @@ func setupButtonHighlightEffect(_ button : UIButton, _ normalBGColor : UIColor, 
 }
 
 func displayPriceWithCurrency(_ price : String) -> String {
-    return CURRENCY + " " + price
+    return getTranslate("currency_aed") + price
 }
 
 func displayDiscountPriceWithCurrency(_ price : String, _ discount : Int) -> String {
     let newPrice = Float(price)! - (Float(price)! * Float(discount) / 100)
-    return CURRENCY + " " + String(newPrice)
+    return String(newPrice) + getTranslate("currency_aed")
 }
 
 func getDiscountPrice(_ price : Float, _ discount : Int) -> Float {
@@ -433,10 +433,10 @@ func getDiscountPrice(_ price : Float, _ discount : Int) -> Float {
 
 func getStockStatus(_ status : String) -> String {
     if status == "instock" {
-        return "In stock"
+        return getTranslate("instock_status")
     }
     else {
-        return "Out of stock"
+        return getTranslate("out_of_stock_status")
     }
 }
 
@@ -447,4 +447,11 @@ func getStockStatusColor(_ status : String) -> UIColor {
     else {
         return UIColor.red
     }
+}
+
+func isArabic() -> Bool {
+    if Locale.current.languageCode == "ar" {
+        return true
+    }
+    return false
 }

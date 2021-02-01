@@ -18,7 +18,7 @@ class SellerWithdrawTabVC: UIViewController {
     @IBOutlet weak var noDataLbl: Label!
     
     var selectedTab = 0
-    var arrTab = ["Withdraw Request", "Approved Requests", "Cancelled Requests"]
+    var arrTab = [getTranslate("tab_withdraw_request"), getTranslate("tab_approve_request"), getTranslate("tab_cancel_request")]
     var arrPending = [WithdrawModel]()
     var arrApproved = [WithdrawModel]()
     var arrCancelled = [WithdrawModel]()
@@ -34,7 +34,7 @@ class SellerWithdrawTabVC: UIViewController {
         newFrame.size.width = SCREEN.WIDTH-40
         withdrawView.frame = newFrame
         withdrawView.addDashedBorder(OrangeColor)
-        noDataLbl.text = "You don't have sufficient balance for a withdraw request!"
+        noDataLbl.text = getTranslate("withdraw_pending_msg")
         serviceCallToGetWithdrawRequest()
     }
     
@@ -95,7 +95,7 @@ extension SellerWithdrawTabVC : UICollectionViewDelegate, UICollectionViewDataSo
         selectedTab = indexPath.row
         tabCV.reloadData()
         if selectedTab == 0 {
-            noDataLbl.text = "You don't have sufficient balance for a withdraw request!"
+            noDataLbl.text = getTranslate("withdraw_pending_msg")
             if arrPending.count == 0 {
                 serviceCallToGetWithdrawRequest()
             }else{
@@ -103,7 +103,7 @@ extension SellerWithdrawTabVC : UICollectionViewDelegate, UICollectionViewDataSo
             }
         }
         else if selectedTab == 1 {
-            noDataLbl.text = "You don't have any approved request!"
+            noDataLbl.text = getTranslate("withdraw_approve_msg")
             if arrApproved.count == 0 {
                 serviceCallToGetWithdrawRequest()
             }else{
@@ -111,7 +111,7 @@ extension SellerWithdrawTabVC : UICollectionViewDelegate, UICollectionViewDataSo
             }
         }
         else if selectedTab == 2 {
-            noDataLbl.text = "You don't have any cancelled request!"
+            noDataLbl.text = getTranslate("withdraw_cancel_msg")
             if arrCancelled.count == 0 {
                 serviceCallToGetWithdrawRequest()
             }else{

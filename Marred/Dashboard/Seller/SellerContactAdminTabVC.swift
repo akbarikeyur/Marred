@@ -47,19 +47,19 @@ class SellerContactAdminTabVC: UIViewController {
     @IBAction func clickToSend(_ sender: Any) {
         self.view.endEditing(true)
         if fnameTxt.text?.trimmed == "" {
-            displayToast("Please enter first name")
+            displayToast("enter_fname")
         }
         else if lnameTxt.text?.trimmed == "" {
-            displayToast("Please enter last name")
+            displayToast("enter_lname")
         }
         else if emailTxt.text?.trimmed == "" {
-            displayToast("Please enter email")
+            displayToast("enter_email")
         }
         else if !emailTxt.text!.isValidEmail {
-            displayToast("Invalid email")
+            displayToast("invalid_email")
         }
         else if messageTxtView.text?.trimmed == "" {
-            displayToast("Please enter your message")
+            displayToast("enter_message")
         }
         else{
             var param = [String : Any]()
@@ -71,7 +71,7 @@ class SellerContactAdminTabVC: UIViewController {
             
             DashboardAPIManager.shared.serviceCallToContactUs(param) {
                 self.resetData()
-                showAlert("Thank you for getting in touch!", message: "We appreciate you contacting us. One of our colleagues will get back in touch with you soon!") {
+                showAlert("contact_admin_title", message: "contact_admin_message") {
                     NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.NOTIFICATION_TAB_CLICK), object: ["tabIndex" : 0])
                 }
             }

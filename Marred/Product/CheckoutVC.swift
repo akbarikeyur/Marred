@@ -143,7 +143,11 @@ class CheckoutVC: UIViewController {
     @IBAction func clickToShipping(_ sender: UIButton) {
         freeShipBtn.isSelected = false
         flatRateBtn.isSelected = false
-        sender.isSelected = true
+        if sender.tag == 1 {
+            freeShipBtn.isSelected = true
+        }else{
+            flatRateBtn.isSelected = true
+        }
         updateTotalPrice()
     }
     

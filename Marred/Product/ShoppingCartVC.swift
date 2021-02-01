@@ -100,20 +100,20 @@ class ShoppingCartVC: UIViewController {
             promocodeTxt.textColor = BlackColor
             promocodeTxt.isUserInteractionEnabled = true
             applyCouponBtn.isSelected = false
-            applyCouponBtn.setTitle("Apply", for: .normal)
+            applyCouponBtn.setTitle(getTranslate("apply_button"), for: .normal)
             self.coupon = CouponModel.init([String : Any]())
             self.updateTotalPrice()
         }else{
             if promocodeTxt.text?.trimmed == "" {
-                displayToast("Please enter coupon code")
+                displayToast("enter_coupon_code")
             }else{
                 ProductAPIManager.shared.serviceCallToApplyCoupon(promocodeTxt.text!) { (data) in
                     self.coupon = CouponModel.init(data)
                     self.updateTotalPrice()
-                    self.promocodeTxt.text = displayPriceWithCurrency(self.coupon.amount) + " discount applied"
+                    self.promocodeTxt.text = displayPriceWithCurrency(self.coupon.amount) + getTranslate("discount_apply")
                     self.promocodeTxt.textColor = UIColor.red
                     self.promocodeTxt.isUserInteractionEnabled = false
-                    self.applyCouponBtn.setTitle("Deny", for: .selected)
+                    self.applyCouponBtn.setTitle(getTranslate("deny_button"), for: .selected)
                     self.applyCouponBtn.isSelected = true
                  }
             }
@@ -132,7 +132,11 @@ class ShoppingCartVC: UIViewController {
     @IBAction func clickToShipping(_ sender: UIButton) {
         freeShipBtn.isSelected = false
         flatRateBtn.isSelected = false
-        sender.isSelected = true
+        if sender.tag == 1 {
+            freeShipBtn.isSelected = true
+        }else{
+            flatRateBtn.isSelected = true
+        }
         updateTotalPrice()
     }
     
@@ -221,7 +225,7 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
     }
     
     @objc @IBAction func clickToRemove(_ sender: UIButton) {
-        showAlertWithOption("Delete", message: "Are you sure want to delete?", btns: ["No", "Yes"], completionConfirm: {
+        showAlertWithOption(getTranslate("delete_title"), message: getTranslate("delete_message"), btns: ["no_button", "yes_button"], completionConfirm: {
             self.serviceCallToClearToCart(self.arrCart[sender.tag])
             self.arrCart.remove(at: sender.tag)
             self.updateTableviewHeight()

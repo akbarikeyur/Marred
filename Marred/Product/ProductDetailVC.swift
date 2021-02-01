@@ -54,7 +54,7 @@ class ProductDetailVC: UIViewController {
         brandLbl.text = product.brands.name
         quantityBtn.setTitle("1", for: .normal)
         priceLbl.text = product.price
-        soldByLbl.text = "Sold By: " + product.vendor
+        soldByLbl.text = getTranslate("sold_by_colon") + product.vendor
     }
     
     func setupProductDetail() {
@@ -65,9 +65,9 @@ class ProductDetailVC: UIViewController {
         skuLbl.text = productDetail.get_sku
         quantityBtn.setTitle("1", for: .normal)
         priceLbl.text = displayPriceWithCurrency(productDetail.get_price)
-        let tempCat = "Categories: " + productDetail.get_categories.html2String
-        categoryLbl.attributedText = attributedStringWithColor(tempCat, ["Categories:"], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 14.0))
-        soldByLbl.attributedText = attributedStringWithColor("Sold By: " + product.vendor, ["Sold By:"], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 14.0))
+        let tempCat = getTranslate("categories_colon") + productDetail.get_categories.html2String
+        categoryLbl.attributedText = attributedStringWithColor(tempCat, [getTranslate("categories_colon")], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 14.0))
+        soldByLbl.attributedText = attributedStringWithColor(getTranslate("sold_by_colon") + product.vendor, [getTranslate("sold_by_colon")], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 14.0))
         stockLbl.text = getStockStatus(productDetail.get_stock_status)
         stockLbl.textColor = getStockStatusColor(productDetail.get_stock_status)
         clickToSelectTab(descBtn)
@@ -144,7 +144,7 @@ class ProductDetailVC: UIViewController {
             descLbl.text = productDetail.get_description
         }
         else if sender == vendorBtn {
-            descLbl.text = "VENDOR INFORMATION\n\nStore Name: " + product.vendor
+            descLbl.text = getTranslate("vendor_information") + product.vendor
         }
     }
     

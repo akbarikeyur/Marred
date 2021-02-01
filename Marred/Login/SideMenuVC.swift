@@ -61,7 +61,7 @@ class SideMenuVC: UIViewController {
     }
     
     @IBAction func clickToLogout(_ sender: Any) {
-        showAlertWithOption("Logout", message: "Are you sure want to logout?", btns: ["No", "Yes"], completionConfirm: {
+        showAlertWithOption("logout_title", message: "logout_msg", btns: ["no_button", "yes_button"], completionConfirm: {
             AppDelegate().sharedDelegate().navigaeToLogout()
         }) {
             

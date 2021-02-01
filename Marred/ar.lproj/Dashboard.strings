@@ -1,0 +1,237 @@
+
+/* Class = "UILabel"; text = "Orders"; ObjectID = "20F-sQ-dOb"; */
+"20F-sQ-dOb.text" = "الطلب #٪ s";
+
+/* Class = "UILabel"; text = "Last Name"; ObjectID = "3aA-z8-17R"; */
+"3aA-z8-17R.text" = "الكنية";
+
+/* Class = "UILabel"; text = "Minimum Withdraw amount: 1,000.00 AED"; ObjectID = "78X-UZ-kJV"; */
+"78X-UZ-kJV.text" = "الحد الأدنى للسحب: 1،000.00 درهم إماراتي";
+
+/* Class = "UILabel"; text = "289"; ObjectID = "7Sf-P8-ity"; */
+"7Sf-P8-ity.text" = "289";
+
+/* Class = "UIButton"; normalTitle = "Enable tab on product single page view "; ObjectID = "8nf-Y2-aAV"; */
+"8nf-Y2-aAV.normalTitle" = "تمكين علامة التبويب في عرض صفحة واحدة للمنتج";
+
+/* Class = "UILabel"; text = "Total Orders"; ObjectID = "9IP-JB-EUF"; */
+"9IP-JB-EUF.text" = "إجمالي الطلبات";
+
+/* Class = "UILabel"; text = "State"; ObjectID = "A7v-Zn-IzG"; */
+"A7v-Zn-IzG.text" = "حالة";
+
+/* Class = "UIButton"; normalTitle = "Update Settings"; ObjectID = "AyJ-O8-3kg"; */
+"AyJ-O8-3kg.normalTitle" = "إعدادات التحديث";
+
+/* Class = "UILabel"; text = "Name of bank"; ObjectID = "BwP-3Z-oxQ"; */
+"BwP-3Z-oxQ.text" = "اسم البنك";
+
+/* Class = "UILabel"; text = "Address of your bank"; ObjectID = "BzC-8P-TGu"; */
+"BzC-8P-TGu.text" = "عنوان البنك الذي تتعامل معه";
+
+/* Class = "UILabel"; text = "Last Sales 23 06 20"; ObjectID = "CFM-dG-rDa"; */
+"CFM-dG-rDa.text" = "Last Sales 23 06 20";
+
+/* Class = "UILabel"; text = "+971"; ObjectID = "Cak-rP-e1B"; */
+"Cak-rP-e1B.text" = "+971";
+
+/* Class = "UILabel"; text = "05"; ObjectID = "Ce2-rv-LKd"; */
+"Ce2-rv-LKd.text" = "05";
+
+/* Class = "UILabel"; text = "These are the withdraw methods available for you. Please update your payment information below to submit withdraw requests and get your store payments seamlessly."; ObjectID = "DWb-Np-f1R"; */
+"DWb-Np-f1R.text" = "هذه هي طرق السحب المتاحة لك. يرجى تحديث معلومات الدفع أدناه لتقديم طلب السحب والحصول على مدفوعات متجرك بسلاسة.";
+
+/* Class = "UILabel"; text = "Email address "; ObjectID = "F3Z-Ie-KkU"; */
+"F3Z-Ie-KkU.text" = "عنوان بريد الكتروني ";
+
+/* Class = "UILabel"; text = "Last View23 06 20"; ObjectID = "FXu-09-kre"; */
+"FXu-09-kre.text" = "Last View23 06 20";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "GSF-0w-NQD"; */
+"GSF-0w-NQD.text" = "مدينة";
+
+/* Class = "UIButton"; normalTitle = "Save Changes"; ObjectID = "I1o-RG-uVf"; */
+"I1o-RG-uVf.normalTitle" = "حفظ التغييرات";
+
+/* Class = "UILabel"; text = "Password Change"; ObjectID = "It7-nK-CTc"; */
+"It7-nK-CTc.text" = "تغيير كلمة السر";
+
+/* Class = "UILabel"; text = "Phone Number"; ObjectID = "J6o-cM-nS7"; */
+"J6o-cM-nS7.text" = "رقم الهاتف";
+
+/* Class = "UILabel"; text = "14"; ObjectID = "K2h-94-Wma"; */
+"K2h-94-Wma.text" = "14";
+
+/* Class = "UILabel"; text = "Last Name"; ObjectID = "L6y-rk-x6P"; */
+"L6y-rk-x6P.text" = "الكنية";
+
+/* Class = "UILabel"; text = "Total Earning"; ObjectID = "M0d-dd-f6Q"; */
+"M0d-dd-f6Q.text" = "مجموع الأرباح";
+
+/* Class = "UILabel"; text = "Total Purchases"; ObjectID = "NKS-RH-PU9"; */
+"NKS-RH-PU9.text" = "إجمالي المشتريات";
+
+/* Class = "UILabel"; text = "Post/ZIP Code"; ObjectID = "NSV-7g-DwM"; */
+"NSV-7g-DwM.text" = "الرمز البريدي / البريدي";
+
+/* Class = "UILabel"; text = "Store Product Per Page"; ObjectID = "NXz-nD-6nw"; */
+"NXz-nD-6nw.text" = "تخزين المنتج في الصفحة";
+
+/* Class = "UILabel"; text = "Store Name"; ObjectID = "ONp-zk-EZ0"; */
+"ONp-zk-EZ0.text" = "اسم المتجر";
+
+/* Class = "UILabel"; text = "Swift code"; ObjectID = "ORx-3T-T9m"; */
+"ORx-3T-T9m.text" = "رمز السرعة";
+
+/* Class = "UIButton"; normalTitle = "Save Changes"; ObjectID = "Pik-jP-vi7"; */
+"Pik-jP-vi7.normalTitle" = "حفظ التغييرات";
+
+/* Class = "UILabel"; text = "Sales this Month"; ObjectID = "QPR-aV-U5Q"; */
+"QPR-aV-U5Q.text" = "مبيعات هذا الشهر";
+
+/* Class = "UILabel"; text = "Confirm new password"; ObjectID = "Qoq-3G-9Jd"; */
+"Qoq-3G-9Jd.text" = "تأكيد كلمة المرور الجديدة";
+
+/* Class = "UILabel"; text = "Upload a banner for your store. Banner\nsize is (625x300) pixels. "; ObjectID = "SRV-l4-UEX"; */
+"SRV-l4-UEX.text" = "تحميل لافتة لمتجرك. حجم البانر (625x300) بكسل.";
+
+/* Class = "UILabel"; text = "Email Address"; ObjectID = "STx-sb-lb6"; */
+"STx-sb-lb6.text" = "عنوان بريد الكتروني";
+
+/* Class = "UILabel"; text = "New password (leave blank to leave unchanged)"; ObjectID = "TvR-OL-e0c"; */
+"TvR-OL-e0c.text" = "كلمة مرور جديدة (اتركها فارغة لتركها دون تغيير)";
+
+/* Class = "UILabel"; text = "Current Balance"; ObjectID = "UQD-oK-ed6"; */
+"UQD-oK-ed6.text" = "الرصيد الحالي";
+
+/* Class = "UILabel"; text = "Mark Herry"; ObjectID = "V2y-9o-OED"; */
+"V2y-9o-OED.text" = "Mark Herry";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "VhC-D7-JNO"; */
+"VhC-D7-JNO.text" = "0";
+
+/* Class = "UILabel"; text = "Last Order 23 06 20"; ObjectID = "WC5-CE-kCf"; */
+"WC5-CE-kCf.text" = "Last Order 23 06 20";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "WTY-fK-NI2"; */
+"WTY-fK-NI2.text" = "البريد الإلكتروني";
+
+/* Class = "UILabel"; text = "To Edit the details, please login to our website."; ObjectID = "WiB-2B-v9F"; */
+"WiB-2B-v9F.text" = "لتعديل التفاصيل ، يرجى تسجيل الدخول إلى موقعنا.";
+
+/* Class = "UILabel"; text = "Current password (leave blank to leave unchanged)"; ObjectID = "WuD-kz-QB5"; */
+"WuD-kz-QB5.text" = "كلمة المرور الحالية (اتركها فارغة لتركها دون تغيير)";
+
+/* Class = "UILabel"; text = "Orders"; ObjectID = "XEa-pV-eRz"; */
+"XEa-pV-eRz.text" = "طلب";
+
+/* Class = "UILabel"; text = "Sales"; ObjectID = "XMX-x3-xyb"; */
+"XMX-x3-xyb.text" = "مبيعات";
+
+/* Class = "UILabel"; text = "Select Date"; ObjectID = "Z41-48-ZMF"; */
+"Z41-48-ZMF.text" = "حدد تاريخ";
+
+/* Class = "UILabel"; text = "This will be how your name will be displayed in the account\v section and in reviews."; ObjectID = "Zev-1C-tau"; */
+"Zev-1C-tau.text" = "ستكون هذه هي الطريقة التي سيتم بها عرض اسمك في قسم الحساب وفي المراجعة.";
+
+/* Class = "UILabel"; text = "0.00 AED"; ObjectID = "adC-ft-yVt"; */
+"adC-ft-yVt.text" = "0.00 AED";
+
+/* Class = "UILabel"; text = "Routing number"; ObjectID = "agK-Am-3bo"; */
+"agK-Am-3bo.text" = "رقم التوصيل";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "eST-ke-rUK"; */
+"eST-ke-rUK.text" = "الاسم الاول";
+
+/* Class = "UILabel"; text = "Last Orders 23 06 20"; ObjectID = "f2y-FC-wWT"; */
+"f2y-FC-wWT.text" = "Last Orders 23 06 20";
+
+/* Class = "UILabel"; text = "Select Category"; ObjectID = "fPR-J2-cQW"; */
+"fPR-J2-cQW.text" = "اختر الفئة";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "fVY-xN-QaS"; */
+"fVY-xN-QaS.normalTitle" = "إرسال";
+
+/* Class = "UILabel"; text = "Upload Banner"; ObjectID = "fuf-ys-ffO"; */
+"fuf-ys-ffO.text" = "تحميل لافتة";
+
+/* Class = "UILabel"; text = "Total Orders\n"; ObjectID = "ggf-yR-zBw"; */
+"ggf-yR-zBw.text" = "إجمالي الطلبات";
+
+/* Class = "UILabel"; text = "Bank Transfer"; ObjectID = "icU-og-N1N"; */
+"icU-og-N1N.text" = "حوالة بنكية";
+
+/* Class = "UILabel"; text = "Select Category"; ObjectID = "kWf-gr-piX"; */
+"kWf-gr-piX.text" = "اختر الفئة";
+
+/* Class = "UILabel"; text = "Address: Street 2"; ObjectID = "kbw-CF-PB8"; */
+"kbw-CF-PB8.text" = "العنوان: شارع 2";
+
+/* Class = "UILabel"; text = "Country"; ObjectID = "kdo-z3-9l7"; */
+"kdo-z3-9l7.text" = "بلد";
+
+/* Class = "UILabel"; text = "More products"; ObjectID = "n2k-El-JYa"; */
+"n2k-El-JYa.text" = "المزيد من المنتجات";
+
+/* Class = "UILabel"; text = "Last Earning 23 06 20"; ObjectID = "nDe-dD-9XX"; */
+"nDe-dD-9XX.text" = "Last Earning 23 06 20";
+
+/* Class = "UILabel"; text = "Total Sales"; ObjectID = "oJO-OE-tLy"; */
+"oJO-OE-tLy.text" = "إجمالي المبيعات";
+
+/* Class = "UILabel"; text = "Products "; ObjectID = "ouH-Fn-Uwr"; */
+"ouH-Fn-Uwr.text" = "منتجات ";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "oxa-gB-Og5"; */
+"oxa-gB-Og5.text" = "0";
+
+/* Class = "UILabel"; text = "Your bank account name"; ObjectID = "p5s-bx-Jq2"; */
+"p5s-bx-Jq2.text" = "اسم حسابك المصرفي";
+
+/* Class = "UILabel"; text = "Display name"; ObjectID = "pmb-kM-wrC"; */
+"pmb-kM-wrC.text" = "اسم العرض";
+
+/* Class = "UILabel"; text = "Hello!"; ObjectID = "pvW-wu-IR9"; */
+"pvW-wu-IR9.text" = "مرحبا!";
+
+/* Class = "UILabel"; text = "Select Date"; ObjectID = "qxK-2e-woU"; */
+"qxK-2e-woU.text" = "حدد تاريخ";
+
+/* Class = "UILabel"; text = "50,000 AED"; ObjectID = "rdX-Or-Gcq"; */
+"rdX-Or-Gcq.text" = "50,000 AED";
+
+/* Class = "UILabel"; text = "Page View"; ObjectID = "sFd-cC-PAc"; */
+"sFd-cC-PAc.text" = "عرض الصفحة";
+
+/* Class = "UITextField"; placeholder = "000 0000 000"; ObjectID = "uBL-AO-BAO"; */
+"uBL-AO-BAO.placeholder" = "000 0000 000";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "v1F-yw-rS0"; */
+"v1F-yw-rS0.text" = "الاسم الاول";
+
+/* Class = "UILabel"; text = "Message"; ObjectID = "v7L-un-Lgp"; */
+"v7L-un-Lgp.text" = "رسالة";
+
+/* Class = "UILabel"; text = "Last Purchases 23 06 20"; ObjectID = "vIZ-ca-QrI"; */
+"vIZ-ca-QrI.text" = "Last Purchases 23 06 20";
+
+/* Class = "UIButton"; normalTitle = "Show email address in store "; ObjectID = "vmD-Cj-X53"; */
+"vmD-Cj-X53.normalTitle" = "إظهار عنوان البريد الإلكتروني في المتجر";
+
+/* Class = "UILabel"; text = "Address: Street 1 "; ObjectID = "vpv-v2-Hgb"; */
+"vpv-v2-Hgb.text" = "العنوان: شارع 1";
+
+/* Class = "UILabel"; text = "IBAN"; ObjectID = "wV0-AJ-jP2"; */
+"wV0-AJ-jP2.text" = "ذاهبون";
+
+/* Class = "UILabel"; text = "Your bank account number"; ObjectID = "xa0-sB-ic7"; */
+"xa0-sB-ic7.text" = "رقم حسابك المصرفي";
+
+/* Class = "UILabel"; text = "Payment"; ObjectID = "yDZ-Tr-Grk"; */
+"yDZ-Tr-Grk.text" = "دفع";
+
+/* Class = "UILabel"; text = "Profile Picture"; ObjectID = "zhN-lX-y6d"; */
+"zhN-lX-y6d.text" = "الصوره الشخصيه";
+
+/* Class = "UILabel"; text = "You don't have sufficient balance for a withdraw request!"; ObjectID = "ztH-HM-f9T"; */
+"ztH-HM-f9T.text" = "ليس لديك رصيد كاف لطلب السحب!";

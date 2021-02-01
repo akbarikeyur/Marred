@@ -45,7 +45,7 @@ class BuyerAccountDetailTabVC: UIViewController {
     
     //MARK:- Button click event
     @IBAction func clickToSelectImage(_ sender: UIButton) {
-        showAlert("", message: "To edit the details, please login to our website.") {
+        showAlert("", message: "edit_detail_msg") {
             
         }
     }

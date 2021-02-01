@@ -17,20 +17,20 @@ struct API {
     static let LOGIN                                  =       BASE_URL + "v1/user/signin"
     static let SIGNUP                                 =       BASE_URL + "v1/user/register"
     static let FORGOT_PASSWORD                        =       BASE_URL + "v1/user/forgotpassword"
-    static let GET_USER_DETAIL                        =       BASE_URL + "v1/user/getuserdetail"
+    static let GET_USER_DETAIL                        =       BASE_URL + "v1/user/getuserdetail" + APIManager.shared.addLangParam()
     
-    static let GET_HOME                               =       BASE_URL + "v1/getHomepage"
+    static let GET_HOME                               =       BASE_URL + "v1/getHomepage" + APIManager.shared.addLangParam()
     
-    static let GET_CATEGORY                           =       BASE_URL + "v1/get_cateogories"
-    static let GET_PAVILION_CATEGORY                  =       BASE_URL + "v1/pavilions"
+    static let GET_CATEGORY                           =       BASE_URL + "v1/get_cateogories" + APIManager.shared.addLangParam()
+    static let GET_PAVILION_CATEGORY                  =       BASE_URL + "v1/pavilions" + APIManager.shared.addLangParam()
     
-    static let GET_PRODUCT_LIST                       =       BASE_URL + "v1/getProductsByCat"
-    static let GET_PRODUCT_DETAIL                     =       BASE_URL + "v1/productDetail"
+    static let GET_PRODUCT_LIST                       =       BASE_URL + "v1/getProductsByCat" + APIManager.shared.addLangParam()
+    static let GET_PRODUCT_DETAIL                     =       BASE_URL + "v1/productDetail" + APIManager.shared.addLangParam()
     
     static let ADD_TO_CART                            =       BASE_URL + "cocart/v1/add-item"
     static let CLEAR_CART                             =       BASE_URL + "cocart/v1/clear"
     static let GET_CART_COUNT                         =       BASE_URL + "cocart/v1/count-items"
-    static let GET_CART                               =       BASE_URL + "v1/cocart/custom/get-cart"
+    static let GET_CART                               =       BASE_URL + "v1/cocart/custom/get-cart" + APIManager.shared.addLangParam()
     
     static let APPLY_COUPON                           =       BASE_URL + "wc/v3/coupons?code="
     static let GET_PAYMENT_GATEWAY                    =       BASE_URL + "wc/v3/payment_gateways"
@@ -39,20 +39,20 @@ struct API {
     
     static let ADD_BOOKMARK                           =       BASE_URL + "v1/bookmark/addbookmark"
     static let REMOVE_BOOKMARK                        =       BASE_URL + "v1/bookmark/removebookmark"
-    static let GET_BOOKMARK                           =       BASE_URL + "v1/bookmark/getbookmark"
+    static let GET_BOOKMARK                           =       BASE_URL + "v1/bookmark/getbookmark" + APIManager.shared.addLangParam()
     
-    static let GET_SELLER_DASHBOARD                   =       BASE_URL + "v1/seller/Dashboard"
-    static let ADD_SHOP                               =       BASE_URL + "v1/seller/addShop"
-    static let DEAL_OF_DAY                            =       BASE_URL + "v1/deal_of_the_day"    
+    static let GET_SELLER_DASHBOARD                   =       BASE_URL + "v1/seller/Dashboard" + APIManager.shared.addLangParam()
+    static let ADD_SHOP                               =       BASE_URL + "v1/seller/addShop" + APIManager.shared.addLangParam()
+    static let DEAL_OF_DAY                            =       BASE_URL + "v1/deal_of_the_day" + APIManager.shared.addLangParam()
     
-    static let GET_USER_PRODUCT                       =       BASE_URL + "v1/user/getPorductByUser"
-    static let GET_BUYER_ORDER                        =       BASE_URL + "wc/v3/orders"
-    static let GET_SELLER_ORDER                       =       BASE_URL + "v1/user/getVendorOrder"
-    static let GET_WITHDRAW_REQUEST                   =       BASE_URL + "v1/seller/getwithDrawRequest"
+    static let GET_USER_PRODUCT                       =       BASE_URL + "v1/user/getPorductByUser" + APIManager.shared.addLangParam()
+    static let GET_BUYER_ORDER                        =       BASE_URL + "wc/v3/orders" + APIManager.shared.addLangParam()
+    static let GET_SELLER_ORDER                       =       BASE_URL + "v1/user/getVendorOrder" + APIManager.shared.addLangParam()
+    static let GET_WITHDRAW_REQUEST                   =       BASE_URL + "v1/seller/getwithDrawRequest" + APIManager.shared.addLangParam()
     
-    static let CONTACT_US                             =       BASE_URL + "v1/contactadmin"
+    static let CONTACT_US                             =       BASE_URL + "v1/contactadmin" + APIManager.shared.addLangParam()
     
-    static let GET_SET_ADDRESS                        =       BASE_URL + "wc/v3/customers/" + String(AppModel.shared.currentUser.ID)
+    static let GET_SET_ADDRESS                        =       BASE_URL + "wc/v3/customers/" + String(AppModel.shared.currentUser.ID) + APIManager.shared.addLangParam()
 }
 
 public class APIManager {
@@ -75,6 +75,14 @@ public class APIManager {
         let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
         let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         return (isReachable && !needsConnection)
+    }
+    
+    func addLangParam() -> String {
+        if isArabic() {
+            return "?wpml_language=ar"
+        }else{
+            return "?wpml_language=en"
+        }
     }
     
     func getJsonHeader() -> HTTPHeaders {

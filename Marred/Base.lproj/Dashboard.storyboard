@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1776,7 +1776,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kCQ-UF-rOI" customClass="View" customModule="Marred" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="237" width="280" height="97.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have sufficient balance for a withdraw request!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztH-HM-f9T" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have sufficient balance for a withdrawal request!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztH-HM-f9T" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="15" y="30" width="250" height="37.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                                         <color key="textColor" red="0.99607843139999996" green="0.37647058820000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1897,10 +1897,8 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRV-l4-UEX" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Upload a banner for your store. Banner size is (625x300) pixels." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRV-l4-UEX" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                                 <rect key="frame" x="10" y="162.5" width="270" height="28.5"/>
-                                                                <string key="text">Upload a banner for your store. Banner
-size is (625x300) pixels. </string>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -2883,7 +2881,7 @@ size is (625x300) pixels. </string>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWb-Np-f1R" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="70.5" width="300" height="56.5"/>
-                                                <string key="text">These are the withdraw methods available for you. Please update your payment information below to submit withdraw requests and get your store payments seamlessly.</string>
+                                                <string key="text">These are the withdraw methods available for you. Please update your payment information below to submit withdrawal request and get your store payments seamlessly.</string>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3954,12 +3952,8 @@ size is (625x300) pixels. </string>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zev-1C-tau" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This will be how your name will be displayed in the account section and in review." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zev-1C-tau" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="76.5" width="300" height="26"/>
-                                                        <string key="text" base64-UTF8="YES">
-VGhpcyB3aWxsIGJlIGhvdyB5b3VyIG5hbWUgd2lsbCBiZSBkaXNwbGF5ZWQgaW4gdGhlIGFjY291bnQL
-IHNlY3Rpb24gYW5kIGluIHJldmlld3MuA
-</string>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
                                                         <color key="textColor" red="0.99607843137254903" green="0.37647058823529411" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>

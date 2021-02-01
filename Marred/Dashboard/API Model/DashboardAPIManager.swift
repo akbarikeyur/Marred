@@ -31,7 +31,7 @@ public class DashboardAPIManager {
     }
     
     func serviceCallToGetBuyerOrder(_ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
-        let strUrl = API.GET_BUYER_ORDER + "?customer=" + String(AppModel.shared.currentUser.ID)
+        let strUrl = API.GET_BUYER_ORDER + "&customer=" + String(AppModel.shared.currentUser.ID)
         APIManager.shared.callGetRequestWithArrayResponse(strUrl, true) { (data) in
             printData(data)
             completion(data)

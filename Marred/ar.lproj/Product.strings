@@ -1,0 +1,197 @@
+/* Class = "UILabel"; text = "Free shipping"; ObjectID = "ES1-oU-QGs"; */
+"ES1-oU-QGs.text" = "الشحن مجانا";
+
+/* Class = "UILabel"; text = "Your cart is empty. Please add some product."; ObjectID = "2GR-kB-y9p"; */
+"2GR-kB-y9p.text" = "عربة التسوق فارغة. الرجاء إضافة بعض المنتجات.";
+
+/* Class = "UILabel"; text = "Calculate shipping"; ObjectID = "2Ix-l1-sjT"; */
+"2Ix-l1-sjT.text" = "حساب الشحن";
+
+/* Class = "UILabel"; text = "+971"; ObjectID = "4ER-sW-a7M"; */
+"4ER-sW-a7M.text" = "+971";
+
+/* Class = "UILabel"; text = "Your Business Name"; ObjectID = "52F-jE-9Qc"; */
+"52F-jE-9Qc.text" = "اسم عملك";
+
+/* Class = "UITextField"; placeholder = "000 0000 000"; ObjectID = "6Es-zR-BXF"; */
+"6Es-zR-BXF.placeholder" = "000 0000 000";
+
+/* Class = "UILabel"; text = "Your Request"; ObjectID = "7eE-wM-Kml"; */
+"7eE-wM-Kml.text" = "طلبك";
+
+/* Class = "UITextField"; placeholder = "State"; ObjectID = "Aji-EI-n6c"; */
+"Aji-EI-n6c.placeholder" = "حالة";
+
+/* Class = "UIButton"; normalTitle = "Apply"; ObjectID = "B40-lF-9Bu"; */
+"B40-lF-9Bu.normalTitle" = "تطبيق";
+
+/* Class = "UIButton"; normalTitle = "Update"; ObjectID = "B8F-Nc-WzI"; */
+"B8F-Nc-WzI.normalTitle" = "تحديث";
+
+/* Class = "UITextField"; placeholder = "Street address (House number and street name)"; ObjectID = "IbU-p8-poH"; */
+"IbU-p8-poH.placeholder" = "عنوان الشارع (رقم المنزل واسم الشارع)";
+
+/* Class = "UILabel"; text = "Checkout"; ObjectID = "Ioh-Z3-yjg"; */
+"Ioh-Z3-yjg.text" = "الدفع";
+
+/* Class = "UIButton"; normalTitle = "Free shipping"; ObjectID = "Lqg-5X-6wQ"; */
+"Lqg-5X-6wQ.normalTitle" = "الشحن مجانا";
+
+/* Class = "UILabel"; text = "Lorem Ipsum is simply dummy text of the printing typesetting industry."; ObjectID = "MbF-7W-NLl"; */
+"MbF-7W-NLl.text" = "";
+
+/* Class = "UITextField"; placeholder = "State / Country"; ObjectID = "Mva-FH-NYq"; */
+"Mva-FH-NYq.placeholder" = "ولايه دوله";
+
+/* Class = "UITextField"; placeholder = "Postcode"; ObjectID = "Ngr-L3-1Sf"; */
+"Ngr-L3-1Sf.placeholder" = "الرمز البريدي";
+
+/* Class = "UITextField"; placeholder = "000 0000 000"; ObjectID = "NsH-Lo-p8J"; */
+"NsH-Lo-p8J.placeholder" = "000 0000 000";
+
+/* Class = "UITextField"; placeholder = "Town / City"; ObjectID = "OPS-U2-f8u"; */
+"OPS-U2-f8u.placeholder" = "بلدة / مدينة";
+
+/* Class = "UITextField"; placeholder = "First name"; ObjectID = "Ob6-Yk-WLX"; */
+"Ob6-Yk-WLX.placeholder" = "الاسم الاول";
+
+/* Class = "UILabel"; text = "You have no any bookmarks product"; ObjectID = "PYC-IZ-PED"; */
+"PYC-IZ-PED.text" = "ليس لديك أي منتج إشارات مرجعية";
+
+/* Class = "UITextField"; placeholder = "Apartment, suite, unit, etc. (optional)"; ObjectID = "QgC-gi-hMW"; */
+"QgC-gi-hMW.placeholder" = "شقة، جناح، وحدة الخ (اختياري)";
+
+/* Class = "UILabel"; text = "Flat rate"; ObjectID = "aKe-aa-wDp"; */
+"aKe-aa-wDp.text" = "الشحن مجانا";
+
+/* Class = "UITextField"; placeholder = "Company name (optional)"; ObjectID = "RqN-f9-SnZ"; */
+"RqN-f9-SnZ.placeholder" = "اسم الشركة (اختياري)";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "Tyz-FQ-amX"; */
+"Tyz-FQ-amX.text" = "إجمالي";
+
+/* Class = "UILabel"; text = "Subtotal"; ObjectID = "ViO-Nc-YPw"; */
+"ViO-Nc-YPw.text" = "المجموع الفرعي";
+
+/* Class = "UILabel"; text = "Order notes (optional)"; ObjectID = "W3E-bt-kHA"; */
+"W3E-bt-kHA.text" = "ملاحظات الطلب (اختياري)";
+
+/* Class = "UITextField"; placeholder = "Select Country"; ObjectID = "Y7l-0p-hBB"; */
+"Y7l-0p-hBB.placeholder" = "حدد الدولة";
+
+/* Class = "UITextField"; placeholder = "Enter Voucher Code"; ObjectID = "ZXf-7X-PXi"; */
+"ZXf-7X-PXi.placeholder" = "أدخل رمز القسيمة";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "Zd0-AH-QfX"; */
+"Zd0-AH-QfX.normalTitle" = "إرسال";
+
+/* Class = "UILabel"; text = "Credit Card/Debit Card"; ObjectID = "aZB-EC-Iid"; */
+"aZB-EC-Iid.text" = "بطاقة الائتمان بطاقة الخصم";
+
+/* Class = "UILabel"; text = "Proceed to Checkout"; ObjectID = "afh-UI-xlO"; */
+"afh-UI-xlO.text" = "الشروع في الخروج";
+
+/* Class = "UILabel"; text = "Free"; ObjectID = "bfX-6D-eLr"; */
+"bfX-6D-eLr.text" = "مجانا";
+
+/* Class = "UILabel"; text = "Coupon Discount"; ObjectID = "bqu-63-9gM"; */
+"bqu-63-9gM.text" = "خصم القسيمة";
+
+/* Class = "UILabel"; text = "34.50 AED"; ObjectID = "coO-qT-Sbo"; */
+"coO-qT-Sbo.text" = "34.50 AED";
+
+/* Class = "UILabel"; text = "Last Name"; ObjectID = "d60-xM-LNI"; */
+"d60-xM-LNI.text" = "الكنية";
+
+/* Class = "UILabel"; text = "Deal of the Day"; ObjectID = "dnC-hH-YdQ"; */
+"dnC-hH-YdQ.text" = "صفقات اليوم";
+
+/* Class = "UILabel"; text = "25.00 AED"; ObjectID = "dsM-eD-4RG"; */
+"dsM-eD-4RG.text" = "25.00 AED";
+
+/* Class = "UILabel"; text = "Already have an account? Log in"; ObjectID = "e0b-jU-zUi"; */
+"e0b-jU-zUi.text" = "هل لديك حساب؟ تسجيل الدخول";
+
+/* Class = "UILabel"; text = "Your"; ObjectID = "eOj-p8-JHu"; */
+"eOj-p8-JHu.text" = "الخاص بك";
+
+/* Class = "UITextField"; placeholder = "Email address "; ObjectID = "fEt-Yf-7uE"; */
+"fEt-Yf-7uE.placeholder" = "عنوان بريد الكتروني ";
+
+/* Class = "UILabel"; text = "Pay Now"; ObjectID = "fuY-M9-5mo"; */
+"fuY-M9-5mo.text" = "ادفع الآن";
+
+/* Class = "UILabel"; text = "Add Shop in Categories"; ObjectID = "gUr-vw-5D1"; */
+"gUr-vw-5D1.text" = "إضافة متجر في الفئات";
+
+/* Class = "UILabel"; text = "Shopping Cart"; ObjectID = "glf-Af-ChA"; */
+"glf-Af-ChA.text" = "عربة التسوق";
+
+/* Class = "UILabel"; text = "+971"; ObjectID = "h9J-AM-1LU"; */
+"h9J-AM-1LU.text" = "+971";
+
+/* Class = "UILabel"; text = "Shipping options will be updated during checkout. "; ObjectID = "hHY-xU-09h"; */
+"hHY-xU-09h.text" = "سيتم تحديث خيارات الشحن أثناء الخروج.";
+
+/* Class = "UILabel"; text = "Add Shop in Pavillions"; ObjectID = "hhT-Pv-mJL"; */
+"hhT-Pv-mJL.text" = "إضافة متجر في الجناح";
+
+/* Class = "UILabel"; text = "Add Your Shop"; ObjectID = "hov-PN-6c6"; */
+"hov-PN-6c6.text" = "أضف متجرك";
+
+/* Class = "UILabel"; text = "34.50 AED"; ObjectID = "ixd-Bx-wjs"; */
+"ixd-Bx-wjs.text" = "34.50 AED";
+
+/* Class = "UILabel"; text = "25.00 AED"; ObjectID = "jwN-fg-4uK"; */
+"jwN-fg-4uK.text" = "25.00 AED";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "lrK-KB-En3"; */
+"lrK-KB-En3.text" = "مجموع";
+
+/* Class = "UILabel"; text = "Shipping options will be updated during checkout. "; ObjectID = "n6o-jE-vge"; */
+"n6o-jE-vge.text" = "سيتم تحديث خيارات الشحن أثناء الخروج.";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "o7R-Ii-6X6"; */
+"o7R-Ii-6X6.placeholder" = "الكنية";
+
+/* Class = "UILabel"; text = "Email address "; ObjectID = "p94-61-5n2"; */
+"p94-61-5n2.text" = " عنوان بريد الكتروني";
+
+/* Class = "UIButton"; normalTitle = "Cash on delivery"; ObjectID = "pjV-qx-MBz"; */
+"pjV-qx-MBz.normalTitle" = "الدفع عند الاستلام";
+
+/* Class = "UITextField"; placeholder = "Town / City"; ObjectID = "pxF-7O-BiQ"; */
+"pxF-7O-BiQ.placeholder" = "بلدة / مدينة";
+
+/* Class = "UIButton"; normalTitle = "Ship to a different address?"; ObjectID = "qaw-wo-XqI"; */
+"qaw-wo-XqI.normalTitle" = "الشحن إلى عنوان مختلف؟";
+
+/* Class = "UILabel"; text = "Phone Number"; ObjectID = "qgc-Dj-IQT"; */
+"qgc-Dj-IQT.text" = "رقم الهاتف";
+
+/* Class = "UILabel"; text = "Subtotal"; ObjectID = "rBh-0S-ssl"; */
+"rBh-0S-ssl.text" = "المجموع الفرعي";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "rMr-Jf-Vd8"; */
+"rMr-Jf-Vd8.text" = "الاسم الاول";
+
+/* Class = "UILabel"; text = "154.50 AED"; ObjectID = "rgX-gq-fcQ"; */
+"rgX-gq-fcQ.text" = "154.50 AED";
+
+/* Class = "UIButton"; normalTitle = "Flat rate"; ObjectID = "sJt-Do-Az0"; */
+"sJt-Do-Az0.normalTitle" = "سعر موحد";
+
+/* Class = "UITextField"; placeholder = "United Arab Emirates"; ObjectID = "ujd-VU-YUY"; */
+"ujd-VU-YUY.placeholder" = "الإمارات العربية المتحدة";
+
+/* Class = "UILabel"; text = "Free"; ObjectID = "vb0-a0-TQq"; */
+"vb0-a0-TQq.text" = "مجانا";
+
+/* Class = "UILabel"; text = "154.50 AED"; ObjectID = "wBk-NK-qxz"; */
+"wBk-NK-qxz.text" = "154.50 AED";
+
+/* Class = "UILabel"; text = "Your order"; ObjectID = "wQa-iD-EzB"; */
+"wQa-iD-EzB.text" = "طلبك";
+
+/* Class = "UILabel"; text = "Billing details"; ObjectID = "yKC-yD-lka"; */
+"yKC-yD-lka.text" = "تفاصيل الفاتورة";

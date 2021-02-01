@@ -13,7 +13,7 @@ class SellerDashboardVC: UIViewController {
     @IBOutlet weak var tabCV: UICollectionView!
     @IBOutlet weak var mainContainerView: UIView!
     
-    var arrTabData = ["Dashboard", "Products", "Orders", "Contact Admin", "Withdraw"]
+    var arrTabData = [getTranslate("tab_dashboard"), getTranslate("tab_product"), getTranslate("tab_order"), getTranslate("tab_contact_admin"), getTranslate("tab_withdraw")]
     var selectedTab = 0
     
     let dashboardTab : SellerDashboardTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "SellerDashboardTabVC") as! SellerDashboardTabVC
@@ -49,7 +49,7 @@ class SellerDashboardVC: UIViewController {
     
     @IBAction func clickToLogout(_ sender: Any) {
         self.view.endEditing(true)
-        showAlertWithOption("Logout", message: "Are you sure want to logout?", btns: ["No", "Yes"], completionConfirm: {
+        showAlertWithOption("logout_title", message: "logout_msg", btns: ["no_button", "yes_button"], completionConfirm: {
             AppDelegate().sharedDelegate().navigaeToLogout()
         }) {
             

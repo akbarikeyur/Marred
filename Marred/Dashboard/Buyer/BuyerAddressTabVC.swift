@@ -60,9 +60,9 @@ extension BuyerAddressTabVC : UITableViewDelegate, UITableViewDataSource, MyAddr
         cell.deleagate = self
         cell.setupDetails(arrAddress[indexPath.row])
         if indexPath.row == 0 {
-            cell.titleLbl.text = "Billing Address"
+            cell.titleLbl.text = getTranslate("billing_address")
         }else{
-            cell.titleLbl.text = "Shipping Address"
+            cell.titleLbl.text = getTranslate("shipping_address")
         }
         
         cell.selectionStyle = .none

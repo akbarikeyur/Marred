@@ -61,16 +61,16 @@ class SellerDashboardTabVC: UIViewController {
         totalOrderLbl.text = sellerDict.orders.total
         
         arrOrder = [TitleValueModel]()
-        arrOrder.append(TitleValueModel.init(["title" : "Total", "value" : sellerDict.orders.total!]))
-        arrOrder.append(TitleValueModel.init(["title" : "Completed", "value" : sellerDict.orders.wc_completed!]))
-        arrOrder.append(TitleValueModel.init(["title" : "Pending", "value" : sellerDict.orders.wc_pending!]))
-        arrOrder.append(TitleValueModel.init(["title" : "Processing", "value" : sellerDict.orders.wc_processing!]))
-        arrOrder.append(TitleValueModel.init(["title" : "Cancelled", "value" : sellerDict.orders.wc_cancelled!]))
-        arrOrder.append(TitleValueModel.init(["title" : "Refunded", "value" : sellerDict.orders.wc_failed!]))
+        arrOrder.append(TitleValueModel.init(["title" : getTranslate("order_total"), "value" : sellerDict.orders.total!]))
+        arrOrder.append(TitleValueModel.init(["title" : getTranslate("order_complete"), "value" : sellerDict.orders.wc_completed!]))
+        arrOrder.append(TitleValueModel.init(["title" : getTranslate("order_pending"), "value" : sellerDict.orders.wc_pending!]))
+        arrOrder.append(TitleValueModel.init(["title" : getTranslate("order_processing"), "value" : sellerDict.orders.wc_processing!]))
+        arrOrder.append(TitleValueModel.init(["title" : getTranslate("order_cancel"), "value" : sellerDict.orders.wc_cancelled!]))
+        arrOrder.append(TitleValueModel.init(["title" : getTranslate("order_refund"), "value" : sellerDict.orders.wc_failed!]))
         updateOrderTableHeight()
         
         arrProduct = [TitleValueModel]()
-        arrProduct.append(TitleValueModel.init(["title" : "Total", "value" : sellerDict.products.total!]))
+        arrProduct.append(TitleValueModel.init(["title" : getTranslate("order_total"), "value" : sellerDict.products.total!]))
         updateProductTableHeight()
     }
     

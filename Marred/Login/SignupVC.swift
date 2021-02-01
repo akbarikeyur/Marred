@@ -52,26 +52,29 @@ class SignupVC: UIViewController {
     @IBAction func clickToSelectUserRole(_ sender: UIButton) {
         customerBtn.isSelected = false
         vendorBtn.isSelected = false
-        sender.isSelected = true
-        
+        if sender.tag == 1 {
+            customerBtn.isSelected = true
+        }else{
+            vendorBtn.isSelected = true
+        }
     }
     
     @IBAction func clickToSubmit(_ sender: Any) {
         self.view.endEditing(true)
         if fnameTxt.text?.trimmed == "" {
-            displayToast("Please ente first name")
+            displayToast("enter_fname")
         }
         else if lnameTxt.text?.trimmed == "" {
-            displayToast("Please ente last name")
+            displayToast("enter_lname")
         }
         else if unameTxt.text?.trimmed == "" {
-            displayToast("Please ente user name")
+            displayToast("enter_uname")
         }
         else if emailTxt.text?.trimmed == "" {
-            displayToast("Please ente email")
+            displayToast("enter_email")
         }
         else if !emailTxt.text!.isValidEmail {
-            displayToast("Invalid email")
+            displayToast("invalid_email")
         }
         else {
             var param = [String : Any]()

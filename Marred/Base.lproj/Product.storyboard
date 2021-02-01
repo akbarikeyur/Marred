@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -536,14 +536,15 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dY-1G-J47" customClass="Button" customModule="Marred" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="54" width="130" height="19"/>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dY-1G-J47" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="54" width="20" height="19"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="130" id="KBG-8S-BA9"/>
+                                                            <constraint firstAttribute="height" constant="19" id="IRa-Tx-lJj"/>
+                                                            <constraint firstAttribute="width" constant="20" id="IWc-FL-6so"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="Free shipping" image="radio_off">
+                                                        <state key="normal" image="radio_off">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <state key="selected" image="radio_on"/>
@@ -558,6 +559,41 @@
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="clickToShipping:" destination="80i-9T-RZ2" eventType="touchUpInside" id="B6e-LN-rLH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free shipping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ES1-oU-QGs" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                        <rect key="frame" x="37" y="54" width="95.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqh-KO-qvB" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="54" width="122.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="clickToShipping:" destination="80i-9T-RZ2" eventType="touchUpInside" id="KQi-MR-NOO"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfX-6D-eLr" customClass="Label" customModule="Marred" customModuleProvider="target">
@@ -575,14 +611,15 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAM-gK-Vuq" customClass="Button" customModule="Marred" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="83" width="130" height="19"/>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAM-gK-Vuq" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="83" width="20" height="19"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="130" id="9zJ-XT-mBT"/>
+                                                            <constraint firstAttribute="height" constant="19" id="Q0V-Op-nmw"/>
+                                                            <constraint firstAttribute="width" constant="20" id="Z55-VU-K2V"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="Flat rate" image="radio_off">
+                                                        <state key="normal" image="radio_off">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <state key="selected" image="radio_on"/>
@@ -597,6 +634,41 @@
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="clickToShipping:" destination="80i-9T-RZ2" eventType="touchUpInside" id="lNs-1Z-Ypc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flat rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKe-aa-wDp" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                        <rect key="frame" x="37" y="83" width="95.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqQ-jK-BLJ" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="83" width="122.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="clickToShipping:" destination="80i-9T-RZ2" eventType="touchUpInside" id="SH3-3a-JPG"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25.00 AED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwN-fg-4uK" customClass="Label" customModule="Marred" customModuleProvider="target">
@@ -636,23 +708,37 @@
                                                     <constraint firstAttribute="trailing" secondItem="bfX-6D-eLr" secondAttribute="trailing" constant="10" id="0W6-dX-1Jw"/>
                                                     <constraint firstAttribute="trailing" secondItem="jwN-fg-4uK" secondAttribute="trailing" constant="10" id="3Gm-32-6x5"/>
                                                     <constraint firstAttribute="bottom" secondItem="hHY-xU-09h" secondAttribute="bottom" constant="40" id="4H7-oo-RxH"/>
+                                                    <constraint firstItem="bfX-6D-eLr" firstAttribute="centerY" secondItem="0dY-1G-J47" secondAttribute="centerY" id="5OQ-S3-ycE"/>
                                                     <constraint firstItem="bfX-6D-eLr" firstAttribute="leading" secondItem="ixd-Bx-wjs" secondAttribute="leading" id="6B1-9h-2ul"/>
                                                     <constraint firstItem="jwN-fg-4uK" firstAttribute="leading" secondItem="ixd-Bx-wjs" secondAttribute="leading" id="8D1-72-lSi"/>
-                                                    <constraint firstItem="bfX-6D-eLr" firstAttribute="centerY" secondItem="0dY-1G-J47" secondAttribute="centerY" id="AF0-dY-HgB"/>
+                                                    <constraint firstItem="0dY-1G-J47" firstAttribute="leading" secondItem="ELC-6H-z7Q" secondAttribute="leading" constant="10" id="9qj-ll-za5"/>
                                                     <constraint firstItem="ixd-Bx-wjs" firstAttribute="centerY" secondItem="ViO-Nc-YPw" secondAttribute="centerY" id="B1m-ax-y7T"/>
+                                                    <constraint firstItem="hHY-xU-09h" firstAttribute="top" secondItem="RAM-gK-Vuq" secondAttribute="bottom" constant="20" id="CTp-QX-0gx"/>
                                                     <constraint firstAttribute="height" constant="176.5" id="En4-ox-u70"/>
                                                     <constraint firstItem="hHY-xU-09h" firstAttribute="leading" secondItem="ELC-6H-z7Q" secondAttribute="leading" constant="10" id="FQ2-Gj-VK5"/>
-                                                    <constraint firstItem="jwN-fg-4uK" firstAttribute="centerY" secondItem="RAM-gK-Vuq" secondAttribute="centerY" id="HvM-IV-zBQ"/>
-                                                    <constraint firstItem="0dY-1G-J47" firstAttribute="leading" secondItem="ELC-6H-z7Q" secondAttribute="leading" constant="10" id="Hws-dB-2nc"/>
-                                                    <constraint firstItem="RAM-gK-Vuq" firstAttribute="leading" secondItem="ELC-6H-z7Q" secondAttribute="leading" constant="10" id="IOY-lu-K9a"/>
+                                                    <constraint firstItem="ES1-oU-QGs" firstAttribute="leading" secondItem="0dY-1G-J47" secondAttribute="trailing" constant="7" id="IvU-0b-zcp"/>
+                                                    <constraint firstItem="RAM-gK-Vuq" firstAttribute="leading" secondItem="ELC-6H-z7Q" secondAttribute="leading" constant="10" id="Mbb-gN-2aU"/>
+                                                    <constraint firstItem="lqh-KO-qvB" firstAttribute="bottom" secondItem="0dY-1G-J47" secondAttribute="bottom" id="Paq-8J-1Mc"/>
+                                                    <constraint firstItem="jwN-fg-4uK" firstAttribute="centerY" secondItem="RAM-gK-Vuq" secondAttribute="centerY" id="TRo-jw-Ozt"/>
+                                                    <constraint firstItem="aKe-aa-wDp" firstAttribute="trailing" secondItem="ES1-oU-QGs" secondAttribute="trailing" id="TXt-eb-4ub"/>
+                                                    <constraint firstItem="aKe-aa-wDp" firstAttribute="leading" secondItem="RAM-gK-Vuq" secondAttribute="trailing" constant="7" id="TgF-c0-7NO"/>
                                                     <constraint firstItem="ixd-Bx-wjs" firstAttribute="leading" secondItem="ViO-Nc-YPw" secondAttribute="trailing" id="UGz-pt-7JN"/>
-                                                    <constraint firstItem="hHY-xU-09h" firstAttribute="top" secondItem="RAM-gK-Vuq" secondAttribute="bottom" constant="20" id="X8i-dT-lD0"/>
+                                                    <constraint firstItem="ES1-oU-QGs" firstAttribute="top" secondItem="ViO-Nc-YPw" secondAttribute="bottom" constant="15" id="WYn-v4-weN"/>
+                                                    <constraint firstItem="xqQ-jK-BLJ" firstAttribute="leading" secondItem="RAM-gK-Vuq" secondAttribute="leading" id="WhM-al-nfx"/>
                                                     <constraint firstItem="ViO-Nc-YPw" firstAttribute="top" secondItem="ELC-6H-z7Q" secondAttribute="top" constant="20" id="XDl-fG-c9g"/>
+                                                    <constraint firstItem="aKe-aa-wDp" firstAttribute="leading" secondItem="ELC-6H-z7Q" secondAttribute="leading" constant="37" id="Xsu-b3-xdc"/>
+                                                    <constraint firstItem="aKe-aa-wDp" firstAttribute="trailing" secondItem="xqQ-jK-BLJ" secondAttribute="trailing" id="bsy-03-VPB"/>
                                                     <constraint firstAttribute="trailing" secondItem="hHY-xU-09h" secondAttribute="trailing" constant="5" id="c3K-sb-jGe"/>
-                                                    <constraint firstItem="0dY-1G-J47" firstAttribute="top" secondItem="ViO-Nc-YPw" secondAttribute="bottom" constant="15" id="hNQ-6x-a2i"/>
+                                                    <constraint firstItem="lqh-KO-qvB" firstAttribute="top" secondItem="0dY-1G-J47" secondAttribute="top" id="ddM-3z-b9V"/>
+                                                    <constraint firstItem="xqQ-jK-BLJ" firstAttribute="top" secondItem="RAM-gK-Vuq" secondAttribute="top" id="eBt-NR-shv"/>
+                                                    <constraint firstItem="lqh-KO-qvB" firstAttribute="leading" secondItem="0dY-1G-J47" secondAttribute="leading" id="hoG-hc-yxd"/>
+                                                    <constraint firstItem="xqQ-jK-BLJ" firstAttribute="bottom" secondItem="RAM-gK-Vuq" secondAttribute="bottom" id="irJ-Vl-Zhd"/>
                                                     <constraint firstAttribute="trailing" secondItem="ixd-Bx-wjs" secondAttribute="trailing" constant="10" id="mIP-ya-NdI"/>
-                                                    <constraint firstItem="RAM-gK-Vuq" firstAttribute="top" secondItem="0dY-1G-J47" secondAttribute="bottom" constant="10" id="qAi-Wt-vlJ"/>
+                                                    <constraint firstItem="aKe-aa-wDp" firstAttribute="top" secondItem="ES1-oU-QGs" secondAttribute="bottom" constant="10" id="pyB-ye-oD5"/>
+                                                    <constraint firstItem="RAM-gK-Vuq" firstAttribute="top" secondItem="0dY-1G-J47" secondAttribute="bottom" constant="10" id="u1J-1r-Xxf"/>
+                                                    <constraint firstItem="ES1-oU-QGs" firstAttribute="trailing" secondItem="lqh-KO-qvB" secondAttribute="trailing" id="u7P-zu-X3N"/>
                                                     <constraint firstItem="ViO-Nc-YPw" firstAttribute="leading" secondItem="ELC-6H-z7Q" secondAttribute="leading" constant="10" id="vC9-WF-YpW"/>
+                                                    <constraint firstItem="0dY-1G-J47" firstAttribute="top" secondItem="ViO-Nc-YPw" secondAttribute="bottom" constant="15" id="vYD-1D-DSU"/>
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dash_line" translatesAutoresizingMaskIntoConstraints="NO" id="Ij0-3b-h9J">
@@ -868,7 +954,7 @@
                                 <rect key="frame" x="0.0" y="60" width="320" height="1440"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcD-Ys-7Td">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1438"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1462"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioh-Z3-yjg" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="10" width="300" height="29.5"/>
@@ -1073,7 +1159,7 @@
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFb-bN-Rb0">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                                         <state key="normal" image="dropdown"/>
                                                         <connections>
                                                             <action selector="clickToSelectCountry:" destination="phc-4e-0R7" eventType="touchUpInside" id="ufD-sx-bdB"/>
@@ -1381,10 +1467,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaw-wo-XqI" customClass="Button" customModule="Marred" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="695" width="300" height="21"/>
+                                                <rect key="frame" x="10" y="695" width="21" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="nfP-AZ-DbB"/>
+                                                    <constraint firstAttribute="width" constant="21" id="xCw-8S-CiT"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Ship to a different address?" image="checkbox_off">
+                                                <state key="normal" image="checkbox_off">
                                                     <color key="titleColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <state key="selected" image="checkbox_on"/>
@@ -1399,6 +1489,28 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="clickToSelectDifferentAddress:" destination="phc-4e-0R7" eventType="touchUpInside" id="ahO-co-WRd"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ship to a different address?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7S-6y-IzY" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                <rect key="frame" x="41" y="695" width="269" height="21"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="14"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNY-mb-fXe">
+                                                <rect key="frame" x="10" y="695" width="300" height="21"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                                <connections>
+                                                    <action selector="clickToSelectDifferentAddress:" destination="phc-4e-0R7" eventType="touchUpInside" id="Hrh-a8-wkS"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order notes (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3E-bt-kHA" customClass="Label" customModule="Marred" customModuleProvider="target">
@@ -1487,7 +1599,7 @@
                                                 </connections>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Cn-Ll-Wt7">
-                                                <rect key="frame" x="0.0" y="1000" width="320" height="146.5"/>
+                                                <rect key="frame" x="0.0" y="1000" width="320" height="170.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtotal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBh-0S-ssl" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="20" width="175" height="19"/>
@@ -1519,14 +1631,11 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqg-5X-6wQ" customClass="Button" customModule="Marred" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="54" width="130" height="19"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="130" id="N5k-It-JMe"/>
-                                                        </constraints>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqg-5X-6wQ" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="54" width="17" height="31"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="Free shipping" image="radio_off">
+                                                        <state key="normal" image="radio_off">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <state key="selected" image="radio_on"/>
@@ -1543,8 +1652,43 @@
                                                             <action selector="clickToShipping:" destination="phc-4e-0R7" eventType="touchUpInside" id="ouw-sZ-CGU"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free shipping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04a-Wi-OFq" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                        <rect key="frame" x="37" y="60" width="95.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sww-lQ-Du5" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="54" width="122.5" height="31"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="clickToShipping:" destination="phc-4e-0R7" eventType="touchUpInside" id="ryu-yw-Qmm"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb0-a0-TQq" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                        <rect key="frame" x="185" y="55.5" width="125" height="16.5"/>
+                                                        <rect key="frame" x="185" y="61.5" width="125" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1559,13 +1703,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJt-Do-Az0" customClass="Button" customModule="Marred" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="83" width="130" height="19"/>
+                                                        <rect key="frame" x="10" y="95" width="17" height="31"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="130" id="Elo-EP-nho"/>
+                                                            <constraint firstAttribute="width" constant="17" id="Qtg-GS-SgT"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="Flat rate" image="radio_off">
+                                                        <state key="normal" image="radio_off">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <state key="selected" image="radio_on"/>
@@ -1582,8 +1726,43 @@
                                                             <action selector="clickToShipping:" destination="phc-4e-0R7" eventType="touchUpInside" id="BbV-AJ-ZO8"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flat rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtJ-HZ-yKy" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                        <rect key="frame" x="37" y="101" width="95.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCm-Va-9OV" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="95" width="122.5" height="31"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="clickToShipping:" destination="phc-4e-0R7" eventType="touchUpInside" id="8DW-ic-5Pp"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25.00 AED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsM-eD-4RG" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                        <rect key="frame" x="185" y="84.5" width="125" height="16.5"/>
+                                                        <rect key="frame" x="185" y="102.5" width="125" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
                                                         <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1598,7 +1777,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipping options will be updated during checkout. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n6o-jE-vge" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="122" width="305" height="14.5"/>
+                                                        <rect key="frame" x="10" y="146" width="305" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                         <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1617,28 +1796,43 @@
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="n6o-jE-vge" secondAttribute="trailing" constant="5" id="22C-y5-kT0"/>
                                                     <constraint firstItem="dsM-eD-4RG" firstAttribute="centerY" secondItem="sJt-Do-Az0" secondAttribute="centerY" id="60r-cR-shg"/>
+                                                    <constraint firstItem="vb0-a0-TQq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="04a-Wi-OFq" secondAttribute="trailing" constant="10" id="6fe-JO-tez"/>
                                                     <constraint firstItem="coO-qT-Sbo" firstAttribute="width" secondItem="rBh-0S-ssl" secondAttribute="width" constant="-50" id="7e0-vT-zyq"/>
                                                     <constraint firstItem="vb0-a0-TQq" firstAttribute="leading" secondItem="coO-qT-Sbo" secondAttribute="leading" id="9NX-zR-Nfg"/>
                                                     <constraint firstAttribute="trailing" secondItem="coO-qT-Sbo" secondAttribute="trailing" constant="10" id="Ahn-9f-JRn"/>
+                                                    <constraint firstItem="gCm-Va-9OV" firstAttribute="leading" secondItem="sJt-Do-Az0" secondAttribute="leading" id="G2R-Mp-KZs"/>
                                                     <constraint firstItem="rBh-0S-ssl" firstAttribute="leading" secondItem="8Cn-Ll-Wt7" secondAttribute="leading" constant="10" id="GKD-7x-UoZ"/>
                                                     <constraint firstItem="coO-qT-Sbo" firstAttribute="centerY" secondItem="rBh-0S-ssl" secondAttribute="centerY" id="GQI-OC-ll2"/>
+                                                    <constraint firstItem="04a-Wi-OFq" firstAttribute="leading" secondItem="Lqg-5X-6wQ" secondAttribute="trailing" constant="10" id="H4h-bE-h2Z"/>
+                                                    <constraint firstItem="VtJ-HZ-yKy" firstAttribute="leading" secondItem="sJt-Do-Az0" secondAttribute="trailing" constant="10" id="I1Q-f7-rW6"/>
                                                     <constraint firstAttribute="trailing" secondItem="vb0-a0-TQq" secondAttribute="trailing" constant="10" id="Kre-Kp-ztE"/>
+                                                    <constraint firstItem="04a-Wi-OFq" firstAttribute="trailing" secondItem="sww-lQ-Du5" secondAttribute="trailing" id="NzA-OG-T5f"/>
                                                     <constraint firstItem="dsM-eD-4RG" firstAttribute="leading" secondItem="coO-qT-Sbo" secondAttribute="leading" id="PfI-0O-GWn"/>
                                                     <constraint firstAttribute="trailing" secondItem="dsM-eD-4RG" secondAttribute="trailing" constant="10" id="QLc-94-7nG"/>
                                                     <constraint firstItem="n6o-jE-vge" firstAttribute="leading" secondItem="8Cn-Ll-Wt7" secondAttribute="leading" constant="10" id="R1X-ci-oC0"/>
                                                     <constraint firstItem="n6o-jE-vge" firstAttribute="top" secondItem="sJt-Do-Az0" secondAttribute="bottom" constant="20" id="S0H-5j-oS9"/>
                                                     <constraint firstItem="rBh-0S-ssl" firstAttribute="top" secondItem="8Cn-Ll-Wt7" secondAttribute="top" constant="20" id="TWL-Rs-Z7h"/>
+                                                    <constraint firstItem="gCm-Va-9OV" firstAttribute="top" secondItem="sJt-Do-Az0" secondAttribute="top" id="WTa-Jw-3L6"/>
                                                     <constraint firstAttribute="bottom" secondItem="n6o-jE-vge" secondAttribute="bottom" constant="10" id="XCL-Yn-IIQ"/>
+                                                    <constraint firstItem="VtJ-HZ-yKy" firstAttribute="centerY" secondItem="sJt-Do-Az0" secondAttribute="centerY" id="Xh8-zt-hYd"/>
+                                                    <constraint firstItem="04a-Wi-OFq" firstAttribute="centerY" secondItem="Lqg-5X-6wQ" secondAttribute="centerY" id="Xzp-yk-2m1"/>
+                                                    <constraint firstItem="dsM-eD-4RG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VtJ-HZ-yKy" secondAttribute="trailing" constant="10" id="Yub-vn-kLJ"/>
+                                                    <constraint firstItem="04a-Wi-OFq" firstAttribute="trailing" secondItem="gCm-Va-9OV" secondAttribute="trailing" id="aAe-7M-dX2"/>
+                                                    <constraint firstItem="sww-lQ-Du5" firstAttribute="top" secondItem="Lqg-5X-6wQ" secondAttribute="top" id="bEp-lf-OGe"/>
                                                     <constraint firstItem="sJt-Do-Az0" firstAttribute="top" secondItem="Lqg-5X-6wQ" secondAttribute="bottom" constant="10" id="cpS-I4-aBK"/>
                                                     <constraint firstItem="sJt-Do-Az0" firstAttribute="leading" secondItem="8Cn-Ll-Wt7" secondAttribute="leading" constant="10" id="crY-60-VP9"/>
                                                     <constraint firstItem="vb0-a0-TQq" firstAttribute="centerY" secondItem="Lqg-5X-6wQ" secondAttribute="centerY" id="ctz-Hq-UaA"/>
+                                                    <constraint firstItem="sww-lQ-Du5" firstAttribute="bottom" secondItem="Lqg-5X-6wQ" secondAttribute="bottom" id="j45-zX-tLK"/>
+                                                    <constraint firstItem="gCm-Va-9OV" firstAttribute="trailing" secondItem="VtJ-HZ-yKy" secondAttribute="trailing" id="kAD-bX-gEA"/>
                                                     <constraint firstItem="Lqg-5X-6wQ" firstAttribute="leading" secondItem="8Cn-Ll-Wt7" secondAttribute="leading" constant="10" id="krr-FV-vIb"/>
                                                     <constraint firstItem="Lqg-5X-6wQ" firstAttribute="top" secondItem="rBh-0S-ssl" secondAttribute="bottom" constant="15" id="nTv-GW-zfH"/>
                                                     <constraint firstItem="coO-qT-Sbo" firstAttribute="leading" secondItem="rBh-0S-ssl" secondAttribute="trailing" id="pVV-E8-WTf"/>
+                                                    <constraint firstItem="gCm-Va-9OV" firstAttribute="bottom" secondItem="sJt-Do-Az0" secondAttribute="bottom" id="tNi-1Z-JrJ"/>
+                                                    <constraint firstItem="sww-lQ-Du5" firstAttribute="leading" secondItem="Lqg-5X-6wQ" secondAttribute="leading" id="zEb-TZ-UAX"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVF-ny-xSI">
-                                                <rect key="frame" x="0.0" y="1146.5" width="320" height="121"/>
+                                                <rect key="frame" x="0.0" y="1170.5" width="320" height="121"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card/Debit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZB-EC-Iid" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="15" width="300" height="19"/>
@@ -1735,7 +1929,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-FU-Q8j" customClass="View" customModule="Marred" customModuleProvider="target">
-                                                <rect key="frame" x="215.5" y="1301" width="94.5" height="29.5"/>
+                                                <rect key="frame" x="215.5" y="1325" width="94.5" height="29.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="154.50 AED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgX-gq-fcQ" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="6" width="74.5" height="16.5"/>
@@ -1767,7 +1961,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrK-KB-En3" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="1307.5" width="31.5" height="16.5"/>
+                                                <rect key="frame" x="10" y="1331.5" width="31.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1782,7 +1976,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gw-H5-2ps">
-                                                <rect key="frame" x="0.0" y="1362" width="320" height="76"/>
+                                                <rect key="frame" x="0.0" y="1386" width="320" height="76"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuY-M9-5mo" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="15" width="320" height="61"/>
@@ -1825,7 +2019,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8C0-Ve-8lH" customClass="View" customModule="Marred" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="1362" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="1386" width="320" height="20"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="q0p-bR-hEm"/>
@@ -1843,16 +2037,21 @@
                                             <constraint firstItem="Ob6-Yk-WLX" firstAttribute="top" secondItem="yKC-yD-lka" secondAttribute="bottom" constant="20" id="1yN-Jf-pIq"/>
                                             <constraint firstAttribute="trailing" secondItem="8Cn-Ll-Wt7" secondAttribute="trailing" id="5GM-Kh-9fT"/>
                                             <constraint firstAttribute="trailing" secondItem="Ob6-Yk-WLX" secondAttribute="trailing" constant="10" id="5iH-yJ-nlv"/>
+                                            <constraint firstItem="DNY-mb-fXe" firstAttribute="bottom" secondItem="qaw-wo-XqI" secondAttribute="bottom" id="640-aS-Ooz"/>
                                             <constraint firstAttribute="trailing" secondItem="kLV-Rw-Mir" secondAttribute="trailing" constant="10" id="6Dw-DA-Ovc"/>
                                             <constraint firstAttribute="trailing" secondItem="yKC-yD-lka" secondAttribute="trailing" constant="10" id="8XC-i8-X5Q"/>
+                                            <constraint firstItem="p7S-6y-IzY" firstAttribute="trailing" secondItem="DNY-mb-fXe" secondAttribute="trailing" id="95D-xu-aYD"/>
+                                            <constraint firstItem="p7S-6y-IzY" firstAttribute="leading" secondItem="qaw-wo-XqI" secondAttribute="trailing" constant="10" id="9Y1-9I-t3X"/>
                                             <constraint firstItem="lrK-KB-En3" firstAttribute="leading" secondItem="kcD-Ys-7Td" secondAttribute="leading" constant="10" id="9aR-Dv-M1G"/>
                                             <constraint firstItem="4gw-H5-2ps" firstAttribute="top" secondItem="8C0-Ve-8lH" secondAttribute="top" id="9gA-Bn-iuh"/>
                                             <constraint firstAttribute="trailing" secondItem="RqN-f9-SnZ" secondAttribute="trailing" constant="10" id="AAE-9d-Wfw"/>
                                             <constraint firstItem="Jgl-3S-Gf0" firstAttribute="leading" secondItem="kcD-Ys-7Td" secondAttribute="leading" id="CEt-6t-ADT"/>
+                                            <constraint firstItem="p7S-6y-IzY" firstAttribute="bottom" secondItem="qaw-wo-XqI" secondAttribute="bottom" id="CYR-fP-WuI"/>
                                             <constraint firstItem="IbU-p8-poH" firstAttribute="leading" secondItem="kcD-Ys-7Td" secondAttribute="leading" constant="10" id="DSm-wW-3Sg"/>
                                             <constraint firstItem="JVF-ny-xSI" firstAttribute="top" secondItem="8Cn-Ll-Wt7" secondAttribute="bottom" id="DzZ-ka-LlU"/>
                                             <constraint firstItem="kLV-Rw-Mir" firstAttribute="top" secondItem="RqN-f9-SnZ" secondAttribute="bottom" constant="10" id="EXE-nT-1Lh"/>
                                             <constraint firstItem="Sns-fz-2lm" firstAttribute="top" secondItem="W3E-bt-kHA" secondAttribute="bottom" constant="10" id="HFt-y1-1Cx"/>
+                                            <constraint firstItem="DNY-mb-fXe" firstAttribute="leading" secondItem="qaw-wo-XqI" secondAttribute="leading" id="Hmz-at-zv4"/>
                                             <constraint firstAttribute="trailing" secondItem="OPS-U2-f8u" secondAttribute="trailing" constant="10" id="IdQ-ft-eg0"/>
                                             <constraint firstItem="RqN-f9-SnZ" firstAttribute="leading" secondItem="kcD-Ys-7Td" secondAttribute="leading" constant="10" id="IrA-oh-EDH"/>
                                             <constraint firstItem="Ngr-L3-1Sf" firstAttribute="leading" secondItem="kcD-Ys-7Td" secondAttribute="leading" constant="10" id="JLh-5u-EIB"/>
@@ -1875,6 +2074,7 @@
                                             <constraint firstItem="Ob6-Yk-WLX" firstAttribute="leading" secondItem="kcD-Ys-7Td" secondAttribute="leading" constant="10" id="a0Q-1I-cvn"/>
                                             <constraint firstItem="qaw-wo-XqI" firstAttribute="leading" secondItem="kcD-Ys-7Td" secondAttribute="leading" constant="10" id="ais-59-vau"/>
                                             <constraint firstItem="8Cn-Ll-Wt7" firstAttribute="top" secondItem="Jgl-3S-Gf0" secondAttribute="bottom" id="cWz-Ga-mcB"/>
+                                            <constraint firstAttribute="trailing" secondItem="p7S-6y-IzY" secondAttribute="trailing" constant="10" id="cyY-vB-G8c"/>
                                             <constraint firstItem="4gw-H5-2ps" firstAttribute="trailing" secondItem="8C0-Ve-8lH" secondAttribute="trailing" id="e6l-42-NdK"/>
                                             <constraint firstItem="qaw-wo-XqI" firstAttribute="top" secondItem="fEt-Yf-7uE" secondAttribute="bottom" constant="20" id="eR4-zd-au6"/>
                                             <constraint firstItem="OPS-U2-f8u" firstAttribute="leading" secondItem="kcD-Ys-7Td" secondAttribute="leading" constant="10" id="eua-6F-CYh"/>
@@ -1888,6 +2088,7 @@
                                             <constraint firstAttribute="trailing" secondItem="Jgl-3S-Gf0" secondAttribute="trailing" id="iWF-Cu-8B7"/>
                                             <constraint firstAttribute="trailing" secondItem="0Yp-Rs-c69" secondAttribute="trailing" constant="10" id="jAj-u5-age"/>
                                             <constraint firstItem="Aji-EI-n6c" firstAttribute="leading" secondItem="kcD-Ys-7Td" secondAttribute="leading" constant="10" id="jDv-Yv-rWn"/>
+                                            <constraint firstItem="p7S-6y-IzY" firstAttribute="top" secondItem="qaw-wo-XqI" secondAttribute="top" id="jnW-0G-ONh"/>
                                             <constraint firstItem="o7R-Ii-6X6" firstAttribute="top" secondItem="Ob6-Yk-WLX" secondAttribute="bottom" constant="10" id="lea-px-gYa"/>
                                             <constraint firstAttribute="trailing" secondItem="W3E-bt-kHA" secondAttribute="trailing" constant="10" id="mZR-M7-umS"/>
                                             <constraint firstAttribute="trailing" secondItem="Ioh-Z3-yjg" secondAttribute="trailing" constant="10" id="o9o-9z-C58"/>
@@ -1895,6 +2096,7 @@
                                             <constraint firstAttribute="trailing" secondItem="rGI-ly-38i" secondAttribute="trailing" constant="10" id="qB8-6r-skD"/>
                                             <constraint firstAttribute="trailing" secondItem="wQa-iD-EzB" secondAttribute="trailing" constant="10" id="qFu-C4-asN"/>
                                             <constraint firstItem="0Yp-Rs-c69" firstAttribute="top" secondItem="Sns-fz-2lm" secondAttribute="bottom" constant="20" id="qhi-NS-lt1"/>
+                                            <constraint firstItem="DNY-mb-fXe" firstAttribute="top" secondItem="qaw-wo-XqI" secondAttribute="top" id="rid-et-m7x"/>
                                             <constraint firstItem="Gph-FU-Q8j" firstAttribute="centerY" secondItem="lrK-KB-En3" secondAttribute="centerY" id="s5z-2s-k7n"/>
                                             <constraint firstItem="Ioh-Z3-yjg" firstAttribute="leading" secondItem="kcD-Ys-7Td" secondAttribute="leading" constant="10" id="swZ-5w-o1L"/>
                                             <constraint firstAttribute="trailing" secondItem="4gw-H5-2ps" secondAttribute="trailing" id="tKy-mr-GnS"/>
@@ -1904,7 +2106,6 @@
                                             <constraint firstItem="yKC-yD-lka" firstAttribute="leading" secondItem="kcD-Ys-7Td" secondAttribute="leading" constant="10" id="vYT-Hj-cUJ"/>
                                             <constraint firstItem="IbU-p8-poH" firstAttribute="top" secondItem="Aji-EI-n6c" secondAttribute="bottom" constant="10" id="va2-ey-G2q"/>
                                             <constraint firstAttribute="trailing" secondItem="Ngr-L3-1Sf" secondAttribute="trailing" constant="10" id="wU9-ao-B3B"/>
-                                            <constraint firstAttribute="trailing" secondItem="qaw-wo-XqI" secondAttribute="trailing" constant="10" id="wjK-vA-dx3"/>
                                             <constraint firstItem="4gw-H5-2ps" firstAttribute="top" secondItem="Gph-FU-Q8j" secondAttribute="bottom" constant="31.5" id="xMr-Jx-Efo"/>
                                             <constraint firstItem="4gw-H5-2ps" firstAttribute="leading" secondItem="8C0-Ve-8lH" secondAttribute="leading" id="xNK-TE-cal"/>
                                             <constraint firstItem="fEt-Yf-7uE" firstAttribute="leading" secondItem="kcD-Ys-7Td" secondAttribute="leading" constant="10" id="xVJ-TD-1Eb"/>
@@ -2055,7 +2256,7 @@
                                     <outlet property="delegate" destination="Fv6-cn-gIA" id="bcx-zX-HAc"/>
                                 </connections>
                             </collectionView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no any bookmarkd product" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYC-IZ-PED" customClass="Label" customModule="Marred" customModuleProvider="target">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no any bookmarks product" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYC-IZ-PED" customClass="Label" customModule="Marred" customModuleProvider="target">
                                 <rect key="frame" x="10" y="276" width="300" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2131,7 +2332,7 @@
                                 <rect key="frame" x="0.0" y="60" width="320" height="885"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A29-HE-LTr">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="885"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Your Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hov-PN-6c6" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="10" width="300" height="30"/>
@@ -2148,8 +2349,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing typesetting industry." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbF-7W-NLl" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="45" width="300" height="33"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbF-7W-NLl" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="45" width="300" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                 <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2164,7 +2365,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLe-cd-E5n">
-                                                <rect key="frame" x="0.0" y="98" width="320" height="72"/>
+                                                <rect key="frame" x="0.0" y="65" width="320" height="72"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMr-Jf-Vd8" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="300" height="17"/>
@@ -2226,7 +2427,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xm-EO-5GW">
-                                                <rect key="frame" x="0.0" y="170" width="320" height="72"/>
+                                                <rect key="frame" x="0.0" y="137" width="320" height="72"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d60-xM-LNI" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="300" height="17"/>
@@ -2288,7 +2489,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wmb-bx-yIe">
-                                                <rect key="frame" x="0.0" y="242" width="320" height="72"/>
+                                                <rect key="frame" x="0.0" y="209" width="320" height="72"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Business Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52F-jE-9Qc" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="300" height="17"/>
@@ -2350,7 +2551,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHd-Pr-QUD">
-                                                <rect key="frame" x="0.0" y="314" width="320" height="72"/>
+                                                <rect key="frame" x="0.0" y="281" width="320" height="72"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p94-61-5n2" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="300" height="17"/>
@@ -2412,7 +2613,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGS-mC-ToG">
-                                                <rect key="frame" x="0.0" y="386" width="320" height="72"/>
+                                                <rect key="frame" x="0.0" y="353" width="320" height="72"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgc-Dj-IQT" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="300" height="17"/>
@@ -2524,7 +2725,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiE-dG-MRm">
-                                                <rect key="frame" x="0.0" y="478" width="320" height="82"/>
+                                                <rect key="frame" x="0.0" y="445" width="320" height="82"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Shop in Pavillions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhT-Pv-mJL" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="20" width="300" height="17"/>
@@ -2613,7 +2814,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxn-AM-yrB">
-                                                <rect key="frame" x="0.0" y="560" width="320" height="97"/>
+                                                <rect key="frame" x="0.0" y="527" width="320" height="97"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Shop in Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUr-vw-5D1" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="15" width="300" height="17"/>
@@ -2693,7 +2894,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6H-Ot-pSh">
-                                                <rect key="frame" x="0.0" y="657" width="320" height="132"/>
+                                                <rect key="frame" x="0.0" y="624" width="320" height="132"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Request" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eE-wM-Kml" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="300" height="17"/>
@@ -2761,7 +2962,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zd0-AH-QfX" customClass="Button" customModule="Marred" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="819" width="300" height="45"/>
+                                                <rect key="frame" x="10" y="786" width="300" height="45"/>
                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.85490196080000003" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="gwU-Oc-kpZ"/>

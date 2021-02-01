@@ -44,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             AppModel.shared.currentUser = getLoginUserData()
 //            navigateToDashBoard()
         }
+        
+        
         navigateToDashBoard()
         return true
     }
