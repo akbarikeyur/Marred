@@ -14,7 +14,7 @@ class BuyerDashboardVC: UIViewController {
     @IBOutlet weak var mainContainerView: UIView!
     
     var arrTabData = [getTranslate("tab_dashboard"), getTranslate("tab_order"), getTranslate("tab_address"), getTranslate("tab_account"), getTranslate("tab_contact")]
-    var selectedTab = 0
+    var selectedTab = getTranslate("tab_dashboard")
     
     let dashboardTab : BuyerDashboardTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerDashboardTabVC") as! BuyerDashboardTabVC
     let orderTab : BuyerOrderTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "BuyerOrderTabVC") as! BuyerOrderTabVC
@@ -28,6 +28,10 @@ class BuyerDashboardVC: UIViewController {
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(redirectToContactUs), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_CONTACT_US), object: nil)
         registerCollectionView()
+        if isArabic() {
+            arrTabData = arrTabData.reversed()
+        }
+        tabCV.reloadData()
         selectTab()
     }
     
@@ -36,7 +40,7 @@ class BuyerDashboardVC: UIViewController {
     }
     
     @objc func redirectToContactUs() {
-        selectedTab = 4
+        selectedTab = getTranslate("tab_contact")
         selectTab()
     }
     
@@ -90,7 +94,7 @@ extension BuyerDashboardVC : UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let label = UILabel(frame: CGRect.zero)
         label.text = arrTabData[indexPath.row]
-        if selectedTab == indexPath.row {
+        if selectedTab == label.text {
             label.font = UIFont.init(name: APP_BOLD, size: 14)
         }else{
             label.font = UIFont.init(name: APP_REGULAR, size: 14)
@@ -102,7 +106,7 @@ extension BuyerDashboardVC : UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : CategoryListCVC = tabCV.dequeueReusableCell(withReuseIdentifier: "CategoryListCVC", for: indexPath) as! CategoryListCVC
         cell.nameLbl.text = arrTabData[indexPath.row]
-        if selectedTab == indexPath.row {
+        if selectedTab == cell.nameLbl.text {
             cell.nameLbl.textColor = BlackColor
             cell.lineImg.isHidden = false
             cell.nameLbl.font = UIFont.init(name: APP_BOLD, size: 14)
@@ -115,29 +119,30 @@ extension BuyerDashboardVC : UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedTab = indexPath.row
+        selectedTab = arrTabData[indexPath.row]
         selectTab()
     }
     
     func selectTab() {
         tabCV.reloadData()
-        if selectedTab == 0 {
+        
+        if selectedTab == getTranslate("tab_dashboard") {
             displaySubViewtoParentView(mainContainerView, subview: dashboardTab.view)
             dashboardTab.setupDetails()
         }
-        else if selectedTab == 1 {
+        else if selectedTab == getTranslate("tab_order") {
             displaySubViewtoParentView(mainContainerView, subview: orderTab.view)
             orderTab.setupDetails()
         }
-        else if selectedTab == 2 {
+        else if selectedTab == getTranslate("tab_address") {
             displaySubViewtoParentView(mainContainerView, subview: addressTab.view)
             addressTab.setupDetails()
         }
-        else if selectedTab == 3 {
+        else if selectedTab == getTranslate("tab_account") {
             displaySubViewtoParentView(mainContainerView, subview: accountTab.view)
             accountTab.setupDetails()
         }
-        else if selectedTab == 4 {
+        else if selectedTab == getTranslate("tab_contact") {
             displaySubViewtoParentView(mainContainerView, subview: contactTab.view)
             contactTab.setupDetails()
         }

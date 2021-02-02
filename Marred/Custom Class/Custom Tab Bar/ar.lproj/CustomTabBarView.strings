@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Home"; ObjectID = "6ll-h5-Des"; */
+"6ll-h5-Des.text" = "الرئيسية";
+
+/* Class = "UILabel"; text = "Categories"; ObjectID = "Br5-UP-6l0"; */
+"Br5-UP-6l0.text" = "التصنيفات";
+
+/* Class = "UILabel"; text = "Bookmark"; ObjectID = "T6W-OD-IWm"; */
+"T6W-OD-IWm.text" = "المرجعية";
+
+/* Class = "UILabel"; text = "Cart"; ObjectID = "lIK-NH-xSt"; */
+"lIK-NH-xSt.text" = "عربة";
+
+/* Class = "UILabel"; text = "My Account"; ObjectID = "wfE-sr-h2b"; */
+"wfE-sr-h2b.text" = "حسابي";

@@ -131,7 +131,7 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
                     }
                 }
                 delay(delayCnt) {
-                    NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.SELECT_CATEGORY_CLICK), object: ["index" : 1])
+                    NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.SELECT_CATEGORY_CLICK), object: ["tab" : getTranslate("shop_by_pavilions")])
                 }
                 break
             case 3:
@@ -144,7 +144,7 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
                     }
                 }
                 delay(delayCnt) {
-                    NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.SELECT_CATEGORY_CLICK), object: ["index" : 0])
+                    NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.SELECT_CATEGORY_CLICK), object: ["tab" : getTranslate("shop_by_categories")])
                 }
                 break
             case 4:

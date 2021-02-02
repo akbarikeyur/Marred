@@ -179,3 +179,5 @@
 /* Class = "UILabel"; text = "Your cart is empty. Please add some product."; ObjectID = "2GR-kB-y9p"; */
 "2GR-kB-y9p.text" = "عربة التسوق فارغة. الرجاء إضافة بعض المنتجات.";
 
+/* Class = "UITextField"; placeholder = "Search Product"; ObjectID = "28B-uM-YKm"; */
+"28B-uM-YKm.placeholder" = "البحث عن المنتج";

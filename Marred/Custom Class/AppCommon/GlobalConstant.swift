@@ -35,7 +35,7 @@ struct DEVICE {
 
 struct IMAGE {
     static var PLACEHOLDER = "ic_placeholder"
-    static var PRODUCT_PLACEHOLDER = "product_placeholder_small"
+    static var PRODUCT_PLACEHOLDER = "ic_placeholder"
     
 }
 

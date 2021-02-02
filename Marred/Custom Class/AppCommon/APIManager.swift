@@ -24,6 +24,7 @@ struct API {
     static let GET_CATEGORY                           =       BASE_URL + "v1/get_cateogories" + APIManager.shared.addLangParam()
     static let GET_PAVILION_CATEGORY                  =       BASE_URL + "v1/pavilions" + APIManager.shared.addLangParam()
     
+    static let SEARCH_PRODUCT                         =       BASE_URL + "wc/v3/products" + APIManager.shared.addLangParam() + "&search="
     static let GET_PRODUCT_LIST                       =       BASE_URL + "v1/getProductsByCat" + APIManager.shared.addLangParam()
     static let GET_PRODUCT_DETAIL                     =       BASE_URL + "v1/productDetail" + APIManager.shared.addLangParam()
     
@@ -224,6 +225,10 @@ public class APIManager {
             case .success:
                 if let result = response.result.value as? [String:Any] {
                     completion(result)
+                    return
+                }
+                else if let result = response.result.value as? [[String:Any]] {
+                    completion(["data" : result])
                     return
                 }
                 if let error = response.result.error

@@ -56,7 +56,8 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func clickToSearch(_ sender: Any) {
-        
+        let vc : SearchProductVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SearchProductVC") as! SearchProductVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToWishList(_ sender: Any) {
@@ -73,8 +74,6 @@ class HomeVC: UIViewController {
             return
         }
         NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 2])
-//        let vc : ShoppingCartVC = STORYBOARD.PRODUCT.instantiateViewController(withIdentifier: "ShoppingCartVC") as! ShoppingCartVC
-//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

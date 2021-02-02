@@ -39,7 +39,8 @@ class DealofDaysVC: UIViewController {
     }
 
     @IBAction func clickToSearch(_ sender: Any) {
-        
+        let vc : SearchProductVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SearchProductVC") as! SearchProductVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToWishList(_ sender: Any) {

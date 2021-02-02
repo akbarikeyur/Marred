@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -59,7 +59,7 @@
                                 <state key="normal" image="close_red"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zercon Accessories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mia-Cj-UFJ" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                <rect key="frame" x="80" y="29.5" width="160" height="16.5"/>
+                                <rect key="frame" x="80" y="29.5" width="159" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor: Najma al fajer trading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtG-WJ-20f" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                <rect key="frame" x="80" y="48" width="160" height="14.5"/>
+                                <rect key="frame" x="80" y="48" width="159" height="14.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                 <color key="textColor" red="0.99607843139999996" green="0.37647058820000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34.50 AED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uz-9w-1UI" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                <rect key="frame" x="80" y="67.5" width="160" height="19"/>
+                                <rect key="frame" x="80" y="67.5" width="159" height="19"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -199,7 +199,7 @@
                             <constraint firstItem="OtG-WJ-20f" firstAttribute="trailing" secondItem="mia-Cj-UFJ" secondAttribute="trailing" id="FkY-XK-vWn"/>
                             <constraint firstItem="Mos-NC-ibT" firstAttribute="top" secondItem="GwY-gI-3xN" secondAttribute="top" id="N4v-Pc-LIx"/>
                             <constraint firstItem="5Uz-9w-1UI" firstAttribute="top" secondItem="OtG-WJ-20f" secondAttribute="bottom" constant="5" id="RIy-Nb-AKQ"/>
-                            <constraint firstItem="Mos-NC-ibT" firstAttribute="leading" secondItem="OtG-WJ-20f" secondAttribute="trailing" id="SXe-pY-Ipr"/>
+                            <constraint firstItem="Mos-NC-ibT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OtG-WJ-20f" secondAttribute="trailing" id="SXe-pY-Ipr"/>
                             <constraint firstItem="Ugs-q6-ZJi" firstAttribute="trailing" secondItem="ii3-8Q-GhZ" secondAttribute="trailing" constant="14" id="Thd-WP-Q4C"/>
                             <constraint firstItem="ii3-8Q-GhZ" firstAttribute="centerY" secondItem="GwY-gI-3xN" secondAttribute="centerY" id="VP6-Tx-6Yp"/>
                             <constraint firstAttribute="trailing" secondItem="Mos-NC-ibT" secondAttribute="trailing" id="W8h-MS-9sE"/>

@@ -127,7 +127,9 @@ func displayToast(_ message:String)
 func printData(_ items: Any..., separator: String = " ", terminator: String = "\n")
 {
     #if DEBUG
-        print(items)
+        items.forEach {
+            Swift.print($0, separator: separator, terminator: terminator)
+        }
     #endif
 }
 

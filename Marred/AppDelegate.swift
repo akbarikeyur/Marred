@@ -42,10 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if isUserLogin() && getApiKey() != "" {
             AppModel.shared.currentUser = getLoginUserData()
-//            navigateToDashBoard()
         }
-        
-        
         navigateToDashBoard()
         return true
     }

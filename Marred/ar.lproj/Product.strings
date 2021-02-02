@@ -62,7 +62,7 @@
 "QgC-gi-hMW.placeholder" = "شقة، جناح، وحدة الخ (اختياري)";
 
 /* Class = "UILabel"; text = "Flat rate"; ObjectID = "aKe-aa-wDp"; */
-"aKe-aa-wDp.text" = "الشحن مجانا";
+"aKe-aa-wDp.text" = "سعر موحد";
 
 /* Class = "UITextField"; placeholder = "Company name (optional)"; ObjectID = "RqN-f9-SnZ"; */
 "RqN-f9-SnZ.placeholder" = "اسم الشركة (اختياري)";
@@ -195,3 +195,15 @@
 
 /* Class = "UILabel"; text = "Billing details"; ObjectID = "yKC-yD-lka"; */
 "yKC-yD-lka.text" = "تفاصيل الفاتورة";
+
+/* Class = "UILabel"; text = "Ship to a different address?"; ObjectID = "p7S-6y-IzY"; */
+"p7S-6y-IzY.text" = "الشحن إلى عنوان مختلف؟";
+
+/* Class = "UILabel"; text = "Free shipping"; ObjectID = "04a-Wi-OFq"; */
+"04a-Wi-OFq.text" = "الشحن مجانا";
+
+/* Class = "UILabel"; text = "Flat rate"; ObjectID = "VtJ-HZ-yKy"; */
+"VtJ-HZ-yKy.text" = "سعر موحد";
+
+/* Class = "UILabel"; text = "Cash on delivery"; ObjectID = "0bk-da-x9c"; */
+"0bk-da-x9c.text" = "الدفع عند الاستلام";

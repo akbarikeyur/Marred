@@ -20,6 +20,7 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var cityTxt: TextField!
     @IBOutlet weak var freeShipBtn: Button!
     @IBOutlet weak var flatRateBtn: Button!
+    @IBOutlet weak var flatRateLbl: Label!
     @IBOutlet weak var subTotalLbl: Label!
     @IBOutlet weak var totalLbl: Label!
     @IBOutlet weak var bottomView: UIView!
@@ -43,7 +44,7 @@ class ShoppingCartVC: UIViewController {
         
         registerTableViewMethod()
         resetCartScreen()
-        
+        flatRateLbl.text = displayPriceWithCurrency("25.00")
         calculateView.isHidden = true
         clickToShipping(freeShipBtn)
         serviceCallToGetCart()
@@ -87,7 +88,8 @@ class ShoppingCartVC: UIViewController {
     }
     
     @IBAction func clickToSearch(_ sender: Any) {
-        
+        let vc : SearchProductVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SearchProductVC") as! SearchProductVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToBack(_ sender: Any) {

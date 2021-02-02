@@ -23,6 +23,12 @@ struct ProductModel {
         }
         
         thumbnail = dict["thumbnail"] as? String ?? ""
+        
+        if thumbnail == "" {
+            if let images = dict["images"] as? [[String : Any]], images.count > 0 {
+                thumbnail = images[0]["src"] as? String ?? ""
+            }
+        }
         if dict["title"] != nil {
             title = dict["title"] as? String ?? ""
         }else if dict["get_name"] != nil {
@@ -31,6 +37,9 @@ struct ProductModel {
             title = dict["name"] as? String ?? ""
         }
         vendor = dict["vendor"] as? String ?? ""
+        if vendor == "" {
+            vendor = dict["store"] as? String ?? ""
+        }
         brands = BrandModel.init(dict["brands"] as? [String : Any] ?? [String : Any]())
         vendor_id = AppModel.shared.getIntData(dict, "vendor_id")
         author_name = dict["author_name"] as? String ?? ""

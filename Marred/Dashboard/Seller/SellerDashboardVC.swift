@@ -14,7 +14,7 @@ class SellerDashboardVC: UIViewController {
     @IBOutlet weak var mainContainerView: UIView!
     
     var arrTabData = [getTranslate("tab_dashboard"), getTranslate("tab_product"), getTranslate("tab_order"), getTranslate("tab_contact_admin"), getTranslate("tab_withdraw")]
-    var selectedTab = 0
+    var selectedTab = getTranslate("tab_dashboard")
     
     let dashboardTab : SellerDashboardTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "SellerDashboardTabVC") as! SellerDashboardTabVC
     let productTab : SellerDashboardProductTabVC = STORYBOARD.DASHBOARD.instantiateViewController(withIdentifier: "SellerDashboardProductTabVC") as! SellerDashboardProductTabVC
@@ -30,6 +30,10 @@ class SellerDashboardVC: UIViewController {
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(redirectToContactUs), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_CONTACT_US), object: nil)
         registerCollectionView()
+        if isArabic() {
+            arrTabData = arrTabData.reversed()
+        }
+        tabCV.reloadData()
         selectTab()
     }
     
@@ -38,7 +42,7 @@ class SellerDashboardVC: UIViewController {
     }
     
     @objc func redirectToContactUs() {
-        selectedTab = 3
+        selectedTab = getTranslate("tab_contact_admin")
         selectTab()
     }
     
@@ -92,7 +96,7 @@ extension SellerDashboardVC : UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let label = UILabel(frame: CGRect.zero)
         label.text = arrTabData[indexPath.row]
-        if selectedTab == indexPath.row {
+        if selectedTab == label.text {
             label.font = UIFont.init(name: APP_BOLD, size: 14)
         }else{
             label.font = UIFont.init(name: APP_REGULAR, size: 14)
@@ -104,7 +108,7 @@ extension SellerDashboardVC : UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : CategoryListCVC = tabCV.dequeueReusableCell(withReuseIdentifier: "CategoryListCVC", for: indexPath) as! CategoryListCVC
         cell.nameLbl.text = arrTabData[indexPath.row]
-        if selectedTab == indexPath.row {
+        if selectedTab == cell.nameLbl.text {
             cell.nameLbl.textColor = BlackColor
             cell.lineImg.isHidden = false
             cell.nameLbl.font = UIFont.init(name: APP_BOLD, size: 14)
@@ -117,40 +121,40 @@ extension SellerDashboardVC : UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedTab = indexPath.row
+        selectedTab = arrTabData[indexPath.row]
         selectTab()
     }
     
     func selectTab() {
         tabCV.reloadData()
-        if selectedTab == 0 {
+        if selectedTab == getTranslate("tab_dashboard") {
             displaySubViewtoParentView(mainContainerView, subview: dashboardTab.view)
             dashboardTab.setupDetails()
         }
-        else if selectedTab == 1 {
+        else if selectedTab == getTranslate("tab_product") {
             displaySubViewtoParentView(mainContainerView, subview: productTab.view)
             productTab.setupDetails()
         }
-        else if selectedTab == 2 {
+        else if selectedTab == getTranslate("tab_order") {
             displaySubViewtoParentView(mainContainerView, subview: orderTab.view)
             orderTab.setupDetails()
         }
-        else if selectedTab == 3 {
+        else if selectedTab == getTranslate("tab_contact_admin") {
             displaySubViewtoParentView(mainContainerView, subview: contactTab.view)
             contactTab.setupDetails()
         }
-        else if selectedTab == 4 {
+        else if selectedTab == getTranslate("tab_withdraw") {
             displaySubViewtoParentView(mainContainerView, subview: withdrawTab.view)
             withdrawTab.setupDetails()
         }
-        else if selectedTab == 5 {
-            displaySubViewtoParentView(mainContainerView, subview: settingTab.view)
-            settingTab.setupDetails()
-        }
-        else if selectedTab == 6 {
-            displaySubViewtoParentView(mainContainerView, subview: paymentTab.view)
-            paymentTab.setupDetails()
-        }
+//        else if selectedTab == 5 {
+//            displaySubViewtoParentView(mainContainerView, subview: settingTab.view)
+//            settingTab.setupDetails()
+//        }
+//        else if selectedTab == 6 {
+//            displaySubViewtoParentView(mainContainerView, subview: paymentTab.view)
+//            paymentTab.setupDetails()
+//        }
     }
     
     func resetAllTab() {

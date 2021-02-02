@@ -34,9 +34,9 @@ class CheckoutVC: UIViewController {
     @IBOutlet weak var constraintHeightOrderTbl: NSLayoutConstraint!
     @IBOutlet weak var freeShipBtn: Button!
     @IBOutlet weak var flatRateBtn: Button!
+    @IBOutlet weak var flatRateLbl: Label!
     @IBOutlet weak var subTotalLbl: Label!
     @IBOutlet weak var shippingChargeLbl: Label!
-    @IBOutlet weak var flatRateLbl: Label!
     @IBOutlet weak var cardBtn: Button!
     @IBOutlet weak var cashBtn: Button!
     @IBOutlet weak var totalLbl: Label!
@@ -63,6 +63,8 @@ class CheckoutVC: UIViewController {
         loginView.isHidden = isUserLogin()
         loginLbl.attributedText = getAttributeStringWithColor(loginLbl.text!, ["Log in"], color: BlackColor, font: UIFont(name: APP_BOLD, size: 14.0), isUnderLine: true)
         registerTableViewMethod()
+        
+        flatRateLbl.text = displayPriceWithCurrency("25.00")
         
         FoloosiPay.initSDK(merchantKey: FOLOOSI.MERCHANT_KEY,withDelegate: self)
         
@@ -154,7 +156,11 @@ class CheckoutVC: UIViewController {
     @IBAction func clickToSelectCard(_ sender: UIButton) {
         cardBtn.isSelected = false
         cashBtn.isSelected = false
-        sender.isSelected = true
+        if sender.tag == 1 {
+            cardBtn.isSelected = true
+        }else{
+            cashBtn.isSelected = true
+        }
     }
     
     @IBAction func clickToPayNow(_ sender: Any) {

@@ -20,7 +20,7 @@ class CategoryVC: UIViewController {
     
     var arrTabData = [getTranslate("shop_by_categories"), getTranslate("shop_by_pavilions")]
     
-    var selectedTab = 0
+    var selectedTab = getTranslate("shop_by_categories")
     var selectedPavillion = PavilionModel.init([String : Any]())
     var arrCategory = getCategoryData()
     var arrPavilion = [PavilionModel]()
@@ -34,6 +34,12 @@ class CategoryVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(changeSelectedTab(_:)), name: NSNotification.Name.init(NOTIFICATION.SELECT_CATEGORY_CLICK), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshCategoryList), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CATEGORY_LIST), object: nil)
         registerCollectionView()
+        
+        if isArabic() {
+            arrTabData = arrTabData.reversed()
+        }
+        
+        tabCV.reloadData()
         selectTab()
         
         if arrCategory.count == 0 {
@@ -47,7 +53,7 @@ class CategoryVC: UIViewController {
             arrPavilion.append(PavilionModel.init(temp))
         }
         pavillionCV.reloadData()
-        if selectedTab == 1 {
+        if selectedTab == getTranslate("shop_by_pavilions") {
             if arrPavilion.count > 0 {
                 selectedPavillion = arrPavilion[0]
                 if let data = pavilionDict[String(selectedPavillion.id)], data.count > 0 {
@@ -71,7 +77,7 @@ class CategoryVC: UIViewController {
     
     @objc func changeSelectedTab(_ noti : Notification) {
         if let dict = noti.object as? [String : Any] {
-            if let tab = dict["index"] as? Int {
+            if let tab = dict["tab"] as? String {
                 selectedTab = tab
                 selectTab()
             }
@@ -84,7 +90,8 @@ class CategoryVC: UIViewController {
     }
     
     @IBAction func clickToSearch(_ sender: Any) {
-        
+        let vc : SearchProductVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SearchProductVC") as! SearchProductVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToWishList(_ sender: Any) {
@@ -149,7 +156,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         else if collectionView == tabCV {
             let label = UILabel(frame: CGRect.zero)
             label.text = arrTabData[indexPath.row]
-            if selectedTab == indexPath.row {
+            if selectedTab == label.text {
                 label.font = UIFont.init(name: APP_BOLD, size: 14)
             }else{
                 label.font = UIFont.init(name: APP_REGULAR, size: 14)
@@ -174,7 +181,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         else if collectionView == tabCV {
             let cell : CategoryListCVC = tabCV.dequeueReusableCell(withReuseIdentifier: "CategoryListCVC", for: indexPath) as! CategoryListCVC
             cell.nameLbl.text = arrTabData[indexPath.row]
-            if selectedTab == indexPath.row {
+            if selectedTab == cell.nameLbl.text {
                 cell.nameLbl.textColor = BlackColor
                 cell.lineImg.isHidden = false
                 cell.nameLbl.font = UIFont.init(name: APP_BOLD, size: 14)
@@ -208,7 +215,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == tabCV {
-            selectedTab = indexPath.row
+            selectedTab = arrTabData[indexPath.row]
             selectTab()
         }
         else if collectionView == pavillionCV {
@@ -237,11 +244,11 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         tabCV.reloadData()
         categoryView.removeFromSuperview()
         pavillionView.removeFromSuperview()
-        if selectedTab == 0 {
+        if selectedTab == getTranslate("shop_by_categories") {
             displaySubViewtoParentView(mainContainerView, subview: categoryView)
             categoryCV.reloadData()
         }
-        else if selectedTab == 1 {
+        else if selectedTab == getTranslate("shop_by_pavilions") {
             displaySubViewtoParentView(mainContainerView, subview: pavillionView)
             pavillionCV.reloadData()
             shopCV.reloadData()

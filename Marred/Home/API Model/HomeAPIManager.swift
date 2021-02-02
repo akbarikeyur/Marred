@@ -71,4 +71,14 @@ public class HomeAPIManager {
             }
         }
     }
+    
+    func serviceCallToSearchProductList(_ search : String, _ isLoader : Bool, _ completion: @escaping (_ result : [[String : Any]]) -> Void) {
+        APIManager.shared.callGetRequest(API.SEARCH_PRODUCT + search, isLoader) { (dict) in
+            printData(dict)
+            if let data = dict["data"] as? [[String : Any]] {
+                completion(data)
+                return
+            }
+        }
+    }
 }

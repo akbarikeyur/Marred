@@ -48,7 +48,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zercon Accessories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkM-oW-gW0" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                <rect key="frame" x="80" y="29.5" width="220" height="16.5"/>
+                                <rect key="frame" x="80" y="29.5" width="159" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor: Najma al fajer trading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1P-uw-Wg4" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                <rect key="frame" x="80" y="48" width="220" height="14.5"/>
+                                <rect key="frame" x="80" y="48" width="159" height="14.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                 <color key="textColor" red="0.99607843139999996" green="0.37647058820000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QIc-hW-8p8" secondAttribute="trailing" id="XMX-w5-K4M"/>
                             <constraint firstItem="D1P-uw-Wg4" firstAttribute="leading" secondItem="6MC-hr-Xtg" secondAttribute="trailing" constant="10" id="iqL-0S-rDQ"/>
                             <constraint firstItem="6MC-hr-Xtg" firstAttribute="centerY" secondItem="jOs-nR-Wsd" secondAttribute="centerY" id="jbm-XX-I1K"/>
-                            <constraint firstAttribute="trailing" secondItem="D1P-uw-Wg4" secondAttribute="trailing" id="lHp-gd-RI3"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D1P-uw-Wg4" secondAttribute="trailing" id="lHp-gd-RI3"/>
                             <constraint firstItem="D1P-uw-Wg4" firstAttribute="leading" secondItem="RkM-oW-gW0" secondAttribute="leading" id="rlw-eh-StC"/>
                             <constraint firstItem="D1P-uw-Wg4" firstAttribute="top" secondItem="RkM-oW-gW0" secondAttribute="bottom" constant="2" id="tDf-Hb-LAi"/>
                             <constraint firstItem="QIc-hW-8p8" firstAttribute="centerY" secondItem="ZwE-EA-N0j" secondAttribute="centerY" id="vZV-CN-avs"/>

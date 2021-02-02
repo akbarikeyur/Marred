@@ -56,7 +56,11 @@ class SellerDashboardTabVC: UIViewController {
     func setupData() {
         resetData()
         totalSaleLbl.text = sellerDict.total_sales
-        totalEarningLbl.text = sellerDict.order_total
+        if sellerDict.order_total != "" {
+            totalEarningLbl.text = sellerDict.order_total
+        }else{
+            totalEarningLbl.text = ""
+        }
         totalViewLbl.text = sellerDict.pageviews
         totalOrderLbl.text = sellerDict.orders.total
         

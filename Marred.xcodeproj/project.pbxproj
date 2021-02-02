@@ -113,7 +113,6 @@
 		79BF3636257E46A4006491C5 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF360F257E46A3006491C5 /* TextView.swift */; };
 		79BF3637257E46A4006491C5 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF3610257E46A3006491C5 /* ImageView.swift */; };
 		79BF3638257E46A4006491C5 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF3611257E46A3006491C5 /* Button.swift */; };
-		79BF3639257E46A4006491C5 /* CustomTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79BF3613257E46A4006491C5 /* CustomTabBarView.xib */; };
 		79BF363A257E46A4006491C5 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF3614257E46A4006491C5 /* CustomTabBarView.swift */; };
 		79BF363B257E46A4006491C5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF3615257E46A4006491C5 /* CustomTabBarController.swift */; };
 		79BF363E257E545D006491C5 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79BF363D257E545D006491C5 /* Roboto-Regular.ttf */; };
@@ -127,6 +126,8 @@
 		79BF3657257E61FA006491C5 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF3656257E61FA006491C5 /* HomeModel.swift */; };
 		79BF3659257E63B1006491C5 /* Home.json in Resources */ = {isa = PBXBuildFile; fileRef = 79BF3658257E63B1006491C5 /* Home.json */; };
 		79D3396E25C8243300310CD1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79D3397025C8243300310CD1 /* Localizable.strings */; };
+		79D7469525C939D300EB72D2 /* SearchProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D7469425C939D300EB72D2 /* SearchProductVC.swift */; };
+		79DC8AE725C95BAE00A7F873 /* CustomTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79DC8AE925C95BAE00A7F873 /* CustomTabBarView.xib */; };
 		79DDD67E2589F04200510375 /* BuyerDashboardTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDD67D2589F04200510375 /* BuyerDashboardTabVC.swift */; };
 		79E888C925BEC70300B5DB37 /* WithdrawRequestTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E888C725BEC70300B5DB37 /* WithdrawRequestTVC.swift */; };
 		79E888CA25BEC70300B5DB37 /* WithdrawRequestTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79E888C825BEC70300B5DB37 /* WithdrawRequestTVC.xib */; };
@@ -264,7 +265,6 @@
 		79BF360F257E46A3006491C5 /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		79BF3610257E46A3006491C5 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		79BF3611257E46A3006491C5 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		79BF3613257E46A4006491C5 /* CustomTabBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTabBarView.xib; sourceTree = "<group>"; };
 		79BF3614257E46A4006491C5 /* CustomTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		79BF3615257E46A4006491C5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		79BF363D257E545D006491C5 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -281,6 +281,9 @@
 		79D3396D25C81B5700310CD1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		79D3396F25C8243300310CD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		79D3397125C8243800310CD1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		79D7469425C939D300EB72D2 /* SearchProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductVC.swift; sourceTree = "<group>"; };
+		79DC8AE825C95BAE00A7F873 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomTabBarView.xib; sourceTree = "<group>"; };
+		79DC8AEB25C95BC100A7F873 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CustomTabBarView.strings; sourceTree = "<group>"; };
 		79DDD67D2589F04200510375 /* BuyerDashboardTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerDashboardTabVC.swift; sourceTree = "<group>"; };
 		79E888C725BEC70300B5DB37 /* WithdrawRequestTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawRequestTVC.swift; sourceTree = "<group>"; };
 		79E888C825BEC70300B5DB37 /* WithdrawRequestTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawRequestTVC.xib; sourceTree = "<group>"; };
@@ -607,7 +610,7 @@
 		79BF3612257E46A4006491C5 /* Custom Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
-				79BF3613257E46A4006491C5 /* CustomTabBarView.xib */,
+				79DC8AE925C95BAE00A7F873 /* CustomTabBarView.xib */,
 				79BF3614257E46A4006491C5 /* CustomTabBarView.swift */,
 				79BF3615257E46A4006491C5 /* CustomTabBarController.swift */,
 			);
@@ -632,6 +635,7 @@
 				79BF35BD257E4466006491C5 /* HomeVC.swift */,
 				794B1C0D2580DF8500A7F391 /* CategoryVC.swift */,
 				79220C3E25810A1000329AC8 /* SubCategoryVC.swift */,
+				79D7469425C939D300EB72D2 /* SearchProductVC.swift */,
 				79BF3652257E613F006491C5 /* API Model */,
 				79BF3648257E5A2B006491C5 /* Tableview Cell */,
 				79BF364D257E5B60006491C5 /* Collectionview Cell */,
@@ -793,7 +797,7 @@
 				79BF35C1257E4466006491C5 /* Main.storyboard in Resources */,
 				79BF3642257E547C006491C5 /* Roboto-Bold.ttf in Resources */,
 				792DAE62258A33B0008E1343 /* BookmarkCVC.xib in Resources */,
-				79BF3639257E46A4006491C5 /* CustomTabBarView.xib in Resources */,
+				79DC8AE725C95BAE00A7F873 /* CustomTabBarView.xib in Resources */,
 				79100C172584AE4B00000215 /* CheckoutOrderTVC.xib in Resources */,
 				794B1C0C2580D0D500A7F391 /* ProductImageCVC.xib in Resources */,
 				79E888CA25BEC70300B5DB37 /* WithdrawRequestTVC.xib in Resources */,
@@ -889,6 +893,7 @@
 				79BF35E3257E469B006491C5 /* SHA1.swift in Sources */,
 				79220C372580FCB100329AC8 /* SideMenuTVC.swift in Sources */,
 				79322399258B6D1700ACF496 /* DashboardOrderTVC.swift in Sources */,
+				79D7469525C939D300EB72D2 /* SearchProductVC.swift in Sources */,
 				79BF361C257E46A4006491C5 /* String+RUI.swift in Sources */,
 				79BF3632257E46A4006491C5 /* CollectionViewCell.swift in Sources */,
 				79BF362F257E46A4006491C5 /* CollectionView.swift in Sources */,
@@ -1058,6 +1063,15 @@
 				79D3397125C8243800310CD1 /* ar */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		79DC8AE925C95BAE00A7F873 /* CustomTabBarView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79DC8AE825C95BAE00A7F873 /* Base */,
+				79DC8AEB25C95BC100A7F873 /* ar */,
+			);
+			name = CustomTabBarView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

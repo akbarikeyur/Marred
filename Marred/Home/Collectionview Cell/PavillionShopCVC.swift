@@ -18,6 +18,11 @@ class PavillionShopCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        if isArabic() {
+            arrowImg.image = UIImage(named: "black_arrow_previous")
+        }else{
+            arrowImg.image = UIImage(named: "black_arrow")
+        }
     }
 
     func setupDetails(_ dict : PavilionModel) {
