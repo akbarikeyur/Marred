@@ -15,10 +15,13 @@ class ContactInfoTVC: UITableViewCell {
         // Initialization code
     }
 
+    @IBAction func clickToWhatsapp(_ sender: Any) {
+        openUrlInSafari(strUrl: WHATSAPP_URL)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    
 }

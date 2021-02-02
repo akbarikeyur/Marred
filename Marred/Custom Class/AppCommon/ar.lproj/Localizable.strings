@@ -55,6 +55,8 @@
 "menu_deal" = "صفقات اليوم";
 "menu_shop" = "أضف متجرك";
 "menu_contact" = "تواصل معنا";
+"menu_message" = "دعم واتس اب";
+"menu_laguange" = "تغيير إلى اللغة الإنجليزية";
 
 //Cart
 "enter_coupon_code" = "الرجاء إدخال رمز القسيمة";

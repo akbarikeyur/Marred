@@ -1427,14 +1427,26 @@
                                             <constraint firstAttribute="height" constant="1" id="hSu-RL-qj6"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asb-NA-9Wl" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="24" width="10" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="GF2-fh-5ev"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="back"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clickToBack:" destination="CMy-JG-Xzb" eventType="touchUpInside" id="XQW-10-s7C"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1z-He-nvu" customClass="Button" customModule="Marred" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="24" width="220" height="35"/>
+                                        <rect key="frame" x="28" y="24" width="42" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="moC-ZQ-xrq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
-                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Back" image="back">
+                                        <state key="normal" title="Back">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -1445,7 +1457,6 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="back"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="clickToBack:" destination="CMy-JG-Xzb" eventType="touchUpInside" id="kKz-fe-a38"/>
@@ -1455,12 +1466,15 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="3T0-Hs-jrX"/>
+                                    <constraint firstItem="R1z-He-nvu" firstAttribute="bottom" secondItem="asb-NA-9Wl" secondAttribute="bottom" id="4Rh-RX-wUz"/>
+                                    <constraint firstItem="asb-NA-9Wl" firstAttribute="leading" secondItem="SgG-aQ-Lqd" secondAttribute="leading" constant="10" id="6PS-hi-aQU"/>
                                     <constraint firstItem="fc9-c1-MD5" firstAttribute="leading" secondItem="SgG-aQ-Lqd" secondAttribute="leading" constant="10" id="8eE-Ru-aEq"/>
-                                    <constraint firstAttribute="trailing" secondItem="R1z-He-nvu" secondAttribute="trailing" constant="10" id="Mfq-VV-qhs"/>
-                                    <constraint firstItem="R1z-He-nvu" firstAttribute="leading" secondItem="SgG-aQ-Lqd" secondAttribute="leading" constant="10" id="Xuz-Ju-fny"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="R1z-He-nvu" secondAttribute="trailing" constant="10" id="Mfq-VV-qhs"/>
                                     <constraint firstItem="fc9-c1-MD5" firstAttribute="top" secondItem="R1z-He-nvu" secondAttribute="bottom" id="XyH-yb-Xhf"/>
+                                    <constraint firstItem="R1z-He-nvu" firstAttribute="leading" secondItem="asb-NA-9Wl" secondAttribute="trailing" constant="8" id="ZO7-67-rJM"/>
                                     <constraint firstAttribute="bottom" secondItem="fc9-c1-MD5" secondAttribute="bottom" id="af5-Nf-ssr"/>
                                     <constraint firstAttribute="trailing" secondItem="fc9-c1-MD5" secondAttribute="trailing" id="iMk-AK-Jvk"/>
+                                    <constraint firstItem="R1z-He-nvu" firstAttribute="top" secondItem="asb-NA-9Wl" secondAttribute="top" id="lbo-Jo-CSu"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xta-j1-834">
@@ -2530,10 +2544,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9l-Jd-nyV">
-                                                                <rect key="frame" x="0.0" y="71.5" width="320" height="71.5"/>
+                                                                <rect key="frame" x="0.0" y="71.5" width="320" height="74.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd5-VD-d1T" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="10" width="300" height="16.5"/>
+                                                                        <rect key="frame" x="10" y="10" width="300" height="19.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -2548,7 +2562,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEM-60-fcZ" customClass="TextField" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="31.5" width="300" height="40"/>
+                                                                        <rect key="frame" x="10" y="34.5" width="300" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="Bbb-ns-Nyk"/>
                                                                         </constraints>
@@ -2592,7 +2606,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUu-MV-eBu">
-                                                                <rect key="frame" x="0.0" y="143" width="320" height="71.5"/>
+                                                                <rect key="frame" x="0.0" y="146" width="320" height="71.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Business Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4b-lx-M6M" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="10" width="300" height="16.5"/>
@@ -2654,10 +2668,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1l-US-Cn5">
-                                                                <rect key="frame" x="0.0" y="214.5" width="320" height="74.5"/>
+                                                                <rect key="frame" x="0.0" y="217.5" width="320" height="71.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msJ-aL-2ao" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="10" width="300" height="19.5"/>
+                                                                        <rect key="frame" x="10" y="10" width="300" height="16.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -2672,7 +2686,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rO2-mm-hkL" customClass="View" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="34.5" width="300" height="40"/>
+                                                                        <rect key="frame" x="10" y="31.5" width="300" height="40"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="OLB-Ds-gvE">
                                                                                 <rect key="frame" x="10" y="10" width="26" height="20"/>

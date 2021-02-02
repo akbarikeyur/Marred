@@ -173,6 +173,11 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
                     NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_CONTACT_US), object: nil)
                 }
                 break
+            case 7:
+                openUrlInSafari(strUrl: WHATSAPP_URL)
+                break
+            case 8:
+                break
             default:
                 break
         }

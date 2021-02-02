@@ -67,6 +67,7 @@
 		79752002258252820020FEEE /* ShoppingCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79752001258252820020FEEE /* ShoppingCartVC.swift */; };
 		79752006258259C00020FEEE /* CartTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79752004258259C00020FEEE /* CartTVC.swift */; };
 		79752007258259C00020FEEE /* CartTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79752005258259C00020FEEE /* CartTVC.xib */; };
+		7984ACC525C98DD700E30C8C /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984ACC425C98DD700E30C8C /* BundleExtension.swift */; };
 		798A4F232580B957004D8BDF /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798A4F222580B957004D8BDF /* ProductDetailVC.swift */; };
 		79A4607C258B265F00A65BDE /* SellerDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A4607B258B265F00A65BDE /* SellerDashboardVC.swift */; };
 		79A4607E258B362300A65BDE /* SellerDashboardTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A4607D258B362300A65BDE /* SellerDashboardTabVC.swift */; };
@@ -215,6 +216,7 @@
 		79752001258252820020FEEE /* ShoppingCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartVC.swift; sourceTree = "<group>"; };
 		79752004258259C00020FEEE /* CartTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTVC.swift; sourceTree = "<group>"; };
 		79752005258259C00020FEEE /* CartTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTVC.xib; sourceTree = "<group>"; };
+		7984ACC425C98DD700E30C8C /* BundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		798A4F222580B957004D8BDF /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		79A4607B258B265F00A65BDE /* SellerDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerDashboardVC.swift; sourceTree = "<group>"; };
 		79A4607D258B362300A65BDE /* SellerDashboardTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerDashboardTabVC.swift; sourceTree = "<group>"; };
@@ -524,6 +526,7 @@
 			children = (
 				79BF35D3257E469B006491C5 /* AppModel.swift */,
 				79BF35D4257E469B006491C5 /* APIManager.swift */,
+				7984ACC425C98DD700E30C8C /* BundleExtension.swift */,
 				79BF35D0257E469B006491C5 /* DateTimeUtility.swift */,
 				79BF35D2257E469B006491C5 /* DatePickerManager.swift */,
 				79BF35D1257E469B006491C5 /* FloatRatingView.swift */,
@@ -954,6 +957,7 @@
 				79BF35DB257E469B006491C5 /* GlobalConstant.swift in Sources */,
 				79BF361F257E46A4006491C5 /* Date+RUI.swift in Sources */,
 				792DAE66258A3F7F008E1343 /* AddYourShopVC.swift in Sources */,
+				7984ACC525C98DD700E30C8C /* BundleExtension.swift in Sources */,
 				79BF3620257E46A4006491C5 /* UIImage+RUI.swift in Sources */,
 				792DAE53258A0698008E1343 /* MyOrderTVC.swift in Sources */,
 				79A4607C258B265F00A65BDE /* SellerDashboardVC.swift in Sources */,

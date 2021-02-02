@@ -55,6 +55,8 @@
 "menu_deal" = "Deals of The Day";
 "menu_shop" = "Add Your Shop";
 "menu_contact" = "Contact us";
+"menu_message" = "Support on WhatsApp";
+"menu_laguange" = "Change to Arabic";
 
 //Cart
 "enter_coupon_code" = "Please enter coupon code";

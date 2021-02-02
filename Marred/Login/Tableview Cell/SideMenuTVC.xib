@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,13 +47,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOr-Nr-DYO">
+                                <rect key="frame" x="261" y="9.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="changeLanguage:" destination="KGk-i7-Jjw" eventType="valueChanged" id="XE1-SA-rFj"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="x4W-Wj-UnV" secondAttribute="trailing" constant="10" id="8En-wQ-mDJ"/>
                             <constraint firstItem="5so-0s-w41" firstAttribute="leading" secondItem="DVY-pK-KBk" secondAttribute="leading" id="GW7-3b-vB8"/>
                             <constraint firstItem="x4W-Wj-UnV" firstAttribute="leading" secondItem="5so-0s-w41" secondAttribute="trailing" constant="10" id="KVy-OJ-Is3"/>
+                            <constraint firstItem="bOr-Nr-DYO" firstAttribute="centerY" secondItem="DVY-pK-KBk" secondAttribute="centerY" id="Pst-aB-Xd2"/>
                             <constraint firstItem="5so-0s-w41" firstAttribute="top" secondItem="DVY-pK-KBk" secondAttribute="top" id="V19-Vh-MkJ"/>
+                            <constraint firstAttribute="trailing" secondItem="bOr-Nr-DYO" secondAttribute="trailing" constant="10" id="aP8-FI-kAM"/>
                             <constraint firstAttribute="bottom" secondItem="5so-0s-w41" secondAttribute="bottom" id="hGR-m8-zvA"/>
                             <constraint firstItem="x4W-Wj-UnV" firstAttribute="centerY" secondItem="DVY-pK-KBk" secondAttribute="centerY" id="qH3-vV-beq"/>
                         </constraints>
@@ -68,6 +77,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="languageSwitch" destination="bOr-Nr-DYO" id="w2g-Vc-gDh"/>
                 <outlet property="menuBtn" destination="5so-0s-w41" id="weu-5Q-S7l"/>
                 <outlet property="titleLbl" destination="x4W-Wj-UnV" id="PwZ-Lf-6d9"/>
             </connections>

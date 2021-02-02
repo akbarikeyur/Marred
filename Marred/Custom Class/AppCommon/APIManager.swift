@@ -17,21 +17,21 @@ struct API {
     static let LOGIN                                  =       BASE_URL + "v1/user/signin"
     static let SIGNUP                                 =       BASE_URL + "v1/user/register"
     static let FORGOT_PASSWORD                        =       BASE_URL + "v1/user/forgotpassword"
-    static let GET_USER_DETAIL                        =       BASE_URL + "v1/user/getuserdetail" + APIManager.shared.addLangParam()
+    static let GET_USER_DETAIL                        =       BASE_URL + "v1/user/getuserdetail"
     
-    static let GET_HOME                               =       BASE_URL + "v1/getHomepage" + APIManager.shared.addLangParam()
+    static let GET_HOME                               =       BASE_URL + "v1/getHomepage"
     
-    static let GET_CATEGORY                           =       BASE_URL + "v1/get_cateogories" + APIManager.shared.addLangParam()
-    static let GET_PAVILION_CATEGORY                  =       BASE_URL + "v1/pavilions" + APIManager.shared.addLangParam()
+    static let GET_CATEGORY                           =       BASE_URL + "v1/get_cateogories"
+    static let GET_PAVILION_CATEGORY                  =       BASE_URL + "v1/pavilions"
     
-    static let SEARCH_PRODUCT                         =       BASE_URL + "wc/v3/products" + APIManager.shared.addLangParam() + "&search="
-    static let GET_PRODUCT_LIST                       =       BASE_URL + "v1/getProductsByCat" + APIManager.shared.addLangParam()
-    static let GET_PRODUCT_DETAIL                     =       BASE_URL + "v1/productDetail" + APIManager.shared.addLangParam()
+    static let SEARCH_PRODUCT                         =       BASE_URL + "wc/v3/products?search="
+    static let GET_PRODUCT_LIST                       =       BASE_URL + "v1/getProductsByCat"
+    static let GET_PRODUCT_DETAIL                     =       BASE_URL + "v1/productDetail"
     
     static let ADD_TO_CART                            =       BASE_URL + "cocart/v1/add-item"
     static let CLEAR_CART                             =       BASE_URL + "cocart/v1/clear"
     static let GET_CART_COUNT                         =       BASE_URL + "cocart/v1/count-items"
-    static let GET_CART                               =       BASE_URL + "v1/cocart/custom/get-cart" + APIManager.shared.addLangParam()
+    static let GET_CART                               =       BASE_URL + "v1/cocart/custom/get-cart"
     
     static let APPLY_COUPON                           =       BASE_URL + "wc/v3/coupons?code="
     static let GET_PAYMENT_GATEWAY                    =       BASE_URL + "wc/v3/payment_gateways"
@@ -40,20 +40,20 @@ struct API {
     
     static let ADD_BOOKMARK                           =       BASE_URL + "v1/bookmark/addbookmark"
     static let REMOVE_BOOKMARK                        =       BASE_URL + "v1/bookmark/removebookmark"
-    static let GET_BOOKMARK                           =       BASE_URL + "v1/bookmark/getbookmark" + APIManager.shared.addLangParam()
+    static let GET_BOOKMARK                           =       BASE_URL + "v1/bookmark/getbookmark"
     
-    static let GET_SELLER_DASHBOARD                   =       BASE_URL + "v1/seller/Dashboard" + APIManager.shared.addLangParam()
-    static let ADD_SHOP                               =       BASE_URL + "v1/seller/addShop" + APIManager.shared.addLangParam()
-    static let DEAL_OF_DAY                            =       BASE_URL + "v1/deal_of_the_day" + APIManager.shared.addLangParam()
+    static let GET_SELLER_DASHBOARD                   =       BASE_URL + "v1/seller/Dashboard"
+    static let ADD_SHOP                               =       BASE_URL + "v1/seller/addShop"
+    static let DEAL_OF_DAY                            =       BASE_URL + "v1/deal_of_the_day"
     
-    static let GET_USER_PRODUCT                       =       BASE_URL + "v1/user/getPorductByUser" + APIManager.shared.addLangParam()
-    static let GET_BUYER_ORDER                        =       BASE_URL + "wc/v3/orders" + APIManager.shared.addLangParam()
-    static let GET_SELLER_ORDER                       =       BASE_URL + "v1/user/getVendorOrder" + APIManager.shared.addLangParam()
-    static let GET_WITHDRAW_REQUEST                   =       BASE_URL + "v1/seller/getwithDrawRequest" + APIManager.shared.addLangParam()
+    static let GET_USER_PRODUCT                       =       BASE_URL + "v1/user/getPorductByUser"
+    static let GET_BUYER_ORDER                        =       BASE_URL + "wc/v3/orders"
+    static let GET_SELLER_ORDER                       =       BASE_URL + "v1/user/getVendorOrder"
+    static let GET_WITHDRAW_REQUEST                   =       BASE_URL + "v1/seller/getwithDrawRequest"
     
-    static let CONTACT_US                             =       BASE_URL + "v1/contactadmin" + APIManager.shared.addLangParam()
+    static let CONTACT_US                             =       BASE_URL + "v1/contactadmin"
     
-    static let GET_SET_ADDRESS                        =       BASE_URL + "wc/v3/customers/" + String(AppModel.shared.currentUser.ID) + APIManager.shared.addLangParam()
+    static let GET_SET_ADDRESS                        =       BASE_URL + "wc/v3/customers/" + String(AppModel.shared.currentUser.ID)
 }
 
 public class APIManager {
@@ -78,11 +78,19 @@ public class APIManager {
         return (isReachable && !needsConnection)
     }
     
-    func addLangParam() -> String {
+    func addLangParam(_ strUrl : String) -> String {
         if isArabic() {
-            return "?wpml_language=ar"
+            if strUrl.contains("?") {
+                return strUrl + "&wpml_language=ar"
+            }else{
+                return strUrl + "?wpml_language=ar"
+            }
         }else{
-            return "?wpml_language=en"
+            if strUrl.contains("?") {
+                return strUrl + "&wpml_language=en"
+            }else{
+                return strUrl + "?wpml_language=en"
+            }
         }
     }
     
@@ -157,7 +165,7 @@ public class APIManager {
             showLoader()
         }
         
-        Alamofire.request(api, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: getJsonHeader()).authenticate(user: "ck_eb581e733c1f69769fa0ca5407cd56f7f7137942", password: "cs_bedc787fb94f3adeffae2e40475b3fbae5812305").responseJSON { (response) in
+        Alamofire.request(addLangParam(api), method: .get, parameters: nil, encoding: JSONEncoding.default, headers: getJsonHeader()).authenticate(user: "ck_eb581e733c1f69769fa0ca5407cd56f7f7137942", password: "cs_bedc787fb94f3adeffae2e40475b3fbae5812305").responseJSON { (response) in
             removeLoader()
             switch response.result {
             case .success:
@@ -188,7 +196,7 @@ public class APIManager {
             showLoader()
         }
         
-        Alamofire.request(api, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: getBasicJson()).responseJSON { (response) in
+        Alamofire.request(addLangParam(api), method: .get, parameters: nil, encoding: JSONEncoding.default, headers: getBasicJson()).responseJSON { (response) in
             removeLoader()
             switch response.result {
             case .success:
@@ -219,7 +227,7 @@ public class APIManager {
             showLoader()
         }
         
-        Alamofire.request(api, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: getJsonHeader()).responseJSON { (response) in
+        Alamofire.request(addLangParam(api), method: .get, parameters: nil, encoding: JSONEncoding.default, headers: getJsonHeader()).responseJSON { (response) in
             removeLoader()
             switch response.result {
             case .success:
@@ -258,7 +266,7 @@ public class APIManager {
             for (key, value) in param {
                 multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
             }
-        }, usingThreshold: UInt64.init(), to: api, method: .put, headers: getJsonHeader()) { (result) in
+        }, usingThreshold: UInt64.init(), to: addLangParam(api), method: .put, headers: getJsonHeader()) { (result) in
             switch result{
             case .success(let upload, _, _):
                 upload.uploadProgress(closure: { (Progress) in
@@ -294,7 +302,7 @@ public class APIManager {
             showLoader()
         }
         
-        Alamofire.request(api, method: .post, parameters: params, encoding: JSONEncoding.default, headers: getJsonHeader()).authenticate(user: "ck_eb581e733c1f69769fa0ca5407cd56f7f7137942", password: "cs_bedc787fb94f3adeffae2e40475b3fbae5812305").responseJSON { (response) in
+        Alamofire.request(addLangParam(api), method: .post, parameters: params, encoding: JSONEncoding.default, headers: getJsonHeader()).authenticate(user: "ck_eb581e733c1f69769fa0ca5407cd56f7f7137942", password: "cs_bedc787fb94f3adeffae2e40475b3fbae5812305").responseJSON { (response) in
             removeLoader()
             switch response.result {
             case .success:
@@ -324,7 +332,7 @@ public class APIManager {
         if isLoaderDisplay {
             showLoader()
         }
-        Alamofire.request(api, method: .post, parameters: params, encoding: JSONEncoding.default, headers: getJsonHeader()).responseJSON { (response) in
+        Alamofire.request(addLangParam(api), method: .post, parameters: params, encoding: JSONEncoding.default, headers: getJsonHeader()).responseJSON { (response) in
             removeLoader()
             switch response.result {
             case .success:
@@ -364,7 +372,7 @@ public class APIManager {
             for (key, value) in params {
                 multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
             }
-        }, usingThreshold: UInt64.init(), to: api, method: .post, headers: getJsonHeader()) { (result) in
+        }, usingThreshold: UInt64.init(), to: addLangParam(api), method: .post, headers: getJsonHeader()) { (result) in
             switch result{
             case .success(let upload, _, _):
                 upload.uploadProgress(closure: { (Progress) in
@@ -409,7 +417,7 @@ public class APIManager {
                     }
                 }
             }
-        }, usingThreshold: UInt64.init(), to: api, method: .post, headers: getMultipartHeader()) { (result) in
+        }, usingThreshold: UInt64.init(), to: addLangParam(api), method: .post, headers: getMultipartHeader()) { (result) in
             switch result{
                 case .success(let upload, _, _):
                     upload.uploadProgress(closure: { (Progress) in

@@ -30,24 +30,34 @@ class HomeVC: UIViewController {
         
         // Do any additional setup after loading the view.
         registerTableViewMethod()
-        AppDelegate().sharedDelegate().serviceCallToGetCategory()
-        if isUserLogin() {
-            AppDelegate().sharedDelegate().serviceCallToGetUserDetail()
-            AppDelegate().sharedDelegate().serviceCallToGetPaymentGateway()
-        }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: NSNotification.Name.init(NOTIFICATION.RELOAD_AFTER_CHANGE_LANGUAGE), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshCategoryList), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CATEGORY_LIST), object: nil)
         refreshControl.addTarget(self, action: #selector(refreshHomeData), for: .valueChanged)
         tblView.refreshControl = refreshControl
-        setupData()
+        refreshData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate().sharedDelegate().showTabBar()
     }
     
+    @objc func refreshData() {
+        AppDelegate().sharedDelegate().serviceCallToGetCategory()
+        if isUserLogin() {
+            AppDelegate().sharedDelegate().serviceCallToGetUserDetail()
+            AppDelegate().sharedDelegate().serviceCallToGetPaymentGateway()
+        }
+        setupData()
+    }
+    
     @objc func refreshHomeData() {
         refreshControl.endRefreshing()
         serviceCallToGetHome(true)
+    }
+    
+    @objc func refreshCategoryList() {
+        tblView.reloadData()
     }
     
     //MARK:- Button click event
@@ -86,7 +96,6 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         tblView.register(UINib.init(nibName: "BannerAdTVC", bundle: nil), forCellReuseIdentifier: "BannerAdTVC")
         tblView.register(UINib.init(nibName: "PavilionProductTVC", bundle: nil), forCellReuseIdentifier: "PavilionProductTVC")
         tblView.register(UINib.init(nibName: "ContactInfoTVC", bundle: nil), forCellReuseIdentifier: "ContactInfoTVC")
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

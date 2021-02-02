@@ -14,6 +14,8 @@ let BUILD_VERSION = 1
 let DEVICE_ID = UIDevice.current.identifierForVendor?.uuidString
 
 let ITUNES_URL = ""
+let WHATSAPP_URL = "https://api.whatsapp.com/send?phone=971554999109"
+let APPLE_LANGUAGE_KEY = "AppleLanguages"
 
 struct FOLOOSI
 {
@@ -58,6 +60,7 @@ struct NOTIFICATION {
     static var CLEAR_CART                   =   "CLEAR_CART"
     
     static var REFRESH_BOOKMARK             =   "REFRESH_BOOKMARK"
+    static var RELOAD_AFTER_CHANGE_LANGUAGE =   "RELOAD_AFTER_CHANGE_LANGUAGE"
 }
 
 struct Platform {

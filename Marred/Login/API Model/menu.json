@@ -28,5 +28,16 @@
         "id" : 6,
         "name" : "menu_contact",
         "image" : "menu_contact"
+    },
+    {
+        "id" : 7,
+        "name" : "menu_message",
+        "image" : "menu_message"
+    },
+    {
+        "id" : 8,
+        "name" : "menu_laguange",
+        "image" : ""
     }
 ]
+
