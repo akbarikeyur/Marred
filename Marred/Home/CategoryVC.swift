@@ -33,6 +33,7 @@ class CategoryVC: UIViewController {
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(changeSelectedTab(_:)), name: NSNotification.Name.init(NOTIFICATION.SELECT_CATEGORY_CLICK), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshCategoryList), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CATEGORY_LIST), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeSelectedPavilion), name: NSNotification.Name.init(NOTIFICATION.SELECT_PAVILION_CLICK), object: nil)
         registerCollectionView()
         
         if isArabic() {
@@ -82,6 +83,10 @@ class CategoryVC: UIViewController {
                 selectTab()
             }
         }
+    }
+    
+    @objc func changeSelectedPavilion(_ noti : Notification) {
+        
     }
     
     //MARK:- Button click event
@@ -220,13 +225,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         }
         else if collectionView == pavillionCV {
             selectedPavillion = arrPavilion[indexPath.row]
-            pavillionCV.reloadData()
-            if let data = pavilionDict[String(selectedPavillion.id)], data.count > 0 {
-                arrPavilionCategory = data
-                shopCV.reloadData()
-            }else{
-                serviceCallToGetPavilionCategory()
-            }
+            selectPavilion()
         }
         else if collectionView == categoryCV {
             let vc : SubCategoryVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryVC
@@ -261,6 +260,16 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
                     serviceCallToGetPavilionCategory()
                 }
             }
+        }
+    }
+    
+    func selectPavilion() {
+        pavillionCV.reloadData()
+        if let data = pavilionDict[String(selectedPavillion.id)], data.count > 0 {
+            arrPavilionCategory = data
+            shopCV.reloadData()
+        }else{
+            serviceCallToGetPavilionCategory()
         }
     }
 }

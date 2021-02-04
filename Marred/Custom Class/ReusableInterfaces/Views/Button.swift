@@ -111,6 +111,10 @@ class Button: UIButton {
             if buttonImage == "back" && isArabic() {
                 buttonImage = "back_arabic"
             }
+            else if buttonImage == "next_yellow" && isArabic() {
+                buttonImage = "next_yellow_arabic"
+            }
+            
             self.setImage(UIImage(named: buttonImage), for: .normal)
         }
     }

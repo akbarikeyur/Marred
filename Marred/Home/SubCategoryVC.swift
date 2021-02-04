@@ -30,7 +30,9 @@ class SubCategoryVC: UIViewController {
         if arrSubCategory.count == 0 {
             serviceCallToGetSubCategory()
         }else{
-            selectedSubCat = arrSubCategory[0]
+            if selectedSubCat.term_id == 0 {
+                selectedSubCat = arrSubCategory[0]
+            }
             page = 1
             serviceCallToGetProductList()
         }

@@ -16,6 +16,7 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var profileImgBtn: Button!
     @IBOutlet weak var nameLbl: Label!
     @IBOutlet weak var emailLbl: Label!
+    @IBOutlet weak var backBtn: Button!
     
     var arrMenu = [MenuModel]()
     
@@ -38,6 +39,7 @@ class SideMenuVC: UIViewController {
             loginView.isHidden = false
             profileView.isHidden = true
         }
+        backBtn.buttonImage = "back"
     }
     
     @objc func updateUserData() {

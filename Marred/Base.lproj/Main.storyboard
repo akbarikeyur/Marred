@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lXP-D9-Ivi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lXP-D9-Ivi">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1713,6 +1713,7 @@
                         <viewLayoutGuide key="safeArea" id="RII-L0-MCw"/>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="asb-NA-9Wl" id="0sG-kX-EM6"/>
                         <outlet property="emailLbl" destination="gJY-lH-vjV" id="9kg-kF-Z0P"/>
                         <outlet property="loginView" destination="bxb-RZ-Dcc" id="LZO-nY-333"/>
                         <outlet property="nameLbl" destination="hNb-DC-VgD" id="gNG-j6-2yn"/>
@@ -2544,10 +2545,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9l-Jd-nyV">
-                                                                <rect key="frame" x="0.0" y="71.5" width="320" height="74.5"/>
+                                                                <rect key="frame" x="0.0" y="71.5" width="320" height="71.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd5-VD-d1T" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="10" width="300" height="19.5"/>
+                                                                        <rect key="frame" x="10" y="10" width="300" height="16.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -2562,7 +2563,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEM-60-fcZ" customClass="TextField" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="34.5" width="300" height="40"/>
+                                                                        <rect key="frame" x="10" y="31.5" width="300" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="Bbb-ns-Nyk"/>
                                                                         </constraints>
@@ -2606,7 +2607,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUu-MV-eBu">
-                                                                <rect key="frame" x="0.0" y="146" width="320" height="71.5"/>
+                                                                <rect key="frame" x="0.0" y="143" width="320" height="71.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Business Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4b-lx-M6M" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="10" width="300" height="16.5"/>
@@ -2668,7 +2669,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1l-US-Cn5">
-                                                                <rect key="frame" x="0.0" y="217.5" width="320" height="71.5"/>
+                                                                <rect key="frame" x="0.0" y="214.5" width="320" height="71.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msJ-aL-2ao" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="10" width="300" height="16.5"/>
@@ -2780,7 +2781,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nH2-uf-HPS">
-                                                                <rect key="frame" x="0.0" y="309" width="320" height="81.5"/>
+                                                                <rect key="frame" x="0.0" y="306" width="320" height="81.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Shop in Pavillions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKk-Wv-Bjh" customClass="Label" customModule="Marred" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="20" width="300" height="16.5"/>
@@ -2869,10 +2870,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nig-QY-ua1">
-                                                                <rect key="frame" x="0.0" y="390.5" width="320" height="96.5"/>
+                                                                <rect key="frame" x="0.0" y="387.5" width="320" height="99.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Shop in Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK8-rx-58d" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="15" width="300" height="16.5"/>
+                                                                        <rect key="frame" x="10" y="15" width="300" height="19.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -2887,7 +2888,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTa-SK-hyc" customClass="View" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="36.5" width="300" height="40"/>
+                                                                        <rect key="frame" x="10" y="39.5" width="300" height="40"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-23-i2x" customClass="TextField" customModule="Marred" customModuleProvider="target">
                                                                                 <rect key="frame" x="10" y="0.0" width="270" height="40"/>

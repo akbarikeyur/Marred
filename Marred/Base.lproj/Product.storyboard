@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -124,13 +124,16 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJm-MY-Jjy">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJm-MY-Jjy" customClass="Button" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="250" y="10" width="70" height="66"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="9nm-qv-BES"/>
                                                             <constraint firstAttribute="height" constant="66" id="gIf-Bw-l72"/>
                                                         </constraints>
                                                         <state key="normal" image="next_yellow"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="next_yellow"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="clickToProcessToCheckout:" destination="80i-9T-RZ2" eventType="touchUpInside" id="dBe-dc-8oP"/>
                                                         </connections>
@@ -903,6 +906,7 @@
                         <outlet property="applyCouponBtn" destination="B40-lF-9Bu" id="Acg-sM-YJi"/>
                         <outlet property="bottomView" destination="NlI-gK-Ztc" id="UTl-9h-dro"/>
                         <outlet property="calculateView" destination="a6N-CT-HDz" id="XC9-69-jEf"/>
+                        <outlet property="checkoutBtn" destination="TJm-MY-Jjy" id="ghq-mG-DTo"/>
                         <outlet property="cityTxt" destination="pxF-7O-BiQ" id="3Ab-At-8rG"/>
                         <outlet property="constraintHeightTblView" destination="3oo-hk-45m" id="GDe-xP-bdg"/>
                         <outlet property="countryFlagImg" destination="KbJ-Fj-Ld1" id="LmV-Zh-HwK"/>
@@ -2056,10 +2060,13 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyi-Bn-q9g">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyi-Bn-q9g" customClass="Button" customModule="Marred" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="15" width="320" height="61"/>
                                                         <inset key="imageEdgeInsets" minX="150" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" image="next_yellow"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="next_yellow"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="clickToPayNow:" destination="phc-4e-0R7" eventType="touchUpInside" id="6wZ-ow-k6S"/>
                                                         </connections>

@@ -28,6 +28,7 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var myScroll: UIScrollView!
     @IBOutlet weak var noDataView: UIView!
     @IBOutlet weak var applyCouponBtn: Button!
+    @IBOutlet weak var checkoutBtn: Button!
     
     var isLoader = false
     var arrCart = [CartModel]()
@@ -52,6 +53,7 @@ class ShoppingCartVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate().sharedDelegate().showTabBar()
+        checkoutBtn.buttonImage = "next_yellow"
     }
     
     override func viewDidAppear(_ animated: Bool) {

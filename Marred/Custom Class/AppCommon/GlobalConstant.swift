@@ -52,6 +52,7 @@ struct NOTIFICATION {
     static var REDICT_TAB_BAR               =   "REDICT_TAB_BAR"
     static var NOTIFICATION_TAB_CLICK       =   "NOTIFICATION_TAB_CLICK"
     static var SELECT_CATEGORY_CLICK        =   "SELECT_CATEGORY_CLICK"
+    static var SELECT_PAVILION_CLICK        =   "SELECT_PAVILION_CLICK"
     
     static var UPDATE_CATEGORY_LIST         =   "UPDATE_CATEGORY_LIST"
     static var REDIRECT_CONTACT_US          =   "REDIRECT_CONTACT_US"

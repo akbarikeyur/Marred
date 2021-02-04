@@ -40,6 +40,12 @@ class PavilionProductTVC: UITableViewCell {
         topPageControl.currentPage = 0
     }
     
+    @IBAction func clickToViewAll(_ sender: Any) {
+        let vc : SubCategoryVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryVC
+        vc.arrSubCategory = dictHome.data
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -100,7 +106,8 @@ extension PavilionProductTVC : UICollectionViewDelegate, UICollectionViewDataSou
 //            selectedCategory = indexPath.row
 //            categoryCV.reloadData()
             let vc : SubCategoryVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryVC
-            vc.categoryData = dictHome.data[indexPath.row]
+            vc.arrSubCategory = dictHome.data
+            vc.selectedSubCat = dictHome.data[indexPath.row]
             UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
         }
         else {
