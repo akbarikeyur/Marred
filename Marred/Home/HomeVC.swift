@@ -43,6 +43,8 @@ class HomeVC: UIViewController {
     }
     
     @objc func refreshData() {
+        arrData = [HomeDisplayModel]()
+        tblView.reloadData()
         AppDelegate().sharedDelegate().serviceCallToGetCategory()
         if isUserLogin() {
             AppDelegate().sharedDelegate().serviceCallToGetUserDetail()

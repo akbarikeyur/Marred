@@ -128,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK:- Change language
     func changeLanguage()
     {
-        if L102Language.currentAppleLanguage() == "en" {
+        if L102Language.currentAppleLanguage() == "en" || L102Language.currentAppleLanguage().contains("en") {
             UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
             UserDefaults.standard.synchronize()
             // Update the language by swaping bundle
@@ -150,9 +150,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         container = MFSideMenuContainerViewController()
         customTabbarVc = CustomTabBarController()
         navigateToDashBoard()
-        delay(2.0) {
-            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.RELOAD_AFTER_CHANGE_LANGUAGE), object: nil)
-        }
+//        delay(1.0) {
+//            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.RELOAD_AFTER_CHANGE_LANGUAGE), object: nil)
+//        }
     }
     
     //MARK:- Notification

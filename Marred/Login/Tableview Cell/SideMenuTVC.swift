@@ -18,7 +18,7 @@ class SideMenuTVC: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         languageSwitch.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
-        if L102Language.currentAppleLanguage() == "ar" {
+        if L102Language.currentAppleLanguage() == "ar" || L102Language.currentAppleLanguage().contains("ar") {
             self.languageSwitch.setOn(true, animated: false)
         }
         else{

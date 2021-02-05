@@ -1206,6 +1206,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J9QFXLMG88;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Marred/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1228,6 +1229,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J9QFXLMG88;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Marred/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
