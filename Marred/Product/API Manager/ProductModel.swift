@@ -55,14 +55,22 @@ struct ProductModel {
 }
 
 struct ProductDetailModel {
-    var get_total_sales, get_stock_quantity : Int!
-    var get_name, get_status, get_description, get_short_description, get_sku, get_price, get_regular_price, get_sale_price, get_tax_status, get_stock_status, get_purchase_note : String!
+    var get_total_sales, get_stock_quantity, product_id : Int!
+    var get_name, get_status, get_description, get_short_description, get_sku, get_price, get_regular_price, get_sale_price, get_tax_status, get_stock_status, get_purchase_note, get_type, thumbnail, vendor : String!
     var get_featured, get_virtual, get_manage_stock : Bool!
     var related_products : [ProductModel]!
     var get_categories : [CategoryModel]!
+    var brands : BrandModel!
+    var images : [String]!
+    var get_available_variations : [VariationModel]!
     
     init(_ dict : [String : Any])
     {
+        product_id = AppModel.shared.getIntData(dict, "product_id")
+        brands = BrandModel.init(dict["brands"] as? [String : Any] ?? [String : Any]())
+        get_type = dict["get_type"] as? String ?? ""
+        thumbnail = dict["thumbnail"] as? String ?? ""
+        vendor = dict["vendor"] as? String ?? ""
         get_total_sales = AppModel.shared.getIntData(dict, "get_total_sales")
         get_stock_quantity = AppModel.shared.getIntData(dict, "get_stock_quantity")
         get_name = dict["get_name"] as? String ?? ""
@@ -92,6 +100,56 @@ struct ProductDetailModel {
                 related_products.append(ProductModel.init(temp))
             }
         }
+        
+        images = dict["images"] as? [String] ?? [String]()
+        get_available_variations = [VariationModel]()
+        if let data = dict["get_available_variations"] as? [[String : Any]] {
+            for temp in data {
+                get_available_variations.append(VariationModel.init(temp))
+            }
+        }
+    }
+}
+
+struct VariationModel {
+    var variation_id : Int!
+    var attribute_pa_size, attribute_pa_color, display_price, full_src, thumb_src : String!
+    var isForSize, isForColor : Bool!
+    
+    init(_ dict : [String : Any])
+    {
+        variation_id = AppModel.shared.getIntData(dict, "variation_id")
+        attribute_pa_size = ""
+        attribute_pa_color = ""
+        isForSize = false
+        isForColor = false
+        if let tempDict = dict["attributes"] as? [String : Any] {
+            if tempDict["attribute_pa_size"] != nil {
+                isForSize = true
+                attribute_pa_size = AppModel.shared.getStringData(tempDict, "attribute_pa_size")
+            }
+            if tempDict["attribute_pa_color"] != nil {
+                isForColor = true
+                attribute_pa_color = AppModel.shared.getStringData(tempDict, "attribute_pa_color")
+            }
+        }
+        display_price = AppModel.shared.getStringData(dict, "display_price")
+        full_src = ""
+        thumb_src = ""
+        if let tempDict = dict["attributes"] as? [String : Any] {
+            full_src = AppModel.shared.getStringData(tempDict, "full_src")
+            thumb_src = AppModel.shared.getStringData(tempDict, "thumb_src")
+        }
+    }
+}
+
+struct ImageModel {
+    var id : Int!
+    var src : String!
+    
+    init(_ dict : [String : Any]) {
+        id = AppModel.shared.getIntData(dict, "id")
+        src = dict["src"] as? String ?? ""
     }
 }
 

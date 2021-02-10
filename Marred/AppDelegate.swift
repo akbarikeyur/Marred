@@ -236,7 +236,7 @@ extension AppDelegate {
         window?.isUserInteractionEnabled = false
         activityLoader = NVActivityIndicatorView(frame: CGRect(x: ((window?.frame.size.width)!-50)/2, y: ((window?.frame.size.height)!-50)/2, width: 50, height: 50))
         activityLoader.type = .ballSpinFadeLoader
-        activityLoader.color = GrayColor
+        activityLoader.color = DarkYellowColor
         window?.addSubview(activityLoader)
         activityLoader.startAnimating()
     }

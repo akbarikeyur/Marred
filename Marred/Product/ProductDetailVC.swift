@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import DropDown
 class ProductDetailVC: UIViewController {
 
     @IBOutlet weak var myScroll: UIScrollView!
@@ -27,17 +27,28 @@ class ProductDetailVC: UIViewController {
     @IBOutlet weak var relatedProductView: UIView!
     @IBOutlet weak var productCV: UICollectionView!
     @IBOutlet weak var descLbl: Label!
+    @IBOutlet weak var sizeColorView: UIView!
+    @IBOutlet weak var sizeView: UIView!
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var sizeLbl: Label!
+    @IBOutlet weak var colorLbl: Label!
     
     var selectedImageIndex = 0
     var product = ProductModel.init([String : Any]())
     var productDetail = ProductDetailModel.init([String : Any]())
     var isFavorite = false
     
+    var arrSize = [VariationModel]()
+    var arrColor = [VariationModel]()
+    var selectedColor = ""
+    var selectedVariation = VariationModel.init([String : Any]())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         registerCollectionView()
+        sizeColorView.isHidden = true
         setupProduct()
         serviceCallToGetProductDetail()
         wishBtn.isSelected = isFavorite
@@ -53,15 +64,15 @@ class ProductDetailVC: UIViewController {
         nameLbl.text = product.title
         brandLbl.text = product.brands.name
         quantityBtn.setTitle("1", for: .normal)
-        priceLbl.text = product.price
+        priceLbl.text = displayPriceWithCurrency(product.price)
         soldByLbl.text = getTranslate("sold_by_colon") + product.vendor
     }
     
     func setupProductDetail() {
-        setImageBackgroundImage(coverImgView, product.thumbnail, IMAGE.PLACEHOLDER)
+        setImageBackgroundImage(coverImgView, productDetail.thumbnail, IMAGE.PLACEHOLDER)
         imageCV.reloadData()
         nameLbl.text = productDetail.get_name
-        brandLbl.text = product.brands.name
+        brandLbl.text = productDetail.brands.name
         skuLbl.text = productDetail.get_sku
         quantityBtn.setTitle("1", for: .normal)
         priceLbl.text = displayPriceWithCurrency(productDetail.get_price)
@@ -75,7 +86,7 @@ class ProductDetailVC: UIViewController {
         }
         let tempCat = getTranslate("categories_colon") + strCat
         categoryLbl.attributedText = attributedStringWithColor(tempCat, [getTranslate("categories_colon")], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 14.0))
-        soldByLbl.attributedText = attributedStringWithColor(getTranslate("sold_by_colon") + product.vendor, [getTranslate("sold_by_colon")], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 14.0))
+        soldByLbl.attributedText = attributedStringWithColor(getTranslate("sold_by_colon") + productDetail.vendor, [getTranslate("sold_by_colon")], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 14.0))
         stockLbl.text = getStockStatus(productDetail.get_stock_status)
         stockLbl.textColor = getStockStatusColor(productDetail.get_stock_status)
         clickToSelectTab(descBtn)
@@ -84,6 +95,60 @@ class ProductDetailVC: UIViewController {
             relatedProductView.isHidden = true
         }else{
             relatedProductView.isHidden = false
+        }
+        
+        //Variation
+        sizeColorView.isHidden = true
+        sizeView.isHidden = true
+        colorView.isHidden = true
+        arrSize = [VariationModel].init()
+        arrColor = [VariationModel].init()
+        selectedVariation = VariationModel.init([String : Any]())
+        if productDetail.get_available_variations.count > 0 {
+            for temp in productDetail.get_available_variations {
+                if temp.isForSize {
+                    arrSize.append(temp)
+                }
+                if temp.isForColor {
+                    arrColor.append(temp)
+                }
+            }
+            if arrSize.count > 0 {
+                sizeColorView.isHidden = false
+                sizeView.isHidden = false
+            }
+            if arrColor.count > 0 {
+                sizeColorView.isHidden = false
+                colorView.isHidden = false
+            }
+        }
+    }
+    
+    func getSizeArray() {
+        arrSize = [VariationModel]()
+        for temp in productDetail.get_available_variations {
+            if temp.attribute_pa_color == selectedColor {
+                let index = arrSize.firstIndex { (tmpSize) -> Bool in
+                    tmpSize.attribute_pa_size == temp.attribute_pa_size
+                }
+                if index == nil {
+                    arrSize.append(temp)
+                }
+            }
+        }
+    }
+    
+    func getColorArray() {
+        arrColor = [VariationModel]()
+        for temp in productDetail.get_available_variations {
+            if temp.attribute_pa_size == sizeLbl.text {
+                let index = arrColor.firstIndex { (tmpSize) -> Bool in
+                    tmpSize.attribute_pa_color == temp.attribute_pa_color
+                }
+                if index == nil {
+                    arrColor.append(temp)
+                }
+            }
         }
     }
     
@@ -100,7 +165,7 @@ class ProductDetailVC: UIViewController {
         sender.isSelected = !sender.isSelected
         var param = [String : Any]()
         param["user_id"] = AppModel.shared.currentUser.ID
-        param["product_id"] = product.id
+        param["product_id"] = productDetail.product_id
         if sender.isSelected {
             ProductAPIManager.shared.serviceCallToAddBookmark(param) {
                 NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_BOOKMARK), object: nil)
@@ -117,6 +182,43 @@ class ProductDetailVC: UIViewController {
     @IBAction func clickToCircle(_ sender: Any) {
         
     }
+    
+    @IBAction func clickToSelectSize(_ sender: UIButton) {
+        self.view.endEditing(true)
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        var arrData = [String]()
+        for temp in arrSize {
+            arrData.append(temp.attribute_pa_size)
+        }
+        dropDown.dataSource = arrData
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.sizeLbl.text = item
+            if self.colorLbl.text != "Select color" {
+                self.getColorArray()
+            }
+        }
+        dropDown.show()
+    }
+    
+    @IBAction func clickToSelectColor(_ sender: UIButton) {
+        self.view.endEditing(true)
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        var arrData = [String]()
+        for temp in arrColor {
+            arrData.append(temp.attribute_pa_color)
+        }
+        dropDown.dataSource = arrData
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.colorLbl.text = item
+            if self.sizeLbl.text != "Select size" {
+                self.getSizeArray()
+            }
+        }
+        dropDown.show()
+    }
+    
     
     @IBAction func clickToChangeQuantity(_ sender: UIButton) {
         var quantity : Int = Int((quantityBtn.titleLabel?.text)!)!
@@ -152,14 +254,14 @@ class ProductDetailVC: UIViewController {
             descLbl.attributedText = productDetail.get_description.html2AttributedString
         }
         else if sender == vendorBtn {
-            descLbl.text = getTranslate("vendor_information") + product.vendor
+            descLbl.text = getTranslate("vendor_information") + productDetail.vendor
             descLbl.attributedText = descLbl.text?.html2AttributedString
         }
     }
     
     @IBAction func clickToSeeFullImage(_ sender: Any) {
-        if product.thumbnail != "" {
-            displayFullScreenImage([product.thumbnail], 0)
+        if productDetail.thumbnail != "" {
+            displayFullScreenImage([productDetail.thumbnail], 0)
         }
     }
     /*
@@ -184,7 +286,7 @@ extension ProductDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == imageCV {
-            return (product.thumbnail == "") ? 0 : 1
+            return productDetail.images.count
         }
         return productDetail.related_products.count
     }
@@ -200,7 +302,7 @@ extension ProductDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == imageCV {
             let cell : ProductImageCVC = imageCV.dequeueReusableCell(withReuseIdentifier: "ProductImageCVC", for: indexPath) as! ProductImageCVC
-            setImageBackgroundImage(cell.imgView, product.thumbnail, IMAGE.PLACEHOLDER)
+            setImageBackgroundImage(cell.imgView,productDetail.images[indexPath.row], IMAGE.PLACEHOLDER)
             cell.outerView.setCornerRadius((imageCV.frame.size.width-10)/2)
             if selectedImageIndex == indexPath.row {
                 cell.outerView.layer.borderColor = DarkYellowColor.cgColor
@@ -217,8 +319,11 @@ extension ProductDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == imageCV {
-            selectedImageIndex = indexPath.row
-            imageCV.reloadData()
+            var arrData = [String]()
+            for temp in productDetail.images {
+                arrData.append(temp)
+            }
+            displayFullScreenImage(arrData, indexPath.row)
         }
         else if collectionView == productCV {
             product = productDetail.related_products[indexPath.row]
@@ -238,8 +343,12 @@ extension ProductDetailVC {
     
     func serviceCallToAddToCart() {
         var param = [String : Any]()
-        param["product_id"] = String(product.id)
+        param["product_id"] = String(productDetail.product_id)
         param["quantity"] = Int((quantityBtn.titleLabel?.text)!)!
+        if selectedVariation.variation_id != 0 {
+            param["variation_id"] = selectedVariation.variation_id
+        }
+        printData(param)
         ProductAPIManager.shared.serviceCallToAddToCart(param) {
             self.quantityBtn.setTitle("1", for: .normal)
             NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART), object: nil)

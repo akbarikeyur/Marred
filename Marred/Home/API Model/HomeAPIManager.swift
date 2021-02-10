@@ -14,7 +14,7 @@ public class HomeAPIManager {
 
     func serviceCallToGetHome(_ isLoader : Bool, _ completion: @escaping (_ result : [String : Any]) -> Void) {
         APIManager.shared.callPostRequest(API.GET_HOME, [String : Any](), isLoader) { (dict) in
-            printData(dict)
+            //printData(dict)
             completion(dict)
         }
     }
