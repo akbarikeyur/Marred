@@ -172,6 +172,27 @@ func getHomePavalionData() -> [HomeModel]
     return arrData
 }
 
+func setPavilionData(_ data: [PavilionModel])
+{
+    var arrData = [[String : Any]]()
+    for temp in data {
+        arrData.append(temp.dictionary())
+    }
+    setDataToPreference(data: arrData as AnyObject, forKey: "pavilion_data")
+}
+
+func getPavilionData() -> [PavilionModel]
+{
+    var arrData = [PavilionModel]()
+    if let data : [[String : Any]] = getDataFromPreference(key: "pavilion_data") as? [[String : Any]]
+    {
+        for temp in data {
+            arrData.append(PavilionModel.init(temp))
+        }
+    }
+    return arrData
+}
+
 //Address
 func setBillingAddress(_ dict : AddressModel) {
     setDataToPreference(data: dict.dictionary() as AnyObject, forKey: "user_billing_address")

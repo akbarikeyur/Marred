@@ -18,6 +18,7 @@ class SubCategoryVC: UIViewController {
     var categoryData = CategoryModel.init([String : Any]())
     var arrSubCategory = [CategoryModel]()
     var selectedSubCat = CategoryModel.init([String : Any]())
+    var selectedPavilion = PavilionModel.init([String : Any]())
     var page = 1
     var arrProduct = [ProductModel]()
     
@@ -27,7 +28,10 @@ class SubCategoryVC: UIViewController {
         // Do any additional setup after loading the view.
         registerCollectionView()
         nameLbl.text = ""
-        if arrSubCategory.count == 0 {
+        if selectedPavilion.id != 0 {
+            serviceCallToGetPavilionCategory()
+        }
+        else if arrSubCategory.count == 0 {
             serviceCallToGetSubCategory()
         }else{
             if selectedSubCat.term_id == 0 {
@@ -130,6 +134,24 @@ extension SubCategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, 
 }
 
 extension SubCategoryVC {
+    
+    func serviceCallToGetPavilionCategory() {
+        HomeAPIManager.shared.serviceCallToGetPavilionCategory(selectedPavilion.id) { (data) in
+            self.arrSubCategory = [CategoryModel]()
+            for temp in data {
+                self.arrSubCategory.append(CategoryModel.init(temp))
+            }
+            self.categoryCV.reloadData()
+            if self.arrSubCategory.count > 0 {
+                self.selectedSubCat = self.arrSubCategory[0]
+                self.page = 1
+                self.arrProduct = [ProductModel]()
+                self.serviceCallToGetProductList()
+            }
+            self.noDataFound.isHidden = (self.arrSubCategory.count > 0)
+        }
+    }
+    
     func serviceCallToGetSubCategory() {
         HomeAPIManager.shared.serviceCallToGetSubCategory(categoryData.term_id) { (data) in
             self.arrSubCategory = [CategoryModel]()

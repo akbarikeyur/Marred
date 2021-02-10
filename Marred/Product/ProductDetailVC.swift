@@ -157,6 +157,11 @@ class ProductDetailVC: UIViewController {
         }
     }
     
+    @IBAction func clickToSeeFullImage(_ sender: Any) {
+        if product.thumbnail != "" {
+            displayFullScreenImage([product.thumbnail], 0)
+        }
+    }
     /*
     // MARK: - Navigation
 

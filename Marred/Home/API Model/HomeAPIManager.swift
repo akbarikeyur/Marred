@@ -61,6 +61,22 @@ public class HomeAPIManager {
         }
     }
     
+    func serviceCallToGetPavilionList() {
+        APIManager.shared.callPostRequest(API.GET_PAVILION, [String : Any](), true) { (dict) in
+            printData(dict)
+            if let data = dict["pavailions"] as? [[String : Any]] {
+                var arrPavilion = [PavilionModel]()
+                for temp in data {
+                    arrPavilion.append(PavilionModel.init(temp))
+                }
+                if arrPavilion.count > 0 {
+                    setPavilionData(arrPavilion)
+                    NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_PIVILION_DATA), object: nil)
+                }
+            }
+        }
+    }
+    
     func serviceCallToGetPavilionCategory(_ id : Int, _ completion: @escaping (_ data : [[String : Any]]) -> Void) {
         APIManager.shared.callPostRequest(API.GET_PAVILION_CATEGORY, ["pavilions_id" : id], true) { (dict) in
             printData(dict)

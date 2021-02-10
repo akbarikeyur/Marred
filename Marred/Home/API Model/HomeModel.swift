@@ -65,12 +65,16 @@ struct HomeDisplayModel {
 
 struct PavilionModel {
     var id : Int!
-    var name, image : String!
+    var title, img : String!
     
     init(_ dict : [String : Any])
     {
         id = AppModel.shared.getIntData(dict, "id")
-        name = dict["name"] as? String ?? ""
-        image = dict["image"] as? String ?? ""
+        title = dict["title"] as? String ?? ""
+        img = dict["img"] as? String ?? ""
+    }
+    
+    func dictionary() -> [String : Any] {
+        return ["id" : id!, "title" : title!, "img" : img!]
     }
 }

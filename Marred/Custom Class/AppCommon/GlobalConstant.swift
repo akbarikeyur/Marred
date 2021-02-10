@@ -62,6 +62,7 @@ struct NOTIFICATION {
     
     static var REFRESH_BOOKMARK             =   "REFRESH_BOOKMARK"
     static var RELOAD_AFTER_CHANGE_LANGUAGE =   "RELOAD_AFTER_CHANGE_LANGUAGE"
+    static var UPDATE_PIVILION_DATA         =   "UPDATE_PIVILION_DATA"
 }
 
 struct Platform {

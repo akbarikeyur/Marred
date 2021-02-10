@@ -22,6 +22,7 @@ struct API {
     static let GET_HOME                               =       BASE_URL + "v1/getHomepage"
     
     static let GET_CATEGORY                           =       BASE_URL + "v1/get_cateogories"
+    static let GET_PAVILION                           =       BASE_URL + "v1/getGlobalPavilion"
     static let GET_PAVILION_CATEGORY                  =       BASE_URL + "v1/pavilions"
     
     static let SEARCH_PRODUCT                         =       BASE_URL + "v1/user/ProductSearch"

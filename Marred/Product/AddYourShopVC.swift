@@ -33,7 +33,7 @@ class AddYourShopVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(setPavilionDetail), name: NSNotification.Name.init(NOTIFICATION.UPDATE_PIVILION_DATA), object: nil)
         setupDetail()
     }
     
@@ -57,18 +57,24 @@ class AddYourShopVC: UIViewController {
             }
         }
         
-        for temp in getJsonFromFile("pavilion") {
-            arrPavilion.append(PavilionModel.init(temp))
-        }
-        if arrPavilion.count > 0 {
-            selectedPavilion = arrPavilion[0]
-            pavilionFlagImg.image = UIImage(named: selectedPavilion.image)
-            pavillionTxt.text = getTranslate(selectedPavilion.name)
+        if getPavilionData().count == 0 {
+            HomeAPIManager.shared.serviceCallToGetPavilionList()
+        }else{
+            setPavilionDetail()
         }
         
         if arrCategory.count > 0 {
             selectedCategory = arrCategory[0]
             categoryTxt.text = selectedCategory.name
+        }
+    }
+    
+    @objc func setPavilionDetail() {
+        arrPavilion = getPavilionData()
+        if arrPavilion.count > 0 {
+            selectedPavilion = arrPavilion[0]
+            pavilionFlagImg.image = UIImage(named: selectedPavilion.img)
+            pavillionTxt.text = getTranslate(selectedPavilion.title)
         }
     }
     
@@ -99,13 +105,13 @@ class AddYourShopVC: UIViewController {
         dropDown.anchorView = sender
         var arrData = [String]()
         for temp in arrPavilion {
-            arrData.append(temp.name)
+            arrData.append(temp.title)
         }
         dropDown.dataSource = arrData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.selectedPavilion = self.arrPavilion[index]
-            self.pavilionFlagImg.image = UIImage(named: self.selectedPavilion.image)
-            self.pavillionTxt.text = getTranslate(self.selectedPavilion.name)
+            setImageBackgroundImage(self.pavilionFlagImg, self.selectedPavilion.img, IMAGE.PLACEHOLDER)
+            self.pavillionTxt.text = getTranslate(self.selectedPavilion.title)
         }
         dropDown.show()
     }
@@ -161,7 +167,7 @@ class AddYourShopVC: UIViewController {
             param["email"] = emailTxt.text
             param["phonecode"] = phonecodeLbl.text
             param["phone"] = phoneTxt.text
-            param["pavilion"] = selectedPavilion.name
+            param["pavilion"] = selectedPavilion.title
             param["category"] = selectedCategory.name
             param["request"] = requestTxtview.text
             printData(param)

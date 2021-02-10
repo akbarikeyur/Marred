@@ -7,95 +7,35 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Roboto-Bold.ttf">
-            <string>Roboto-Bold</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PavillionShopCVC" id="gTV-IL-0wX" customClass="PavillionShopCVC" customModule="Marred" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PavillionShopCVC" id="gTV-IL-0wX" customClass="PavillionShopCVC" customModule="Maared_24_معارض" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dL9-mq-HWk" customClass="View" customModule="Marred" customModuleProvider="target">
-                        <rect key="frame" x="5" y="5" width="60" height="80"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uae" translatesAutoresizingMaskIntoConstraints="NO" id="poD-I6-mxL">
-                                <rect key="frame" x="8" y="5" width="44" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="4lt-2g-pxb"/>
-                                    <constraint firstAttribute="width" constant="44" id="Z6h-hM-hba"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zad-d5-LuK" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                <rect key="frame" x="5" y="46.5" width="50" height="28.5"/>
-                                <string key="text">UAE
-Pavilion</string>
-                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ab"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
-                                        <integer key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Zad-d5-LuK" secondAttribute="trailing" constant="5" id="BHL-wK-oRp"/>
-                            <constraint firstItem="Zad-d5-LuK" firstAttribute="top" secondItem="poD-I6-mxL" secondAttribute="bottom" constant="3.5" id="Lyr-4e-SF4"/>
-                            <constraint firstAttribute="bottom" secondItem="Zad-d5-LuK" secondAttribute="bottom" constant="5" id="hlD-H8-tXI"/>
-                            <constraint firstItem="poD-I6-mxL" firstAttribute="centerX" secondItem="dL9-mq-HWk" secondAttribute="centerX" id="mJ5-Yk-YOg"/>
-                            <constraint firstItem="Zad-d5-LuK" firstAttribute="leading" secondItem="dL9-mq-HWk" secondAttribute="leading" constant="5" id="oBR-bs-PCV"/>
-                            <constraint firstItem="poD-I6-mxL" firstAttribute="top" secondItem="dL9-mq-HWk" secondAttribute="top" constant="5" id="uKg-n9-aSm"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderColorTypeAdapter">
-                                <integer key="value" value="8"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="N8B-KU-ai1">
-                        <rect key="frame" x="64" y="37.5" width="7.5" height="15"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uae" translatesAutoresizingMaskIntoConstraints="NO" id="poD-I6-mxL">
+                        <rect key="frame" x="10" y="10" width="60" height="60"/>
                     </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="dL9-mq-HWk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="4Kg-ZC-Hb5"/>
-                <constraint firstAttribute="bottom" secondItem="dL9-mq-HWk" secondAttribute="bottom" constant="5" id="Lah-7r-QX6"/>
-                <constraint firstItem="N8B-KU-ai1" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="WWV-iA-yBF"/>
-                <constraint firstItem="N8B-KU-ai1" firstAttribute="leading" secondItem="dL9-mq-HWk" secondAttribute="trailing" constant="-1" id="dTo-dT-AjI"/>
-                <constraint firstItem="dL9-mq-HWk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="fts-r0-oz9"/>
-                <constraint firstAttribute="trailing" secondItem="dL9-mq-HWk" secondAttribute="trailing" constant="15" id="sxt-78-ggL"/>
+                <constraint firstAttribute="trailing" secondItem="poD-I6-mxL" secondAttribute="trailing" constant="10" id="3Yd-jI-Dl6"/>
+                <constraint firstItem="poD-I6-mxL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="FJl-VO-K0q"/>
+                <constraint firstItem="poD-I6-mxL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="PSG-sk-a0U"/>
+                <constraint firstAttribute="bottom" secondItem="poD-I6-mxL" secondAttribute="bottom" constant="10" id="prf-A5-bDI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="arrowImg" destination="N8B-KU-ai1" id="RZe-Dg-cOX"/>
                 <outlet property="imgView" destination="poD-I6-mxL" id="dWw-2T-GOV"/>
-                <outlet property="nameLbl" destination="Zad-d5-LuK" id="WVh-PC-YG3"/>
-                <outlet property="outerView" destination="dL9-mq-HWk" id="95G-Uh-fhu"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="black_arrow" width="7.5" height="15"/>
         <image name="uae" width="512" height="512"/>
     </resources>
 </document>

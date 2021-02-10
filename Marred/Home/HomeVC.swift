@@ -13,7 +13,6 @@ struct HOME {
     static let BANNER_AD = "BANNER_AD"
     static let PRODUCT_LIST = "PRODUCT_LIST"
     static let CONTACT_INFO = "CONTACT_INFO"
-    
 }
 
 class HomeVC: UIViewController {
