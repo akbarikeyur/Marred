@@ -56,9 +56,10 @@ struct ProductModel {
 
 struct ProductDetailModel {
     var get_total_sales, get_stock_quantity : Int!
-    var get_name, get_status, get_description, get_short_description, get_sku, get_price, get_regular_price, get_sale_price, get_tax_status, get_stock_status, get_purchase_note, get_categories : String!
+    var get_name, get_status, get_description, get_short_description, get_sku, get_price, get_regular_price, get_sale_price, get_tax_status, get_stock_status, get_purchase_note : String!
     var get_featured, get_virtual, get_manage_stock : Bool!
     var related_products : [ProductModel]!
+    var get_categories : [CategoryModel]!
     
     init(_ dict : [String : Any])
     {
@@ -72,7 +73,12 @@ struct ProductDetailModel {
         get_tax_status = dict["get_tax_status"] as? String ?? ""
         get_stock_status = dict["get_stock_status"] as? String ?? ""
         get_purchase_note = dict["get_purchase_note"] as? String ?? ""
-        get_categories = dict["get_categories"] as? String ?? ""
+        get_categories = [CategoryModel]()
+        if let data = dict["get_categories"] as? [[String : Any]] {
+            for temp in data {
+                get_categories.append(CategoryModel.init(temp))
+            }
+        }
         get_price = AppModel.shared.getStringData(dict, "get_price")
         get_regular_price = AppModel.shared.getStringData(dict, "get_regular_price")
         get_sale_price = AppModel.shared.getStringData(dict, "get_sale_price")

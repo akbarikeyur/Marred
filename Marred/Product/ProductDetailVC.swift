@@ -65,7 +65,15 @@ class ProductDetailVC: UIViewController {
         skuLbl.text = productDetail.get_sku
         quantityBtn.setTitle("1", for: .normal)
         priceLbl.text = displayPriceWithCurrency(productDetail.get_price)
-        let tempCat = getTranslate("categories_colon") + productDetail.get_categories.html2String
+        var strCat = ""
+        for temp in productDetail.get_categories {
+            if strCat != "" {
+                strCat = strCat + ", " + temp.name
+            }else{
+                strCat = temp.name
+            }
+        }
+        let tempCat = getTranslate("categories_colon") + strCat
         categoryLbl.attributedText = attributedStringWithColor(tempCat, [getTranslate("categories_colon")], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 14.0))
         soldByLbl.attributedText = attributedStringWithColor(getTranslate("sold_by_colon") + product.vendor, [getTranslate("sold_by_colon")], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 14.0))
         stockLbl.text = getStockStatus(productDetail.get_stock_status)
@@ -141,10 +149,11 @@ class ProductDetailVC: UIViewController {
         sender.backgroundColor = DarkYellowColor
         sender.isSelected = true
         if sender == descBtn {
-            descLbl.text = productDetail.get_description
+            descLbl.attributedText = productDetail.get_description.html2AttributedString
         }
         else if sender == vendorBtn {
             descLbl.text = getTranslate("vendor_information") + product.vendor
+            descLbl.attributedText = descLbl.text?.html2AttributedString
         }
     }
     

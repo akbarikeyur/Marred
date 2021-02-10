@@ -24,7 +24,7 @@ struct API {
     static let GET_CATEGORY                           =       BASE_URL + "v1/get_cateogories"
     static let GET_PAVILION_CATEGORY                  =       BASE_URL + "v1/pavilions"
     
-    static let SEARCH_PRODUCT                         =       BASE_URL + "wc/v2/products?search="
+    static let SEARCH_PRODUCT                         =       BASE_URL + "v1/user/ProductSearch"
     static let GET_PRODUCT_LIST                       =       BASE_URL + "v1/getProductsByCat"
     static let GET_PRODUCT_DETAIL                     =       BASE_URL + "v1/productDetail"
     

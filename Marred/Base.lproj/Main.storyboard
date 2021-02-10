@@ -25,7 +25,7 @@
         <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="Marred" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="Maared_24_معارض" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,10 @@
                                             <action selector="clickToSideMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="euI-f6-4Yy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWG-4R-MnJ" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_maared" translatesAutoresizingMaskIntoConstraints="NO" id="KxY-Hy-PTY">
+                                        <rect key="frame" x="50" y="5" width="142" height="40"/>
+                                    </imageView>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWG-4R-MnJ" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="192" y="7" width="36" height="36"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -60,7 +63,7 @@
                                             <action selector="clickToSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYe-lK-3AV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKx-g3-zYW" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKx-g3-zYW" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="233" y="7" width="36" height="36"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -77,7 +80,7 @@
                                             <action selector="clickToWishList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gwb-vd-8GY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TW3-lY-to2" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TW3-lY-to2" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="274" y="7" width="36" height="36"/>
                                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -105,8 +108,12 @@
                                     <constraint firstAttribute="trailing" secondItem="TW3-lY-to2" secondAttribute="trailing" constant="10" id="Ph2-8A-Jad"/>
                                     <constraint firstAttribute="bottom" secondItem="D69-pr-QQP" secondAttribute="bottom" id="bhD-3O-7lS"/>
                                     <constraint firstItem="D69-pr-QQP" firstAttribute="leading" secondItem="4Nw-Iw-sPs" secondAttribute="leading" id="dn2-Uu-XPo"/>
+                                    <constraint firstAttribute="bottom" secondItem="KxY-Hy-PTY" secondAttribute="bottom" constant="5" id="eUd-XO-4C3"/>
+                                    <constraint firstItem="KxY-Hy-PTY" firstAttribute="leading" secondItem="D69-pr-QQP" secondAttribute="trailing" id="eqs-0m-Aas"/>
+                                    <constraint firstItem="EWG-4R-MnJ" firstAttribute="leading" secondItem="KxY-Hy-PTY" secondAttribute="trailing" id="lBK-Rc-5z3"/>
                                     <constraint firstItem="fKx-g3-zYW" firstAttribute="leading" secondItem="EWG-4R-MnJ" secondAttribute="trailing" constant="5" id="pTM-Od-TgX"/>
                                     <constraint firstItem="fKx-g3-zYW" firstAttribute="centerY" secondItem="EWG-4R-MnJ" secondAttribute="centerY" id="uDl-FI-QXH"/>
+                                    <constraint firstItem="KxY-Hy-PTY" firstAttribute="top" secondItem="4Nw-Iw-sPs" secondAttribute="top" constant="5" id="vyi-4g-N2x"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8dg-Gw-IFb">
@@ -143,7 +150,7 @@
         <!--Product DetailVC-->
         <scene sceneID="JEj-TG-f6Q">
             <objects>
-                <viewController storyboardIdentifier="ProductDetailVC" id="4ul-Hp-5oS" customClass="ProductDetailVC" customModule="Marred" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailVC" id="4ul-Hp-5oS" customClass="ProductDetailVC" customModule="Maared_24_معارض" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FZr-Nb-YVV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1076"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,7 +189,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e12-gv-dvs">
                                                 <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOr-xB-Dqa" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOr-xB-Dqa" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="DbB-8X-sMX"/>
@@ -207,7 +214,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWW-0u-UqV">
                                                 <rect key="frame" x="0.0" y="400" width="320" height="334"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Zercon Accessories" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tS-eW-lET" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Zercon Accessories" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tS-eW-lET" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="254" height="23.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
                                                         <nil key="textColor"/>
@@ -222,7 +229,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okD-Yv-Bmb" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okD-Yv-Bmb" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="274" y="4" width="36" height="36"/>
                                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -247,7 +254,7 @@
                                                             <action selector="clickToWishList:" destination="4ul-Hp-5oS" eventType="touchUpInside" id="2z8-di-baT"/>
                                                         </connections>
                                                     </button>
-                                                    <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="398-IG-kMo" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                    <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="398-IG-kMo" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="310" y="4" width="0.0" height="36"/>
                                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -268,7 +275,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRr-lk-UCs" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRr-lk-UCs" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="38.5" width="35" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                         <nil key="textColor"/>
@@ -280,7 +287,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FV075" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWK-dj-KmJ" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FV075" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWK-dj-KmJ" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="47" y="38.5" width="34.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
                                                         <nil key="textColor"/>
@@ -300,7 +307,7 @@
                                                             <constraint firstAttribute="width" constant="1" id="uDV-Wh-KJs"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKU: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjV-en-Bgh" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKU: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjV-en-Bgh" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="102.5" y="38.5" width="29" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                         <nil key="textColor"/>
@@ -312,7 +319,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FV075021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmT-HK-jKI" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FV075021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmT-HK-jKI" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="133.5" y="38.5" width="54.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
                                                         <nil key="textColor"/>
@@ -324,10 +331,10 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3K-xt-ppG" customClass="View" customModule="Marred" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3K-xt-ppG" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="68" width="320" height="138"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVn-Xa-ilN" customClass="View" customModule="Marred" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVn-Xa-ilN" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                 <rect key="frame" x="10" y="20" width="145" height="44"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZj-cg-NZV">
@@ -337,7 +344,7 @@
                                                                             <action selector="clickToChangeQuantity:" destination="4ul-Hp-5oS" eventType="touchUpInside" id="2Hu-0N-FOY"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mr-mj-hI7" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mr-mj-hI7" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="57.5" y="7" width="30" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="30" id="0qB-EI-rtG"/>
@@ -390,10 +397,10 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vpo-BC-AST" customClass="View" customModule="Marred" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vpo-BC-AST" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                 <rect key="frame" x="165" y="20" width="145" height="43.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESp-4w-dFs" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESp-4w-dFs" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="7" y="5" width="133" height="14.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -408,7 +415,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 AED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCX-g4-KR2" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 AED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCX-g4-KR2" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="7" y="19.5" width="128" height="19"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -446,10 +453,10 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wH1-IR-r34" customClass="View" customModule="Marred" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wH1-IR-r34" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                 <rect key="frame" x="10" y="74" width="300" height="44"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add to cart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3d-ch-GdF" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add to cart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3d-ch-GdF" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="30" y="0.0" width="280" height="44"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -518,7 +525,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories: Occasional Accessories, Accessories, UAE Pavilion, UAE Accessories &amp; Jewellery" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crW-6C-vRX" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories: Occasional Accessories, Accessories, UAE Pavilion, UAE Accessories &amp; Jewellery" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crW-6C-vRX" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="226" width="300" height="50"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                         <color key="textColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
@@ -533,7 +540,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Sold By: Najma al fajer trading" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfy-2j-I15" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Sold By: Najma al fajer trading" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfy-2j-I15" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="286" width="300" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -548,7 +555,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQc-cm-yTb" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQc-cm-yTb" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="307.5" width="47" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -563,7 +570,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In stock" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSb-Q2-Khh" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In stock" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSb-Q2-Khh" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="60" y="307.5" width="49.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                         <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -625,13 +632,13 @@
                                                     <constraint firstAttribute="height" constant="1" id="YZS-6H-vJM"/>
                                                 </constraints>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMx-0C-hPH" customClass="View" customModule="Marred" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMx-0C-hPH" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="765" width="300" height="139.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylz-e9-YMF">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="35"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qt2-5x-v9K" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qt2-5x-v9K" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="35"/>
                                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.85490196080000003" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
@@ -651,7 +658,7 @@
                                                                     <action selector="clickToSelectTab:" destination="4ul-Hp-5oS" eventType="touchUpInside" id="SJT-08-5p0"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vI-Ga-zB7" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vI-Ga-zB7" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                 <rect key="frame" x="150" y="0.0" width="150" height="35"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
                                                                 <state key="normal" title="Vendor Info">
@@ -684,7 +691,7 @@
                                                             <constraint firstItem="qt2-5x-v9K" firstAttribute="leading" secondItem="ylz-e9-YMF" secondAttribute="leading" id="z2C-4o-3Ol"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEH-gL-EaF" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEH-gL-EaF" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="45" width="280" height="84.5"/>
                                                         <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
@@ -726,7 +733,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdk-x5-mCb">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="156.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Related products" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXg-RV-7Qw" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Related products" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXg-RV-7Qw" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                 <rect key="frame" x="10" y="0.0" width="300" height="16.5"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -863,7 +870,7 @@
         <!--CategoryVC-->
         <scene sceneID="SkM-JL-qYh">
             <objects>
-                <viewController storyboardIdentifier="CategoryVC" id="P1j-EQ-gfX" customClass="CategoryVC" customModule="Marred" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryVC" id="P1j-EQ-gfX" customClass="CategoryVC" customModule="Maared_24_معارض" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KGv-MN-w2g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -881,7 +888,7 @@
                                             <action selector="clickToSideMenu:" destination="P1j-EQ-gfX" eventType="touchUpInside" id="yA1-3J-UgE"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcP-eQ-WIt" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcP-eQ-WIt" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="192" y="7" width="36" height="36"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -898,7 +905,7 @@
                                             <action selector="clickToSearch:" destination="P1j-EQ-gfX" eventType="touchUpInside" id="ESc-3e-Q9a"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ved-Kl-Xlj" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ved-Kl-Xlj" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="233" y="7" width="36" height="36"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -915,7 +922,7 @@
                                             <action selector="clickToWishList:" destination="P1j-EQ-gfX" eventType="touchUpInside" id="cV2-3b-5PN"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsd-RP-2fY" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsd-RP-2fY" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="274" y="7" width="36" height="36"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -950,7 +957,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFs-1j-gGj">
                                 <rect key="frame" x="0.0" y="70" width="320" height="35"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JC9-WZ-heo" customClass="ImageView" customModule="Marred" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JC9-WZ-heo" customClass="ImageView" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="10" y="34" width="300" height="1"/>
                                         <color key="backgroundColor" red="0.83529411764705885" green="0.83529411764705885" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1110,7 +1117,7 @@
         <!--Search ProductVC-->
         <scene sceneID="5bK-DU-Hd1">
             <objects>
-                <viewController storyboardIdentifier="SearchProductVC" id="kWe-Dl-IR8" customClass="SearchProductVC" customModule="Marred" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchProductVC" id="kWe-Dl-IR8" customClass="SearchProductVC" customModule="Maared_24_معارض" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="skm-nQ-xfO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1118,7 +1125,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kD1-es-NWJ">
                                 <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONN-V3-Pbu" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONN-V3-Pbu" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="oCy-qV-8UB"/>
@@ -1131,7 +1138,7 @@
                                             <action selector="clickToBack:" destination="kWe-Dl-IR8" eventType="touchUpInside" id="Ulz-KU-SJa"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Product" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="28B-uM-YKm" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Product" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="28B-uM-YKm" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="50" y="8" width="260" height="34"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
@@ -1200,7 +1207,7 @@
         <!--Sub CategoryVC-->
         <scene sceneID="HJG-sQ-SWO">
             <objects>
-                <viewController storyboardIdentifier="SubCategoryVC" id="WqI-fL-Igr" customClass="SubCategoryVC" customModule="Marred" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubCategoryVC" id="WqI-fL-Igr" customClass="SubCategoryVC" customModule="Maared_24_معارض" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WtG-sH-fhc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1208,7 +1215,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80E-mQ-ntY">
                                 <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXX-bh-vrZ" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXX-bh-vrZ" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="vqN-b8-jMY"/>
@@ -1221,7 +1228,7 @@
                                             <action selector="clickToBack:" destination="WqI-fL-Igr" eventType="touchUpInside" id="pIy-Ie-f7C"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8w-T9-DDZ" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8w-T9-DDZ" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="274" y="7" width="36" height="36"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1252,7 +1259,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-Ro-Gf1">
                                 <rect key="frame" x="0.0" y="70" width="320" height="35"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accessories (28 Products found)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0z-at-v7z" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accessories (28 Products found)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0z-at-v7z" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="10" y="9.5" width="254" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1322,7 +1329,7 @@
                                     <outlet property="delegate" destination="WqI-fL-Igr" id="kd6-XJ-9El"/>
                                 </connections>
                             </collectionView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data not found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1d-iG-h36" customClass="Label" customModule="Marred" customModuleProvider="target">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data not found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1d-iG-h36" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="114" y="276" width="92.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -1391,7 +1398,7 @@
         <!--Custom Tab Bar Controller-->
         <scene sceneID="4uU-FD-0Cg">
             <objects>
-                <tabBarController storyboardIdentifier="CustomTabBarController" id="hpm-8Y-tjB" customClass="CustomTabBarController" customModule="Marred" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="CustomTabBarController" id="hpm-8Y-tjB" customClass="CustomTabBarController" customModule="Maared_24_معارض" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eln-UX-DUI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1405,7 +1412,7 @@
         <!--Side MenuVC-->
         <scene sceneID="2Hx-zv-Q56">
             <objects>
-                <viewController storyboardIdentifier="SideMenuVC" id="CMy-JG-Xzb" customClass="SideMenuVC" customModule="Marred" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SideMenuVC" id="CMy-JG-Xzb" customClass="SideMenuVC" customModule="Maared_24_معارض" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sub-YD-bP5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1427,7 +1434,7 @@
                                             <constraint firstAttribute="height" constant="1" id="hSu-RL-qj6"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asb-NA-9Wl" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asb-NA-9Wl" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="10" y="24" width="10" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="10" id="GF2-fh-5ev"/>
@@ -1440,7 +1447,7 @@
                                             <action selector="clickToBack:" destination="CMy-JG-Xzb" eventType="touchUpInside" id="XQW-10-s7C"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1z-He-nvu" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1z-He-nvu" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="28" y="24" width="42" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="moC-ZQ-xrq"/>
@@ -1488,7 +1495,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0q-2P-jA2">
                                 <rect key="frame" x="0.0" y="428" width="320" height="140"/>
                                 <subviews>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90g-eV-nog" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90g-eV-nog" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="10" y="0.0" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="Bah-F2-I82"/>
@@ -1507,7 +1514,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Mark Herry" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNb-DC-VgD" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Mark Herry" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNb-DC-VgD" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="90" y="10" width="220" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -1522,7 +1529,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="markherry@abc.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJY-lH-vjV" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="markherry@abc.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJY-lH-vjV" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="90" y="33.5" width="220" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1537,7 +1544,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXe-lC-X88" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXe-lC-X88" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="90" y="70" width="110" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1594,7 +1601,7 @@
                                                 </constraints>
                                                 <state key="normal" image="menu_login"/>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiG-yO-dD5" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiG-yO-dD5" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="90" y="15.5" width="220" height="19"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -1641,7 +1648,7 @@
                                                 </constraints>
                                                 <state key="normal" image="menu_signup"/>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Sign up" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRj-Qw-c0y" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Sign up" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRj-Qw-c0y" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="90" y="15.5" width="220" height="19"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -1744,12 +1751,12 @@
         <!--LoginVC-->
         <scene sceneID="NV8-YI-kMQ">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="Id8-Yf-HjE" customClass="LoginVC" customModule="Marred" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="Id8-Yf-HjE" customClass="LoginVC" customModule="Maared_24_معارض" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Fj-Bc-JYa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emh-aY-HAK" customClass="Label" customModule="Marred" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emh-aY-HAK" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="20" y="102.5" width="280" height="35.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="30"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1761,7 +1768,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your credentials to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hAq-kL-iUd" customClass="Label" customModule="Marred" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your credentials to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hAq-kL-iUd" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="20" y="143" width="280" height="19"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1773,7 +1780,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVz-y7-gbe" customClass="View" customModule="Marred" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVz-y7-gbe" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="20" y="212" width="280" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qq-v0-H1k">
@@ -1784,7 +1791,7 @@
                                         </constraints>
                                         <state key="normal" image="email"/>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1f2-lP-WBn" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1f2-lP-WBn" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="58" y="0.0" width="212" height="50"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
@@ -1819,7 +1826,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUX-1D-Sxb" customClass="View" customModule="Marred" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUX-1D-Sxb" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="20" y="272" width="280" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJB-ez-SqA">
@@ -1830,7 +1837,7 @@
                                         </constraints>
                                         <state key="normal" image="password"/>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJF-9v-d5f" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJF-9v-d5f" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="58" y="0.0" width="182" height="50"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
@@ -1879,7 +1886,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ug1-cV-hCz" customClass="Button" customModule="Marred" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ug1-cV-hCz" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="203" y="335.5" width="97" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="XT3-sN-kPv"/>
@@ -1898,7 +1905,7 @@
                                     <action selector="clickToForgotPassword:" destination="Id8-Yf-HjE" eventType="touchUpInside" id="snI-0i-80Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utn-Aw-Kkk" customClass="Button" customModule="Marred" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utn-Aw-Kkk" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="20" y="389.5" width="280" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1920,7 +1927,7 @@
                                     <action selector="clickToSignIn:" destination="Id8-Yf-HjE" eventType="touchUpInside" id="rpG-zf-h6W"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIn-84-bDg" customClass="Button" customModule="Marred" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIn-84-bDg" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="20" y="449.5" width="280" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vaK-1k-jvL"/>
@@ -1939,7 +1946,7 @@
                                     <action selector="clickToSkip:" destination="Id8-Yf-HjE" eventType="touchUpInside" id="gGa-xU-Tnx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gne-gK-Zzg" customClass="Button" customModule="Marred" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gne-gK-Zzg" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="20" y="518" width="280" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="pGY-66-zl4"/>
@@ -2020,12 +2027,12 @@
         <!--Forgot PasswordVC-->
         <scene sceneID="zsR-rL-zLc">
             <objects>
-                <viewController storyboardIdentifier="ForgotPasswordVC" id="dDJ-At-oxE" customClass="ForgotPasswordVC" customModule="Marred" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPasswordVC" id="dDJ-At-oxE" customClass="ForgotPasswordVC" customModule="Maared_24_معارض" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="md8-Jo-uIQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpE-kk-4cG" customClass="Button" customModule="Marred" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpE-kk-4cG" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="7aM-eZ-2CN"/>
@@ -2040,7 +2047,7 @@
                                     <action selector="clickToBack:" destination="dDJ-At-oxE" eventType="touchUpInside" id="clD-yL-Wx4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWq-3F-z1K" customClass="Label" customModule="Marred" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWq-3F-z1K" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="20" y="174" width="280" height="36"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="30"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2052,7 +2059,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your registered email address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VQX-Bf-ho5" customClass="Label" customModule="Marred" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your registered email address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VQX-Bf-ho5" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="20" y="210" width="280" height="19"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2064,7 +2071,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQn-mr-V1g" customClass="View" customModule="Marred" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQn-mr-V1g" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="20" y="259" width="280" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTz-NZ-hSq">
@@ -2075,7 +2082,7 @@
                                         </constraints>
                                         <state key="normal" image="email"/>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KhT-Zy-K2Q" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KhT-Zy-K2Q" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="58" y="0.0" width="212" height="50"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
@@ -2110,7 +2117,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbn-Bo-9gf" customClass="Button" customModule="Marred" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbn-Bo-9gf" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                 <rect key="frame" x="20" y="329" width="280" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2162,7 +2169,7 @@
         <!--SignupVC-->
         <scene sceneID="cwI-Vp-I0J">
             <objects>
-                <viewController storyboardIdentifier="SignupVC" id="38G-W7-bX0" customClass="SignupVC" customModule="Marred" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupVC" id="38G-W7-bX0" customClass="SignupVC" customModule="Maared_24_معارض" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Xs-7j-xQm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1075"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2170,7 +2177,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeS-IZ-ZqM">
                                 <rect key="frame" x="0.0" y="20" width="320" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-XF-PEB" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-XF-PEB" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="6fk-sR-NuG"/>
@@ -2198,7 +2205,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAv-xi-MKO">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1016"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFW-uX-Ypf" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFW-uX-Ypf" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="10" width="300" height="29.5"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="25"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2213,7 +2220,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ag-p4-ivi" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ag-p4-ivi" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="44.5" width="300" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2231,7 +2238,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jb-aO-V2H">
                                                 <rect key="frame" x="0.0" y="81" width="320" height="71.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxb-e1-aJT" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxb-e1-aJT" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="300" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2246,7 +2253,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XSX-ao-NC7" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XSX-ao-NC7" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="31.5" width="300" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="X8X-cB-aVR"/>
@@ -2293,7 +2300,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rhd-oC-D94">
                                                 <rect key="frame" x="0.0" y="152.5" width="320" height="71.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hd-ei-BR7" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hd-ei-BR7" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="300" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2308,7 +2315,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HYI-E9-QTq" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HYI-E9-QTq" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="31.5" width="300" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Wp1-PN-Zbv"/>
@@ -2355,7 +2362,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p63-Lj-Ogo">
                                                 <rect key="frame" x="0.0" y="224" width="320" height="71.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxN-dx-PRv" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxN-dx-PRv" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="300" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2370,7 +2377,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3e3-B9-EZ7" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3e3-B9-EZ7" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="31.5" width="300" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="D2C-id-wPd"/>
@@ -2417,7 +2424,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="933-P1-snb">
                                                 <rect key="frame" x="0.0" y="295.5" width="320" height="71.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeC-6l-RTf" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeC-6l-RTf" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="300" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2432,7 +2439,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOE-Jw-N0v" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOE-Jw-N0v" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="31.5" width="300" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="wR9-UD-uZ0"/>
@@ -2483,10 +2490,10 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="487"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSc-fT-O1A">
-                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9y-Q9-ORc" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="10" width="300" height="16.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9y-Q9-ORc" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
+                                                                        <rect key="frame" x="10" y="10" width="300" height="19.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -2500,8 +2507,8 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bPP-3Z-dpd" customClass="TextField" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="31.5" width="300" height="40"/>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bPP-3Z-dpd" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
+                                                                        <rect key="frame" x="10" y="34.5" width="300" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="cCU-Td-FmV"/>
                                                                         </constraints>
@@ -2545,9 +2552,9 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9l-Jd-nyV">
-                                                                <rect key="frame" x="0.0" y="71.5" width="320" height="71.5"/>
+                                                                <rect key="frame" x="0.0" y="74.5" width="320" height="71.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd5-VD-d1T" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd5-VD-d1T" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="10" width="300" height="16.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2562,7 +2569,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEM-60-fcZ" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEM-60-fcZ" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="31.5" width="300" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="Bbb-ns-Nyk"/>
@@ -2607,9 +2614,9 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUu-MV-eBu">
-                                                                <rect key="frame" x="0.0" y="143" width="320" height="71.5"/>
+                                                                <rect key="frame" x="0.0" y="146" width="320" height="71.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Business Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4b-lx-M6M" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Business Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4b-lx-M6M" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="10" width="300" height="16.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2624,7 +2631,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gdF-xN-qI6" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gdF-xN-qI6" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="31.5" width="300" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="QPJ-ut-8qO"/>
@@ -2669,9 +2676,9 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1l-US-Cn5">
-                                                                <rect key="frame" x="0.0" y="214.5" width="320" height="71.5"/>
+                                                                <rect key="frame" x="0.0" y="217.5" width="320" height="71.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msJ-aL-2ao" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msJ-aL-2ao" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="10" width="300" height="16.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2686,7 +2693,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rO2-mm-hkL" customClass="View" customModule="Marred" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rO2-mm-hkL" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="31.5" width="300" height="40"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="OLB-Ds-gvE">
@@ -2696,7 +2703,7 @@
                                                                                     <constraint firstAttribute="width" constant="26" id="g66-8w-WpZ"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+971" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGA-Bc-L9L" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+971" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGA-Bc-L9L" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                                 <rect key="frame" x="46" y="12" width="54" height="16.5"/>
                                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                                 <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2722,7 +2729,7 @@
                                                                                     <action selector="clickToSelectPhoneCode:" destination="38G-W7-bX0" eventType="touchUpInside" id="tFB-mv-z9c"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="000 0000 000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jE2-yg-976" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="000 0000 000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jE2-yg-976" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                                 <rect key="frame" x="110" y="0.0" width="180" height="40"/>
                                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
@@ -2781,9 +2788,9 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nH2-uf-HPS">
-                                                                <rect key="frame" x="0.0" y="306" width="320" height="81.5"/>
+                                                                <rect key="frame" x="0.0" y="309" width="320" height="81.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Shop in Pavillions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKk-Wv-Bjh" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Shop in Pavillions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKk-Wv-Bjh" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="20" width="300" height="16.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2798,7 +2805,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBy-TN-u5W" customClass="View" customModule="Marred" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBy-TN-u5W" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="41.5" width="300" height="40"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="WQV-PC-KbG">
@@ -2808,7 +2815,7 @@
                                                                                     <constraint firstAttribute="height" constant="20" id="kLx-Vt-GXw"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXA-YK-iXM" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXA-YK-iXM" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                                 <rect key="frame" x="46" y="0.0" width="234" height="40"/>
                                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
@@ -2870,10 +2877,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nig-QY-ua1">
-                                                                <rect key="frame" x="0.0" y="387.5" width="320" height="99.5"/>
+                                                                <rect key="frame" x="0.0" y="390.5" width="320" height="96.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Shop in Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK8-rx-58d" customClass="Label" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="15" width="300" height="19.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Shop in Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK8-rx-58d" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
+                                                                        <rect key="frame" x="10" y="15" width="300" height="16.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -2887,10 +2894,10 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTa-SK-hyc" customClass="View" customModule="Marred" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="39.5" width="300" height="40"/>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTa-SK-hyc" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
+                                                                        <rect key="frame" x="10" y="36.5" width="300" height="40"/>
                                                                         <subviews>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-23-i2x" customClass="TextField" customModule="Marred" customModuleProvider="target">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-23-i2x" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                                 <rect key="frame" x="10" y="0.0" width="270" height="40"/>
                                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
@@ -2975,7 +2982,7 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bao-OY-CRY" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bao-OY-CRY" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="864" width="20" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="51I-4h-rft"/>
@@ -3002,7 +3009,7 @@
                                                     <action selector="clickToSelectUserRole:" destination="38G-W7-bX0" eventType="touchUpInside" id="TvV-Nn-rMM"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a customer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdc-Tr-1kb" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a customer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdc-Tr-1kb" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="864" width="101" height="25"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3017,7 +3024,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lo7-Ws-syo" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lo7-Ws-syo" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="864" width="300" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="4Pf-ew-HSQ"/>
@@ -3043,7 +3050,7 @@
                                                     <action selector="clickToSelectUserRole:" destination="38G-W7-bX0" eventType="touchUpInside" id="ZPI-ag-guc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hg-B1-ArJ" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hg-B1-ArJ" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="889" width="20" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="CcR-vc-TWR"/>
@@ -3061,7 +3068,7 @@
                                                     <action selector="clickToSelectUserRole:" destination="38G-W7-bX0" eventType="touchUpInside" id="8Rt-ID-SRq"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a vendor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEL-kS-Eqm" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a vendor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEL-kS-Eqm" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="889" width="84.5" height="25"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3076,7 +3083,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdW-yj-aEB" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdW-yj-aEB" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="889" width="300" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="tTn-wg-aJP"/>
@@ -3102,7 +3109,7 @@
                                                     <action selector="clickToSelectUserRole:" destination="38G-W7-bX0" eventType="touchUpInside" id="tRj-f6-cKB"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A password will be sent to your email address." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIh-im-m1r" customClass="Label" customModule="Marred" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A password will be sent to your email address." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIh-im-m1r" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="934" width="300" height="14.5"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -3117,7 +3124,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a68-lK-a2v" customClass="Button" customModule="Marred" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a68-lK-a2v" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="958.5" width="300" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -3251,6 +3258,7 @@
         <image name="flag" width="26" height="20"/>
         <image name="heart_off" width="20" height="20"/>
         <image name="heart_on" width="20" height="20"/>
+        <image name="logo_maared" width="212" height="100"/>
         <image name="menu" width="25" height="15"/>
         <image name="menu_login" width="24.5" height="27"/>
         <image name="menu_logout" width="21.5" height="21.5"/>

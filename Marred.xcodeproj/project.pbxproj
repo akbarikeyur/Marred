@@ -220,7 +220,7 @@
 		798A4F222580B957004D8BDF /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		79A4607B258B265F00A65BDE /* SellerDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerDashboardVC.swift; sourceTree = "<group>"; };
 		79A4607D258B362300A65BDE /* SellerDashboardTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerDashboardTabVC.swift; sourceTree = "<group>"; };
-		79BF35B6257E4466006491C5 /* Marred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marred.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79BF35B6257E4466006491C5 /* Maared 24 معارض.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maared 24 معارض.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79BF35B9257E4466006491C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79BF35BD257E4466006491C5 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		79BF35C0257E4466006491C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -484,7 +484,7 @@
 		79BF35B7257E4466006491C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				79BF35B6257E4466006491C5 /* Marred.app */,
+				79BF35B6257E4466006491C5 /* Maared 24 معارض.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -723,7 +723,7 @@
 			);
 			name = Marred;
 			productName = Marred;
-			productReference = 79BF35B6257E4466006491C5 /* Marred.app */;
+			productReference = 79BF35B6257E4466006491C5 /* Maared 24 معارض.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1213,7 +1213,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.Marred;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Maared 24 معارض";
 				SWIFT_OBJC_BRIDGING_HEADER = "Marred/Custom Class/Objective C/Marred-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1236,7 +1236,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.Marred;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Maared 24 معارض";
 				SWIFT_OBJC_BRIDGING_HEADER = "Marred/Custom Class/Objective C/Marred-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
