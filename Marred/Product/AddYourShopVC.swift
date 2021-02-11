@@ -87,6 +87,7 @@ class AddYourShopVC: UIViewController {
         self.view.endEditing(true)
         let dropDown = DropDown()
         dropDown.anchorView = sender
+        dropDown.semanticContentAttribute = isArabic() ? .forceLeftToRight : .forceRightToLeft
         var arrData = [String]()
         for temp in arrCountry {
             arrData.append(temp.name)
@@ -103,6 +104,7 @@ class AddYourShopVC: UIViewController {
         self.view.endEditing(true)
         let dropDown = DropDown()
         dropDown.anchorView = sender
+        dropDown.semanticContentAttribute = isArabic() ? .forceLeftToRight : .forceRightToLeft
         var arrData = [String]()
         for temp in arrPavilion {
             arrData.append(temp.title)
@@ -120,6 +122,7 @@ class AddYourShopVC: UIViewController {
         self.view.endEditing(true)
         let dropDown = DropDown()
         dropDown.anchorView = sender
+        dropDown.semanticContentAttribute = isArabic() ? .forceLeftToRight : .forceRightToLeft
         var arrData = [String]()
         for temp in arrCategory {
             arrData.append(temp.name)

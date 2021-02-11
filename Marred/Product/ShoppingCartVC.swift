@@ -30,7 +30,6 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var applyCouponBtn: Button!
     @IBOutlet weak var checkoutBtn: Button!
     
-    var isLoader = false
     var arrCart = [CartModel]()
     var totalPrice = 0.0
     var coupon = CouponModel.init([String : Any]())
@@ -74,7 +73,6 @@ class ShoppingCartVC: UIViewController {
     }
     
     @objc func resetCartScreen() {
-        isLoader = true
         noDataView.isHidden = true
         myScroll.isHidden = true
         promocodeTxt.text = ""
@@ -196,6 +194,8 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
     func updateTableviewHeight() {
         tblView.reloadData()
         constraintHeightTblView.constant = CGFloat(130*arrCart.count)
+        noDataView.isHidden = (arrCart.count > 0)
+        myScroll.isHidden = (arrCart.count == 0)
     }
     
     func updateQuantity(_ cart: CartModel) {
@@ -242,7 +242,7 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
 
 extension ShoppingCartVC {
     @objc func serviceCallToGetCart() {
-        ProductAPIManager.shared.serviceCallToGetCart(isLoader) { (data) in
+        ProductAPIManager.shared.serviceCallToGetCart(arrCart.count==0) { (data) in
             self.arrCart = [CartModel]()
             for temp in data {
                 if let dict = temp["cart"] as? [String : Any] {
@@ -257,7 +257,6 @@ extension ShoppingCartVC {
             self.noDataView.isHidden = (self.arrCart.count > 0)
             self.myScroll.isHidden = (self.arrCart.count == 0)
         }
-        isLoader = false
     }
     
     func serviceCallToClearToCart(_ cart : CartModel) {

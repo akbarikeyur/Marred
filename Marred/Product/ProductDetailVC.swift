@@ -8,6 +8,7 @@
 
 import UIKit
 import DropDown
+
 class ProductDetailVC: UIViewController {
 
     @IBOutlet weak var myScroll: UIScrollView!
@@ -37,16 +38,17 @@ class ProductDetailVC: UIViewController {
     var product = ProductModel.init([String : Any]())
     var productDetail = ProductDetailModel.init([String : Any]())
     var isFavorite = false
-    
+    var arrDisplayImage = [String]()
     var arrSize = [VariationModel]()
     var arrColor = [VariationModel]()
-    var selectedColor = ""
     var selectedVariation = VariationModel.init([String : Any]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        colorLbl.text = getTranslate("select_color")
+        sizeLbl.text = getTranslate("select_size")
         registerCollectionView()
         sizeColorView.isHidden = true
         setupProduct()
@@ -70,6 +72,8 @@ class ProductDetailVC: UIViewController {
     
     func setupProductDetail() {
         setImageBackgroundImage(coverImgView, productDetail.thumbnail, IMAGE.PLACEHOLDER)
+        arrDisplayImage = [String]()
+        arrDisplayImage = productDetail.images
         imageCV.reloadData()
         nameLbl.text = productDetail.get_name
         brandLbl.text = productDetail.brands.name
@@ -103,14 +107,33 @@ class ProductDetailVC: UIViewController {
         colorView.isHidden = true
         arrSize = [VariationModel].init()
         arrColor = [VariationModel].init()
+        resetVariation()
+    }
+    
+    func resetVariation() {
         selectedVariation = VariationModel.init([String : Any]())
+        colorLbl.text = getTranslate("select_color")
+        sizeLbl.text = getTranslate("select_size")
+        arrDisplayImage = [String]()
+        arrDisplayImage = productDetail.images
+        imageCV.reloadData()
         if productDetail.get_available_variations.count > 0 {
             for temp in productDetail.get_available_variations {
                 if temp.isForSize {
-                    arrSize.append(temp)
+                    let index = arrSize.firstIndex { (tempV) -> Bool in
+                        tempV.attribute_pa_size == temp.attribute_pa_size
+                    }
+                    if index == nil {
+                        arrSize.append(temp)
+                    }
                 }
                 if temp.isForColor {
-                    arrColor.append(temp)
+                    let index = arrColor.firstIndex { (tempV) -> Bool in
+                        tempV.attribute_pa_color == temp.attribute_pa_color
+                    }
+                    if index == nil {
+                        arrColor.append(temp)
+                    }
                 }
             }
             if arrSize.count > 0 {
@@ -127,7 +150,7 @@ class ProductDetailVC: UIViewController {
     func getSizeArray() {
         arrSize = [VariationModel]()
         for temp in productDetail.get_available_variations {
-            if temp.attribute_pa_color == selectedColor {
+            if temp.attribute_pa_color == colorLbl.text {
                 let index = arrSize.firstIndex { (tmpSize) -> Bool in
                     tmpSize.attribute_pa_size == temp.attribute_pa_size
                 }
@@ -136,6 +159,11 @@ class ProductDetailVC: UIViewController {
                 }
             }
         }
+        arrDisplayImage = [String]()
+        for temp in arrColor {
+            arrDisplayImage.append(temp.full_src)
+        }
+        imageCV.reloadData()
     }
     
     func getColorArray() {
@@ -150,6 +178,11 @@ class ProductDetailVC: UIViewController {
                 }
             }
         }
+        arrDisplayImage = [String]()
+        for temp in arrColor {
+            arrDisplayImage.append(temp.full_src)
+        }
+        imageCV.reloadData()
     }
     
     //MARK:- Button click event
@@ -187,6 +220,7 @@ class ProductDetailVC: UIViewController {
         self.view.endEditing(true)
         let dropDown = DropDown()
         dropDown.anchorView = sender
+        dropDown.semanticContentAttribute = isArabic() ? .forceLeftToRight : .forceRightToLeft
         var arrData = [String]()
         for temp in arrSize {
             arrData.append(temp.attribute_pa_size)
@@ -194,9 +228,8 @@ class ProductDetailVC: UIViewController {
         dropDown.dataSource = arrData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.sizeLbl.text = item
-            if self.colorLbl.text != "Select color" {
-                self.getColorArray()
-            }
+            self.selectedVariation = self.arrSize[index]
+            self.getColorArray()
         }
         dropDown.show()
     }
@@ -205,6 +238,7 @@ class ProductDetailVC: UIViewController {
         self.view.endEditing(true)
         let dropDown = DropDown()
         dropDown.anchorView = sender
+        dropDown.semanticContentAttribute = isArabic() ? .forceLeftToRight : .forceRightToLeft
         var arrData = [String]()
         for temp in arrColor {
             arrData.append(temp.attribute_pa_color)
@@ -212,13 +246,15 @@ class ProductDetailVC: UIViewController {
         dropDown.dataSource = arrData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.colorLbl.text = item
-            if self.sizeLbl.text != "Select size" {
-                self.getSizeArray()
-            }
+            self.selectedVariation = self.arrColor[index]
+            self.getSizeArray()
         }
         dropDown.show()
     }
     
+    @IBAction func clickToClearVariation(_ sender: UIButton) {
+        resetVariation()
+    }
     
     @IBAction func clickToChangeQuantity(_ sender: UIButton) {
         var quantity : Int = Int((quantityBtn.titleLabel?.text)!)!
@@ -286,7 +322,7 @@ extension ProductDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == imageCV {
-            return productDetail.images.count
+            return arrDisplayImage.count
         }
         return productDetail.related_products.count
     }
@@ -302,7 +338,7 @@ extension ProductDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == imageCV {
             let cell : ProductImageCVC = imageCV.dequeueReusableCell(withReuseIdentifier: "ProductImageCVC", for: indexPath) as! ProductImageCVC
-            setImageBackgroundImage(cell.imgView,productDetail.images[indexPath.row], IMAGE.PLACEHOLDER)
+            setImageBackgroundImage(cell.imgView,arrDisplayImage[indexPath.row], IMAGE.PLACEHOLDER)
             cell.outerView.setCornerRadius((imageCV.frame.size.width-10)/2)
             if selectedImageIndex == indexPath.row {
                 cell.outerView.layer.borderColor = DarkYellowColor.cgColor
@@ -320,7 +356,7 @@ extension ProductDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == imageCV {
             var arrData = [String]()
-            for temp in productDetail.images {
+            for temp in arrDisplayImage {
                 arrData.append(temp)
             }
             displayFullScreenImage(arrData, indexPath.row)

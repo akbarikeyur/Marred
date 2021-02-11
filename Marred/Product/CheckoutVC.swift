@@ -120,6 +120,7 @@ class CheckoutVC: UIViewController {
         self.view.endEditing(true)
         let dropDown = DropDown()
         dropDown.anchorView = sender
+        dropDown.semanticContentAttribute = isArabic() ? .forceLeftToRight : .forceRightToLeft
         var arrData = [String]()
         for temp in arrCountry {
             arrData.append(temp.name)
@@ -274,14 +275,20 @@ extension CheckoutVC {
         if coupon.code != "" {
             param["coupon_code"] = coupon.code
         }
+        var type = "simple"
         var arrData = [[String : Any]]()
         for temp in arrCart {
             var dict = [String : Any]()
             dict["product_id"] = temp.product_id
             dict["qty"] = temp.quantity
+            if temp.variation.count > 0 {
+                dict["variations"] = temp.variation
+                type = "variable"
+            }
             arrData.append(dict)
         }
         param["products"] = APIManager.shared.toJson(arrData)
+        param["type"] = type
         if cashBtn.isSelected {
             param["payment_method"] = "COD"
         }else{

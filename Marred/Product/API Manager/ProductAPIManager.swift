@@ -13,13 +13,8 @@ public class ProductAPIManager {
     static let shared = ProductAPIManager()
 
     func serviceCallToGetProductDetail(_ product_id : Int, _ completion: @escaping (_ dict : [String : Any]) -> Void) {
-        /*
-        APIManager.shared.callGetRequest((API.GET_PRODUCT_DETAIL + String(product_id)), true) { (dict) in
-            printData(dict)
-            completion(dict)
-        }
-        */
-        APIManager.shared.callPostRequest(API.GET_PRODUCT_DETAIL, ["product_id" : 6907], true) { (dict) in
+        //6907
+        APIManager.shared.callPostRequest(API.GET_PRODUCT_DETAIL, ["product_id" : product_id], true) { (dict) in
             printData(dict)
             if let status = dict["status"] as? String, status == "success" {
                 if let data = dict["data"] as? [String : Any] {

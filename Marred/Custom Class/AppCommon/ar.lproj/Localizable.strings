@@ -134,3 +134,6 @@
 "withdraw_pending_msg" = "ليس لديك رصيد كاف لطلب السحب!";
 "withdraw_approve_msg" = "ليس لديك أي طلب معتمد!";
 "withdraw_cancel_msg" = "ليس لديك أي طلب ملغى!";
+
+"select_color" = "إختر لون";
+"select_size" = "أختر الحجم";

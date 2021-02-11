@@ -181,3 +181,12 @@
 
 /* Class = "UITextField"; placeholder = "Search Product"; ObjectID = "28B-uM-YKm"; */
 "28B-uM-YKm.placeholder" = "البحث عن المنتج";
+
+/* Class = "UILabel"; text = "Size"; ObjectID = "D1d-Qf-PgA"; */
+"D1d-Qf-PgA.text" = "بحجم";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "svY-Go-2My"; */
+"svY-Go-2My.text" = "السعر";
+
+/* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "fee-HE-5ne"; */
+"fee-HE-5ne.normalTitle" = "";

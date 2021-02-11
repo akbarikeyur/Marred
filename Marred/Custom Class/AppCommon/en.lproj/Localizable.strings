@@ -135,3 +135,6 @@
 "withdraw_pending_msg" = "You don't have sufficient balance for a withdraw request!";
 "withdraw_approve_msg" = "You don't have any approved request!";
 "withdraw_cancel_msg" = "You don't have any cancelled request!";
+
+"select_color" = "Select color";
+"select_size" = "Select size";
