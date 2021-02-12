@@ -21,6 +21,7 @@ class SubCategoryVC: UIViewController {
     var selectedPavilion = PavilionModel.init([String : Any]())
     var page = 1
     var arrProduct = [ProductModel]()
+    var isDisplayAll = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +34,13 @@ class SubCategoryVC: UIViewController {
         }
         else if arrSubCategory.count == 0 {
             serviceCallToGetSubCategory()
-        }else{
-            if selectedSubCat.term_id == 0 {
-                selectedSubCat = arrSubCategory[0]
-            }
-            page = 1
-            serviceCallToGetProductList()
         }
+        else if selectedSubCat.term_id == 0 {
+            selectedSubCat = arrSubCategory[0]
+        }
+        
+        page = 1
+        serviceCallToGetProductList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -142,12 +143,12 @@ extension SubCategoryVC {
                 self.arrSubCategory.append(CategoryModel.init(temp))
             }
             self.categoryCV.reloadData()
-            if self.arrSubCategory.count > 0 {
-                self.selectedSubCat = self.arrSubCategory[0]
-                self.page = 1
-                self.arrProduct = [ProductModel]()
-                self.serviceCallToGetProductList()
-            }
+//            if self.arrSubCategory.count > 0 {
+//                self.selectedSubCat = self.arrSubCategory[0]
+//                self.page = 1
+//                self.arrProduct = [ProductModel]()
+//                self.serviceCallToGetProductList()
+//            }
             self.noDataFound.isHidden = (self.arrSubCategory.count > 0)
         }
     }
@@ -159,12 +160,12 @@ extension SubCategoryVC {
                 self.arrSubCategory.append(CategoryModel.init(temp))
             }
             self.categoryCV.reloadData()
-            if self.arrSubCategory.count > 0 {
-                self.selectedSubCat = self.arrSubCategory[0]
-                self.page = 1
-                self.arrProduct = [ProductModel]()
-                self.serviceCallToGetProductList()
-            }
+//            if self.arrSubCategory.count > 0 {
+//                self.selectedSubCat = self.arrSubCategory[0]
+//                self.page = 1
+//                self.arrProduct = [ProductModel]()
+//                self.serviceCallToGetProductList()
+//            }
             self.noDataFound.isHidden = (self.arrSubCategory.count > 0)
         }
     }
@@ -172,7 +173,15 @@ extension SubCategoryVC {
     func serviceCallToGetProductList() {
         var param = [String : Any]()
         param["paged"] = page
-        param["cat_id"] = selectedSubCat.term_id
+        if selectedSubCat.term_id != 0 {
+            param["cat_id"] = selectedSubCat.term_id
+        }
+        else if selectedPavilion.id != 0 {
+            param["cat_id"] = selectedPavilion.id
+        }
+        else if categoryData.term_id != 0 {
+            param["cat_id"] = categoryData.term_id
+        }
         printData(param)
         HomeAPIManager.shared.serviceCallToGetProductList(param, (arrProduct.count == 0)) { (data, total) in
             if self.page == 1 {
@@ -188,8 +197,12 @@ extension SubCategoryVC {
             }
             self.productCV.reloadData()
             
-            self.nameLbl.text = self.selectedSubCat.name + " (" + String(total) + " " + getTranslate("total_product_found") + ")"
-            self.nameLbl.attributedText = attributedStringWithColor(self.nameLbl.text!, [self.selectedSubCat.name], color: self.nameLbl.textColor, font: UIFont(name: APP_BOLD, size: 14.0))
+            if self.selectedSubCat.name != "" {
+                self.nameLbl.text = self.selectedSubCat.name + " (" + String(total) + " " + getTranslate("total_product_found") + ")"
+                self.nameLbl.attributedText = attributedStringWithColor(self.nameLbl.text!, [self.selectedSubCat.name], color: self.nameLbl.textColor, font: UIFont(name: APP_BOLD, size: 14.0))
+            }else{
+                self.nameLbl.text = String(total) + " " + getTranslate("total_product_found")
+            }
         }
     }
 }

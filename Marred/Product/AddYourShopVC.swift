@@ -58,7 +58,7 @@ class AddYourShopVC: UIViewController {
         }
         
         if getPavilionData().count == 0 {
-            HomeAPIManager.shared.serviceCallToGetPavilionList()
+            AppDelegate().sharedDelegate().serviceCallToGetPavilionList()
         }else{
             setPavilionDetail()
         }

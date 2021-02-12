@@ -62,7 +62,7 @@ public class HomeAPIManager {
     }
     
     func serviceCallToGetPavilionList() {
-        APIManager.shared.callPostRequest(API.GET_PAVILION, [String : Any](), true) { (dict) in
+        APIManager.shared.callPostRequest(API.GET_PAVILION, [String : Any](), false) { (dict) in
             printData(dict)
             if let data = dict["pavailions"] as? [[String : Any]] {
                 var arrPavilion = [PavilionModel]()

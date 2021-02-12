@@ -47,7 +47,7 @@ class CategoryVC: UIViewController {
             categoryCV.reloadData()
         }
         self.arrPavilion = getPavilionData()
-        serviceCallToGetPavilionList()
+        AppDelegate().sharedDelegate().serviceCallToGetPavilionList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,7 +121,7 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
 {
     func registerCollectionView() {
         tabCV.register(UINib.init(nibName: "CategoryListCVC", bundle: nil), forCellWithReuseIdentifier: "CategoryListCVC")
-        categoryCV.register(UINib.init(nibName: "CategoriesCVC", bundle: nil), forCellWithReuseIdentifier: "CategoriesCVC")
+        categoryCV.register(UINib.init(nibName: "TopCategoryCVC", bundle: nil), forCellWithReuseIdentifier: "TopCategoryCVC")
         pavillionCV.register(UINib.init(nibName: "PavillionShopCVC", bundle: nil), forCellWithReuseIdentifier: "PavillionShopCVC")
     }
     
@@ -159,8 +159,8 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoryCV {
-            let cell : CategoriesCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "CategoriesCVC", for: indexPath) as! CategoriesCVC
-            cell.setupDetails(arrCategory[indexPath.row])
+            let cell : TopCategoryCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "TopCategoryCVC", for: indexPath) as! TopCategoryCVC
+            cell.setupDetail(arrCategory[indexPath.row])
             return cell
         }
         else if collectionView == tabCV {
@@ -208,18 +208,26 @@ extension CategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         if selectedTab == getTranslate("shop_by_categories") {
             displaySubViewtoParentView(mainContainerView, subview: categoryView)
             categoryCV.reloadData()
+            if arrCategory.count == 0 {
+                if getCategoryData().count > 0 {
+                    refreshCategoryList()
+                }else{
+                    AppDelegate().sharedDelegate().serviceCallToGetCategory()
+                }
+            }
         }
         else if selectedTab == getTranslate("shop_by_pavilions") {
             displaySubViewtoParentView(mainContainerView, subview: pavillionView)
             pavillionCV.reloadData()
+            if arrPavilion.count == 0 {
+                if getPavilionData().count > 0 {
+                    refreshPivilionData()
+                }else{
+                    AppDelegate().sharedDelegate().serviceCallToGetPavilionList()
+                }
+            }
         }
     }
     
     
-}
-
-extension CategoryVC {
-    func serviceCallToGetPavilionList() {
-        HomeAPIManager.shared.serviceCallToGetPavilionList()
-    }
 }

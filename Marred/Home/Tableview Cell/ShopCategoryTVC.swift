@@ -39,7 +39,7 @@ class ShopCategoryTVC: UITableViewCell {
         self.endEditing(true)
         let dropDown = DropDown()
         dropDown.anchorView = sender
-        dropDown.semanticContentAttribute = isArabic() ? .forceLeftToRight : .forceRightToLeft
+        dropDown.semanticContentAttribute = isArabic() ? .forceLeftToRight : .forceLeftToRight
         var arrData = [String]()
         for temp in arrCategory {
             arrData.append(temp.name)

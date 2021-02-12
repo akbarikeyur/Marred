@@ -75,6 +75,7 @@ func setCategoryData(_ data : [CategoryModel])
         arrData.append(temp.dictionary())
     }
     setDataToPreference(data: arrData as AnyObject, forKey: "category_data")
+    setSynchDateCategory()
 }
 
 func getCategoryData() -> [CategoryModel]
@@ -179,6 +180,7 @@ func setPavilionData(_ data: [PavilionModel])
         arrData.append(temp.dictionary())
     }
     setDataToPreference(data: arrData as AnyObject, forKey: "pavilion_data")
+    setSynchDatePavilion()
 }
 
 func getPavilionData() -> [PavilionModel]
@@ -218,4 +220,40 @@ func getShippingAddress() -> AddressModel {
         address = AddressModel.init(data)
     }
     return address
+}
+
+func setSynchDateCategory() {
+    setDataToPreference(data: getDateStringFromDate(date: Date(), format: "dd-MM-yyyy") as AnyObject, forKey: "synch_date_cat")
+}
+
+func isDifferentSynchDateCategory() -> Bool {
+    if let strDate : String = getDataFromPreference(key: "synch_date_cat") as? String
+    {
+        if strDate == getDateStringFromDate(date: Date(), format: "dd-MM-yyyy") {
+            return false
+        }
+    }
+    return true
+}
+
+func removeSynchDateCategory() {
+    removeDataFromPreference(key: "synch_date_cat")
+}
+
+func setSynchDatePavilion() {
+    setDataToPreference(data: getDateStringFromDate(date: Date(), format: "dd-MM-yyyy") as AnyObject, forKey: "synch_date_pav")
+}
+
+func isDifferentSynchDatePavilion() -> Bool {
+    if let strDate : String = getDataFromPreference(key: "synch_date_pav") as? String
+    {
+        if strDate == getDateStringFromDate(date: Date(), format: "dd-MM-yyyy") {
+            return false
+        }
+    }
+    return true
+}
+
+func removeSynchDatePavilion() {
+    removeDataFromPreference(key: "synch_date_pav")
 }

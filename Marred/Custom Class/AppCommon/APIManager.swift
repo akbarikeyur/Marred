@@ -333,6 +333,7 @@ public class APIManager {
         if isLoaderDisplay {
             showLoader()
         }
+        printData(addLangParam(api))
         Alamofire.request(addLangParam(api), method: .post, parameters: params, encoding: JSONEncoding.default, headers: getJsonHeader()).responseJSON { (response) in
             removeLoader()
             switch response.result {

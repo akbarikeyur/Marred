@@ -477,7 +477,7 @@ class L102Language {
 }
 
 func isArabic() -> Bool {
-    if Locale.current.languageCode == "ar" || L102Language.currentAppleLanguage() == "ar" {
+    if L102Language.currentAppleLanguage().contains("ar") {
         return true
     }
     return false

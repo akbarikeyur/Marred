@@ -32,6 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.backgroundColor = WhiteColor
         
+        if L102Language.currentAppleLanguage() == "" {
+            if (Locale.current.languageCode?.contains("ar"))! {
+                L102Language.setAppleLAnguageTo(lang: "ar")
+            }else{
+                L102Language.setAppleLAnguageTo(lang: "en")
+            }
+        }
+        
         //Firebase
         FirebaseApp.configure()
         
@@ -143,9 +151,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
         }
         setCategoryData([CategoryModel]())
+        setPavilionData([PavilionModel]())
         setHomeBannerData([String]())
         setHomePavalionData([HomeModel]())
-        
+        removeSynchDateCategory()
+        removeSynchDatePavilion()
+    
         AppDelegate().sharedDelegate().window?.rootViewController = AppDelegate().sharedDelegate().storyboard().instantiateInitialViewController()
         container = MFSideMenuContainerViewController()
         customTabbarVc = CustomTabBarController()
@@ -273,7 +284,15 @@ extension UIApplication {
 
 extension AppDelegate {
     func serviceCallToGetCategory() {
-        HomeAPIManager.shared.serviceCallToGetCategory()
+//        if getCategoryData().count == 0 || isDifferentSynchDateCategory() {
+            HomeAPIManager.shared.serviceCallToGetCategory()
+//        }
+    }
+    
+    func serviceCallToGetPavilionList() {
+//        if getPavilionData().count == 0 || isDifferentSynchDatePavilion() {
+            HomeAPIManager.shared.serviceCallToGetPavilionList()
+//        }
     }
     
     func serviceCallToGetUserDetail() {
