@@ -19,7 +19,7 @@ class TopCategoryCVC: UICollectionViewCell {
     }
     
     func setupDetail(_ dict : CategoryModel) {
-        imgView.image = UIImage(named: String(dict.term_id))
+        setImageBackgroundImage(imgView, dict.cat_image, "")
         nameLbl.text = dict.name
     }
     

@@ -26,7 +26,7 @@ class SideMenuVC: UIViewController {
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(updateUserData), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
         registerTableViewMethod()
-        
+        profileImgBtn.setBackgroundImage(UIImage(named: "logo"), for: .normal)
         
         updateUserData()
     }

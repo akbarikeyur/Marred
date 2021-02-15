@@ -10,20 +10,19 @@ import Foundation
 
 struct CategoryModel {
     var term_id, count : Int!
-    var name : String!
-    var img : Bool!
+    var name, cat_image : String!
     
     init(_ dict : [String : Any])
     {
         term_id = AppModel.shared.getIntData(dict, "term_id")
         name = dict["name"] as? String ?? ""
         name = name.replacingOccurrences(of: "&amp;", with: "&")
-        img = dict["img"] as? Bool ?? false
+        cat_image = dict["cat_image"] as? String ?? ""
         count = AppModel.shared.getIntData(dict, "count")
     }
     
     func dictionary() -> [String : Any] {
-        return ["term_id" : term_id!, "name" : name!, "img" : img!, "count" : count!]
+        return ["term_id" : term_id!, "name" : name!, "cat_image" : cat_image!, "count" : count!]
     }
 }
 

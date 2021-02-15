@@ -1,0 +1,1168 @@
+{
+	"id": "53608b97-3231-00f1-44b7-3a4c8c903652",
+	"name": "mareed",
+	"description": "",
+	"order": [
+		"69a1fb62-97b5-c099-4e14-c762edba9d4d",
+		"e0f0e879-5d2c-94b7-e3f4-4697316d8e20",
+		"852f353c-67cd-5ff6-158b-e42e9c3a9542",
+		"6afc842e-e654-cfac-13c3-627ffb0bb6f7",
+		"40dc3ed2-40a8-d6e1-e7f4-fce236f3acf0",
+		"1935cc1e-0844-b04a-0fc4-89b55d0a0f03",
+		"bdda054a-0935-36d8-aff4-2556a66d0014",
+		"201903f6-683a-a277-8fbf-99ef72a6b63d",
+		"ee6c5c22-1fb8-c338-a8da-e32b79c921a8",
+		"325dad03-c9b8-4847-e6c5-86ef4aab9c37",
+		"74b88c94-334e-bcd9-120b-bc46e31502d4",
+		"72959d0c-619c-e4c8-fdc9-1b9bc4172232",
+		"3d9c49f5-b2c4-f0e6-3ae1-3003fd31f0f9",
+		"836474f1-5af7-0ff9-cf38-e2de8dba0a92",
+		"49831d87-f651-8c87-bdf3-6bd6b79c92c1",
+		"6d201409-41d6-cb51-38fb-65f7f692b7ae",
+		"44188583-1b43-5676-587f-409d5a5626bc",
+		"d81a1456-b4b9-68d6-b0b2-99b03da51189",
+		"f10d56d7-dde7-c895-1209-d38234cd9961",
+		"9c502bc4-2546-feef-9615-c1747180abf2",
+		"0132b3e0-b108-449f-720f-16f22f53b9ce",
+		"e242e438-9a00-dbfd-61b7-27b4187994ba",
+		"ae0b0607-6ef1-490b-2516-000dbc2794d1",
+		"7dd83798-fcfb-48fc-ccc6-7def68a56d06",
+		"3cc5427e-1d3e-165b-b2c4-98321b4099f8",
+		"fdcf1439-b901-94fc-3fd1-c1275171281b",
+		"eb1b809a-274e-6b7c-cc72-c2cbae81be18",
+		"194d451c-04ae-592a-2790-f65a2b59ec49",
+		"a5a1b366-cf37-1da0-7d0f-ce1e4ec4b762",
+		"9cf2b35b-fd36-397c-398e-e78d9c5ba203",
+		"5ab9f614-cfaa-7a75-75c8-b8935f6b0c45",
+		"0e5c7f2c-a8f4-2707-09f4-dec69eef2666",
+		"bdd26538-d76e-bef9-4b20-290dbef2861a",
+		"23fa9fe1-6a3a-62e8-eb11-4db5b26b5284",
+		"704827af-1cf1-b098-8bb1-722d63452ad1",
+		"64af7ac1-f490-de2d-2d55-ffffc6ea2af6",
+		"0f3ea46c-1934-4120-e912-d3e48a5ec79f",
+		"cfb6cd4c-3a5f-ec76-fd21-16f47cba3e37",
+		"ff34f8f7-59a1-ac85-3ca9-6d2d68e5b103",
+		"b07fb5e6-432a-e295-cf84-f15bc3b161bb"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 0,
+	"owner": "1369513",
+	"public": false,
+	"requests": [
+		{
+			"id": "0132b3e0-b108-449f-720f-16f22f53b9ce",
+			"name": "User Register",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ck_eb581e733c1f69769fa0ca5407cd56f7f7137942",
+				"password": "cs_bedc787fb94f3adeffae2e40475b3fbae5812305"
+			},
+			"headers": "",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\r\n    \"email\" : \"ali@anglotestserver.website\",\r\n    \"first_name\" : \"arm\",\r\n    \"last_name\" : \"arm\",\r\n    \"username\" : \"arm196\",\r\n    \"billing\" : {\r\n        \"first_name\" : \"John\",\r\n        \"last_name\" : \"Doe\",\r\n        \"company\" : \"\",\r\n        \"address_1\" : \"969 Market\",\r\n        \"address_2\" : \"\",\r\n        \"city\" : \"San Francisco\",\r\n        \"state\" : \"CA\",\r\n        \"postcode\" : \"94103\",\r\n        \"country\" : \"US\",\r\n        \"email\" : \"john.doe@example.com\",\r\n        \"phone\" : \"(555) 555-5555\"\r\n    },\r\n    \"shipping\" : {\r\n        \"first_name\" : \"John\",\r\n        \"last_name\" : \"Doe\",\r\n        \"company\" : \"\",\r\n        \"address_1\" : \"969 Market\",\r\n        \"address_2\" : \"\",\r\n        \"city\" : \"San Francisco\",\r\n        \"state\" : \"CA\",\r\n        \"postcode\" : \"94103\",\r\n        \"country\" : \"US\",\r\n        \"email\" : \"john.doe@example.com\",\r\n        \"phone\" : \"(555) 555-5555\"\r\n    }\r\n}",
+			"url": "https://maared24.com/wp-json/wc/v3/customers",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "0e5c7f2c-a8f4-2707-09f4-dec69eef2666",
+			"name": "get Vendor Orders",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "user_id",
+					"value": "88",
+					"type": "text"
+				},
+				{
+					"key": "filter",
+					"value": "wc-cancelled",
+					"description": "wc-cancelled / wc-failed / wc-completed / wc-processing / wc-pending",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/user/getVendorOrder",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "0f3ea46c-1934-4120-e912-d3e48a5ec79f",
+			"name": "contact admin",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "user_id",
+					"value": "45",
+					"type": "text"
+				},
+				{
+					"key": "filter",
+					"value": "wc-cancelled",
+					"description": "wc-cancelled / wc-failed / wc-completed / wc-processing / wc-pending",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/contactadmin",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "1935cc1e-0844-b04a-0fc4-89b55d0a0f03",
+			"name": "Kuwait Pavilion",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "pavilions_id",
+					"value": "243",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/pavilions",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "194d451c-04ae-592a-2790-f65a2b59ec49",
+			"name": "deal of the day",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "user_id",
+					"value": "1",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/deal_of_the_day",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "201903f6-683a-a277-8fbf-99ef72a6b63d",
+			"name": "Turkey Pavilion",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "pavilions_id",
+					"value": "236",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/pavilions",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "23fa9fe1-6a3a-62e8-eb11-4db5b26b5284",
+			"name": "Seller Dashboard",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "user_id",
+					"value": "45",
+					"type": "text"
+				},
+				{
+					"key": "filter",
+					"value": "wc-cancelled",
+					"description": "wc-cancelled / wc-failed / wc-completed / wc-processing / wc-pending",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/seller/Dashboard",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "325dad03-c9b8-4847-e6c5-86ef4aab9c37",
+			"name": "Egypt Pavilion",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "pavilions_id",
+					"value": "443",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/pavilions",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "3cc5427e-1d3e-165b-b2c4-98321b4099f8",
+			"name": "Add Bookmark",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "user_id",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "product_id",
+					"value": "24508",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/bookmark/addbookmark",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "3d9c49f5-b2c4-f0e6-3ae1-3003fd31f0f9",
+			"name": "product detail",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "product_id",
+					"value": "24508",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/productDetail",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "40dc3ed2-40a8-d6e1-e7f4-fce236f3acf0",
+			"name": "Europe Pavilion",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "pavilions_id",
+					"value": "258",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/pavilions",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "44188583-1b43-5676-587f-409d5a5626bc",
+			"name": "cart items count",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "GET",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "product_id",
+					"value": "24508",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "quantity",
+					"value": "1",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/cocart/v1/count-items",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "49831d87-f651-8c87-bdf3-6bd6b79c92c1",
+			"name": "clear cart",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "product_id",
+					"value": "24508",
+					"type": "text"
+				},
+				{
+					"key": "quantity",
+					"value": "1",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/cocart/v1/clear",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "5ab9f614-cfaa-7a75-75c8-b8935f6b0c45",
+			"name": "get product by vendor",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "author_name",
+					"value": "europe-pavilion",
+					"type": "text"
+				},
+				{
+					"key": "paged",
+					"value": "1",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/user/getPorductByUser",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "64af7ac1-f490-de2d-2d55-ffffc6ea2af6",
+			"name": "add shop",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "first_name",
+					"value": "ad",
+					"type": "text"
+				},
+				{
+					"key": "last_name",
+					"value": "asd",
+					"type": "text"
+				},
+				{
+					"key": "business_name",
+					"value": "asd",
+					"type": "text"
+				},
+				{
+					"key": "email",
+					"value": "adasd",
+					"type": "text"
+				},
+				{
+					"key": "phonecode",
+					"value": "123",
+					"type": "text"
+				},
+				{
+					"key": "phone",
+					"value": "13123",
+					"type": "text"
+				},
+				{
+					"key": "pavilion",
+					"value": "test",
+					"type": "text"
+				},
+				{
+					"key": "category",
+					"value": "asd",
+					"type": "text"
+				},
+				{
+					"key": "request",
+					"value": "asdasd",
+					"type": "text"
+				},
+				{
+					"key": "user_id",
+					"value": "123",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/seller/addShop",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "69a1fb62-97b5-c099-4e14-c762edba9d4d",
+			"name": "yameen pavilion",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "pavilions_id",
+					"value": "1041",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/pavilions",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "6afc842e-e654-cfac-13c3-627ffb0bb6f7",
+			"name": "China Pavilion",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "pavilions_id",
+					"value": "239",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/pavilions",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "6d201409-41d6-cb51-38fb-65f7f692b7ae",
+			"name": "cart calculate",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "product_id",
+					"value": "24508",
+					"type": "text"
+				},
+				{
+					"key": "quantity",
+					"value": "1",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/cocart/v1/calculate",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "704827af-1cf1-b098-8bb1-722d63452ad1",
+			"name": "get-cart 2",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "GET",
+			"helperAttributes": {},
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/cocart/custom/get-cart",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "72959d0c-619c-e4c8-fdc9-1b9bc4172232",
+			"name": "Products By Cat",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "paged",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "cat_id",
+					"value": "853",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/getProductsByCat",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "74b88c94-334e-bcd9-120b-bc46e31502d4",
+			"name": "Get Cateogories",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "pavilions_id",
+					"value": "443",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "cat_id",
+					"value": "267",
+					"description": "0 for parent else send the cat id",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/get_cateogories",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "7dd83798-fcfb-48fc-ccc6-7def68a56d06",
+			"name": "User Update Detail",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ck_eb581e733c1f69769fa0ca5407cd56f7f7137942",
+				"password": "cs_bedc787fb94f3adeffae2e40475b3fbae5812305"
+			},
+			"headers": "",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\r\n    \"email\" : \"john.doe@example.com\",\r\n    \"first_name\" : \"John\",\r\n    \"last_name\" : \"Doe\",\r\n    \"username\" : \"john.doe\",\r\n    \"billing\" : {\r\n        \"first_name\" : \"John\",\r\n        \"last_name\" : \"Doe\",\r\n        \"company\" : \"\",\r\n        \"address_1\" : \"969 Market\",\r\n        \"address_2\" : \"\",\r\n        \"city\" : \"San Francisco\",\r\n        \"state\" : \"CA\",\r\n        \"postcode\" : \"94103\",\r\n        \"country\" : \"US\",\r\n        \"email\" : \"john.doe@example.com\",\r\n        \"phone\" : \"(555) 555-5555\"\r\n    },\r\n    \"shipping\" : {\r\n        \"first_name\" : \"John\",\r\n        \"last_name\" : \"Doe\",\r\n        \"company\" : \"\",\r\n        \"address_1\" : \"969 Market\",\r\n        \"address_2\" : \"\",\r\n        \"city\" : \"San Francisco\",\r\n        \"state\" : \"CA\",\r\n        \"postcode\" : \"94103\",\r\n        \"country\" : \"US\",\r\n        \"email\" : \"john.doe@example.com\",\r\n        \"phone\" : \"(555) 555-5555\"\r\n    }\r\n}",
+			"url": "https://maared24.com/wp-json/wc/v3/customers/132",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "836474f1-5af7-0ff9-cf38-e2de8dba0a92",
+			"name": "add to cart",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "product_id",
+					"value": "24508",
+					"type": "text"
+				},
+				{
+					"key": "quantity",
+					"value": "1",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/cocart/v1/add-item",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "852f353c-67cd-5ff6-158b-e42e9c3a9542",
+			"name": "Africa Pavilion",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "pavilions_id",
+					"value": "241",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/pavilions",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "9c502bc4-2546-feef-9615-c1747180abf2",
+			"name": "User signin",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "user_email",
+					"value": "ali@anglotestserver.website",
+					"type": "text"
+				},
+				{
+					"key": "filter",
+					"value": "wc-cancelled",
+					"description": "wc-cancelled / wc-failed / wc-completed / wc-processing / wc-pending",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/user/signin",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "9cf2b35b-fd36-397c-398e-e78d9c5ba203",
+			"name": "get orders",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "GET",
+			"helperAttributes": {},
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "context",
+					"value": "view",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/wc/v3/orders?key=ck_eb581e733c1f69769fa0ca5407cd56f7f7137942&Screet=cs_bedc787fb94f3adeffae2e40475b3fbae5812305&customer=131",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "key",
+					"value": "ck_eb581e733c1f69769fa0ca5407cd56f7f7137942"
+				},
+				{
+					"key": "Screet",
+					"value": "cs_bedc787fb94f3adeffae2e40475b3fbae5812305"
+				},
+				{
+					"key": "customer",
+					"value": "131"
+				}
+			],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "a5a1b366-cf37-1da0-7d0f-ce1e4ec4b762",
+			"name": "get payment methods",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "GET",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "ck_eb581e733c1f69769fa0ca5407cd56f7f7137942",
+				"password": "cs_bedc787fb94f3adeffae2e40475b3fbae5812305"
+			},
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "context",
+					"value": "view",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/wc/v2/payment_gateways?key=ck_eb581e733c1f69769fa0ca5407cd56f7f7137942&Screet=cs_bedc787fb94f3adeffae2e40475b3fbae5812305",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "key",
+					"value": "ck_eb581e733c1f69769fa0ca5407cd56f7f7137942"
+				},
+				{
+					"key": "Screet",
+					"value": "cs_bedc787fb94f3adeffae2e40475b3fbae5812305"
+				}
+			],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "ae0b0607-6ef1-490b-2516-000dbc2794d1",
+			"name": "User Detail",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "GET",
+			"helperAttributes": {},
+			"headers": "",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/wc/v3/customers/132",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "b07fb5e6-432a-e295-cf84-f15bc3b161bb",
+			"headers": "",
+			"headerData": [],
+			"url": "https://maared24.com/wp-json/wc/v3/products?wpml_language=ar&search=belt",
+			"queryParams": [
+				{
+					"key": "wpml_language",
+					"value": "ar",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "search",
+					"value": "belt",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"data": [
+				{
+					"key": "search",
+					"value": "men",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Search",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1612331913700,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "bdd26538-d76e-bef9-4b20-290dbef2861a",
+			"name": "homepage",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "product_id",
+					"value": "24508",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/getHomepage",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "bdda054a-0935-36d8-aff4-2556a66d0014",
+			"name": "Saudi Pavilion",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "pavilions_id",
+					"value": "235",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/pavilions",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "cfb6cd4c-3a5f-ec76-fd21-16f47cba3e37",
+			"name": "withdraw request",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "user_id",
+					"value": "45",
+					"type": "text"
+				},
+				{
+					"key": "amount",
+					"value": "1000",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/seller/withDrawRequest",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "d81a1456-b4b9-68d6-b0b2-99b03da51189",
+			"name": "cart items",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "GET",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "product_id",
+					"value": "24508",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "quantity",
+					"value": "1",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "cart_item_key",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/cocart/v1/item",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "e0f0e879-5d2c-94b7-e3f4-4697316d8e20",
+			"name": "Fashion Style Pavilion",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "pavilions_id",
+					"value": "790",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/pavilions",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "e242e438-9a00-dbfd-61b7-27b4187994ba",
+			"name": "User Forgot password",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "email",
+					"value": "arm@gmail.com",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/user/forgotpassword",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "eb1b809a-274e-6b7c-cc72-c2cbae81be18",
+			"name": "get Bookmark",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "user_id",
+					"value": "1",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/bookmark/getbookmark",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "ee6c5c22-1fb8-c338-a8da-e32b79c921a8",
+			"name": "UAE Pavilion",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "pavilions_id",
+					"value": "234",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/pavilions",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "f10d56d7-dde7-c895-1209-d38234cd9961",
+			"name": "cart total",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "GET",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "product_id",
+					"value": "24508",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "quantity",
+					"value": "1",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "cart_item_key",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/cocart/v1/totals",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "fdcf1439-b901-94fc-3fd1-c1275171281b",
+			"name": "remove Bookmark",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "user_id",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "product_id",
+					"value": "24508",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/bookmark/removebookmark",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		},
+		{
+			"id": "ff34f8f7-59a1-ac85-3ca9-6d2d68e5b103",
+			"name": "get withdraw request",
+			"description": "",
+			"collectionId": "53608b97-3231-00f1-44b7-3a4c8c903652",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "user_id",
+					"value": "45",
+					"type": "text"
+				},
+				{
+					"key": "status",
+					"value": "2",
+					"description": "0 pending, 1 completed, 2 cancelled",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://maared24.com/wp-json/v1/seller/getwithDrawRequest",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "53608b97-3231-00f1-44b7-3a4c8c903652"
+		}
+	]
+}

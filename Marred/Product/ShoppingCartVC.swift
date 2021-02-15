@@ -221,11 +221,11 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
         if coupon.id != "" && coupon.amount != "" {
             totalPrice -= Double(coupon.amount)!
         }
-        subTotalLbl.text = displayPriceWithCurrency(String(totalPrice))
+        subTotalLbl.text = displayPriceWithCurrency(displayFlotingPrice(totalPrice))
         if flatRateBtn.isSelected {
             totalPrice += 25.0
         }
-        totalLbl.text = displayPriceWithCurrency(String(totalPrice))
+        totalLbl.text = displayPriceWithCurrency(displayFlotingPrice(totalPrice))
     }
     
     @objc @IBAction func clickToRemove(_ sender: UIButton) {
