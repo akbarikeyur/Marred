@@ -2,8 +2,8 @@
 /* Class = "UILabel"; text = "100% secure payment"; ObjectID = "6XK-qq-M3M"; */
 "6XK-qq-M3M.text" = "دفع إلكتروني 100% آمن";
 
-/* Class = "UILabel"; text = "For all oders over 350 AED"; ObjectID = "Bhl-EY-Ieg"; */
-"Bhl-EY-Ieg.text" = "للطلبات التي تتجاوز ال 350 درهم";
+/* Class = "UILabel"; text = "For all oders over 500 AED"; ObjectID = "Bhl-EY-Ieg"; */
+"Bhl-EY-Ieg.text" = "للطلبات التي تتجاوز ال 500 درهم";
 
 /* Class = "UILabel"; text = "7 Days Return"; ObjectID = "HCo-Rw-Z8s"; */
 "HCo-Rw-Z8s.text" = "7 أيام للإستبدال";

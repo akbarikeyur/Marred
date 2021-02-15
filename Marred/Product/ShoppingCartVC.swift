@@ -18,7 +18,9 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var countryFlagImg: UIButton!
     @IBOutlet weak var stateTxt: TextField!
     @IBOutlet weak var cityTxt: TextField!
+    @IBOutlet weak var freeShipView: UIView!
     @IBOutlet weak var freeShipBtn: Button!
+    @IBOutlet weak var flatRateView: UIView!
     @IBOutlet weak var flatRateBtn: Button!
     @IBOutlet weak var flatRateLbl: Label!
     @IBOutlet weak var subTotalLbl: Label!
@@ -222,6 +224,19 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
             totalPrice -= Double(coupon.amount)!
         }
         subTotalLbl.text = displayPriceWithCurrency(displayFlotingPrice(totalPrice))
+        
+        flatRateView.isHidden = true
+        freeShipView.isHidden = true
+        flatRateBtn.isSelected = false
+        freeShipBtn.isSelected = false
+        if totalPrice >= 500 {
+            freeShipBtn.isSelected = true
+            freeShipView.isHidden = false
+        }else {
+            flatRateBtn.isSelected = true
+            flatRateView.isHidden = false
+        }
+        
         if flatRateBtn.isSelected {
             totalPrice += 25.0
         }

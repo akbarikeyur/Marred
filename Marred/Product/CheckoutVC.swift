@@ -32,7 +32,9 @@ class CheckoutVC: UIViewController {
     @IBOutlet weak var notesTxtView: TextView!
     @IBOutlet weak var orderTbl: UITableView!
     @IBOutlet weak var constraintHeightOrderTbl: NSLayoutConstraint!
+    @IBOutlet weak var freeShipView: UIView!
     @IBOutlet weak var freeShipBtn: Button!
+    @IBOutlet weak var flatRateView: UIView!
     @IBOutlet weak var flatRateBtn: Button!
     @IBOutlet weak var flatRateLbl: Label!
     @IBOutlet weak var subTotalLbl: Label!
@@ -182,6 +184,19 @@ class CheckoutVC: UIViewController {
         }
         
         subTotalLbl.text = displayPriceWithCurrency(displayFlotingPrice(totalPrice))
+        
+        flatRateView.isHidden = true
+        freeShipView.isHidden = true
+        flatRateBtn.isSelected = false
+        freeShipBtn.isSelected = false
+        if totalPrice >= 500 {
+            freeShipBtn.isSelected = true
+            freeShipView.isHidden = false
+        }else {
+            flatRateBtn.isSelected = true
+            flatRateView.isHidden = false
+        }
+        
         if flatRateBtn.isSelected {
             totalPrice += 25.0
         }

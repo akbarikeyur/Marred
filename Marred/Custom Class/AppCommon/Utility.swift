@@ -421,11 +421,14 @@ func setupButtonHighlightEffect(_ button : UIButton, _ normalBGColor : UIColor, 
 
 func displayFlotingPrice(_ price : Double) -> String
 {
-    var finalPrice = String(format: "%.2f", Float(price))
-    if finalPrice.contains(".00") {
-        finalPrice = finalPrice.replacingOccurrences(of: ".00", with: "")
-    }
-    return finalPrice
+//    var finalPrice = String(format: "%.2f", Float(price))
+//    if finalPrice.contains(".00") {
+//        finalPrice = finalPrice.replacingOccurrences(of: ".00", with: "")
+//    }
+//    if finalPrice.contains(".0") {
+//        finalPrice = finalPrice.replacingOccurrences(of: ".0", with: "")
+//    }
+    return String(format: "%.2f", Float(price))
 }
 
 func displayPriceWithCurrency(_ price : String) -> String {
