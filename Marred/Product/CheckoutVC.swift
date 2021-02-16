@@ -23,7 +23,7 @@ class CheckoutVC: UIViewController {
     @IBOutlet weak var addressTxt: TextField!
     @IBOutlet weak var apartmentTxt: TextField!
     @IBOutlet weak var cityTxt: TextField!
-    @IBOutlet weak var stateCountryTxt: TextField!
+    @IBOutlet weak var postcodeTxt: TextField!
     @IBOutlet weak var phoneFlagImg: UIImageView!
     @IBOutlet weak var phoneCodeLbl: Label!
     @IBOutlet weak var phoneTxt: TextField!
@@ -89,7 +89,7 @@ class CheckoutVC: UIViewController {
         addressTxt.text = dict.address_1
         apartmentTxt.text = dict.address_2
         cityTxt.text = dict.city
-        stateCountryTxt.text = dict.postcode
+        postcodeTxt.text = dict.postcode
         phoneTxt.text = dict.phone
         emailTxt.text = dict.email
         
@@ -285,6 +285,8 @@ extension CheckoutVC : FoloosiDelegate {
 
 extension CheckoutVC {
     func serviceCallToCheckout() {
+        serviceCallToSetAddress()
+        
         var param = [String : Any]()
         param["user_id"] = AppModel.shared.currentUser.ID
         if coupon.code != "" {
@@ -315,4 +317,28 @@ extension CheckoutVC {
             self.navigationController?.popToRootViewController(animated: false)
         }
     }
+    
+    func serviceCallToSetAddress() {
+        var param = [String : Any]()
+        param["first_name"] = fnameTxt.text
+        param["last_name"] = lnameTxt.text
+        param["company"] = companyNameTxt.text
+        param["address_1"] = addressTxt.text
+        param["address_2"] = apartmentTxt.text
+        param["city"] = cityTxt.text
+        param["state"] = stateTxt.text
+        param["postcode"] = postcodeTxt.text
+        param["country"] = countryTxt.text
+        param["email"] = emailTxt.text
+        param["phone"] = phoneTxt.text
+        print(param)
+        var newParam = [String : Any]()
+        newParam["email"] = AppModel.shared.currentUser.user_email
+        newParam["first_name"] = fnameTxt.text
+        newParam["last_name"] = lnameTxt.text
+        newParam["username"] = AppModel.shared.currentUser.user_nicename
+        newParam["billing"] = param
+        AppDelegate().sharedDelegate().serviceCallToSetAddress(newParam)
+    }
+    
 }

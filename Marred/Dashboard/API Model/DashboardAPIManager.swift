@@ -80,10 +80,11 @@ public class DashboardAPIManager {
     func serviceCallToSetAddress(_ param : [String : Any], _ completion: @escaping (_ dict : [String : Any]) -> Void) {
         APIManager.shared.callPutRequest(API.GET_SET_ADDRESS, param, true) { (dict) in
             printData(dict)
-            if let status = dict["status"] as? String, status == "success" {
-                if let data = dict["data"] as? [String : Any] {
-                    completion(data)
-                }
+            if let billing = dict["billing"] as? [String : Any] {
+                setBillingAddress(AddressModel.init(billing))
+            }
+            if let shipping = dict["shipping"] as? [String : Any]{
+                setShippingAddress(AddressModel.init(shipping))
             }
         }
     }

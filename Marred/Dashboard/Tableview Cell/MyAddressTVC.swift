@@ -103,6 +103,10 @@ class MyAddressTVC: UITableViewCell, UITextFieldDelegate {
             }else{
                 newParam["shipping"] = param
             }
+            newParam["email"] = AppModel.shared.currentUser.user_email
+            newParam["first_name"] = fnameTxt.text
+            newParam["last_name"] = lnameTxt.text
+            newParam["username"] = AppModel.shared.currentUser.user_nicename
             DashboardAPIManager.shared.serviceCallToSetAddress(newParam) { (dic) in
                 displayToast("address_success_msg")
             }

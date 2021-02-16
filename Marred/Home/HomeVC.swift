@@ -35,6 +35,9 @@ class HomeVC: UIViewController {
         refreshControl.addTarget(self, action: #selector(refreshHomeData), for: .valueChanged)
         tblView.refreshControl = refreshControl
         refreshData()
+        if isUserLogin() && !isSeller() {
+            AppDelegate().sharedDelegate().serviceCallToGetAddress()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

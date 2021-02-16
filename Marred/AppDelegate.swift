@@ -309,6 +309,28 @@ extension AppDelegate {
             
         }
     }
+    
+    func serviceCallToGetAddress() {
+        DashboardAPIManager.shared.serviceCallToGetAddress { (dict) in
+            if let billing = dict["billing"] as? [String : Any] {
+                setBillingAddress(AddressModel.init(billing))
+            }
+            if let shipping = dict["shipping"] as? [String : Any]{
+                setShippingAddress(AddressModel.init(shipping))
+            }
+        }
+    }
+    
+    func serviceCallToSetAddress(_ newParam : [String : Any]) {
+        DashboardAPIManager.shared.serviceCallToSetAddress(newParam) { (dict) in
+            if let billing = dict["billing"] as? [String : Any] {
+                setBillingAddress(AddressModel.init(billing))
+            }
+            if let shipping = dict["shipping"] as? [String : Any]{
+                setShippingAddress(AddressModel.init(shipping))
+            }
+        }
+    }
 }
 
 

@@ -19,6 +19,11 @@ class BuyerAddressTabVC: UIViewController {
         // Do any additional setup after loading the view.
         registerTableViewMethod()
         
+        arrAddress = [AddressModel]()
+        arrAddress.append(getBillingAddress())
+        arrAddress.append(getShippingAddress())
+        billingTbl.reloadData()
+        
         serviceCallToSetAddress()
     }
     

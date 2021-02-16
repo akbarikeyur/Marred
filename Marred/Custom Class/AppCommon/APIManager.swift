@@ -54,7 +54,7 @@ struct API {
     
     static let CONTACT_US                             =       BASE_URL + "v1/contactadmin"
     
-    static let GET_SET_ADDRESS                        =       BASE_URL + "wc/v3/customers/" + String(AppModel.shared.currentUser.ID)
+    static let GET_SET_ADDRESS                        =       BASE_URL + "wc/v2/customers/" + String(AppModel.shared.currentUser.ID)
 }
 
 public class APIManager {
@@ -263,6 +263,27 @@ public class APIManager {
         if isLoaderDisplay {
             showLoader()
         }
+        
+        Alamofire.request(addLangParam(api), method: .put, parameters: param, encoding: JSONEncoding.default, headers: getJsonHeader()).responseJSON { (response) in
+            removeLoader()
+            switch response.result {
+            case .success:
+                if let result = response.result.value as? [String:Any] {
+                    completion(result)
+                    return
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+        /*
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             for (key, value) in param {
                 multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
@@ -290,6 +311,7 @@ public class APIManager {
                 break
             }
         }
+        */
     }
     
     //MARK:- Post request

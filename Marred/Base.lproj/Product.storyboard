@@ -2278,8 +2278,8 @@
                         <outlet property="phoneCodeLbl" destination="h9J-AM-1LU" id="fmF-m8-LhG"/>
                         <outlet property="phoneFlagImg" destination="RnC-aR-ray" id="T3B-y7-BHW"/>
                         <outlet property="phoneTxt" destination="6Es-zR-BXF" id="UFM-te-rGt"/>
+                        <outlet property="postcodeTxt" destination="Ngr-L3-1Sf" id="3Io-n7-hLd"/>
                         <outlet property="shippingChargeLbl" destination="vb0-a0-TQq" id="RK9-Ul-Pag"/>
-                        <outlet property="stateCountryTxt" destination="Ngr-L3-1Sf" id="Vng-di-MLo"/>
                         <outlet property="stateTxt" destination="Aji-EI-n6c" id="t2h-nj-Bfa"/>
                         <outlet property="subTotalLbl" destination="coO-qT-Sbo" id="7E5-pQ-06g"/>
                         <outlet property="totalLbl" destination="rgX-gq-fcQ" id="DgF-Ox-jb5"/>
