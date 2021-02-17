@@ -79,55 +79,43 @@ struct WithdrawModel {
     }
 }
 
-struct OrderModel {
-    var id, user_id, customer_id : Int!
-    var status, currency, date_created, total : String!
-    var billing, shipping : AddressModel!
-    var line_items : [OrderProductModel]!
-    var stores : [BrandModel]!
-    
-    init(_ dict : [String : Any]) {
-        id = AppModel.shared.getIntData(dict, "id")
-        user_id = AppModel.shared.getIntData(dict, "user_id")
-        customer_id = AppModel.shared.getIntData(dict, "customer_id")
-        status = AppModel.shared.getStringData(dict, "status")
-        currency = AppModel.shared.getStringData(dict, "currency")
-        if let temp = dict["date_created"] as? String {
-            date_created = temp
-        }
-        total = AppModel.shared.getStringData(dict, "total")
-        billing = AddressModel.init(dict["billing"] as? [String : Any] ?? [String : Any]())
-        shipping = AddressModel.init(dict["shipping"] as? [String : Any] ?? [String : Any]())
-        line_items = [OrderProductModel]()
-        if let tempData = dict["line_items"] as? [[String : Any]] {
-            for temp in tempData {
-                line_items.append(OrderProductModel.init(temp))
-            }
-        }
-        stores = [BrandModel]()
-        if let tempData = dict["stores"] as? [[String : Any]] {
-            for temp in tempData {
-                stores.append(BrandModel.init(temp))
-            }
-        }
-    }
-}
-
 struct OrderProductModel {
     var id : Int!
-    var price, name, thumbnail : String!
-    var quantity : Int!
+    var get_name, get_status, get_description, get_short_description, thumbnail, get_price, store_name : String!
+    var get_featured : Bool!
+    
     
     init(_ dict : [String : Any])
     {
         id = AppModel.shared.getIntData(dict, "id")
-        price = AppModel.shared.getStringData(dict, "price")
+        get_price = AppModel.shared.getStringData(dict, "get_price")
+        store_name = AppModel.shared.getStringData(dict, "store_name")
         thumbnail = dict["thumbnail"] as? String ?? ""
-        name = dict["name"] as? String ?? ""
-        quantity = AppModel.shared.getIntData(dict, "quantity")
+        get_name = dict["get_name"] as? String ?? ""
+        get_status = dict["get_status"] as? String ?? ""
+        get_description = dict["get_description"] as? String ?? ""
+        get_short_description = dict["get_short_description"] as? String ?? ""
+        get_featured = dict["get_featured"] as? Bool ?? false
     }
+}
+
+struct OrderModel {
+    var product_detail : OrderProductModel!
+    var id, quantity : Int!
+    var status, currency, date_created, total : String!
+    var billing, shipping : AddressModel!
     
-    func dictionary() -> [String : Any] {
-        return ["id" : id!, "price" : price!, "thumbnail" : thumbnail!, "name" : name!, "quantity" : quantity!]
+    init(_ dict : [String : Any]) {
+        id = AppModel.shared.getIntData(dict, "id")
+        quantity = AppModel.shared.getIntData(dict, "quantity")
+        status = AppModel.shared.getStringData(dict, "status")
+        currency = AppModel.shared.getStringData(dict, "currency")
+        if let tempDict = dict["date_created"] as? [String : Any] {
+            date_created = AppModel.shared.getStringData(tempDict, "date")
+        }
+        total = AppModel.shared.getStringData(dict, "total")
+        billing = AddressModel.init(dict["billing"] as? [String : Any] ?? [String : Any]())
+        shipping = AddressModel.init(dict["shipping"] as? [String : Any] ?? [String : Any]())
+        
     }
 }

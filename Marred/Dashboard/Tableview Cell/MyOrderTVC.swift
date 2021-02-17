@@ -25,17 +25,16 @@ class MyOrderTVC: UITableViewCell {
     }
 
     func setupDetails(_ dict : OrderModel) {
+        setButtonBackgroundImage(imgBtn, dict.product_detail.thumbnail, IMAGE.PLACEHOLDER)
         invoiceLbl.text = " Invoice#: " + String(dict.id) + " "
-        if dict.line_items.count > 0 {
-            nameLbl.text = dict.line_items[0].name
-            qtyLbl.text = "x" + String(dict.line_items[0].quantity)
-            priceLbl.text = displayPriceWithCurrency(dict.line_items[0].price)
-        }
-        let date = getDateFromDateString(date: dict.date_created, format: "yyyy-MM-dd'T'HH:mm:ss")
+        nameLbl.text = dict.product_detail.get_name
+        qtyLbl.text = "x" + String(dict.quantity)
+        priceLbl.text = displayPriceWithCurrency(dict.total)
+        //2021-02-17 05:15:09.000000
+        let strDate = dict.date_created.components(separatedBy: ".").first!
+        let date = getDateFromDateString(date: strDate, format: "yyyy-MM-dd HH:mm:ss")
         dateLbl.text = "Order Date: " + getDateStringFromDate(date: date, format: "MMMM dd yyyy h:mm a")
-        if dict.stores.count > 0 {
-            vendorLbl.text = "Vendor: " + dict.stores[0].name
-        }
+        vendorLbl.text = "Vendor: " + dict.product_detail.store_name
         statusLbl.text = dict.status.capitalized
     }
     

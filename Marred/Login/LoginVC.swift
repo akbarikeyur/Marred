@@ -26,12 +26,18 @@ class LoginVC: UIViewController {
         signupBtn.setAttributedTitle(attributedStringWithColor(getTranslate("signup_button_title"), [getTranslate("signup_button")], color: BlackColor, font: UIFont(name: APP_MEDIUM, size: 12.0)), for: .normal)
         
         if PLATFORM.isSimulator {
-//            emailTxt.text = "FV500@maared24.com"
-//            passwordTxt.text = "FO2VR5NJ8W"
+            //Buyer
+            emailTxt.text = "FV500@maared24.com"
+            passwordTxt.text = "FO2VR5NJ8W"
 //            emailTxt.text = "keyurdakbari@gmail.com"
-            emailTxt.text = "testingakbari@gmail.com"
+//            emailTxt.text = "testingakbari@gmail.com"
+//            passwordTxt.text = "qqqqqq"
+            
+            //Seller
 //            emailTxt.text = "amishapadasala20@gmail.com"
-            passwordTxt.text = "qqqqqq"
+//            passwordTxt.text = "qqqqqq"
+            emailTxt.text = "FV114@maared24.com"
+            passwordTxt.text = "BCF8FMICTN"
         }
     }
     

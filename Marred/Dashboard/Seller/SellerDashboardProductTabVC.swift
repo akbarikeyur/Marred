@@ -20,6 +20,7 @@ class SellerDashboardProductTabVC: UIViewController {
     var arrProduct = [ProductModel]()
     var arrDisplayProduct = [ProductModel]()
     var page = 1
+    var refreshControl = UIRefreshControl.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,8 @@ class SellerDashboardProductTabVC: UIViewController {
         // Do any additional setup after loading the view.
         registerTableViewMethod()
         registerCollectionView()
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        tblView.refreshControl = refreshControl
         refreshData()
     }
     
@@ -34,7 +37,8 @@ class SellerDashboardProductTabVC: UIViewController {
         
     }
     
-    func refreshData() {
+    @objc func refreshData() {
+        refreshControl.endRefreshing()
         page = 1
         serviceCallToGetUserProduct()
     }

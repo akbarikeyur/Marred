@@ -48,7 +48,7 @@ struct API {
     static let DEAL_OF_DAY                            =       BASE_URL + "v1/deal_of_the_day"
     
     static let GET_USER_PRODUCT                       =       BASE_URL + "v1/user/getPorductByUser"
-    static let GET_BUYER_ORDER                        =       BASE_URL + "wc/v3/orders"
+    static let GET_BUYER_ORDER                        =       BASE_URL + "v1/user/getOrders"
     static let GET_SELLER_ORDER                       =       BASE_URL + "v1/user/getVendorOrder"
     static let GET_WITHDRAW_REQUEST                   =       BASE_URL + "v1/seller/getwithDrawRequest"
     
@@ -80,6 +80,9 @@ public class APIManager {
     }
     
     func addLangParam(_ strUrl : String) -> String {
+        if strUrl.contains("user/getVendorOrder") {
+            return strUrl
+        }
         if isArabic() {
             if strUrl.contains("?") {
                 return strUrl + "&wpml_language=ar"

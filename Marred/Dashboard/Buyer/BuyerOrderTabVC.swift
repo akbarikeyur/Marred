@@ -13,12 +13,15 @@ class BuyerOrderTabVC: UIViewController {
     @IBOutlet weak var tblView: UITableView!
     
     var arrOrder = [OrderModel]()
+    var refreshControl = UIRefreshControl.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         registerTableViewMethod()
+        refreshControl.addTarget(self, action: #selector(serviceCallToGetBuyerOrder), for: .valueChanged)
+        tblView.refreshControl = refreshControl
     }
     
     func setupDetails() {
@@ -69,11 +72,15 @@ extension BuyerOrderTabVC : UITableViewDelegate, UITableViewDataSource {
 }
 
 extension BuyerOrderTabVC {
-    func serviceCallToGetBuyerOrder() {
+    @objc func serviceCallToGetBuyerOrder() {
+        refreshControl.endRefreshing()
         DashboardAPIManager.shared.serviceCallToGetBuyerOrder { (data) in
             self.arrOrder = [OrderModel]()
             for temp in data {
-                self.arrOrder.append(OrderModel.init(temp))
+                var order = OrderModel.init(temp["cart_data"] as? [String : Any] ?? [String : Any]())
+                order.quantity = AppModel.shared.getIntData(temp, "quantity")
+                order.product_detail = OrderProductModel.init(temp["product_detail"] as? [String : Any] ?? [String : Any]())
+                self.arrOrder.append(order)
             }
             self.tblView.reloadData()
         }

@@ -18,6 +18,7 @@ class SellerDashboardOrderTabVC: UIViewController {
     var arrType = ["All"]
     var selectedType = 0
     var arrOrder = [OrderModel]()
+    var refreshControl = UIRefreshControl.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,14 @@ class SellerDashboardOrderTabVC: UIViewController {
         // Do any additional setup after loading the view.
         registerTableViewMethod()
         registerCollectionView()
-        serviceCallToGetSellerOrder()
+        refreshControl.addTarget(self, action: #selector(serviceCallToGetSellerOrder), for: .valueChanged)
+        tblView.refreshControl = refreshControl
     }
     
     func setupDetails() {
-        
+        if arrOrder.count == 0 {
+            serviceCallToGetSellerOrder()
+        }
     }
     
     //MARK:- Button click event
@@ -124,15 +128,19 @@ extension SellerDashboardOrderTabVC : UICollectionViewDelegate, UICollectionView
 }
 
 extension SellerDashboardOrderTabVC {
-    func serviceCallToGetSellerOrder() {
+    @objc func serviceCallToGetSellerOrder() {
+        refreshControl.endRefreshing()
         var param = [String : Any]()
-        param["author_name"] = AppModel.shared.currentUser.user_nicename
+        param["user_id"] = AppModel.shared.currentUser.ID
         param["paged"] = 1
         printData(param)
         DashboardAPIManager.shared.serviceCallToGetSellerOrder(param) { (data) in
             self.arrOrder = [OrderModel]()
             for temp in data {
-                self.arrOrder.append(OrderModel.init(temp))
+                var order = OrderModel.init(temp["cart_data"] as? [String : Any] ?? [String : Any]())
+                order.quantity = AppModel.shared.getIntData(temp, "quantity")
+                order.product_detail = OrderProductModel.init(temp["product_detail"] as? [String : Any] ?? [String : Any]())
+                self.arrOrder.append(order)
             }
             self.tblView.reloadData()
         }

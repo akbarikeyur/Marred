@@ -31,10 +31,13 @@ public class DashboardAPIManager {
     }
     
     func serviceCallToGetBuyerOrder(_ completion: @escaping (_ dict : [[String : Any]]) -> Void) {
-        let strUrl = API.GET_BUYER_ORDER + "&customer=" + String(AppModel.shared.currentUser.ID)
-        APIManager.shared.callGetRequestWithArrayResponse(strUrl, true) { (data) in
-            printData(data)
-            completion(data)
+        APIManager.shared.callPostRequest(API.GET_BUYER_ORDER, ["customer_id":String(AppModel.shared.currentUser.ID)], true) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [[String : Any]] {
+                    completion(data)
+                }
+            }
         }
     }
     
@@ -71,7 +74,7 @@ public class DashboardAPIManager {
     }
     
     func serviceCallToGetAddress(_ completion: @escaping (_ dict : [String : Any]) -> Void) {
-        APIManager.shared.callGetRequest(API.GET_SET_ADDRESS, true) { (dict) in
+        APIManager.shared.callGetRequest(API.GET_SET_ADDRESS, false) { (dict) in
             printData(dict)
             completion(dict)
         }

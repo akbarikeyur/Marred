@@ -76,18 +76,16 @@ extension BuyerDashboardTabVC {
         DashboardAPIManager.shared.serviceCallToGetBuyerOrder { (data) in
             self.arrOrder = [OrderModel]()
             for temp in data {
-                self.arrOrder.append(OrderModel.init(temp))
+                var order = OrderModel.init(temp["cart_data"] as? [String : Any] ?? [String : Any]())
+                order.quantity = AppModel.shared.getIntData(temp, "quantity")
+                order.product_detail = OrderProductModel.init(temp["product_detail"] as? [String : Any] ?? [String : Any]())
+                self.arrOrder.append(order)
             }
             self.tblView.reloadData()
             self.totalOrderLbl.text = String(self.arrOrder.count)
             var amount = 0.0
             for temp in self.arrOrder {
-                if temp.line_items.count > 0 {
-                    if temp.line_items[0].price != "" {
-                        amount += Double(temp.line_items[0].price!)!
-                    }
-                    
-                }
+                amount += Double(temp.total)!
             }
             self.totalPuchaseLbl.text = displayPriceWithCurrency(String(amount))
         }
