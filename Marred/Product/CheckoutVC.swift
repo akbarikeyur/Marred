@@ -304,7 +304,7 @@ extension CheckoutVC {
             }
             arrData.append(dict)
         }
-        param["products"] = APIManager.shared.toJson(arrData)
+        param["products"] = arrData
         param["type"] = type
         if cashBtn.isSelected {
             param["payment_method"] = "COD"

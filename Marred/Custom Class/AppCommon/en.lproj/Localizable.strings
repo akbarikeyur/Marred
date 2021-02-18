@@ -138,3 +138,5 @@
 
 "select_color" = "Select color";
 "select_size" = "Select size";
+
+"add_cart_success" = "Product has been added to your cart.";

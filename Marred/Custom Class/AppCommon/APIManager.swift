@@ -80,7 +80,7 @@ public class APIManager {
     }
     
     func addLangParam(_ strUrl : String) -> String {
-        if strUrl.contains("user/getVendorOrder") {
+        if strUrl.contains("user/getVendorOrder") || strUrl.contains("user/getOrders") {
             return strUrl
         }
         if isArabic() {

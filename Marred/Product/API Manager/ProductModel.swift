@@ -29,6 +29,7 @@ struct ProductModel {
                 thumbnail = images[0]["src"] as? String ?? ""
             }
         }
+        title = ""
         if dict["title"] != nil {
             title = dict["title"] as? String ?? ""
         }else if dict["get_name"] != nil {
@@ -36,6 +37,7 @@ struct ProductModel {
         }else if dict["name"] != nil {
             title = dict["name"] as? String ?? ""
         }
+        title = title.html2String
         vendor = dict["vendor"] as? String ?? ""
         if vendor == "" {
             vendor = dict["store"] as? String ?? ""
@@ -74,6 +76,7 @@ struct ProductDetailModel {
         get_total_sales = AppModel.shared.getIntData(dict, "get_total_sales")
         get_stock_quantity = AppModel.shared.getIntData(dict, "get_stock_quantity")
         get_name = dict["get_name"] as? String ?? ""
+        get_name = get_name.html2String
         get_status = dict["get_status"] as? String ?? ""
         get_description = dict["get_description"] as? String ?? ""
         get_short_description = dict["get_short_description"] as? String ?? ""
@@ -167,6 +170,7 @@ struct BrandModel {
         desc = dict["description"] as? String ?? ""
         filter = dict["filter"] as? String ?? ""
         name = dict["name"] as? String ?? ""
+        name = name.html2String
         slug = dict["slug"] as? String ?? ""
         taxonomy = dict["taxonomy"] as? String ?? ""
     }
@@ -185,6 +189,7 @@ struct CartModel {
     init(_ dict : [String : Any]) {
         product_id = AppModel.shared.getStringData(dict, "product_id")
         product_name = AppModel.shared.getStringData(dict, "product_name")
+        product_name = product_name.html2String
         product_price = AppModel.shared.getStringData(dict, "product_price")
         quantity = AppModel.shared.getIntData(dict, "quantity")
         product_image = AppModel.shared.getStringData(dict, "product_image")
@@ -204,6 +209,7 @@ struct DealProductModel {
         id = AppModel.shared.getIntData(dict, "id")
         get_featured = dict["get_featured"] as? Bool ?? false
         get_name = AppModel.shared.getStringData(dict, "get_name")
+        get_name = get_name.html2String
         get_status = AppModel.shared.getStringData(dict, "get_status")
         get_description = AppModel.shared.getStringData(dict, "get_description")
         get_short_description = AppModel.shared.getStringData(dict, "get_short_description")

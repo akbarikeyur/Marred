@@ -386,8 +386,10 @@ extension ProductDetailVC {
         }
         printData(param)
         ProductAPIManager.shared.serviceCallToAddToCart(param) {
-            self.quantityBtn.setTitle("1", for: .normal)
+            
             NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART), object: nil)
         }
+        displayToast("add_cart_success")
+        self.quantityBtn.setTitle("1", for: .normal)
     }
 }

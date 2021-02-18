@@ -92,6 +92,7 @@ struct OrderProductModel {
         store_name = AppModel.shared.getStringData(dict, "store_name")
         thumbnail = dict["thumbnail"] as? String ?? ""
         get_name = dict["get_name"] as? String ?? ""
+        get_name = get_name.html2String
         get_status = dict["get_status"] as? String ?? ""
         get_description = dict["get_description"] as? String ?? ""
         get_short_description = dict["get_short_description"] as? String ?? ""

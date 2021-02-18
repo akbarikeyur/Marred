@@ -16,7 +16,7 @@ struct CategoryModel {
     {
         term_id = AppModel.shared.getIntData(dict, "term_id")
         name = dict["name"] as? String ?? ""
-        name = name.replacingOccurrences(of: "&amp;", with: "&")
+        name = name.html2String
         cat_image = dict["cat_image"] as? String ?? ""
         count = AppModel.shared.getIntData(dict, "count")
     }

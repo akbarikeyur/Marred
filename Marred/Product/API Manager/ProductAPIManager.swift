@@ -25,11 +25,9 @@ public class ProductAPIManager {
     }
     
     func serviceCallToAddToCart(_ param : [String : Any], _ completion: @escaping () -> Void) {
-        APIManager.shared.callPostRequest(API.ADD_TO_CART, param, true) { (dict) in
+        APIManager.shared.callPostRequest(API.ADD_TO_CART, param, false) { (dict) in
             printData(dict)
-            if let status = dict["status"] as? String, status == "success" {
-                completion()
-            }
+            completion()
         }
     }
     

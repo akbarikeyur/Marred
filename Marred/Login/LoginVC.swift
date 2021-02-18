@@ -27,17 +27,17 @@ class LoginVC: UIViewController {
         
         if PLATFORM.isSimulator {
             //Buyer
-            emailTxt.text = "FV500@maared24.com"
-            passwordTxt.text = "FO2VR5NJ8W"
+//            emailTxt.text = "FV500@maared24.com"
+//            passwordTxt.text = "FO2VR5NJ8W"
 //            emailTxt.text = "keyurdakbari@gmail.com"
-//            emailTxt.text = "testingakbari@gmail.com"
-//            passwordTxt.text = "qqqqqq"
+            emailTxt.text = "testingakbari@gmail.com"
+            passwordTxt.text = "qqqqqq"
             
             //Seller
 //            emailTxt.text = "amishapadasala20@gmail.com"
 //            passwordTxt.text = "qqqqqq"
-            emailTxt.text = "FV114@maared24.com"
-            passwordTxt.text = "BCF8FMICTN"
+//            emailTxt.text = "FV114@maared24.com"
+//            passwordTxt.text = "BCF8FMICTN"
         }
     }
     

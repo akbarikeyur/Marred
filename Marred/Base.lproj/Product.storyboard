@@ -1514,7 +1514,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaw-wo-XqI" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaw-wo-XqI" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="695" width="21" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="nfP-AZ-DbB"/>
