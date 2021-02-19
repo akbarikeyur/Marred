@@ -274,6 +274,10 @@ class ProductDetailVC: UIViewController {
             AppDelegate().sharedDelegate().showLoginAlert()
             return
         }
+        if isSeller() {
+            displayToast("Please login with your buyer account to add item to your cart.")
+            return
+        }
         if Int((quantityBtn.titleLabel?.text)!)! > 0 {
             serviceCallToAddToCart()
         }
@@ -386,10 +390,10 @@ extension ProductDetailVC {
         }
         printData(param)
         ProductAPIManager.shared.serviceCallToAddToCart(param) {
-            
+            displayToast("add_cart_success")
+            self.quantityBtn.setTitle("1", for: .normal)
             NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART), object: nil)
         }
-        displayToast("add_cart_success")
-        self.quantityBtn.setTitle("1", for: .normal)
+        
     }
 }

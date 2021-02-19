@@ -98,11 +98,11 @@ class MyAddressTVC: UITableViewCell, UITextFieldDelegate {
             print(param)
             
             var newParam = [String : Any]()
-            if index == 0 {
-                newParam["billing"] = param
-            }else{
+//            if index == 0 {
+//                newParam["billing"] = param
+//            }else{
                 newParam["shipping"] = param
-            }
+//            }
             newParam["email"] = AppModel.shared.currentUser.user_email
             newParam["first_name"] = fnameTxt.text
             newParam["last_name"] = lnameTxt.text

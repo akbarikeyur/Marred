@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1857478225E016A7002234EE /* SellerOrderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857478025E016A7002234EE /* SellerOrderTVC.swift */; };
+		1857478325E016A7002234EE /* SellerOrderTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1857478125E016A7002234EE /* SellerOrderTVC.xib */; };
 		18714EC325BD2D480035E07F /* DashboardAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18714EC225BD2D480035E07F /* DashboardAPIManager.swift */; };
 		18714EC525BD2D530035E07F /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18714EC425BD2D530035E07F /* DashboardModel.swift */; };
 		18736B8725C050D20013F5FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18736B8625C050D20013F5FD /* GoogleService-Info.plist */; };
@@ -149,6 +151,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1857478025E016A7002234EE /* SellerOrderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerOrderTVC.swift; sourceTree = "<group>"; };
+		1857478125E016A7002234EE /* SellerOrderTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellerOrderTVC.xib; sourceTree = "<group>"; };
 		18714EC225BD2D480035E07F /* DashboardAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAPIManager.swift; sourceTree = "<group>"; };
 		18714EC425BD2D530035E07F /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
 		18736B8625C050D20013F5FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -405,6 +409,8 @@
 			children = (
 				792DAE51258A0698008E1343 /* MyOrderTVC.swift */,
 				792DAE52258A0698008E1343 /* MyOrderTVC.xib */,
+				1857478025E016A7002234EE /* SellerOrderTVC.swift */,
+				1857478125E016A7002234EE /* SellerOrderTVC.xib */,
 				792DAE5B258A29C8008E1343 /* MyAddressTVC.swift */,
 				792DAE5C258A29C8008E1343 /* MyAddressTVC.xib */,
 				79322397258B6D1700ACF496 /* DashboardOrderTVC.swift */,
@@ -768,6 +774,7 @@
 				79EAD240257FC18900DC6422 /* CategoryListCVC.xib in Resources */,
 				792FEF7E25C83A62003DDD79 /* Dashboard.storyboard in Resources */,
 				79BF3646257E548D006491C5 /* Roboto-Italic.ttf in Resources */,
+				1857478325E016A7002234EE /* SellerOrderTVC.xib in Resources */,
 				79BF35C6257E4468006491C5 /* LaunchScreen.storyboard in Resources */,
 				79D3396E25C8243300310CD1 /* Localizable.strings in Resources */,
 				1890CDE625BD9F19008644A1 /* country.json in Resources */,
@@ -907,6 +914,7 @@
 				7920BD302585062A0065AEEF /* BuyerDashboardVC.swift in Sources */,
 				792DAE64258A34D7008E1343 /* BookmarkVC.swift in Sources */,
 				79BF35E6257E469B006491C5 /* Preference.swift in Sources */,
+				1857478225E016A7002234EE /* SellerOrderTVC.swift in Sources */,
 				792DAE58258A1B8A008E1343 /* BuyerAccountDetailTabVC.swift in Sources */,
 				79EAD243257FC69C00DC6422 /* ContactInfoTVC.swift in Sources */,
 				79BF35E0257E469B006491C5 /* APIManager.swift in Sources */,

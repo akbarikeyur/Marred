@@ -140,3 +140,10 @@
 "select_size" = "Select size";
 
 "add_cart_success" = "Product has been added to your cart.";
+
+"order_colon" = " Order: ";
+"order_date_colon" = "Order Date: ";
+"customer_colon" = "Customer: ";
+"earning_colon" = "Earning: ";
+"invoice_colon" = " Invoice#: ";
+"vendor_colon" = "Vendor: ";

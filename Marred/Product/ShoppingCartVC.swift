@@ -28,6 +28,7 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var sideImgView: UIImageView!
     @IBOutlet weak var myScroll: UIScrollView!
+    @IBOutlet weak var noDataLbl: Label!
     @IBOutlet weak var noDataView: UIView!
     @IBOutlet weak var applyCouponBtn: Button!
     @IBOutlet weak var checkoutBtn: Button!
@@ -35,6 +36,7 @@ class ShoppingCartVC: UIViewController {
     var arrCart = [CartModel]()
     var totalPrice = 0.0
     var coupon = CouponModel.init([String : Any]())
+    var isLoader = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,12 +51,23 @@ class ShoppingCartVC: UIViewController {
         flatRateLbl.text = displayPriceWithCurrency("25.00")
         calculateView.isHidden = true
         clickToShipping(freeShipBtn)
-        serviceCallToGetCart()
+        if isSeller() {
+            noDataLbl.text = "Please login with your buyer account to see your cart."
+            noDataView.isHidden = false
+            myScroll.isHidden = true
+        }else{
+            noDataLbl.text = "Your cart is empty. Please add some product."
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate().sharedDelegate().showTabBar()
         checkoutBtn.buttonImage = "next_yellow"
+        refreshData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        isLoader = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,6 +84,13 @@ class ShoppingCartVC: UIViewController {
             if tabBar.tabBarView.lastIndex == 2 {
                 serviceCallToGetCart()
             }
+        }
+    }
+    
+    func refreshData() {
+        if arrCart.count == 0 {
+            isLoader = true
+            serviceCallToGetCart()
         }
     }
     
@@ -182,7 +202,9 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CartTVC = tblView.dequeueReusableCell(withIdentifier: "CartTVC") as! CartTVC
         cell.delegate = self
-        cell.setupDetails(arrCart[indexPath.row])
+        if arrCart.count > indexPath.row {
+            cell.setupDetails(arrCart[indexPath.row])
+        }
         cell.removeBtn.tag = indexPath.row
         cell.removeBtn.addTarget(self, action: #selector(clickToRemove(_:)), for: .touchUpInside)
         cell.selectionStyle = .none
@@ -257,7 +279,10 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
 
 extension ShoppingCartVC {
     @objc func serviceCallToGetCart() {
-        ProductAPIManager.shared.serviceCallToGetCart(arrCart.count==0) { (data) in
+        if isSeller() {
+            return
+        }
+        ProductAPIManager.shared.serviceCallToGetCart(isLoader) { (data) in
             self.arrCart = [CartModel]()
             for temp in data {
                 if let dict = temp["cart"] as? [String : Any] {

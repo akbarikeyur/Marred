@@ -105,6 +105,7 @@ struct OrderModel {
     var id, quantity : Int!
     var status, currency, date_created, total : String!
     var billing, shipping : AddressModel!
+    var total_earning : Double!
     
     init(_ dict : [String : Any]) {
         id = AppModel.shared.getIntData(dict, "id")
@@ -115,6 +116,7 @@ struct OrderModel {
             date_created = AppModel.shared.getStringData(tempDict, "date")
         }
         total = AppModel.shared.getStringData(dict, "total")
+        total_earning = AppModel.shared.getDoubleData(dict, "total_earning")
         billing = AddressModel.init(dict["billing"] as? [String : Any] ?? [String : Any]())
         shipping = AddressModel.init(dict["shipping"] as? [String : Any] ?? [String : Any]())
         

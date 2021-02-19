@@ -61,7 +61,7 @@ class SellerDashboardOrderTabVC: UIViewController {
 extension SellerDashboardOrderTabVC : UITableViewDelegate, UITableViewDataSource {
     
     func registerTableViewMethod() {
-        tblView.register(UINib.init(nibName: "MyOrderTVC", bundle: nil), forCellReuseIdentifier: "MyOrderTVC")
+        tblView.register(UINib.init(nibName: "SellerOrderTVC", bundle: nil), forCellReuseIdentifier: "SellerOrderTVC")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,11 +69,11 @@ extension SellerDashboardOrderTabVC : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 135
+        return 147
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : MyOrderTVC = tblView.dequeueReusableCell(withIdentifier: "MyOrderTVC") as! MyOrderTVC
+        let cell : SellerOrderTVC = tblView.dequeueReusableCell(withIdentifier: "SellerOrderTVC") as! SellerOrderTVC
         cell.setupDetails(arrOrder[indexPath.row])
         cell.selectionStyle = .none
         return cell
@@ -139,6 +139,7 @@ extension SellerDashboardOrderTabVC {
             for temp in data {
                 var order = OrderModel.init(temp["cart_data"] as? [String : Any] ?? [String : Any]())
                 order.quantity = AppModel.shared.getIntData(temp, "quantity")
+                order.total_earning = AppModel.shared.getDoubleData(temp, "total_earning")
                 order.product_detail = OrderProductModel.init(temp["product_detail"] as? [String : Any] ?? [String : Any]())
                 self.arrOrder.append(order)
             }

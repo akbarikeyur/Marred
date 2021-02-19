@@ -941,6 +941,7 @@
                         <outlet property="freeShipBtn" destination="0dY-1G-J47" id="a5r-NK-uaP"/>
                         <outlet property="freeShipView" destination="49R-s6-WUZ" id="Qz2-Sz-tdb"/>
                         <outlet property="myScroll" destination="y74-K8-gVI" id="fiH-uL-oel"/>
+                        <outlet property="noDataLbl" destination="2GR-kB-y9p" id="X0a-zL-R9e"/>
                         <outlet property="noDataView" destination="BEI-oK-QJ9" id="12k-4e-PwI"/>
                         <outlet property="promocodeTxt" destination="ZXf-7X-PXi" id="6yX-e9-1P7"/>
                         <outlet property="sideImgView" destination="3ta-yT-tJh" id="64h-vX-C5n"/>

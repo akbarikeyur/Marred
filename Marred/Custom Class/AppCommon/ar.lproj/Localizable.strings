@@ -139,3 +139,10 @@
 "select_size" = "أختر الحجم";
 
 "add_cart_success" = ".تمت إضافة المنتج إلى عربة التسوق الخاصة بك";
+
+"order_colon" = " :ترتيب ";
+"order_date_colon" = " :تاريخ الطلب";
+"customer_colon" = " :عميل";
+"earning_colon" = " :كسب";
+"invoice_colon" = " :فاتورة# ";
+"vendor_colon" = " :بائع";

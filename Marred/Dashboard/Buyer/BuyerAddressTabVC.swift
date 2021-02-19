@@ -20,7 +20,7 @@ class BuyerAddressTabVC: UIViewController {
         registerTableViewMethod()
         
         arrAddress = [AddressModel]()
-        arrAddress.append(getBillingAddress())
+//        arrAddress.append(getBillingAddress())
         arrAddress.append(getShippingAddress())
         billingTbl.reloadData()
         
@@ -64,11 +64,11 @@ extension BuyerAddressTabVC : UITableViewDelegate, UITableViewDataSource, MyAddr
         cell.index = indexPath.row
         cell.deleagate = self
         cell.setupDetails(arrAddress[indexPath.row])
-        if indexPath.row == 0 {
-            cell.titleLbl.text = getTranslate("billing_address")
-        }else{
+//        if indexPath.row == 0 {
+//            cell.titleLbl.text = getTranslate("billing_address")
+//        }else{
             cell.titleLbl.text = getTranslate("shipping_address")
-        }
+//        }
         
         cell.selectionStyle = .none
         return cell
