@@ -103,7 +103,7 @@ struct OrderProductModel {
 struct OrderModel {
     var product_detail : OrderProductModel!
     var id, quantity : Int!
-    var status, currency, date_created, total : String!
+    var status, currency, date_created, total, payment_method_title : String!
     var billing, shipping : AddressModel!
     var total_earning : Double!
     
@@ -119,6 +119,7 @@ struct OrderModel {
         total_earning = AppModel.shared.getDoubleData(dict, "total_earning")
         billing = AddressModel.init(dict["billing"] as? [String : Any] ?? [String : Any]())
         shipping = AddressModel.init(dict["shipping"] as? [String : Any] ?? [String : Any]())
+        payment_method_title = dict["payment_method_title"] as? String ?? ""
         
     }
 }

@@ -19,6 +19,7 @@ class SellerOrderTVC: UITableViewCell {
     @IBOutlet weak var qtyLbl: Label!
     @IBOutlet weak var priceLbl: Label!
     @IBOutlet weak var statusLbl: Label!
+    @IBOutlet weak var paymentLbl: Label!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,6 +39,11 @@ class SellerOrderTVC: UITableViewCell {
         customerLbl.text = getTranslate("customer_colon") + dict.shipping.first_name.capitalized + " " + dict.shipping.last_name
         earningLbl.text = getTranslate("earning_colon") + displayPriceWithCurrency(displayFlotingPrice(dict.total_earning))
         statusLbl.text = dict.status.capitalized
+        if dict.payment_method_title != "" {
+            paymentLbl.text = getTranslate("payment_method_colon") + dict.payment_method_title
+        }else{
+            paymentLbl.text = ""
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

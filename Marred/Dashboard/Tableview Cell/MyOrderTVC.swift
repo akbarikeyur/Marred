@@ -18,6 +18,7 @@ class MyOrderTVC: UITableViewCell {
     @IBOutlet weak var qtyLbl: Label!
     @IBOutlet weak var priceLbl: Label!
     @IBOutlet weak var statusLbl: Label!
+    @IBOutlet weak var paymentLbl: Label!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,6 +37,11 @@ class MyOrderTVC: UITableViewCell {
         dateLbl.text = getTranslate("order_date_colon") + getDateStringFromDate(date: date, format: "MMMM dd yyyy h:mm a")
         vendorLbl.text = getTranslate("vendor_colon") + dict.product_detail.store_name
         statusLbl.text = dict.status.capitalized
+        if dict.payment_method_title != "" {
+            paymentLbl.text = getTranslate("payment_method_colon") + dict.payment_method_title
+        }else{
+            paymentLbl.text = ""
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

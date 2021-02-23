@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import DropDown
+
 protocol MyAddressDelegate {
     func updateAddress(_ index : Int, _ dict : AddressModel)
 }
@@ -28,11 +30,17 @@ class MyAddressTVC: UITableViewCell, UITextFieldDelegate {
     var index = 0
     var deleagate : MyAddressDelegate?
     var addressDict = AddressModel.init([String : Any]())
+    var arrCountry = [CountryModel]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        for temp in getJsonFromFile("country") {
+            arrCountry.append(CountryModel.init(temp))
+        }
     }
-
+    
     func setupDetails(_ dict : AddressModel) {
         addressDict = dict
         fnameTxt.text = dict.first_name
@@ -48,7 +56,24 @@ class MyAddressTVC: UITableViewCell, UITextFieldDelegate {
         phoneTxt.text = dict.phone
     }
     
+    @IBAction func clickToSelectCountry(_ sender: UIButton) {
+        self.endEditing(true)
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        dropDown.semanticContentAttribute = isArabic() ? .forceLeftToRight : .forceRightToLeft
+        var arrData = [String]()
+        for temp in arrCountry {
+            arrData.append(temp.name)
+        }
+        dropDown.dataSource = arrData
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.countryTxt.text = item
+        }
+        dropDown.show()
+    }
+    
     @IBAction func clickToUpdate(_ sender: Any) {
+        self.endEditing(true)
         if fnameTxt.text?.trimmed == "" {
             displayToast("enter_fname")
         }

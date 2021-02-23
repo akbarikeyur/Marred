@@ -147,3 +147,4 @@
 "earning_colon" = "Earning: ";
 "invoice_colon" = " Invoice#: ";
 "vendor_colon" = "Vendor: ";
+"payment_method_colon" = "Payment Method : ";

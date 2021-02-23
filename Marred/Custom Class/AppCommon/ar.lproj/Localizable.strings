@@ -146,3 +146,4 @@
 "earning_colon" = " :كسب";
 "invoice_colon" = " :فاتورة# ";
 "vendor_colon" = " :بائع";
+"payment_method_colon" = " : طريقة الدفع او السداد";
