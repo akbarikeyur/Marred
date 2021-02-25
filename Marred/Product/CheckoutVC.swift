@@ -80,7 +80,7 @@ class CheckoutVC: UIViewController {
     }
     
     func setupDetails() {
-        let dict = getBillingAddress()
+        let dict = getShippingAddress()
         fnameTxt.text = dict.first_name
         lnameTxt.text = dict.last_name
         companyNameTxt.text = dict.company
@@ -89,9 +89,21 @@ class CheckoutVC: UIViewController {
         addressTxt.text = dict.address_1
         apartmentTxt.text = dict.address_2
         cityTxt.text = dict.city
-        postcodeTxt.text = dict.postcode
-        phoneTxt.text = dict.phone
-        emailTxt.text = dict.email
+        if dict.postcode != "" {
+            postcodeTxt.text = dict.postcode
+        }else{
+            postcodeTxt.text = AppModel.shared.currentUser.shipping.postcode
+        }
+        if dict.phone != "" {
+            phoneTxt.text = dict.phone
+        }else{
+            phoneTxt.text = AppModel.shared.currentUser.shipping.phone
+        }
+        if dict.email != "" {
+            emailTxt.text = dict.email
+        }else{
+            emailTxt.text = AppModel.shared.currentUser.user_email
+        }
         
         for temp in getJsonFromFile("country") {
             arrCountry.append(CountryModel.init(temp))
@@ -288,6 +300,49 @@ extension CheckoutVC {
         serviceCallToSetAddress()
         
         var param = [String : Any]()
+        param["customer_id"] = AppModel.shared.currentUser.ID
+        if cardBtn.isSelected {
+            param["payment_method"] = "foloosi"
+            param["payment_method_title"] = "Credit Card/Debit Card"
+            param["set_paid"] = false
+        }else {
+            param["payment_method"] = "cod"
+            param["payment_method_title"] = "Cash on delivery"
+            param["set_paid"] = false
+        }
+        param["billing"] = getShippingDict()
+        param["shipping"] = getShippingDict()
+        var arrData = [[String : Any]]()
+        for temp in arrCart {
+            var dict = [String : Any]()
+            dict["product_id"] = temp.product_id
+            dict["quantity"] = temp.quantity
+            if temp.variation.count > 0 {
+                dict["variation_id"] = temp.variation
+            }
+            arrData.append(dict)
+        }
+        param["line_items"] = arrData
+        
+        if flatRateBtn.isSelected {
+            var rateDict = [String : Any]()
+            rateDict["method_id"] = "flat_rate"
+            rateDict["method_title"] = "Flat Rate"
+            rateDict["total"] = "25.00"
+            arrData = [[String : Any]]()
+            arrData.append(rateDict)
+            param["shipping_lines"] = arrData
+        }
+        if coupon.id != "" {
+            param["coupon_lines"] = [coupon.dictionary()]
+        }
+        printData(param)
+        ProductAPIManager.shared.serviceCallToCheckout(param) {
+            AppDelegate().sharedDelegate().continueAfterCheckout()
+            self.navigationController?.popToRootViewController(animated: false)
+        }
+        /*
+        var param = [String : Any]()
         param["user_id"] = AppModel.shared.currentUser.ID
         if coupon.code != "" {
             param["coupon_code"] = coupon.code
@@ -316,9 +371,10 @@ extension CheckoutVC {
             AppDelegate().sharedDelegate().continueAfterCheckout()
             self.navigationController?.popToRootViewController(animated: false)
         }
+        */
     }
     
-    func serviceCallToSetAddress() {
+    func getShippingDict() -> [String : Any] {
         var param = [String : Any]()
         param["first_name"] = fnameTxt.text
         param["last_name"] = lnameTxt.text
@@ -332,12 +388,17 @@ extension CheckoutVC {
         param["email"] = emailTxt.text
         param["phone"] = phoneTxt.text
         print(param)
+        return param
+    }
+    
+    func serviceCallToSetAddress() {
+        
         var newParam = [String : Any]()
         newParam["email"] = AppModel.shared.currentUser.user_email
         newParam["first_name"] = fnameTxt.text
         newParam["last_name"] = lnameTxt.text
         newParam["username"] = AppModel.shared.currentUser.user_nicename
-        newParam["billing"] = param
+        newParam["shipping"] = getShippingDict()
         AppDelegate().sharedDelegate().serviceCallToSetAddress(newParam)
     }
     

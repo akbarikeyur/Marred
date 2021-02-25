@@ -104,9 +104,12 @@ public class ProductAPIManager {
     func serviceCallToCheckout(_ param : [String : Any], _ completion: @escaping () -> Void) {
         APIManager.shared.callPostRequest(API.CHECKOUT_ORDER, param, true) { (dict) in
             printData(dict)
-            if let status = dict["status"] as? String, status == "success" {
+            if let status = dict["status"] as? String, status != "error" {
                 completion()
                 return
+            }
+            else {
+                APIManager.shared.handleError(dict)
             }
         }
     }

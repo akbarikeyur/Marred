@@ -36,7 +36,7 @@ struct API {
     
     static let APPLY_COUPON                           =       BASE_URL + "wc/v3/coupons?code="
     static let GET_PAYMENT_GATEWAY                    =       BASE_URL + "wc/v3/payment_gateways"
-    static let CHECKOUT_ORDER                         =       BASE_URL + "v1/user/checkout"
+    static let CHECKOUT_ORDER                         =       BASE_URL + "wc/v2/orders" //"v1/user/checkout"
     static let CLEAR_FULL_CART                        =       BASE_URL + "cocart/v1/clear"
     
     static let ADD_BOOKMARK                           =       BASE_URL + "v1/bookmark/addbookmark"

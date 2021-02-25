@@ -19,8 +19,8 @@ let APPLE_LANGUAGE_KEY = "AppleLanguages"
 
 struct FOLOOSI
 {
-    static var MERCHANT_KEY = "test_$2y$10$.wPSbaC1r-q5.b3uiFoGh.zmMhmNn3AFRmQbR.aeJHfBmld62y0Q6"
-//    static var MERCHANT_KEY = "live_$2y$10$PbNf0Ij5CjOElRO7WK3s0OSfRorPhwmIq5fwRTS5azZmRFmYg.jeq"
+//    static var MERCHANT_KEY = "test_$2y$10$.wPSbaC1r-q5.b3uiFoGh.zmMhmNn3AFRmQbR.aeJHfBmld62y0Q6"
+    static var MERCHANT_KEY = "live_$2y$10$PbNf0Ij5CjOElRO7WK3s0OSfRorPhwmIq5fwRTS5azZmRFmYg.jeq"
     static var SECRET_KEY = "test_$2y$10$cTg8rHez0rYYr7mnGtEiz.RLi1u0K4Myjn1HvZE.MZr2.7bK6Vk6C"
 }
 

@@ -223,11 +223,16 @@ struct DealProductModel {
 }
 
 struct CouponModel {
-    var id, code, amount : String
+    var id, code, amount, discount_tax : String!
     
     init(_ dict : [String : Any]) {
         id = AppModel.shared.getStringData(dict, "id")
         code = AppModel.shared.getStringData(dict, "code")
         amount = AppModel.shared.getStringData(dict, "amount")
+        discount_tax = "0"
+    }
+    
+    func dictionary() -> [String : Any] {
+        return ["id" : id!, "code" : code!, "amount" : amount!, "discount_tax" : discount_tax!]
     }
 }
