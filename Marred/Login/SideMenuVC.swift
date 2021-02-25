@@ -43,7 +43,7 @@ class SideMenuVC: UIViewController {
     }
     
     @objc func updateUserData() {
-        if isUserLogin() {
+        if isUserLogin() && AppModel.shared.currentUser != nil && AppModel.shared.currentUser.user_email != nil {
             nameLbl.text = AppModel.shared.currentUser.display_name
             emailLbl.text = AppModel.shared.currentUser.user_email
         }
