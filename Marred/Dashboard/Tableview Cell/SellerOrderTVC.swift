@@ -20,6 +20,9 @@ class SellerOrderTVC: UITableViewCell {
     @IBOutlet weak var priceLbl: Label!
     @IBOutlet weak var statusLbl: Label!
     @IBOutlet weak var paymentLbl: Label!
+    @IBOutlet weak var addressLbl: Label!
+    @IBOutlet weak var phoneLbl: Label!
+    @IBOutlet weak var emailLbl: Label!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,7 +39,7 @@ class SellerOrderTVC: UITableViewCell {
         let strDate = dict.date_created.components(separatedBy: ".").first!
         let date = getDateFromDateString(date: strDate, format: "yyyy-MM-dd HH:mm:ss")
         dateLbl.text = getTranslate("order_date_colon") + getDateStringFromDate(date: date, format: "MMMM dd yyyy h:mm a")
-        customerLbl.text = getTranslate("customer_colon") + dict.shipping.first_name.capitalized + " " + dict.shipping.last_name
+        customerLbl.text = getTranslate("customer_colon") + dict.billing.first_name.capitalized + " " + dict.billing.last_name
         earningLbl.text = getTranslate("earning_colon") + displayPriceWithCurrency(displayFlotingPrice(dict.total_earning))
         statusLbl.text = dict.status.capitalized
         if dict.payment_method_title != "" {
@@ -44,8 +47,55 @@ class SellerOrderTVC: UITableViewCell {
         }else{
             paymentLbl.text = ""
         }
+        
+        addressLbl.text = ""
+        addressLbl.text = dict.billing.address_1
+        if dict.billing.address_2 != "" {
+            if addressLbl.text != "" {
+                addressLbl.text = addressLbl.text! + ", "
+            }
+            addressLbl.text = addressLbl.text! + dict.billing.address_2
+        }
+        
+        if dict.billing.city != "" {
+            if addressLbl.text != "" {
+                addressLbl.text = addressLbl.text! + ", "
+            }
+            addressLbl.text = addressLbl.text! + dict.billing.city
+        }
+        
+        if dict.billing.state != "" {
+            if addressLbl.text != "" {
+                addressLbl.text = addressLbl.text! + ", "
+            }
+            addressLbl.text = addressLbl.text! + dict.billing.state
+        }
+        
+        if dict.billing.postcode != "" {
+            if addressLbl.text != "" {
+                addressLbl.text = addressLbl.text! + ", "
+            }
+            addressLbl.text = addressLbl.text! + dict.billing.postcode
+        }
+        
+        if dict.billing.country != "" {
+            if addressLbl.text != "" {
+                addressLbl.text = addressLbl.text! + ", "
+            }
+            addressLbl.text = addressLbl.text! + dict.billing.country
+        }
+        phoneLbl.text = dict.billing.phone
+        emailLbl.text = dict.billing.email
     }
 
+    @IBAction func clickToPhone(_ sender: Any) {
+        redirectToPhoneCall(phoneLbl.text!)
+    }
+    
+    @IBAction func clickToEmail(_ sender: Any) {
+        redirectToEmail(emailLbl.text!)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
