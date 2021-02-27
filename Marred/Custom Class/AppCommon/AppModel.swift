@@ -12,9 +12,11 @@ class AppModel: NSObject {
     
     static let shared = AppModel()
     var currentUser : UserModel!
+    var CART_COUNT : Int!
     
     func resetData() {
         currentUser = UserModel.init([String : Any]())
+        CART_COUNT = 0
     }
     
     func getCategoryArrOfDictionary(arr:[CategoryModel]) -> [[String:Any]] {

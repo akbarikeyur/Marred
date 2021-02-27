@@ -392,7 +392,13 @@ extension ProductDetailVC {
         ProductAPIManager.shared.serviceCallToAddToCart(param) {
             displayToast("add_cart_success")
             self.quantityBtn.setTitle("1", for: .normal)
+            if AppModel.shared.CART_COUNT == nil {
+                AppModel.shared.CART_COUNT = 0
+            }
+            AppModel.shared.CART_COUNT += 1
             NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART_BADGE), object: nil)
+            
         }
         
     }

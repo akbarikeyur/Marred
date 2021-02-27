@@ -77,6 +77,8 @@ class CheckoutVC: UIViewController {
             clickToShipping(flatRateBtn)
         }
         updateTotalPrice()
+        
+        clickToSelectCard(cashBtn)
     }
     
     func setupDetails() {

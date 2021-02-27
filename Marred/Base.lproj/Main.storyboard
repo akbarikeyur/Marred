@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
         <array key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
         </array>
@@ -97,6 +100,22 @@
                                             <action selector="clickToCart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r52-u4-s0a"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bgG-pM-A0m" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
+                                        <rect key="frame" x="292" y="5" width="20" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="1Pe-Hv-b7j"/>
+                                            <constraint firstAttribute="height" constant="20" id="Rfi-8O-eJ5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -105,8 +124,10 @@
                                     <constraint firstItem="TW3-lY-to2" firstAttribute="centerY" secondItem="EWG-4R-MnJ" secondAttribute="centerY" id="FAe-rd-5uF"/>
                                     <constraint firstAttribute="height" constant="50" id="I9Y-F0-GUS"/>
                                     <constraint firstItem="TW3-lY-to2" firstAttribute="leading" secondItem="fKx-g3-zYW" secondAttribute="trailing" constant="5" id="IdM-GG-xsH"/>
+                                    <constraint firstItem="TW3-lY-to2" firstAttribute="centerX" secondItem="bgG-pM-A0m" secondAttribute="centerX" constant="-10" id="OFs-G9-DA6"/>
                                     <constraint firstAttribute="trailing" secondItem="TW3-lY-to2" secondAttribute="trailing" constant="10" id="Ph2-8A-Jad"/>
                                     <constraint firstAttribute="bottom" secondItem="D69-pr-QQP" secondAttribute="bottom" id="bhD-3O-7lS"/>
+                                    <constraint firstItem="TW3-lY-to2" firstAttribute="centerY" secondItem="bgG-pM-A0m" secondAttribute="centerY" constant="10" id="cB2-mN-GWm"/>
                                     <constraint firstItem="D69-pr-QQP" firstAttribute="leading" secondItem="4Nw-Iw-sPs" secondAttribute="leading" id="dn2-Uu-XPo"/>
                                     <constraint firstAttribute="bottom" secondItem="KxY-Hy-PTY" secondAttribute="bottom" constant="5" id="eUd-XO-4C3"/>
                                     <constraint firstItem="KxY-Hy-PTY" firstAttribute="leading" secondItem="D69-pr-QQP" secondAttribute="trailing" id="eqs-0m-Aas"/>
@@ -140,6 +161,7 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="8RQ-Qp-1ja"/>
                     <connections>
+                        <outlet property="cartLbl" destination="bgG-pM-A0m" id="YsP-ot-snZ"/>
                         <outlet property="tblView" destination="8dg-Gw-IFb" id="qBl-vT-NwS"/>
                     </connections>
                 </viewController>
@@ -1165,6 +1187,22 @@
                                             <action selector="clickToCart:" destination="P1j-EQ-gfX" eventType="touchUpInside" id="k8u-Pj-Lsh"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Nbx-3i-9G0" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
+                                        <rect key="frame" x="292" y="5" width="20" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="DKE-Dv-U8g"/>
+                                            <constraint firstAttribute="height" constant="20" id="cGj-Ti-Clu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -1173,9 +1211,11 @@
                                     <constraint firstItem="Bsd-RP-2fY" firstAttribute="centerY" secondItem="6ji-z2-0wa" secondAttribute="centerY" id="K7W-KJ-0bv"/>
                                     <constraint firstAttribute="bottom" secondItem="SD2-Ra-xMv" secondAttribute="bottom" id="Olx-eg-C2G"/>
                                     <constraint firstItem="Bsd-RP-2fY" firstAttribute="leading" secondItem="Ved-Kl-Xlj" secondAttribute="trailing" constant="5" id="YWo-HO-3Rc"/>
+                                    <constraint firstItem="Bsd-RP-2fY" firstAttribute="centerX" secondItem="Nbx-3i-9G0" secondAttribute="centerX" constant="-10" id="fb9-8d-SlD"/>
                                     <constraint firstItem="Bsd-RP-2fY" firstAttribute="centerY" secondItem="TcP-eQ-WIt" secondAttribute="centerY" id="gNM-nm-JIV"/>
                                     <constraint firstItem="SD2-Ra-xMv" firstAttribute="leading" secondItem="6ji-z2-0wa" secondAttribute="leading" id="jnk-e4-zVz"/>
                                     <constraint firstItem="Ved-Kl-Xlj" firstAttribute="leading" secondItem="TcP-eQ-WIt" secondAttribute="trailing" constant="5" id="mkp-c6-0ml"/>
+                                    <constraint firstItem="Bsd-RP-2fY" firstAttribute="centerY" secondItem="Nbx-3i-9G0" secondAttribute="centerY" constant="10" id="rb3-qh-cSx"/>
                                     <constraint firstItem="Ved-Kl-Xlj" firstAttribute="centerY" secondItem="TcP-eQ-WIt" secondAttribute="centerY" id="t8X-pR-XeM"/>
                                     <constraint firstAttribute="trailing" secondItem="Bsd-RP-2fY" secondAttribute="trailing" constant="10" id="zUm-rx-kEJ"/>
                                 </constraints>
@@ -1248,6 +1288,7 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="VFr-jl-1bo"/>
                     <connections>
+                        <outlet property="cartLbl" destination="Nbx-3i-9G0" id="p8J-1w-CNh"/>
                         <outlet property="categoryCV" destination="yT9-Fb-YZc" id="633-pT-o1v"/>
                         <outlet property="categoryView" destination="uTP-Du-pwK" id="KuK-Go-PtE"/>
                         <outlet property="mainContainerView" destination="GrA-Vu-awd" id="FR7-SS-EYn"/>
@@ -1449,14 +1490,32 @@
                                             <action selector="clickToCart:" destination="WqI-fL-Igr" eventType="touchUpInside" id="xDI-77-QVi"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDB-bd-yan" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
+                                        <rect key="frame" x="292" y="5" width="20" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="JZ5-dx-GDI"/>
+                                            <constraint firstAttribute="height" constant="20" id="M0T-nr-QsU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="XXX-bh-vrZ" secondAttribute="bottom" id="BbJ-5s-am7"/>
                                     <constraint firstItem="XXX-bh-vrZ" firstAttribute="leading" secondItem="80E-mQ-ntY" secondAttribute="leading" id="DCr-iL-j2W"/>
+                                    <constraint firstItem="m8w-T9-DDZ" firstAttribute="centerX" secondItem="XDB-bd-yan" secondAttribute="centerX" constant="-10" id="Ehv-qB-cpp"/>
                                     <constraint firstAttribute="height" constant="50" id="i5g-Vd-MwO"/>
                                     <constraint firstItem="m8w-T9-DDZ" firstAttribute="centerY" secondItem="80E-mQ-ntY" secondAttribute="centerY" id="krS-zp-wKi"/>
                                     <constraint firstItem="XXX-bh-vrZ" firstAttribute="top" secondItem="80E-mQ-ntY" secondAttribute="top" id="p8T-6P-pBp"/>
+                                    <constraint firstItem="m8w-T9-DDZ" firstAttribute="centerY" secondItem="XDB-bd-yan" secondAttribute="centerY" constant="10" id="xDW-Vz-qpC"/>
                                     <constraint firstAttribute="trailing" secondItem="m8w-T9-DDZ" secondAttribute="trailing" constant="10" id="xzk-Yu-cBC"/>
                                 </constraints>
                             </view>
@@ -1571,6 +1630,7 @@
                         <viewLayoutGuide key="safeArea" id="yMo-lW-TcV"/>
                     </view>
                     <connections>
+                        <outlet property="cartLbl" destination="XDB-bd-yan" id="tgJ-D0-arJ"/>
                         <outlet property="categoryCV" destination="CMw-wi-KEL" id="oUb-fR-YU6"/>
                         <outlet property="nameLbl" destination="N0z-at-v7z" id="yot-gG-Tk4"/>
                         <outlet property="noDataFound" destination="Z1d-iG-h36" id="h9t-cx-X5T"/>
@@ -1652,7 +1712,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1z-He-nvu" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
-                                        <rect key="frame" x="28" y="24" width="42" height="35"/>
+                                        <rect key="frame" x="28" y="24" width="41" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="moC-ZQ-xrq"/>
                                         </constraints>
@@ -2818,10 +2878,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUu-MV-eBu">
-                                                                <rect key="frame" x="0.0" y="143" width="320" height="74.5"/>
+                                                                <rect key="frame" x="0.0" y="143" width="320" height="71.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Business Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4b-lx-M6M" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="10" width="300" height="19.5"/>
+                                                                        <rect key="frame" x="10" y="10" width="300" height="16.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -2836,7 +2896,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gdF-xN-qI6" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="34.5" width="300" height="40"/>
+                                                                        <rect key="frame" x="10" y="31.5" width="300" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="QPJ-ut-8qO"/>
                                                                         </constraints>
@@ -2880,10 +2940,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1l-US-Cn5">
-                                                                <rect key="frame" x="0.0" y="217.5" width="320" height="71.5"/>
+                                                                <rect key="frame" x="0.0" y="214.5" width="320" height="74.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msJ-aL-2ao" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="10" width="300" height="16.5"/>
+                                                                        <rect key="frame" x="10" y="10" width="300" height="19.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -2898,7 +2958,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rO2-mm-hkL" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="31.5" width="300" height="40"/>
+                                                                        <rect key="frame" x="10" y="34.5" width="300" height="40"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="OLB-Ds-gvE">
                                                                                 <rect key="frame" x="10" y="10" width="26" height="20"/>

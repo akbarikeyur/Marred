@@ -18,6 +18,7 @@ struct HOME {
 class HomeVC: UIViewController {
 
     @IBOutlet weak var tblView: UITableView!
+    @IBOutlet weak var cartLbl: Label!
     
     var arrData = [HomeDisplayModel]()
     var arrBanner = [String]()
@@ -32,12 +33,16 @@ class HomeVC: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: NSNotification.Name.init(NOTIFICATION.RELOAD_AFTER_CHANGE_LANGUAGE), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshCategoryList), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CATEGORY_LIST), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCartBadge), name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART_BADGE), object: nil)
+        updateCartBadge()
+        
         refreshControl.addTarget(self, action: #selector(refreshHomeData), for: .valueChanged)
         tblView.refreshControl = refreshControl
         refreshData()
         if isUserLogin() && !isSeller() {
             AppDelegate().sharedDelegate().serviceCallToGetAddress()
         }
+        AppDelegate().sharedDelegate().serviceCallToGetCart()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +67,16 @@ class HomeVC: UIViewController {
     
     @objc func refreshCategoryList() {
         tblView.reloadData()
+    }
+    
+    @objc func updateCartBadge() {
+        if AppModel.shared.CART_COUNT != nil && AppModel.shared.CART_COUNT > 0 {
+            cartLbl.text = String(AppModel.shared.CART_COUNT)
+            cartLbl.isHidden = false
+        }else {
+            cartLbl.text = "0"
+            cartLbl.isHidden = true
+        }
     }
     
     //MARK:- Button click event

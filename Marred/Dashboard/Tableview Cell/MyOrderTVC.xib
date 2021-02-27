@@ -143,7 +143,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ihq-p2-D6T" firstAttribute="leading" secondItem="Zgg-fG-9uR" secondAttribute="trailing" constant="10" id="2yE-5U-NH5"/>
-                            <constraint firstAttribute="bottom" secondItem="QNt-0v-Hi7" secondAttribute="bottom" constant="9.5" id="4YC-cj-deA"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QNt-0v-Hi7" secondAttribute="bottom" constant="9.5" id="4YC-cj-deA"/>
                             <constraint firstItem="Zgg-fG-9uR" firstAttribute="leading" secondItem="4Ra-qn-k6y" secondAttribute="leading" id="5xg-AB-HIa"/>
                             <constraint firstAttribute="trailing" secondItem="fCe-9f-66L" secondAttribute="trailing" constant="10" id="78Z-EV-4IX"/>
                             <constraint firstItem="QNt-0v-Hi7" firstAttribute="top" secondItem="sTe-hp-vME" secondAttribute="bottom" constant="2" id="BkW-0e-lwe"/>

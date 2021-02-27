@@ -14,6 +14,7 @@ class SubCategoryVC: UIViewController {
     @IBOutlet weak var categoryCV: UICollectionView!
     @IBOutlet weak var productCV: UICollectionView!
     @IBOutlet weak var noDataFound: Label!
+    @IBOutlet weak var cartLbl: Label!
     
     var categoryData = CategoryModel.init([String : Any]())
     var arrSubCategory = [CategoryModel]()
@@ -27,6 +28,8 @@ class SubCategoryVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCartBadge), name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART_BADGE), object: nil)
+        
         registerCollectionView()
         nameLbl.text = ""
         if selectedPavilion.id != 0 {
@@ -38,9 +41,19 @@ class SubCategoryVC: UIViewController {
         else if selectedSubCat.term_id == 0 {
             selectedSubCat = arrSubCategory[0]
         }
-        
+        updateCartBadge()
         page = 1
         serviceCallToGetProductList()
+    }
+    
+    @objc func updateCartBadge() {
+        if AppModel.shared.CART_COUNT != nil && AppModel.shared.CART_COUNT > 0 {
+            cartLbl.text = String(AppModel.shared.CART_COUNT)
+            cartLbl.isHidden = false
+        }else {
+            cartLbl.text = "0"
+            cartLbl.isHidden = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

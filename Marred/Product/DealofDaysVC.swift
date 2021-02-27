@@ -16,6 +16,7 @@ class DealofDaysVC: UIViewController {
     @IBOutlet weak var topPageControl: JXPageControlScale!
     @IBOutlet weak var bottomCV: UICollectionView!
     @IBOutlet weak var constraintHeightBottomCV: NSLayoutConstraint!
+    @IBOutlet weak var cartLbl: Label!
     
     var arrFeatureData = [DealProductModel]()
     var arrDealData = [DealProductModel]()
@@ -24,6 +25,9 @@ class DealofDaysVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCartBadge), name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART_BADGE), object: nil)
+        updateCartBadge()
+        
         topView.isHidden = (arrFeatureData.count == 0)
         registerCollectionView()
         serviceCallToGetDealOfDay()
@@ -31,6 +35,16 @@ class DealofDaysVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate().sharedDelegate().hideTabBar()
+    }
+    
+    @objc func updateCartBadge() {
+        if AppModel.shared.CART_COUNT != nil && AppModel.shared.CART_COUNT > 0 {
+            cartLbl.text = String(AppModel.shared.CART_COUNT)
+            cartLbl.isHidden = false
+        }else {
+            cartLbl.text = "0"
+            cartLbl.isHidden = true
+        }
     }
     
     //MARK:- Button click event

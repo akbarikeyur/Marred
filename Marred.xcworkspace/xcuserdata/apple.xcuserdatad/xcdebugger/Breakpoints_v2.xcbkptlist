@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F0770EF3-892B-4C86-8462-A0B21A0797BA"
+            uuid = "14E0F80F-7A38-41CE-9F3E-3E15B26BB007"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Marred/Home/CategoryVC.swift"
+            filePath = "Marred/Product/ProductDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "clickToCart(_:)"
+            startingLineNumber = "399"
+            endingLineNumber = "399"
+            landmarkName = "serviceCallToAddToCart()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1922A99F-DC88-4CD6-8DDD-31964278CEC9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marred/Product/ShoppingCartVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
+            landmarkName = "serviceCallToClearToCart(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

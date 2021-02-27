@@ -17,6 +17,7 @@ class CustomTabBarController: UITabBarController, CustomTabBarViewDelegate {
         self.view.layoutIfNeeded()
         
         NotificationCenter.default.addObserver(self, selector: #selector(redirectToTabBar(noti:)), name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCartBadge), name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART_BADGE), object: nil)
         
         tabBarView = Bundle.main.loadNibNamed("CustomTabBarView", owner: nil, options: nil)?.last as! CustomTabBarView
         tabBarView.delegate = self
@@ -38,6 +39,16 @@ class CustomTabBarController: UITabBarController, CustomTabBarViewDelegate {
         }
     }
     
+    @objc func updateCartBadge() {
+        if AppModel.shared.CART_COUNT != nil && AppModel.shared.CART_COUNT > 0 {
+            tabBarView.cartLbl.text = String(AppModel.shared.CART_COUNT)
+            tabBarView.cartLbl.isHidden = false
+        }else {
+            tabBarView.cartLbl.text = "0"
+            tabBarView.cartLbl.isHidden = true
+        }
+    }
+
     //MARK: - CUSTOM TABBAR SETUP
     func setup()
     {

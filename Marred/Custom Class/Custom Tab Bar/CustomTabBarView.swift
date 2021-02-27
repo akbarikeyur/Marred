@@ -20,6 +20,7 @@ class CustomTabBarView: UIView {
     @IBOutlet var btn3: UIButton!
     @IBOutlet var btn4: UIButton!
     @IBOutlet var btn5: UIButton!
+    @IBOutlet weak var cartLbl: Label!
     
     @IBOutlet weak var lbl1: UILabel!
     @IBOutlet weak var lbl2: UILabel!

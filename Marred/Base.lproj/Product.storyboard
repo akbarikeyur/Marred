@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
         <array key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
         </array>
@@ -2345,6 +2348,22 @@
                                             <action selector="clickToCart:" destination="Fv6-cn-gIA" eventType="touchUpInside" id="Dab-dR-6Vg"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2dZ-n1-Tql" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
+                                        <rect key="frame" x="292" y="5" width="20" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="vbs-8h-QoS"/>
+                                            <constraint firstAttribute="width" constant="20" id="yB6-BB-IYA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2353,7 +2372,9 @@
                                     <constraint firstItem="lnW-de-DYO" firstAttribute="leading" secondItem="zon-4V-ZXO" secondAttribute="leading" id="NJb-E7-bdY"/>
                                     <constraint firstItem="lnW-de-DYO" firstAttribute="top" secondItem="zon-4V-ZXO" secondAttribute="top" id="OX3-aT-73q"/>
                                     <constraint firstAttribute="bottom" secondItem="lnW-de-DYO" secondAttribute="bottom" id="PFB-Wf-mzx"/>
+                                    <constraint firstItem="UCm-Dc-fF5" firstAttribute="centerY" secondItem="2dZ-n1-Tql" secondAttribute="centerY" constant="10" id="QPn-66-OPr"/>
                                     <constraint firstItem="UCm-Dc-fF5" firstAttribute="centerY" secondItem="3l2-e9-Rrh" secondAttribute="centerY" id="XvA-Fe-DqS"/>
+                                    <constraint firstItem="UCm-Dc-fF5" firstAttribute="centerX" secondItem="2dZ-n1-Tql" secondAttribute="centerX" constant="-10" id="Z7j-Vv-Yke"/>
                                     <constraint firstAttribute="trailing" secondItem="UCm-Dc-fF5" secondAttribute="trailing" constant="10" id="gOC-ej-TSM"/>
                                     <constraint firstAttribute="height" constant="50" id="sg4-xs-IVn"/>
                                 </constraints>
@@ -2407,6 +2428,7 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="GUb-KN-E4g"/>
                     <connections>
+                        <outlet property="cartLbl" destination="2dZ-n1-Tql" id="QtJ-dK-YXU"/>
                         <outlet property="noDataLbl" destination="PYC-IZ-PED" id="GoY-e8-uUx"/>
                         <outlet property="productCV" destination="Llh-9B-Sfi" id="LeN-vA-gcM"/>
                     </connections>
@@ -3269,6 +3291,22 @@
                                             <action selector="clickToCart:" destination="3R7-62-c2G" eventType="touchUpInside" id="GJ1-jP-Mas"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4bT-gR-joI" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
+                                        <rect key="frame" x="292" y="5" width="20" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="5Wt-7q-E7Z"/>
+                                            <constraint firstAttribute="height" constant="20" id="jjP-VH-FPb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -3276,12 +3314,14 @@
                                     <constraint firstItem="WgX-pX-kpo" firstAttribute="centerY" secondItem="VbB-St-3Tv" secondAttribute="centerY" id="Gh1-iK-JfM"/>
                                     <constraint firstItem="eqc-nt-4Se" firstAttribute="centerY" secondItem="lsg-bg-w0V" secondAttribute="centerY" id="No1-DL-Den"/>
                                     <constraint firstItem="Eol-N7-cWW" firstAttribute="top" secondItem="VbB-St-3Tv" secondAttribute="top" id="P7j-4h-mhf"/>
+                                    <constraint firstItem="WgX-pX-kpo" firstAttribute="centerY" secondItem="4bT-gR-joI" secondAttribute="centerY" constant="10" id="Pcz-Ww-k9D"/>
                                     <constraint firstItem="WgX-pX-kpo" firstAttribute="leading" secondItem="eqc-nt-4Se" secondAttribute="trailing" constant="5" id="TSE-wP-jOX"/>
                                     <constraint firstAttribute="height" constant="50" id="Y4O-TE-OB1"/>
                                     <constraint firstItem="Eol-N7-cWW" firstAttribute="leading" secondItem="VbB-St-3Tv" secondAttribute="leading" id="ayZ-eC-YH9"/>
                                     <constraint firstAttribute="trailing" secondItem="WgX-pX-kpo" secondAttribute="trailing" constant="10" id="h4B-Hb-5ra"/>
                                     <constraint firstAttribute="bottom" secondItem="Eol-N7-cWW" secondAttribute="bottom" id="kgg-U6-oW5"/>
                                     <constraint firstItem="WgX-pX-kpo" firstAttribute="centerY" secondItem="lsg-bg-w0V" secondAttribute="centerY" id="mmB-GD-56s"/>
+                                    <constraint firstItem="WgX-pX-kpo" firstAttribute="centerX" secondItem="4bT-gR-joI" secondAttribute="centerX" constant="-10" id="oZL-cQ-xeS"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyk-AH-Di0">
@@ -3443,6 +3483,7 @@
                     <size key="freeformSize" width="320" height="700"/>
                     <connections>
                         <outlet property="bottomCV" destination="dfi-kd-806" id="lvo-Ia-XQx"/>
+                        <outlet property="cartLbl" destination="4bT-gR-joI" id="PYb-tq-pTQ"/>
                         <outlet property="constraintHeightBottomCV" destination="FnG-79-eEd" id="qP5-h6-G6e"/>
                         <outlet property="topCV" destination="UZG-0a-cTb" id="67f-A6-dEm"/>
                         <outlet property="topPageControl" destination="Cqf-R3-SGa" id="8zR-3C-lx1"/>

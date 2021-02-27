@@ -27,7 +27,12 @@ public class ProductAPIManager {
     func serviceCallToAddToCart(_ param : [String : Any], _ completion: @escaping () -> Void) {
         APIManager.shared.callPostRequest(API.ADD_TO_CART, param, true) { (dict) in
             printData(dict)
-            completion()
+            if let message = dict["message"] as? String, message != "" {
+                displayToast(message)
+            }
+            else {
+                completion()
+            }
         }
     }
     

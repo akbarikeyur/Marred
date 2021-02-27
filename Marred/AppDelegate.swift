@@ -112,6 +112,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func continueAfterCheckout() {
         NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.CLEAR_CART), object: nil)
+        AppModel.shared.CART_COUNT = 0
+        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART_BADGE), object: nil)
         ProductAPIManager.shared.serviceCallToClearFullCart {
             
         }
@@ -329,6 +331,19 @@ extension AppDelegate {
             if let shipping = dict["shipping"] as? [String : Any]{
                 setShippingAddress(AddressModel.init(shipping))
             }
+        }
+    }
+    
+    func serviceCallToGetCart() {
+        if !isUserLogin() || isSeller() {
+            return
+        }
+        ProductAPIManager.shared.serviceCallToGetCart(false) { (data) in
+            if AppModel.shared.CART_COUNT == nil {
+                AppModel.shared.CART_COUNT = 0
+            }
+            AppModel.shared.CART_COUNT = data.count
+            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART_BADGE), object: nil)
         }
     }
 }

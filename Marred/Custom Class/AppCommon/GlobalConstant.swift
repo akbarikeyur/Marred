@@ -59,6 +59,7 @@ struct NOTIFICATION {
     
     static var REFRESH_CART                 =   "REFRESH_CART"
     static var CLEAR_CART                   =   "CLEAR_CART"
+    static var REFRESH_CART_BADGE           =   "REFRESH_CART_BADGE"
     
     static var REFRESH_BOOKMARK             =   "REFRESH_BOOKMARK"
     static var RELOAD_AFTER_CHANGE_LANGUAGE =   "RELOAD_AFTER_CHANGE_LANGUAGE"

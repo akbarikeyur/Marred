@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="Q15-5M-XPA" customClass="CustomTabBarView" customModule="Marred" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="Q15-5M-XPA" customClass="CustomTabBarView" customModule="Maared_24_معارض" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -112,11 +113,29 @@
                                     <color key="textColor" name="DarkText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dnc-Pd-ac4" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
+                                    <rect key="frame" x="33" y="0.0" width="20" height="20"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="Xt0-Fy-z11"/>
+                                        <constraint firstAttribute="width" constant="20" id="zJ9-0H-2Wx"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="10"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="dnc-Pd-ac4" firstAttribute="centerX" secondItem="Tk6-op-dfR" secondAttribute="centerX" constant="11" id="203-0A-CWk"/>
                                 <constraint firstAttribute="height" constant="50" id="7J3-NR-prS"/>
                                 <constraint firstAttribute="bottom" secondItem="Tk6-op-dfR" secondAttribute="bottom" id="BPn-AM-0gk"/>
+                                <constraint firstItem="dnc-Pd-ac4" firstAttribute="centerY" secondItem="Tk6-op-dfR" secondAttribute="centerY" constant="-15" id="Cru-Y2-5cC"/>
                                 <constraint firstAttribute="trailing" secondItem="Tk6-op-dfR" secondAttribute="trailing" id="G2v-hM-unp"/>
                                 <constraint firstItem="Tk6-op-dfR" firstAttribute="leading" secondItem="YLO-G4-d0e" secondAttribute="leading" id="MJO-RW-IBb"/>
                                 <constraint firstAttribute="bottom" secondItem="lIK-NH-xSt" secondAttribute="bottom" constant="2" id="R0L-gW-820"/>
@@ -235,6 +254,7 @@
                 <outlet property="btn3" destination="Tk6-op-dfR" id="ZQ1-0b-CGK"/>
                 <outlet property="btn4" destination="eWL-vC-60S" id="LIU-qR-88u"/>
                 <outlet property="btn5" destination="ONX-rr-41U" id="ScV-jz-Off"/>
+                <outlet property="cartLbl" destination="dnc-Pd-ac4" id="E94-bc-aJt"/>
                 <outlet property="lbl1" destination="6ll-h5-Des" id="03s-od-ZVT"/>
                 <outlet property="lbl2" destination="Br5-UP-6l0" id="Ttg-64-56l"/>
                 <outlet property="lbl3" destination="lIK-NH-xSt" id="QzF-oe-Ewv"/>

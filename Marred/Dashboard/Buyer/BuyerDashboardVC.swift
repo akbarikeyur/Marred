@@ -12,6 +12,7 @@ class BuyerDashboardVC: UIViewController {
 
     @IBOutlet weak var tabCV: UICollectionView!
     @IBOutlet weak var mainContainerView: UIView!
+    @IBOutlet weak var cartLbl: Label!
     
     var arrTabData = [getTranslate("tab_dashboard"), getTranslate("tab_order"), getTranslate("tab_address"), getTranslate("tab_account"), getTranslate("tab_contact")]
     var selectedTab = getTranslate("tab_dashboard")
@@ -27,6 +28,9 @@ class BuyerDashboardVC: UIViewController {
 
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(redirectToContactUs), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_CONTACT_US), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCartBadge), name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART_BADGE), object: nil)
+        updateCartBadge()
+        
         registerCollectionView()
         if isArabic() {
             arrTabData = arrTabData.reversed()
@@ -42,6 +46,16 @@ class BuyerDashboardVC: UIViewController {
     @objc func redirectToContactUs() {
         selectedTab = getTranslate("tab_contact")
         selectTab()
+    }
+    
+    @objc func updateCartBadge() {
+        if AppModel.shared.CART_COUNT != nil && AppModel.shared.CART_COUNT > 0 {
+            cartLbl.text = String(AppModel.shared.CART_COUNT)
+            cartLbl.isHidden = false
+        }else {
+            cartLbl.text = "0"
+            cartLbl.isHidden = true
+        }
     }
     
     //MARK:- Button click event

@@ -16,6 +16,7 @@ class CategoryVC: UIViewController {
     @IBOutlet weak var categoryCV: UICollectionView!
     @IBOutlet var pavillionView: UIView!
     @IBOutlet weak var pavillionCV: UICollectionView!
+    @IBOutlet weak var cartLbl: Label!
     
     var arrTabData = [getTranslate("shop_by_categories"), getTranslate("shop_by_pavilions")]
     
@@ -32,8 +33,9 @@ class CategoryVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(refreshCategoryList), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CATEGORY_LIST), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(changeSelectedPavilion), name: NSNotification.Name.init(NOTIFICATION.SELECT_PAVILION_CLICK), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshPivilionData), name: NSNotification.Name.init(NOTIFICATION.UPDATE_PIVILION_DATA), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCartBadge), name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART_BADGE), object: nil)
         registerCollectionView()
-        
+        updateCartBadge()
         if isArabic() {
             arrTabData = arrTabData.reversed()
         }
@@ -76,6 +78,16 @@ class CategoryVC: UIViewController {
         arrPavilion = [PavilionModel]()
         arrPavilion = getPavilionData()
         pavillionCV.reloadData()
+    }
+    
+    @objc func updateCartBadge() {
+        if AppModel.shared.CART_COUNT != nil && AppModel.shared.CART_COUNT > 0 {
+            cartLbl.text = String(AppModel.shared.CART_COUNT)
+            cartLbl.isHidden = false
+        }else {
+            cartLbl.text = "0"
+            cartLbl.isHidden = true
+        }
     }
     
     //MARK:- Button click event

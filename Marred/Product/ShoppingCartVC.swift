@@ -232,6 +232,8 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
                 serviceCallToClearToCart(arrCart[index!])
                 arrCart.remove(at: index!)
                 updateTableviewHeight()
+                AppModel.shared.CART_COUNT = self.arrCart.count
+                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART_BADGE), object: nil)
             }
         }
         self.updateTotalPrice()
@@ -271,6 +273,8 @@ extension ShoppingCartVC : UITableViewDelegate, UITableViewDataSource, CartDeleg
             self.arrCart.remove(at: sender.tag)
             self.updateTableviewHeight()
             self.updateTotalPrice()
+            AppModel.shared.CART_COUNT = self.arrCart.count
+            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART_BADGE), object: nil)
         }) {
             
         }

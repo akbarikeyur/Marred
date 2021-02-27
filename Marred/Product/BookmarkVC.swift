@@ -12,6 +12,7 @@ class BookmarkVC: UIViewController {
 
     @IBOutlet weak var productCV: UICollectionView!
     @IBOutlet weak var noDataLbl: Label!
+    @IBOutlet weak var cartLbl: Label!
     
     var arrProduct = [ProductModel]()
     var refreshControl = UIRefreshControl.init()
@@ -22,7 +23,8 @@ class BookmarkVC: UIViewController {
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(refreshSceen), name: NSNotification.Name.init(NOTIFICATION.NOTIFICATION_TAB_CLICK), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(serviceCallToGetBookmark), name: NSNotification.Name.init(NOTIFICATION.REFRESH_BOOKMARK), object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCartBadge), name: NSNotification.Name.init(NOTIFICATION.REFRESH_CART_BADGE), object: nil)
+        updateCartBadge()
         
         registerCollectionView()
         
@@ -41,6 +43,16 @@ class BookmarkVC: UIViewController {
             if tabBar.tabBarView.lastIndex == 3 {
                 serviceCallToGetBookmark()
             }
+        }
+    }
+    
+    @objc func updateCartBadge() {
+        if AppModel.shared.CART_COUNT != nil && AppModel.shared.CART_COUNT > 0 {
+            cartLbl.text = String(AppModel.shared.CART_COUNT)
+            cartLbl.isHidden = false
+        }else {
+            cartLbl.text = "0"
+            cartLbl.isHidden = true
         }
     }
     
