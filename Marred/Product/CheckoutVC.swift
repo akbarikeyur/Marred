@@ -181,10 +181,43 @@ class CheckoutVC: UIViewController {
     }
     
     @IBAction func clickToPayNow(_ sender: Any) {
-        if cardBtn.isSelected {
-            setupForPayment()
-        }else{
-            serviceCallToCheckout()
+        self.view.endEditing(true)
+        if fnameTxt.text?.trimmed == "" {
+            displayToast("enter_fname")
+        }
+        else if lnameTxt.text?.trimmed == "" {
+            displayToast("enter_lname")
+        }
+        else if addressTxt.text?.trimmed == "" {
+            displayToast("enter_address")
+        }
+        else if countryTxt.text?.trimmed == "" {
+            displayToast("enter_country")
+        }
+        else if stateTxt.text?.trimmed == "" {
+            displayToast("enter_state")
+        }
+        else if cityTxt.text?.trimmed == "" {
+            displayToast("enter_city")
+        }
+        else if postcodeTxt.text?.trimmed == "" {
+            displayToast("enter_postal_code")
+        }
+        else if emailTxt.text?.trimmed == "" {
+            displayToast("enter_email")
+        }
+        else if !emailTxt.text!.isValidEmail {
+            displayToast("invalid_email")
+        }
+        else if phoneTxt.text?.trimmed == "" {
+            displayToast("enter_phone")
+        }
+        else {
+            if cardBtn.isSelected {
+                setupForPayment()
+            }else{
+                serviceCallToCheckout()
+            }
         }
     }
     
