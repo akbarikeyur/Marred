@@ -105,6 +105,11 @@ class HomeVC: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDICT_TAB_BAR), object: ["tabIndex" : 2])
     }
     
+    @IBAction func clickToWhatsapp(_ sender: Any) {
+        openUrlInSafari(strUrl: WHATSAPP_URL)
+    }
+    
+    
 }
 
 //MARK:- Tableview Method
@@ -126,6 +131,9 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if arrData.count <= indexPath.row {
+            return UITableViewCell()
+        }
         let dict = arrData[indexPath.row]
         if dict.type == HOME.CATEGORY_LIST {
             let cell : ShopCategoryTVC = tblView.dequeueReusableCell(withIdentifier: "ShopCategoryTVC") as! ShopCategoryTVC

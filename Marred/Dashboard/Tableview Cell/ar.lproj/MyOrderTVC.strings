@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "Status:"; ObjectID = "44y-Ja-dlZ"; */
+"44y-Ja-dlZ.text" = ":حالة";
+
+/* Class = "UILabel"; text = "email"; ObjectID = "Btz-HB-4gc"; */
+"Btz-HB-4gc.text" = "email";
+
+/* Class = "UILabel"; text = "Invoice#: 184655023"; ObjectID = "D12-aT-r81"; */
+"D12-aT-r81.text" = "Invoice#: 184655023";
+
+/* Class = "UILabel"; text = "Billing address"; ObjectID = "DCh-UV-oJ2"; */
+"DCh-UV-oJ2.text" = "عنوان وصول الفواتير";
+
+/* Class = "UILabel"; text = "Zercon Accessories"; ObjectID = "FbY-f9-AT8"; */
+"FbY-f9-AT8.text" = "Zercon Accessories";
+
+/* Class = "UILabel"; text = "Completed"; ObjectID = "Num-2o-r15"; */
+"Num-2o-r15.text" = "Completed";
+
+/* Class = "UILabel"; text = "Vendor: Najma al fajer trading"; ObjectID = "QNt-0v-Hi7"; */
+"QNt-0v-Hi7.text" = "Vendor: Najma al fajer trading";
+
+/* Class = "UILabel"; text = "address"; ObjectID = "adN-or-nh6"; */
+"adN-or-nh6.text" = "address";
+
+/* Class = "UILabel"; text = "Quantity:"; ObjectID = "bzm-8W-7u2"; */
+"bzm-8W-7u2.text" = ":كمية";
+
+/* Class = "UILabel"; text = "Order Date: December 16 2020 5:50 AM"; ObjectID = "fCe-9f-66L"; */
+"fCe-9f-66L.text" = "Order Date: December 16 2020 5:50 AM";
+
+/* Class = "UILabel"; text = "phone"; ObjectID = "iUj-He-tDs"; */
+"iUj-He-tDs.text" = "phone";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "luK-V7-W85"; */
+"luK-V7-W85.text" = "x1";
+
+/* Class = "UILabel"; text = "34.50 AED"; ObjectID = "pvv-PS-Zb8"; */
+"pvv-PS-Zb8.text" = "34.50 AED";
+
+/* Class = "UILabel"; text = "Vendor: Najma al fajer trading"; ObjectID = "sTe-hp-vME"; */
+"sTe-hp-vME.text" = "Vendor: Najma al fajer trading";
+
+/* Class = "UILabel"; text = "Price:"; ObjectID = "siJ-3d-1Sl"; */
+"siJ-3d-1Sl.text" = ":السعر";

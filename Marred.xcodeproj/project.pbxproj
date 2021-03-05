@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181A9E3525EFB6E90030DE62 /* MyOrderTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181A9E3725EFB6E90030DE62 /* MyOrderTVC.xib */; };
 		1857478225E016A7002234EE /* SellerOrderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857478025E016A7002234EE /* SellerOrderTVC.swift */; };
 		18714EC325BD2D480035E07F /* DashboardAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18714EC225BD2D480035E07F /* DashboardAPIManager.swift */; };
 		18714EC525BD2D530035E07F /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18714EC425BD2D530035E07F /* DashboardModel.swift */; };
@@ -33,7 +34,6 @@
 		79220C3D2580FE5A00329AC8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79220C3C2580FE5A00329AC8 /* LoginModel.swift */; };
 		79220C3F25810A1000329AC8 /* SubCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79220C3E25810A1000329AC8 /* SubCategoryVC.swift */; };
 		792DAE53258A0698008E1343 /* MyOrderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792DAE51258A0698008E1343 /* MyOrderTVC.swift */; };
-		792DAE54258A0698008E1343 /* MyOrderTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792DAE52258A0698008E1343 /* MyOrderTVC.xib */; };
 		792DAE56258A0E67008E1343 /* BuyerOrderTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792DAE55258A0E67008E1343 /* BuyerOrderTabVC.swift */; };
 		792DAE58258A1B8A008E1343 /* BuyerAccountDetailTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792DAE57258A1B8A008E1343 /* BuyerAccountDetailTabVC.swift */; };
 		792DAE5A258A283D008E1343 /* BuyerAddressTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792DAE59258A283D008E1343 /* BuyerAddressTabVC.swift */; };
@@ -151,6 +151,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181A9E3625EFB6E90030DE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyOrderTVC.xib; sourceTree = "<group>"; };
+		181A9E3925EFB6EB0030DE62 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/MyOrderTVC.strings; sourceTree = "<group>"; };
 		1857478025E016A7002234EE /* SellerOrderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerOrderTVC.swift; sourceTree = "<group>"; };
 		18714EC225BD2D480035E07F /* DashboardAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAPIManager.swift; sourceTree = "<group>"; };
 		18714EC425BD2D530035E07F /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
@@ -179,7 +181,6 @@
 		79220C3C2580FE5A00329AC8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		79220C3E25810A1000329AC8 /* SubCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryVC.swift; sourceTree = "<group>"; };
 		792DAE51258A0698008E1343 /* MyOrderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderTVC.swift; sourceTree = "<group>"; };
-		792DAE52258A0698008E1343 /* MyOrderTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrderTVC.xib; sourceTree = "<group>"; };
 		792DAE55258A0E67008E1343 /* BuyerOrderTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerOrderTabVC.swift; sourceTree = "<group>"; };
 		792DAE57258A1B8A008E1343 /* BuyerAccountDetailTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerAccountDetailTabVC.swift; sourceTree = "<group>"; };
 		792DAE59258A283D008E1343 /* BuyerAddressTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerAddressTabVC.swift; sourceTree = "<group>"; };
@@ -409,7 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				792DAE51258A0698008E1343 /* MyOrderTVC.swift */,
-				792DAE52258A0698008E1343 /* MyOrderTVC.xib */,
+				181A9E3725EFB6E90030DE62 /* MyOrderTVC.xib */,
 				1857478025E016A7002234EE /* SellerOrderTVC.swift */,
 				7951146225EA749400308370 /* SellerOrderTVC.xib */,
 				792DAE5B258A29C8008E1343 /* MyAddressTVC.swift */,
@@ -792,7 +793,7 @@
 				7932239E258B733200ACF496 /* DashboardProductTVC.xib in Resources */,
 				792FEF8825C841BF003DDD79 /* PavilionProductTVC.xib in Resources */,
 				79BF3645257E548D006491C5 /* Roboto-Light.ttf in Resources */,
-				792DAE54258A0698008E1343 /* MyOrderTVC.xib in Resources */,
+				181A9E3525EFB6E90030DE62 /* MyOrderTVC.xib in Resources */,
 				79EAD230257F89D000DC6422 /* BannerAdTVC.xib in Resources */,
 				794B1C122580E25D00A7F391 /* CategoriesCVC.xib in Resources */,
 				792FEF7925C8371E003DDD79 /* Product.storyboard in Resources */,
@@ -1006,6 +1007,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		181A9E3725EFB6E90030DE62 /* MyOrderTVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				181A9E3625EFB6E90030DE62 /* Base */,
+				181A9E3925EFB6EB0030DE62 /* ar */,
+			);
+			name = MyOrderTVC.xib;
+			sourceTree = "<group>";
+		};
 		792FEF7B25C8371E003DDD79 /* Product.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1230,6 +1240,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.Marred;
 				PRODUCT_NAME = "Maared 24 معارض";
 				SWIFT_OBJC_BRIDGING_HEADER = "Marred/Custom Class/Objective C/Marred-Bridging-Header.h";
@@ -1253,6 +1264,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.Marred;
 				PRODUCT_NAME = "Maared 24 معارض";
 				SWIFT_OBJC_BRIDGING_HEADER = "Marred/Custom Class/Objective C/Marred-Bridging-Header.h";

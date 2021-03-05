@@ -21,13 +21,13 @@
 "BQv-nz-ah8.text" = "Zercon Accessories";
 
 /* Class = "UILabel"; text = "Status:"; ObjectID = "TMJ-43-M5i"; */
-"TMJ-43-M5i.text" = "Status:";
+"TMJ-43-M5i.text" = ":حالة";
 
 /* Class = "UILabel"; text = "Vendor: Najma al fajer trading"; ObjectID = "UG6-eB-bJe"; */
 "UG6-eB-bJe.text" = "Vendor: Najma al fajer trading";
 
 /* Class = "UILabel"; text = "Quantity:"; ObjectID = "W0s-NX-Qnf"; */
-"W0s-NX-Qnf.text" = "Quantity:";
+"W0s-NX-Qnf.text" = ":كمية";
 
 /* Class = "UILabel"; text = "x1"; ObjectID = "Xs2-UX-cgs"; */
 "Xs2-UX-cgs.text" = "x1";
@@ -42,7 +42,7 @@
 "nF1-DB-ykO.text" = "Order: 184655023";
 
 /* Class = "UILabel"; text = "Price:"; ObjectID = "nof-rT-Sme"; */
-"nof-rT-Sme.text" = "Price:";
+"nof-rT-Sme.text" = ":السعر";
 
 /* Class = "UILabel"; text = "email"; ObjectID = "w51-Ii-X43"; */
 "w51-Ii-X43.text" = "email";

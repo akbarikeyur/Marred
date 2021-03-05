@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lXP-D9-Ivi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lXP-D9-Ivi">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -33,6 +33,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WR3-r8-6xE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <color key="backgroundColor" red="0.9984564185" green="0.97631400820000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Nw-Iw-sPs">
                                 <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                                 <subviews>
@@ -117,7 +121,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="D69-pr-QQP" firstAttribute="top" secondItem="4Nw-Iw-sPs" secondAttribute="top" id="3Hm-Wc-QEA"/>
                                     <constraint firstItem="TW3-lY-to2" firstAttribute="centerY" secondItem="4Nw-Iw-sPs" secondAttribute="centerY" id="8jH-CV-R4v"/>
@@ -145,15 +149,48 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="dxv-gy-kJt"/>
                                 </connections>
                             </tableView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4iL-ws-Hrb" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
+                                <rect key="frame" x="255" y="503" width="60" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9X-TU-ygn">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <state key="normal" image="whatsapp"/>
+                                        <connections>
+                                            <action selector="clickToWhatsapp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XW3-Vb-hlh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1Kn-fM-ckt"/>
+                                    <constraint firstAttribute="trailing" secondItem="s9X-TU-ygn" secondAttribute="trailing" id="9YR-jL-9SL"/>
+                                    <constraint firstItem="s9X-TU-ygn" firstAttribute="leading" secondItem="4iL-ws-Hrb" secondAttribute="leading" id="BrY-Ve-JGW"/>
+                                    <constraint firstItem="s9X-TU-ygn" firstAttribute="top" secondItem="4iL-ws-Hrb" secondAttribute="top" id="Eiu-sL-jj0"/>
+                                    <constraint firstAttribute="width" constant="60" id="hd7-MX-VCf"/>
+                                    <constraint firstAttribute="bottom" secondItem="s9X-TU-ygn" secondAttribute="bottom" id="vir-BA-6bl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="applyShadow" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8dg-Gw-IFb" secondAttribute="bottom" id="24v-US-9Qe"/>
+                            <constraint firstItem="WR3-r8-6xE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5Fr-i5-UpD"/>
                             <constraint firstItem="4Nw-Iw-sPs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Dx-w6-hU7"/>
                             <constraint firstItem="4Nw-Iw-sPs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="7sc-YW-O1O"/>
+                            <constraint firstItem="4Nw-Iw-sPs" firstAttribute="bottom" secondItem="WR3-r8-6xE" secondAttribute="bottom" id="AJh-x4-Ip6"/>
                             <constraint firstItem="8dg-Gw-IFb" firstAttribute="top" secondItem="4Nw-Iw-sPs" secondAttribute="bottom" id="OEU-Rg-wXV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4iL-ws-Hrb" secondAttribute="bottom" constant="5" id="T2b-ka-TeL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4iL-ws-Hrb" secondAttribute="trailing" constant="5" id="UuY-Bc-P5B"/>
+                            <constraint firstItem="WR3-r8-6xE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aKd-uv-ocG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8dg-Gw-IFb" secondAttribute="trailing" id="q9b-OO-KZw"/>
                             <constraint firstItem="8dg-Gw-IFb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="snu-Vk-zna"/>
+                            <constraint firstItem="WR3-r8-6xE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uyF-Wu-yRG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Nw-Iw-sPs" secondAttribute="trailing" id="uyb-24-auu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -1124,6 +1161,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E6e-Bt-Yao">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <color key="backgroundColor" red="0.9984564185" green="0.97631400820000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ji-z2-0wa">
                                 <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                                 <subviews>
@@ -1205,7 +1246,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="SD2-Ra-xMv" firstAttribute="top" secondItem="6ji-z2-0wa" secondAttribute="top" id="3J7-uq-q9l"/>
                                     <constraint firstAttribute="height" constant="50" id="AOq-MF-D1E"/>
@@ -1278,9 +1319,13 @@
                             <constraint firstItem="GrA-Vu-awd" firstAttribute="top" secondItem="VFs-1j-gGj" secondAttribute="bottom" id="Cv6-7p-anJ"/>
                             <constraint firstItem="ecU-7K-sXM" firstAttribute="trailing" secondItem="VFs-1j-gGj" secondAttribute="trailing" id="G2O-ex-Uuz"/>
                             <constraint firstItem="6ji-z2-0wa" firstAttribute="top" secondItem="ecU-7K-sXM" secondAttribute="top" constant="20" id="Mbk-FV-IqM"/>
+                            <constraint firstItem="E6e-Bt-Yao" firstAttribute="trailing" secondItem="ecU-7K-sXM" secondAttribute="trailing" id="NTT-d7-dFc"/>
                             <constraint firstItem="6ji-z2-0wa" firstAttribute="trailing" secondItem="ecU-7K-sXM" secondAttribute="trailing" id="OzZ-ar-By8"/>
+                            <constraint firstItem="6ji-z2-0wa" firstAttribute="bottom" secondItem="E6e-Bt-Yao" secondAttribute="bottom" id="Y2E-G2-KlO"/>
                             <constraint firstItem="GrA-Vu-awd" firstAttribute="leading" secondItem="ecU-7K-sXM" secondAttribute="leading" id="YqW-pn-BB4"/>
+                            <constraint firstItem="E6e-Bt-Yao" firstAttribute="top" secondItem="KGv-MN-w2g" secondAttribute="top" id="dsD-zQ-sld"/>
                             <constraint firstItem="VFs-1j-gGj" firstAttribute="leading" secondItem="ecU-7K-sXM" secondAttribute="leading" id="gZA-X8-08B"/>
+                            <constraint firstItem="E6e-Bt-Yao" firstAttribute="leading" secondItem="ecU-7K-sXM" secondAttribute="leading" id="oHf-uf-Y0h"/>
                             <constraint firstItem="VFs-1j-gGj" firstAttribute="top" secondItem="6ji-z2-0wa" secondAttribute="bottom" id="zkn-w4-peR"/>
                             <constraint firstItem="6ji-z2-0wa" firstAttribute="leading" secondItem="ecU-7K-sXM" secondAttribute="leading" id="zwZ-fP-745"/>
                         </constraints>
@@ -1713,7 +1758,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1z-He-nvu" customClass="Button" customModule="Maared_24_معارض" customModuleProvider="target">
-                                        <rect key="frame" x="28" y="24" width="42" height="35"/>
+                                        <rect key="frame" x="28" y="24" width="41" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="moC-ZQ-xrq"/>
                                         </constraints>
@@ -2941,10 +2986,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1l-US-Cn5">
-                                                                <rect key="frame" x="0.0" y="214.5" width="320" height="74.5"/>
+                                                                <rect key="frame" x="0.0" y="214.5" width="320" height="71.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msJ-aL-2ao" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="10" width="300" height="19.5"/>
+                                                                        <rect key="frame" x="10" y="10" width="300" height="16.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -2959,7 +3004,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rO2-mm-hkL" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="34.5" width="300" height="40"/>
+                                                                        <rect key="frame" x="10" y="31.5" width="300" height="40"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="OLB-Ds-gvE">
                                                                                 <rect key="frame" x="10" y="10" width="26" height="20"/>
@@ -3053,7 +3098,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nH2-uf-HPS">
-                                                                <rect key="frame" x="0.0" y="309" width="320" height="81.5"/>
+                                                                <rect key="frame" x="0.0" y="306" width="320" height="81.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Shop in Pavillions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKk-Wv-Bjh" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="20" width="300" height="16.5"/>
@@ -3142,10 +3187,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nig-QY-ua1">
-                                                                <rect key="frame" x="0.0" y="390.5" width="320" height="96.5"/>
+                                                                <rect key="frame" x="0.0" y="387.5" width="320" height="99.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Shop in Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK8-rx-58d" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="15" width="300" height="16.5"/>
+                                                                        <rect key="frame" x="10" y="15" width="300" height="19.5"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                         <color key="textColor" red="0.30588235289999999" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -3160,7 +3205,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTa-SK-hyc" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="36.5" width="300" height="40"/>
+                                                                        <rect key="frame" x="10" y="39.5" width="300" height="40"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-23-i2x" customClass="TextField" customModule="Maared_24_معارض" customModuleProvider="target">
                                                                                 <rect key="frame" x="10" y="0.0" width="270" height="40"/>
@@ -3534,5 +3579,6 @@
         <image name="search" width="15.5" height="15.5"/>
         <image name="temp_product" width="375" height="598"/>
         <image name="temp_product1" width="105" height="90"/>
+        <image name="whatsapp" width="30" height="30"/>
     </resources>
 </document>

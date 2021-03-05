@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -22,14 +22,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SellerOrderTVC" id="KGk-i7-Jjw" customClass="SellerOrderTVC" customModule="Maared_24_معارض" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="246"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="164"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="246"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="164"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGM-OD-KyN" customClass="View" customModule="Maared_24_معارض" customModuleProvider="target">
-                        <rect key="frame" x="10" y="5" width="300" height="236"/>
+                        <rect key="frame" x="10" y="5" width="300" height="154"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEs-NV-8Hl">
                                 <rect key="frame" x="5" y="0.0" width="290" height="119"/>
@@ -344,122 +344,16 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4U1-jJ-agu">
-                                <rect key="frame" x="5" y="154" width="290" height="72"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Billing address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8uA-Zl-zuj" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="5" width="280" height="14.5"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ab"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lDg-i6-uWb" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="24.5" width="280" height="14.5"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                        <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6nT-eW-6ZB" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="39" width="280" height="15"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                        <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LB8-KM-soA">
-                                        <rect key="frame" x="5" y="39" width="280" height="15"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="2"/>
-                                        <connections>
-                                            <action selector="clickToPhone:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Twz-CI-QuJ"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="w51-Ii-X43" customClass="Label" customModule="Maared_24_معارض" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="54" width="280" height="18"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                        <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ra-ug-OAr">
-                                        <rect key="frame" x="5" y="54" width="280" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="5"/>
-                                        <connections>
-                                            <action selector="clickToEmail:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FSy-Xv-2ge"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="lDg-i6-uWb" secondAttribute="trailing" constant="5" id="9FH-qu-chA"/>
-                                    <constraint firstItem="LB8-KM-soA" firstAttribute="bottom" secondItem="6nT-eW-6ZB" secondAttribute="bottom" id="Co1-WL-olX"/>
-                                    <constraint firstItem="LB8-KM-soA" firstAttribute="leading" secondItem="6nT-eW-6ZB" secondAttribute="leading" id="D6I-qV-7IA"/>
-                                    <constraint firstItem="lDg-i6-uWb" firstAttribute="top" secondItem="8uA-Zl-zuj" secondAttribute="bottom" constant="5" id="Dbv-NZ-lBE"/>
-                                    <constraint firstItem="lDg-i6-uWb" firstAttribute="leading" secondItem="4U1-jJ-agu" secondAttribute="leading" constant="5" id="EZ1-lg-bDV"/>
-                                    <constraint firstAttribute="trailing" secondItem="8uA-Zl-zuj" secondAttribute="trailing" constant="5" id="HIw-h9-UTu"/>
-                                    <constraint firstAttribute="trailing" secondItem="6nT-eW-6ZB" secondAttribute="trailing" constant="5" id="NnO-MZ-tuV"/>
-                                    <constraint firstItem="w51-Ii-X43" firstAttribute="leading" secondItem="6Ra-ug-OAr" secondAttribute="leading" id="ST6-3O-Fvy"/>
-                                    <constraint firstItem="6nT-eW-6ZB" firstAttribute="top" secondItem="lDg-i6-uWb" secondAttribute="bottom" id="T3a-po-7nL"/>
-                                    <constraint firstItem="w51-Ii-X43" firstAttribute="top" secondItem="6Ra-ug-OAr" secondAttribute="top" id="T9Q-gX-8mV"/>
-                                    <constraint firstItem="LB8-KM-soA" firstAttribute="trailing" secondItem="6nT-eW-6ZB" secondAttribute="trailing" id="VTS-wj-O9b"/>
-                                    <constraint firstItem="8uA-Zl-zuj" firstAttribute="leading" secondItem="4U1-jJ-agu" secondAttribute="leading" constant="5" id="bQJ-Q0-13H"/>
-                                    <constraint firstItem="w51-Ii-X43" firstAttribute="leading" secondItem="4U1-jJ-agu" secondAttribute="leading" constant="5" id="e1e-fM-m5Z"/>
-                                    <constraint firstItem="w51-Ii-X43" firstAttribute="top" secondItem="6nT-eW-6ZB" secondAttribute="bottom" id="fF7-ET-7mU"/>
-                                    <constraint firstAttribute="bottom" secondItem="w51-Ii-X43" secondAttribute="bottom" id="gNy-jk-LTe"/>
-                                    <constraint firstItem="8uA-Zl-zuj" firstAttribute="top" secondItem="4U1-jJ-agu" secondAttribute="top" constant="5" id="nWn-GD-x2u"/>
-                                    <constraint firstItem="w51-Ii-X43" firstAttribute="bottom" secondItem="6Ra-ug-OAr" secondAttribute="bottom" id="qTJ-MG-ybm"/>
-                                    <constraint firstAttribute="trailing" secondItem="w51-Ii-X43" secondAttribute="trailing" constant="5" id="rsk-6O-qqn"/>
-                                    <constraint firstItem="w51-Ii-X43" firstAttribute="trailing" secondItem="6Ra-ug-OAr" secondAttribute="trailing" id="tbb-Kz-k8q"/>
-                                    <constraint firstItem="LB8-KM-soA" firstAttribute="top" secondItem="6nT-eW-6ZB" secondAttribute="top" id="wWD-Bs-mTY"/>
-                                    <constraint firstItem="6nT-eW-6ZB" firstAttribute="leading" secondItem="4U1-jJ-agu" secondAttribute="leading" constant="5" id="xMs-OR-rtM"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="sgO-Lv-aeW" firstAttribute="top" secondItem="gEs-NV-8Hl" secondAttribute="bottom" constant="5" id="0W8-lv-Kmq"/>
-                            <constraint firstItem="4U1-jJ-agu" firstAttribute="top" secondItem="sgO-Lv-aeW" secondAttribute="bottom" id="7an-Ig-0LI"/>
-                            <constraint firstItem="4U1-jJ-agu" firstAttribute="leading" secondItem="uGM-OD-KyN" secondAttribute="leading" constant="5" id="9CS-id-2oZ"/>
+                            <constraint firstAttribute="bottom" secondItem="sgO-Lv-aeW" secondAttribute="bottom" id="9AX-sl-UME"/>
                             <constraint firstAttribute="trailing" secondItem="gEs-NV-8Hl" secondAttribute="trailing" constant="5" id="EDv-bo-9JU"/>
                             <constraint firstItem="gEs-NV-8Hl" firstAttribute="leading" secondItem="uGM-OD-KyN" secondAttribute="leading" constant="5" id="Vqc-ec-VKT"/>
                             <constraint firstItem="gEs-NV-8Hl" firstAttribute="top" secondItem="uGM-OD-KyN" secondAttribute="top" id="aRJ-dI-XLm"/>
                             <constraint firstItem="sgO-Lv-aeW" firstAttribute="leading" secondItem="uGM-OD-KyN" secondAttribute="leading" id="fre-wB-Qgh"/>
-                            <constraint firstAttribute="trailing" secondItem="4U1-jJ-agu" secondAttribute="trailing" constant="5" id="hrP-va-3gW"/>
                             <constraint firstAttribute="trailing" secondItem="sgO-Lv-aeW" secondAttribute="trailing" id="ohw-19-ApW"/>
-                            <constraint firstAttribute="bottom" secondItem="4U1-jJ-agu" secondAttribute="bottom" constant="10" id="wlI-RO-bMQ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -479,16 +373,13 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="addressLbl" destination="lDg-i6-uWb" id="Gnm-ao-VOH"/>
                 <outlet property="customerLbl" destination="26A-BM-wZf" id="rC6-Jb-pHu"/>
                 <outlet property="dateLbl" destination="0X8-KO-Vxd" id="SBo-dH-674"/>
                 <outlet property="earningLbl" destination="342-8V-7dd" id="0RH-JG-91f"/>
-                <outlet property="emailLbl" destination="w51-Ii-X43" id="F8i-zl-zsv"/>
                 <outlet property="imgBtn" destination="AFE-Pq-aIx" id="eRa-f1-c8i"/>
                 <outlet property="nameLbl" destination="BQv-nz-ah8" id="esI-Qr-zw7"/>
                 <outlet property="orderLbl" destination="nF1-DB-ykO" id="oKT-kz-vB9"/>
                 <outlet property="paymentLbl" destination="UG6-eB-bJe" id="khH-Pt-OuZ"/>
-                <outlet property="phoneLbl" destination="6nT-eW-6ZB" id="c85-f6-H60"/>
                 <outlet property="priceLbl" destination="gFF-cz-Ldt" id="XEh-9Z-J1A"/>
                 <outlet property="qtyLbl" destination="Xs2-UX-cgs" id="Ry2-Do-9FZ"/>
                 <outlet property="statusLbl" destination="6Nc-3S-wlS" id="sX2-8X-1be"/>
