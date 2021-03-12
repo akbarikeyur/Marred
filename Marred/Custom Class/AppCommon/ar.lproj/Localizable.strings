@@ -33,6 +33,8 @@
 "login_to_continue" = "الرجاء تسجيل الدخول للمتابعة.";
 "login_button" = "تسجيل الدخول";
 
+"session_expired" = ".انتهت الجلسة. الرجاد الدخول على الحساب من جديد";
+
 //Login
 "signup_button_title" = "إذا لم تكن عضوا بعد ، قم بالتسجيل";
 "signup_button" = "قم بالتسجيل";

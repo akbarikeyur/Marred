@@ -14,8 +14,13 @@ public class HomeAPIManager {
 
     func serviceCallToGetHome(_ isLoader : Bool, _ completion: @escaping (_ result : [String : Any]) -> Void) {
         APIManager.shared.callPostRequest(API.GET_HOME, [String : Any](), isLoader) { (dict) in
-            //printData(dict)
-            completion(dict)
+            printData(dict)
+            if let statusCode = dict["statusCode"] as? Int, statusCode == 403 {
+                displayToast("session_expired")
+                AppDelegate().sharedDelegate().navigaeToLogout()
+            }else{
+                completion(dict)
+            }
         }
     }
     

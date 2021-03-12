@@ -30,14 +30,14 @@ class LoginVC: UIViewController {
 //            emailTxt.text = "FV500@maared24.com"
 //            passwordTxt.text = "FO2VR5NJ8W"
 //            emailTxt.text = "keyurdakbari@gmail.com"
-//            emailTxt.text = "testingakbari@gmail.com"
-//            passwordTxt.text = "qqqqqq"
+            emailTxt.text = "testingakbari@gmail.com"
+            passwordTxt.text = "qqqqqq"
             
             //Seller
 //            emailTxt.text = "amishapadasala20@gmail.com"
 //            passwordTxt.text = "qqqqqq"
-            emailTxt.text = "FV037@maared24.com" //"FV114@maared24.com"
-            passwordTxt.text = "CMDDVB227U"//"BCF8FMICTN"
+//            emailTxt.text = "FV037@maared24.com" //"FV114@maared24.com"
+//            passwordTxt.text = "CMDDVB227U"//"BCF8FMICTN"
         }
     }
     

@@ -339,7 +339,7 @@ extension CheckoutVC {
         if cardBtn.isSelected {
             param["payment_method"] = "foloosi"
             param["payment_method_title"] = "Credit Card/Debit Card"
-            param["set_paid"] = false
+            param["set_paid"] = true
         }else {
             param["payment_method"] = "cod"
             param["payment_method_title"] = "Cash on delivery"
@@ -371,6 +371,7 @@ extension CheckoutVC {
         if coupon.id != "" {
             param["coupon_lines"] = [coupon.dictionary()]
         }
+        param["status"] = "processing"
         printData(param)
         ProductAPIManager.shared.serviceCallToCheckout(param) {
             AppDelegate().sharedDelegate().continueAfterCheckout()
